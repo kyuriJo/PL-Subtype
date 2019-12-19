@@ -4,6 +4,7 @@
 * Description of the input files is in **Input Files**.
 * If you have your pathways of interest, see **Case1**.
 * If you would like to analyze on recommended pathways from DEG analysis, see **Case2**.
+* After generating two result files, follow instructions in **Subtype analysis**.
 
 ## Input Files
 1. Gene expression file
@@ -55,3 +56,6 @@ subtype_analysis.py will generate two files:
 
 2. `Subtype-specific_TFs_in_[Pathway].txt`
    - For each TF in user-selected pathway, TF analysis is performed using hypergeometric test to find whether the target genes of TF enrich in subtype DEGs. This file includes the hypergeometric test result of each TF.
+   
+## Subtype analysis
+
