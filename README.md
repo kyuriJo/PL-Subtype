@@ -1,10 +1,18 @@
 # PL-Subtype
 * Prerequisite : R 2.15.* (limma), Python 3.* (Scipy).
 * To run PL-Subtype, You need 1) **two input files** and 2) **pathway of interest**.
-1. If you have your pathways of interest, see **Case1**.
-2. If you would like to analyze on recommended pathways from DEG analysis, see **Case2**.
+* Description of the input files is in **Input Files**.
+* If you have your pathways of interest, see **Case1**.
+* If you would like to analyze on recommended pathways from DEG analysis, see **Case2**.
+
+## Input Files
+
 
 ## Case 1.
+* Select your pathway of interest in the list below:
+* **Csf1, Egf, Hgf, Ifnab, Ifng, Igf1, IL1, IL2, IL4, IL6, IL12, Ins, Ngf, Pdg, Tgfb, Tnf, Vegf, Cd40, Serum, Lps, PolyIC, TLR9, Adriamycin, Aniso, Bleomycin, Etoposide, Hydroxyurea, NCS, PMA, Sorbitol, UV, IRad**
+* Description of the pathways can be found here: http://pl.csl.sri.com/stm7-guide.html
+
 ```console
 Rscript run_limma.R [expression_file] [sample_file]
 python subtype_analysis.py [pathway name]
