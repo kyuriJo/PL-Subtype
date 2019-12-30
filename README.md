@@ -40,22 +40,39 @@ python subtype_analysis.py [pathway name]
 ## Case 2. 
 ```console
 Rscript run_limma.R [expression_file] [sample_file]
-python enrichment.py [enrichment_res_file]
+python enrichment.py [sample_file]
 ```
-In [enrichment_res_file], recommended pathways are shown in the order of increasing P-value from DEG enrichment test.
+enrichment.py generates `res/Enrichment-test_results.txt` where recommended pathways are shown in the order of increasing P-value from DEG enrichment test.
 Select one of the pathways and continue.
 
 ```console
-python subtype_analysis.py [pathway name]
+python subtype_analysis.py [subtype name] [pathway name]
 ```
 
-## Result files
-subtype_analysis.py will generate two files:
-1. `DEGs_Normal-[subtype]_in_[Pathway].txt`
-   - DEG analysis is performed by Limma comparing Normal vs. each subtype. This file includes the list of DEGs in the user-selected pathway(s).
+## Result files (in `res` folder)
+run_limma.R will generate two types of files:
+1. `Limma_Normal-[subtype].txt`
+2. `Limma_[subtype]-Others.txt`
 
-2. `Subtype-specific_TFs_in_[Pathway].txt`
+subtype_analysis.py will generate two files:
+1. `DEGs_in_[subtype]-[Pathway].txt`
+   - This file includes the list of DEGs in the user-selected pathway(s).
+
+2. `Subtype-specific_TFs_in_[subtype]-[Pathway].txt`
    - For each TF in user-selected pathway, TF analysis is performed using hypergeometric test to find whether the target genes of TF enrich in subtype DEGs. This file includes the hypergeometric test result of each TF.
    
 ## Subtype analysis
+Install Java and download PLA Online, and proceed analysis with result files.
+Java : https://www.oracle.com/technetwork/java/javase/downloads/index.html
+PLA Online : http://pl.csl.sri.com/online.html
+
+1. Launch PLA Online and select your pathway of interest.
+2. Select Occurences tab in the lower right panel and repeat the following:
+   1. Find Occurences that match with DEGs in your `DEGs_in_[subtype]-[Pathway].txt` file
+   2. Click the node in the graph panel and this will open the context tab in the lower right panel.
+   3. Click on the 'make occ as a goal' button and the node will turn green.
+3. Press the button 'Subnet' in the tool bar. This will show you the subtype-specific paths to DEGs.
+4. Among the proteins/genes in the subtype-specific path, find TFs that passed the enrichment test in `Subtype-specific_TFs_in_[subtype]-[Pathway].txt`.
+
+For Step 2, please refer to 'Subnets and Pathnets' section of http://pl.csl.sri.com/stm7-guide.html
 
