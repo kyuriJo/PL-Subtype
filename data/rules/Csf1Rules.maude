@@ -1,0 +1,350 @@
+*********1*********2*********3*********4*********5*********6*********7****
+***
+***  Csf1Rules.maude
+***
+**************************************************************************
+mod CSF1RULES is inc ALLOPS .
+
+var xout : Soup .
+vars clo clm clr cli clc nuo num nui nuc : Soup .
+vars moo mom moi moc mio mim mii mic : Soup .
+vars ero erm eri erc pxo pxm pxi pxc : Soup .
+vars gao gam gai gac lyo lym lyi lyc : Soup .
+vars eeo eem eei eec leo lem lei lec : Soup .
+vars cpo cpm cpi cpc ct ptc sig : Soup .
+var csf1rc : Soup .
+var erksmod : ModSet .
+
+*** ~/evidence/Csf1-Evidence/00Csf1-evidence.txt
+
+*** Csf1R--
+
+rl[417.Csf1R.irt.Csf1]:
+  {XOut   | xout Csf1                     }
+  {Csf1RC | csf1rc Csf1R                  }
+  =>
+  {XOut   | xout                          }
+  {Csf1RC | csf1rc ([Csf1R - act] : Csf1) } .
+  -------------------------------------------
+  *** ~/evidence/Csf1-Evidence/Csf1R.irt.Csf1.417.txt
+
+*** Akt1--
+
+rl[401.Akt1.irt.Csf1]:
+  {Csf1RC | csf1rc ([Csf1R - act] : Csf1)              }
+  {CLc    | clc    Akt1                                }
+  =>
+  {Csf1RC | csf1rc ([Csf1R - act] : Csf1) [Akt1 - act] }
+  {CLc    | clc                                        } .
+  --------------------------------------------------------
+  *** ~/evidence/Csf1-Evidence/Akt1.irt.Csf1.401.txt
+
+*** Araf--
+
+rl[413.Araf.irt.Csf1]:
+  {Csf1RC | csf1rc ([Csf1R - act] : Csf1)              }
+  {CLc    | clc    Araf                                }
+  =>
+  {Csf1RC | csf1rc ([Csf1R - act] : Csf1) [Araf - act] }
+  {CLc    | clc                                        } .
+  --------------------------------------------------------
+  *** ~/evidence/Csf1-Evidence/Araf.irt.Csf1.413.txt
+
+*** Cbl--
+
+rl[503.Cbl.irt.Csf1]:
+  {Csf1RC | csf1rc ([Csf1R - act] : Csf1)               }
+  {CLc    | clc    Cbl                                  }
+  =>
+  {Csf1RC | csf1rc ([Csf1R - act] : Csf1) [Cbl - Yphos] }
+  {CLc    | clc                                         } .
+  ----------------------------------------------------------
+  *** ~/evidence/Csf1-Evidence/Cbl.irt.Csf1.503.txt
+
+*** Ctnnb1--
+
+rl[158.Ctnnb1.irt.Csf1]:
+  {Csf1RC | csf1rc ([Csf1R - act] : Csf1) [Dap12 - Yphos] [Fak2 - Yphos]   }
+  {CLc    | clc    Ctnnb1                                                  }
+  =>
+  {Csf1RC | csf1rc ([Csf1R - act] : Csf1) [Dap12 - Yphos] [Fak2 - Yphos]
+                   [Ctnnb1 - Yphos]                                        }
+  {CLc    | clc                                                            } .
+  ----------------------------------------------------------------------------
+  *** ~/evidence/Csf1-Evidence/Ctnnb1.irt.Csf1.158.txt
+
+*** Dap12--
+
+rl[538.Dap12.irt.Csf1]:
+  {Csf1RC | csf1rc ([Csf1R - act] : Csf1)                 }
+  {CLm    | clm    Dap12                                  }
+  =>
+  {Csf1RC | csf1rc ([Csf1R - act] : Csf1) [Dap12 - Yphos] }
+  {CLm    | clm                                           } .
+  ------------------------------------------------------------
+  *** ~/evidence/Csf1-Evidence/Dap12.irt.Csf1.538.txt
+
+*** Eps8--
+
+rl[494.Eps8.irt.Csf1]:
+  {Csf1RC | csf1rc ([Csf1R - act] : Csf1)                }
+  {CLc    | clc    Eps8                                  }
+  =>
+  {Csf1RC | csf1rc ([Csf1R - act] : Csf1) [Eps8 - Yphos] }
+  {CLc    | clc                                          } .
+  ----------------------------------------------------------
+  *** ~/evidence/Csf1-Evidence/Eps8.irt.Csf1.494.txt
+
+*** Erks--
+
+rl[418.Erks.irt.Csf1]:
+  {Csf1RC | csf1rc ([Csf1R - act] : Csf1) [Araf - act]               }
+  {CLc    | clc    Erks                                              }
+  =>
+  {Csf1RC | csf1rc ([Csf1R - act] : Csf1)  [Araf - act] 
+                    [Erks - act phos(TEY)]                           }
+  {CLc    | clc                                                      } .
+  ----------------------------------------------------------------------
+  *** ~/evidence/Csf1-Evidence/Erks.irt.Csf1.418.txt
+
+*** Fak2--
+
+rl[159.Fak2.irt.Csf1]:
+  {Csf1RC | csf1rc ([Csf1R - act] : Csf1) [Dap12 - Yphos]                }
+  {CLc    | clc    Fak2                                                  }
+  =>
+  {Csf1RC | csf1rc ([Csf1R - act] : Csf1) [Dap12 - Yphos] [Fak2 - Yphos] }
+  {CLc    | clc                                                          } .
+  --------------------------------------------------------------------------
+  *** ~/evidence/Csf1-Evidence/Fak2.irt.Csf1.159.txt
+
+*** Fyn--
+
+rl[441.Fyn.irt.Csf1]:
+  {Csf1RC | csf1rc ([Csf1R - act] : Csf1)             }
+  {CLi    | cli    Fyn                                }
+  =>
+  {Csf1RC | csf1rc ([Csf1R - act] : Csf1) [Fyn - act] }
+  {CLi    | cli                                       } .
+  -------------------------------------------------------
+  *** ~/evidence/Csf1-Evidence/Fyn.irt.Csf1.441.txt
+
+*** Gab2--
+
+rl[482.Gab2.irt.Csf1]:
+  {Csf1RC | csf1rc ([Csf1R - act] : Csf1)                }
+  {CLc    | clc    Gab2                                  }
+  =>
+  {Csf1RC | csf1rc ([Csf1R - act] : Csf1) [Gab2 - Yphos] }
+  {CLc    | clc                                          } .
+  ----------------------------------------------------------
+  *** ~/evidence/Csf1-Evidence/Gab2.irt.Csf1.482.txt
+
+*** Gab3--
+
+rl[613.Gab3.irt.Csf1]:
+  {Csf1RC | csf1rc ([Csf1R - act] : Csf1)                }
+  {CLc    | clc    Gab3                                  }
+  =>
+  {Csf1RC | csf1rc ([Csf1R - act] : Csf1) [Gab3 - Yphos] }
+  {CLc    | clc                                          } .
+  ----------------------------------------------------------
+  *** ~/evidence/Csf1-Evidence/Gab3.irt.Csf1.613.txt
+
+*** Grb2--
+
+rl[493.Grb2.irt.Csf1]:
+  {Csf1RC | csf1rc ([Csf1R - act] : Csf1)      }
+  {CLc    | clc    Grb2                        }
+  =>
+  {Csf1RC | csf1rc ([Csf1R - act] : Csf1) Grb2 }
+  {CLc    | clc                                } .
+  ------------------------------------------------
+  *** ~/evidence/Csf1-Evidence/Grb2.irt.Csf1.493.txt
+
+*** Gsk3s--
+
+rl[160.Gsk3s.irt.Csf1]:
+  {Csf1RC | csf1rc ([Csf1R - act] : Csf1)  }
+  {CLc    | clc     [Gsk3s - act]          }
+  =>
+  {Csf1RC | csf1rc ([Csf1R - act] : Csf1)  }
+  {CLc    | clc    [Gsk3s - phos(SFAE)]    } .
+  -------------------------------------------
+  *** ~/evidence/Csf1-Evidence/Gsk3s.irt.Csf1.160.txt
+
+*** Hras--
+
+rl[422.Hras.irt.Csf1]:
+  {Csf1RC | csf1rc ([Csf1R - act] : Csf1)              }
+  {CLi    | cli    [Hras - GDP]                        }
+  =>
+  {Csf1RC | csf1rc ([Csf1R - act] : Csf1) [Hras - GTP] }
+  {CLi    | cli                                        } .
+  --------------------------------------------------------
+  *** ~/evidence/Csf1-Evidence/Hras.irt.Csf1.422.txt
+
+*** Itgb3--
+
+rl[414.Itgb3.irt.Csf1]:
+  {Csf1RC | csf1rc ([Csf1R - act] : Csf1)       }
+  {CLm    | clm    Itgb3                        }
+  =>
+  {Csf1RC | csf1rc ([Csf1R - act] : Csf1) Itgb3 }
+  {CLm    | clm                                 } .
+  -------------------------------------------------
+  *** ~/evidence/Csf1-Evidence/Itgb3.irt.Csf1.414.txt
+
+*** Kras--
+
+rl[423.Kras.irt.Csf1]:
+  {Csf1RC | csf1rc ([Csf1R - act] : Csf1)              }
+  {CLi    | cli    [Kras - GDP]                        }
+  =>
+  {Csf1RC | csf1rc ([Csf1R - act] : Csf1) [Kras - GTP] }
+  {CLi    | cli                                        } .
+  --------------------------------------------------------
+  *** ~/evidence/Csf1-Evidence/Kras.irt.Csf1.423.txt
+
+*** Mek1--
+
+rl[428.Mek1.irt.Csf1]:
+  {Csf1RC | csf1rc ([Csf1R - act] : Csf1)              }
+  {CLc    | clc    Mek1                                }
+  =>
+  {Csf1RC | csf1rc ([Csf1R - act] : Csf1) [Mek1 - act] }
+  {CLc    | clc                                        } .
+  --------------------------------------------------------
+  *** ~/evidence/Csf1-Evidence/Mek1.irt.Csf1.428.txt
+
+*** Mras--
+
+rl[424.Mras.irt.Csf1]:
+  {Csf1RC | csf1rc ([Csf1R - act] : Csf1)              }
+  {CLi    | cli    [Mras - GDP]                        }
+  =>
+  {Csf1RC | csf1rc ([Csf1R - act] : Csf1) [Mras - GTP] }
+  {CLi    | cli                                        } .
+  --------------------------------------------------------
+  *** ~/evidence/Csf1-Evidence/Mras.irt.Csf1.424.txt
+
+*** Nras--
+
+rl[427.Nras.irt.Csf1]:
+  {Csf1RC | csf1rc ([Csf1R - act] : Csf1)              }
+  {CLi    | cli    [Nras - GDP]                        }
+  =>
+  {Csf1RC | csf1rc ([Csf1R - act] : Csf1) [Nras - GTP] }
+  {CLi    | cli                                        } .
+  --------------------------------------------------------
+  *** ~/evidence/Csf1-Evidence/Nras.irt.Csf1.427.txt
+
+*** P38s--
+
+rl[518.P38s.irt.Csf1]:
+  {Csf1RC | csf1rc ([Csf1R - act] : Csf1) }
+  {CLc    | clc    P38s                   }
+  =>
+  {Csf1RC | csf1rc ([Csf1R - act] : Csf1) }
+  {CLc    | clc    [P38s - act]           } .
+  -------------------------------------------
+  *** ~/evidence/Csf1-Evidence/P38s.irt.Csf1.518.txt
+
+*** Pi3k--
+
+rl[432.Pi3k.irt.Csf1]:
+  {Csf1RC | csf1rc ([Csf1R - act] : Csf1)      }
+  {CLc    | clc    Pi3k                        }
+  =>
+  {Csf1RC | csf1rc ([Csf1R - act] : Csf1) Pi3k }
+  {CLc    | clc                                } .
+  -----------------------------------------------------------
+  *** ~/evidence/Csf1-Evidence/Pi3k.irt.Csf1.432.txt
+
+*** Shp2
+
+rl[608.Shp2.irt.Csf1]: 
+  {Csf1RC | csf1rc ([Csf1R - act] : Csf1)                  }
+  {CLc    | clc    Shp2                                  }
+  =>
+  {Csf1RC | csf1rc ([Csf1R - act] : Csf1) [Shp2 - Yphos] }
+  {CLc    | clc                                            } .
+  ------------------------------------------------------------
+  *** ~/evidence/Csf1-Evidence/Shp2.irt.Csf1.608.txt
+
+*** Raf1--
+
+rl[430.Raf1.irt.Csf1]:
+  {Csf1RC | csf1rc ([Csf1R - act] : Csf1)              }
+  {CLc    | clc    Raf1                                }
+  =>
+  {Csf1RC | csf1rc ([Csf1R - act] : Csf1) [Raf1 - act] }
+  {CLc    | clc                                        } .
+  --------------------------------------------------------
+  *** ~/evidence/Csf1-Evidence/Raf1.irt.Csf1.430.txt
+
+*** Rsk1--
+
+rl[521.Rsk1.irt.Csf1]:
+  {Csf1RC | csf1rc ([Csf1R - act] : Csf1) }
+  {CLc    | clc    Rsk1                   }
+  =>
+  {Csf1RC | csf1rc ([Csf1R - act] : Csf1) }
+  {CLc    | clc    [Rsk1 - act]           } .
+  -------------------------------------------
+  *** ~/evidence/Csf1-Evidence/Rsk1.irt.Csf1.521.txt
+
+*** Shc1--
+
+rl[925.Shc1.irt.Csf1]:
+  {Csf1RC | csf1rc ([Csf1R - act] : Csf1)                } 
+  {CLc    | clc    Shc1                                  }
+  =>
+  {Csf1RC | csf1rc ([Csf1R - act] : Csf1) [Shc1 - Yphos] } 
+  {CLc    | clc                                          } .
+  ----------------------------------------------------------
+  *** ~/evidence/Csf1-Evidence/Shc1.irt.Csf1.925.txt
+
+*** Socs1--
+
+rl[611.Socs1.irt.Csf1]:
+  {Csf1RC | csf1rc ([Csf1R - act] : Csf1)                 } 
+  {CLc    | clc    Socs1                                  }
+  =>
+  {Csf1RC | csf1rc ([Csf1R - act] : Csf1) [Socs1 - Yphos] } 
+  {CLc    | clc                                           } .
+  ----------------------------------------------------------
+  *** ~/evidence/Csf1-Evidence/Socs1.irt.Csf1.611.txt
+
+*** Syk--
+
+rl[533.Syk.irt.Csf1]:
+  {Csf1RC | csf1rc ([Csf1R - act] : Csf1) [Dap12 - Yphos]               } 
+  {CLc    | clc    Syk                                                  }
+  =>
+  {Csf1RC | csf1rc ([Csf1R - act] : Csf1) [Dap12 - Yphos] [Syk - Yphos] } 
+  {CLc    | clc                                                         } .
+  -------------------------------------------------------------------------
+  *** ~/evidence/Csf1-Evidence/Syk.irt.Csf1.533.txt
+
+*** Thoc5--
+
+rl[594.Thoc5.irt.Csf1]:
+  {Csf1RC | csf1rc ([Csf1R - act] : Csf1)                 } 
+  {CLc    | clc    Thoc5                                  }
+  =>
+  {Csf1RC | csf1rc ([Csf1R - act] : Csf1) [Thoc5 - Yphos] } 
+  {CLc    | clc                                           } .
+  ----------------------------------------------------------
+  *** ~/evidence/Csf1-Evidence/Thoc5.irt.Csf1.594.txt
+
+
+
+
+
+
+
+
+
+
+endm

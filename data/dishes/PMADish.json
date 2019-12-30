@@ -1,0 +1,10 @@
+{"stype" : "jnet",
+	 "name" : "PMADish",
+	 "type" : "pnet",
+	 "kbname" : "RKB",
+	 "parent" : "RKB",
+	 "rids" : ["1669.Araf.irt.PMA", "1671.Atf2.irt.PMA", "1676.Eef2k.irt.PMA", "1677.Egr1-gene.irt.PMA", "1679.Eif4ebp1.irt.PMA", "1680.Elk1.irt.PMA", "1683.Fak2.irt.PMA", "1684.Fos-gene.irt.PMA", "1687.Jun-gene.irt.PMA", "1688.Jun.irt.PMA", "1689.Junb-gene.irt.PMA", "1691.Mek1.irt.PMA", "1692.Mnk1.irt.PMA", "1693.Msk1.irt.PMA", "1694.Msk2.irt.PMA", "1695.Pkca.irt.PMA", "1696.Raf1.irt.PMA", "1697.Rps6.irt.PMA", "1700.S6k1.irt.PMA", "1701.Tsc2.phos.irt.PMA", "1702.Vav1.irt.PMA", "1698.Rsks.irt.PMA", "1698.Rsks.irt.PMA#1", "1698.Rsks.irt.PMA#2", "1675.Eef2.irt.PMA", "1681.Erks.irt.PMA", "1682.Erks.to.nuc.irt.PMA#2", "1685.Gsk3s.irt.PMA", "1686.Hras.irt.PMA", "287c.Raf1.by.Hras", "1648c.Rps6.by.Rsk1", "1649c.Rps6.by.Rsk2", "1650c.Rps6.by.S6k1", "014c.ErkS.by.Mek1", "514c.Atf2.by.Erks#1", "514c.Atf2.by.Erks#3", "1670.Atf1.irt.PMA", "1672.Cbl.Ywhaq.irt.PMA", "1673.Cbl.Ywhaz.irt.PMA", "1674.Creb1.irt.PMA", "1674.Creb1.irt.PMA#1", "1678.Eif4e.irt.PMA", "1690.Lkb1.irt.PMA", "375c.Eef2k.by.Rsk1", "558c.Eef2k.by.S6k1", "1631c.Eif4ebp1.by.Erks#1", "1631c.Eif4ebp1.by.Erks#3", "622c.Lkb1.by.Erks#1", "622c.Lkb1.by.Erks#3", "436c.Lkb1.by.Rsk1", "445c.Lkb1.by.S6k1", "790c.Mek1.by.Araf", "876c.Mek1.by.Raf1", "1530c.Msk1.by.Erks#1", "1530c.Msk1.by.Erks#3"],
+	 "init" : ["PMA@XOut", "Egr1-gene@NUc", "Fos-gene@NUc", "Jun-gene@NUc", "Junb-gene@NUc", "Araf@CLc", "Atf1@NUc", "Atf2@CLc", "Cbl@CLc", "Creb1@NUc", "Eef2k@CLc", "Eif4e@CLc", "Eif4ebp1@CLc", "Elk1@NUc", "Erks@CLc", "Fak2@CLc", "Jun@NUc", "Lkb1@CLc", "Mek1@CLc", "Mnk1@CLc", "Mnk1@CLc", "Msk1@NUc", "Msk2@NUc", "Pdpk1@CLc", "Pkca@CLc", "Raf1@CLc", "Rps6@CLc", "Rsk1@CLc", "Rsk2@CLc", "Rsk3@CLc", "S6k1@CLc", "Tsc2@CLc", "Vav1@CLc", "Ywhaq@CLc", "Ywhaz@CLc", "Eef2-phos!T57@CLc", "Gsk3s-act@CLc", "Hras-GDP@CLi"],
+	 "op" : "dishnet",
+	 "args" : "PMADish"
+} 

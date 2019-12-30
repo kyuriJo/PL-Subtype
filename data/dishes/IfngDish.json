@@ -1,0 +1,10 @@
+{"stype" : "jnet",
+	 "name" : "IfngDish",
+	 "type" : "pnet",
+	 "kbname" : "RKB",
+	 "parent" : "RKB",
+	 "rids" : ["1818.Jak1.IfngR1.complex", "1819.Jak2.IfngR2.complex", "1817c.IfngR1.IfngR2.complex", "1562.IfngR1.IfngR2.irt.Ifng", "1820.Jak1.irt.Ifng", "1821.Jak2.irt.Ifng", "1822.Stat1.phos.irt.Ifng", "1823.Stat1.to.nuc.irt.Ifng", "1824.Stat1.act.irt.Ifng", "1825.Irf1.irt.Ifng", "1813.CxcL10-gene.irt.Ifng", "1812.CxcL9-gene.irt.Ifng", "1815.Gbp2-gene.irt.Ifng", "1816.Irf1-gene.irt.Ifng", "1814.Gbp1-gene.irt.Ifng"],
+	 "init" : ["CxcL9-gene@NUc", "CxcL10-gene@NUc", "Gbp1-gene@NUc", "Gbp2-gene@NUc", "Irf1-gene@NUc", "Ifng@XOut", "IfngR1@CLm", "IfngR2@CLm", "Irf1@NUc", "Jak1@CLc", "Jak2@CLc", "Pkr@CLc", "Stat1@CLc"],
+	 "op" : "dishnet",
+	 "args" : "IfngDish"
+} 

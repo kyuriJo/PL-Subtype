@@ -1,0 +1,537 @@
+mod NGFRULES is inc ALLOPS .
+
+vars xout clo clm cli clc nuc sig rnac cvc chr : Soup .
+vars ngfrc trkac : Soup .
+vars erksmods : ModSet .
+
+*** ~/evidence/Ngf-Evidence/00NgfEvidence.txt
+
+rl[1482.NgfR.irt.Ngf]:
+  {XOut  | xout Ngf           }
+  {NgfRC | ngfrc NgfR         }
+  =>
+  {XOut  | xout Ngf              }
+  {NgfRC | ngfrc (NgfR : Ngf) } .
+  --------------------------------------------
+  *** ~/evidence/Ngf-Evidence/NgfR.irt.Ngf.1482.txt
+
+rl[1481.Trka.irt.Ngf]:
+  {XOut  | xout   Ngf                   }
+  {TrkaC | trkac Trka                   }
+  =>
+  {XOut  | xout  Ngf                       }
+  {TrkaC | trkac ([Trka - Yphos] : Ngf) } .
+  --------------------------------------------
+  *** ~/evidence/Ngf-Evidence/Trka.irt.Ngf.1481.txt
+
+*** Akt1--
+
+rl[1484.Akt1.irt.NgfR.Ngf]:
+  {NgfRC | ngfrc (NgfR : Ngf)         }
+  {CLc   | clc    Akt1                }
+  => 
+  {NgfRC | ngfrc (NgfR : Ngf)         }
+  {CLc   | clc   [Akt1 - act]         } .
+  --------------------------------------------
+  *** ~/evidence/Ngf-Evidence/Akt1.irt.NgfR.Ngf.1484.txt
+
+rl[1510.Akt1.irt.Trka.Ngf]:
+  {TrkaC | trkac ([Trka - Yphos] : Ngf) }
+  {CLc   | clc     Akt1                 }
+  => 
+  {TrkaC | trkac ([Trka - Yphos] : Ngf) }
+  {CLc   | clc    [Akt1 - act]          } .
+  ------------------------------------------
+  *** ~/evidence/Ngf-Evidence/Akt1.irt.Trka.Ngf.1510.txt
+
+*** Aps--
+
+rl[1516.Aps.irt.Ngf]:
+  {TrkaC | trkac ([Trka - Yphos] : Ngf)               }
+  {CLc   | clc     Aps                                }
+  =>
+  {TrkaC | trkac ([Trka - Yphos] : Ngf) [Aps - Yphos] }
+  {CLc   | clc                                        } .
+  ----------------------------------------------------------
+  *** ~/evidence/Ngf-Evidence/Aps.irt.Ngf.1516.txt
+
+*** Araf--
+
+rl[1488.Araf.irt.Ngf]:
+  {TrkaC | trkac ([Trka - Yphos] : Ngf) }
+  {CLc   | clc     Araf                 }
+  =>
+  {TrkaC | trkac ([Trka - Yphos] : Ngf) }
+  {CLc   | clc    [Araf - act]          } .
+  --------------------------------------------
+  *** ~/evidence/Ngf-Evidence/Araf.irt.Ngf.1488.txt
+
+*** Arms--
+
+rl[1521.Arms.irt.Ngf]:
+  {TrkaC | trkac ([Trka - Yphos] : Ngf)                }
+  {CLc   | clc      Arms                               }
+  =>
+  {TrkaC | trkac ([Trka - Yphos] : Ngf) [Arms - Yphos] }
+  {CLc   | clc                                         } .
+  -----------------------------------------------------------
+  *** ~/evidence/Ngf-Evidence/Arms.irt.Ngf.1521.txt
+
+*** Atf2--
+
+rl[1493.Atf2.irt.Ngf]:
+  {NgfRC | ngfrc (NgfR : Ngf) Traf6 }
+  {CLc   | clc    Atf2              }
+  {NUc   | nuc                      }
+  =>
+  {NgfRC | ngfrc (NgfR : Ngf) Traf6 }
+  {CLc   | clc                      }
+  {NUc   | nuc   [Atf2 - act]       } .
+  --------------------------------------------
+  *** ~/evidence/Ngf-Evidence/Atf2.irt.Ngf.1493.txt
+
+*** Braf--
+
+rl[1489.Braf.irt.Ngf]:
+  {TrkaC | trkac ([Trka - Yphos] : Ngf) }
+  {CLc   | clc      Braf                }
+  =>
+  {TrkaC | trkac ([Trka - Yphos] : Ngf) }
+  {CLc   | clc     [Braf - act]         } .
+  --------------------------------------------
+  *** ~/evidence/Ngf-Evidence/Braf.irt.Ngf.1489.txt
+
+*** Crks--
+
+rl[003.Crks.irt.Ngf]:
+  {TrkaC | trkac ([Trka - Yphos] : Ngf)                     }
+  {CLc   | clc     crks:CrkS                                }
+  =>
+  {TrkaC | trkac ([Trka - Yphos] : Ngf) [crks:CrkS - Yphos] }
+  {CLc   | clc                                              } .
+  ------------------------------------------------------------
+  *** ~/evidence/Ngf-Evidence/Crks.irt.Ngf.003.txt
+
+*** Egr1--
+*** Egr1-gene--
+
+rl[1486.Egr1-gene.irt.Ngf]:
+  {TrkaC | trkac ([Trka - Yphos] : Ngf) }
+  {NUc   | nuc     Egr1-gene            }
+  =>
+  {TrkaC | trkac ([Trka - Yphos] : Ngf) }
+  {NUc   | nuc    [Egr1-gene - on]      } .
+  --------------------------------------------
+  *** ~/evidence/Ngf-Evidence/Egr1-gene.irt.Ngf.1486.txt
+
+*** Elk1--
+
+rl[1490.Elk1.irt.Ngf]:
+  {TrkaC | trkac ([Trka - Yphos] : Ngf)      }
+  {CLi    | cli   [Hras - GTP] [Rap1a - GTP] } 
+  {NUc    | nuc    Elk1                      }
+  =>
+  {TrkaC | trkac ([Trka - Yphos] : Ngf)      }
+  {CLi    | cli   [Hras - GTP] [Rap1a - GTP] } 
+  {NUc    | nuc   [Elk1 - act]               } .
+  --------------------------------------------
+  *** ~/evidence/Ngf-Evidence/Elk1.irt.Ngf.1490.txt
+
+*** Erks--
+
+rl[1485.Erks.irt.Ngf]:
+  {TrkaC | trkac ([Trka - Yphos] : Ngf)                 }
+  {CLi   | cli    [Hras - GTP] [Rit1 - GTP]             } 
+  {CLc   | clc     Pkcd [Erks - erksmods]               }
+  =>
+  {TrkaC | trkac ([Trka - Yphos] : Ngf)                 }
+  {CLi   | cli    [Hras - GTP] [Rit1 - GTP]             } 
+  {CLc   | clc     Pkcd [Erks - erksmods act phos(TEY)] } .
+  ---------------------------------------------------------
+  *** ~/evidence/Ngf-Evidence/Erks.irt.Ngf.1485.txt
+
+*** Erk5--
+
+rl[1495.Erk5.irt.Ngf]:
+  {TrkaC | trkac ([Trka - Yphos] : Ngf) }
+  {CLc   | clc      Erk5                }
+  =>
+  {TrkaC | trkac ([Trka - Yphos] : Ngf) }
+  {CLc   | clc     [Erk5 - act]         } .
+  --------------------------------------------
+  *** ~/evidence/Ngf-Evidence/Erk5.irt.Ngf.1495.txt
+
+*** Fos--
+*** Fos-gene--
+
+rl[1487.Fos-gene.irt.Ngf]:
+  {TrkaC | trkac ([Trka - Yphos] : Ngf) }
+  {NUc   | nuc     Fos-gene             }
+  =>
+  {TrkaC | trkac ([Trka - Yphos] : Ngf) }
+  {NUc   | nuc    [Fos-gene - on]       } .
+  --------------------------------------------
+  *** ~/evidence/Ngf-Evidence/Fos-gene.irt.Ngf.1487.txt
+
+*** Foxo1--
+
+rl[1496.Foxo1.irt.Ngf]:
+  {XOut | xout   Ngf                  }
+  {NUc  | nuc    Foxo1                }
+  =>
+  {XOut | xout   Ngf                  }
+  {NUc  | nuc   [Foxo1 - phos(S 256)] } .
+  --------------------------------------------
+  *** ~/evidence/Ngf-Evidence/Foxo1.irt.Ngf.1496.txt
+
+*** Foxo3--
+
+rl[1497.Foxo3.irt.Ngf]:
+  {TrkaC | trkac ([Trka - Yphos] : Ngf)            }
+  {NUc   | nuc      Foxo3                          }
+  =>
+  {TrkaC | trkac ([Trka - Yphos] : Ngf)            }
+  {NUc   | nuc    [Foxo3 - phos(T 32) phos(S 253)] } .
+  -----------------------------------------------------
+  *** ~/evidence/Ngf-Evidence/Foxo3.irt.Ngf.1497.txt
+
+*** Frs2--
+
+rl[1498.Frs2.irt.Ngf]:
+  {TrkaC | trkac ([Trka - Yphos] : Ngf)                }
+  {CLc   | clc     Frs2                                }
+  =>
+  {TrkaC | trkac ([Trka - Yphos] : Ngf) [Frs2 - Yphos] }
+  {CLc   | clc                                         } .
+  -----------------------------------------------------------
+  *** ~/evidence/Ngf-Evidence/Frs2.irt.Ngf.1498.txt
+
+*** Gab1--
+
+rl[1520.Gab1.irt.Ngf]:
+  {TrkaC | trkac ([Trka - Yphos] : Ngf)                }
+  {CLc   | clc      Gab1                               }
+  =>
+  {TrkaC | trkac ([Trka - Yphos] : Ngf) [Gab1 - Yphos] }
+  {CLc   | clc                                         } .
+  ------------------------------------------------------------
+  *** ~/evidence/Ngf-Evidence/Gab1.irt.Ngf.1520.txt
+
+*** Gab2--
+
+rl[1499.Gab2.irt.Ngf]:
+  {TrkaC | trkac ([Trka - Yphos] : Ngf)                }
+  {CLc   | clc      Gab2                               }
+  =>
+  {TrkaC | trkac ([Trka - Yphos] : Ngf) [Gab2 - Yphos] }
+  {CLc   | clc                                         } .
+  ------------------------------------------------------------
+  *** ~/evidence/Ngf-Evidence/Gab2.irt.Ngf.1499.txt
+
+*** Grb2--
+
+rl[1500.Grb2.irt.Ngf]:
+  {TrkaC | trkac ([Trka - Yphos] : Ngf)      }
+  {CLc   | clc      Grb2                      }
+  =>
+  {TrkaC | trkac ([Trka - Yphos] : Ngf) Grb2 }
+  {CLc   | clc                               } .
+  -----------------------------------------------------
+  *** ~/evidence/Ngf-Evidence/Grb2.irt.Ngf.1500.txt
+
+*** Hras--
+
+rl[1501.Hras.irt.Ngf]:
+  {TrkaC | trkac ([Trka - Yphos] : Ngf) }
+  {CLi   | cli    [Hras - GDP]          }
+  =>
+  {TrkaC | trkac ([Trka - Yphos] : Ngf) }
+  {CLi   | cli    [Hras - GTP]          } .
+  ---------------------------------------------------------
+  *** ~/evidence/Ngf-Evidence/Hras.irt.Ngf.1501.txt
+
+*** Ikba--
+
+rl[1502.Ikba.irt.Ngf]:
+  {NgfRC | ngfrc (NgfR : Ngf)       }
+  {CLc   | clc    Ikba              }
+  {Sig   | sig                      }
+ =>
+  {NgfRC | ngfrc (NgfR : Ngf)       }
+  {CLc   | clc                      }
+  {Sig    | sig  [Ikba - degraded]  } .
+  ---------------------------------------------------------
+  *** ~/evidence/Ngf-Evidence/Ikba.irt.Ngf.1502.txt
+
+*** Ikk1--
+
+rl[1503.Ikk1.irt.Ngf]:
+  {NgfRC | ngfrc NgfR         }
+  {CLc   | clc   Ikk1         }
+ =>
+  {NgfRC | ngfrc NgfR Ikk1    }
+  {CLc   | clc                } .
+  ---------------------------------------------------------
+  *** ~/evidence/Ngf-Evidence/Ikk1.irt.Ngf.1503.txt
+
+*** Ikk2--
+
+rl[1504.Ikk2.irt.Ngf]:
+  {NgfRC | ngfrc (NgfR : Ngf)  Sqstm1      }
+  {CLc   | clc   Ikk2                      }
+ =>
+  {NgfRC | ngfrc (NgfR : Ngf)  Sqstm1 Ikk2 }
+  {CLc   | clc                             } .
+  ---------------------------------------------------------
+  *** ~/evidence/Ngf-Evidence/Ikk2.irt.Ngf.1504.txt
+
+*** Irak1--
+
+rl[1491.Irak1.irt.Ngf]:
+  {NgfRC | ngfrc (NgfR : Ngf)               }
+  {CLc   | clc    Irak1                     }
+  =>
+  {NgfRC | ngfrc (NgfR : Ngf) [Irak1 - act] }
+  {CLc   | clc                              } .
+  --------------------------------------------
+  *** ~/evidence/Ngf-Evidence/Irak1.irt.Ngf.1491.txt
+
+*** Jnks--
+
+rl[525.Jnks.irt.Ngf]:
+  {NgfRC | ngfrc (NgfR : Ngf) Traf6  }
+  {CLc   | clc    Jnks               }
+  =>
+  {NgfRC | ngfrc (NgfR : Ngf) Traf6  }
+  {CLc   | clc   [Jnks - act]        } .
+  --------------------------------------
+  *** ~/evidence/Ngf-Evidence/Jnks.irt.Ngf.525.txt
+
+*** Matk--
+
+rl[1519.Matk.irt.Ngf]:
+  {TrkaC | trkac ([Trka - Yphos] : Ngf)      }
+  {CLc    | clc      Matk                    }
+  =>
+  {TrkaC | trkac ([Trka - Yphos] : Ngf) Matk }
+  {CLc    | clc      Matk                    } .
+  --------------------------------------------
+  *** ~/evidence/Ngf-Evidence/Matk.irt.Ngf.1519.txt
+
+
+*** Mek12s--
+
+rl[1505.Mek12s.irt.Ngf]:
+  {TrkaC | trkac ([Trka - Yphos] : Ngf) }
+  {CLc   | clc     mek12s:Mek12S        }
+  =>
+  {TrkaC | trkac ([Trka - Yphos] : Ngf) }
+  {CLc   | clc    [mek12s:Mek12S - act] } .
+  --------------------------------------------
+  *** ~/evidence/Ngf-Evidence/Mek12s.irt.Ngf.1505.txt
+
+*** Myd88--
+
+rl[1506.Myd88.irt.Ngf]:
+  {NgfRC | ngfrc (NgfR : Ngf)               }
+  {CLc   | clc    Myd88                     }
+  =>
+  {NgfRC | ngfrc (NgfR : Ngf) Myd88         }
+  {CLc   | clc                              } .
+  --------------------------------------------
+  *** ~/evidence/Ngf-Evidence/Myd88.irt.Ngf.1506.txt
+
+*** P38s--
+
+rl[618.P38s.irt.Ngf]:
+  {TrkaC | trkac ([Trka - Yphos] : Ngf)      }
+  {CLi   | cli    [Rit1 - GTP] [Hras - GTP]  }
+  {CLc   | clc     P38s                      }
+  =>
+  {TrkaC | trkac ([Trka - Yphos] : Ngf)      }
+  {CLi   | cli     [Rit1 - GTP] [Hras - GTP] }
+  {CLc   | clc     [P38s - act]              } .
+  -----------------------------------------------
+  *** ~/evidence/Ngf-Evidence/P38s.irt.Ngf.618.txt
+
+*** Pi3k--
+
+rl[1507.Pi3k.irt.Ngf]:
+  {TrkaC | trkac ([Trka - Yphos] : Ngf)                }
+  {CLc    | clc      Pi3k                              }
+  =>
+  {TrkaC | trkac ([Trka - Yphos] : Ngf) [Pi3k - Yphos] }
+  {CLc    | clc                                        } .
+  ------------------------------------------------------------
+  *** ~/evidence/Ngf-Evidence/Pi3k.irt.Ngf.1507.txt
+
+*** Plcg1--
+
+rl[1508.Plcg1.irt.Ngf]:
+  {TrkaC | trkac ([Trka - Yphos] : Ngf)                 }
+  {CLc   | clc     Plcg1                                }
+  =>
+  {TrkaC | trkac ([Trka - Yphos] : Ngf) [Plcg1 - Yphos] }
+  {CLc   | clc                                          } .
+  ------------------------------------------------------------
+  *** ~/evidence/Ngf-Evidence/Plcg1.irt.Ngf.1508.txt
+
+*** Pxn--
+
+rl[1509.Pxn.irt.Ngf]:
+  {TrkaC | trkac ([Trka - Yphos] : Ngf) }
+  {CLc  | clc    Pxn                    }
+  =>
+  {TrkaC | trkac ([Trka - Yphos] : Ngf) }
+  {CLc  | clc   [Pxn - phos(S 126)]     } .
+  --------------------------------------------
+  *** ~/evidence/Ngf-Evidence/Pxn.irt.Ngf.1509.txt
+
+*** Raf1--
+
+rl[1511.Raf1.irt.Ngf]:
+  {TrkaC | trkac ([Trka - Yphos] : Ngf) }
+  {CLc   | clc      Raf1                }
+  =>
+  {TrkaC | trkac ([Trka - Yphos] : Ngf) }
+  {CLc   | clc     [Raf1 - act]         } .
+  --------------------------------------------
+  *** ~/evidence/Ngf-Evidence/Raf1.irt.Ngf.1511.txt
+
+*** Rap1a--
+
+rl[1512.Rap1a.irt.Ngf]:
+  {TrkaC | trkac ([Trka - Yphos] : Ngf) }
+  {CLi   | cli     [Rap1a - GDP]        }
+  =>
+  {TrkaC | trkac ([Trka - Yphos] : Ngf) }
+  {CLi   | cli     [Rap1a - GTP]        } .
+  --------------------------------------------
+  *** ~/evidence/Ngf-Evidence/Rap1.irt.Ngf.1512.txt
+
+*** RapGef1--
+
+rl[099.RapGef1.irt.Ngf]:
+  {TrkaC | trkac ([Trka - Yphos] : Ngf)                   }
+  {CLc   | clc     RapGef1                                }
+  =>
+  {TrkaC | trkac ([Trka - Yphos] : Ngf) [RapGef1 - Yphos] }
+  {CLc   | clc                                            } .
+  ------------------------------------------------------------
+  *** ~/evidence/Ngf-Evidence/RapGef1.irt.Ngf.099.txt
+
+*** Rela--
+
+rl[1528.Rela.irt.Ngf]:
+  {NgfRC | ngfrc (NgfR : Ngf)   }
+  {CLc   | clc    Rela          }
+  {NUc   | nuc                  }
+  =>
+  {NgfRC | ngfrc (NgfR : Ngf)   }
+  {CLc   | clc                  }
+  {NUc   | nuc   [Rela - act]   } .
+  ------------------------------------------------------------
+  *** ~/evidence/Ngf-Evidence/Rela.irt.Ngf.1528.txt
+
+*** Ripk2--
+
+rl[1513.Ripk2.irt.Ngf]:
+  {NgfRC | ngfrc (NgfR : Ngf)               }
+  {CLc   | clc    Ripk2                     }
+  =>
+  {NgfRC | ngfrc (NgfR : Ngf) Ripk2         }
+  {CLc   | clc                              } .
+  --------------------------------------------
+  *** ~/evidence/Ngf-Evidence/Ripk2.irt.Ngf.1513.txt
+
+*** Rit1--
+
+rl[1514.Rit1.irt.Ngf]:
+  {TrkaC | trkac ([Trka - Yphos] : Ngf) }
+  {CLi   | cli     [Rit1 - GDP]           }
+  =>
+  {TrkaC | trkac ([Trka - Yphos] : Ngf) }
+  {CLi   | cli     [Rit1 - GTP]           } .
+  --------------------------------------------
+  *** ~/evidence/Ngf-Evidence/Rit1.irt.Ngf.1514.txt
+
+*** Sh2b1--
+
+rl[1517.Sh2b1.irt.Ngf]:
+  {TrkaC | trkac ([Trka - Yphos] : Ngf)                 }
+  {CLc   | clc     Sh2b1                                }
+  =>
+  {TrkaC | trkac ([Trka - Yphos] : Ngf) [Sh2b1 - Yphos] }
+  {CLc   | clc                                          } .
+  ------------------------------------------------------------
+  *** ~/evidence/Ngf-Evidence/Sh2b1.irt.Ngf.1517.txt
+
+*** Shc1--
+
+rl[1515.Shc1.irt.Ngf]:
+  {TrkaC | trkac ([Trka - Yphos] : Ngf)                }
+  {CLc   | clc     Shc1                                }
+  =>
+  {TrkaC | trkac ([Trka - Yphos] : Ngf) [Shc1 - Yphos] }
+  {CLc   | clc                                         } .
+  --------------------------------------------------------
+  *** ~/evidence/Ngf-Evidence/Shc1.irt.Ngf.1515.txt
+
+*** Sqstm1--
+
+rl[1492.Sqstm1.irt.Ngf]:
+  {NgfRC | ngfrc (NgfR : Ngf) [Irak1 - act]         }
+  {CLc   | clc    Sqstm1                            }
+  =>
+  {NgfRC | ngfrc (NgfR : Ngf) [Irak1 - act]  Sqstm1 }
+  {CLc   | clc                                      } .
+  -----------------------------------------------------
+  *** ~/evidence/Ngf-Evidence/Sqstm1.irt.Ngf.1492.txt
+
+*** Traf6--
+
+rl[1494.Traf6.irt.Ngf]:
+  {NgfRC | ngfrc (NgfR : Ngf)               }
+  {CLc   | clc    Traf6                     }
+  =>
+  {NgfRC | ngfrc (NgfR : Ngf) Traf6         }
+  {CLc   | clc                              } .
+  --------------------------------------------
+  *** ~/evidence/Ngf-Evidence/Traf6.irt.Ngf.1494.txt
+
+*** Znf274--
+
+rl[108.Znf274.ubiq.irt.Ngf]:
+  {NgfRC | ngfrc (NgfR : Ngf) Traf6                    }
+  {CLc   | clc    Znf274                               }
+  =>
+  {NgfRC | ngfrc (NgfR : Ngf) Traf6 [Znf274 - K63ubiq] }
+  {CLc   | clc                                         } .
+  --------------------------------------------------------
+  *** ~/evidence/Ngf-Evidence/Znf274.ubiq.irt.Ngf.108.txt
+
+rl[1527.Znf274.to.nuc.irt.Ngf]:
+  {NgfRC | ngfrc (NgfR : Ngf) [Znf274 - K63ubiq] }
+  {NUc   | nuc                                   }
+  =>
+  {NgfRC | ngfrc (NgfR : Ngf)                    }
+  {NUc   | nuc   [Znf274 - K63ubiq]              } .
+  --------------------------------------------------------
+  *** ~/evidence/Ngf-Evidence/Znf274.to.nuc.irt.Ngf.1527.txt
+
+
+
+
+
+endm
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,149 @@
+mod SORBITOLRULES is inc ALLOPS .
+
+var xout clc cli nuc rnac cvc : Soup .
+
+*** ~/evidence/Sorbitol-Evidence/00Sorbitol-evidence.txt
+
+rl[1729.Atf2.irt.Sorbitol]:
+  {XOut | xout Sorbitol                           }
+  {CLc  | clc  Sin1 Atf2                          }
+  =>
+  {XOut | xout Sorbitol                           }
+  {CLc  | clc  Sin1 [Atf2 - phos(T 69)phos(T 71)] } .
+  ----------------------------------------------------------
+  *** ~/evidence/Sorbitol-Evidence/Atf2.irt.Sorbitol.1729.txt
+
+*** Eef2--
+
+rl[1761.Eef2.irt.Sorbitol]:
+  {XOut | xout Sorbitol            }
+  {CLc  | clc  [Eef2 - phos(T 57)] }
+  =>
+  {XOut | xout Sorbitol            }
+  {CLc  | clc  Eef2                } .
+  ------------------------------------
+  *** ~/evidence/Sorbitol-Evidence/Eef2.irt.Sorbitol.1761.txt
+
+*** Erks--
+
+rl[1762.Erks.irt.Sorbitol]:
+  {XOut | xout  Sorbitol              }
+  {CLc  | clc   Erks                  }
+  =>                               
+  {XOut | xout  Sorbitol              }
+  {CLc  | clc  [Erks - act phos(TEY)] } .
+  ----------------------------------------
+  *** ~/evidence/Sorbitol-Evidence/Erks.irt.Sorbitol.1762.txt
+
+*** Gadd45b--  Gadd45b-gene--
+
+rl[1763.Gadd45b-gene.irt.Sorbitol]:
+  {XOut | xout  Sorbitol                           }
+  {CLc  | clc   Sin1 [Atf2 - phos(T 69)phos(T 71)] }
+  {NUc  | nuc   Gadd45b-gene                       }
+  =>
+  {XOut | xout  Sorbitol                           }
+  {CLc  | clc   Sin1 [Atf2 - phos(T 69)phos(T 71)] }
+  {NUc  | nuc   [Gadd45b-gene - on]                } .
+  ---------------------------------------------------
+  *** ~/evidence/Sorbitol-Evidence/Gadd45b-gene.irt.Sorbitol.1763.txt
+
+*** Jnks--
+
+rl[1764.Jnks.irt.Sorbitol]:
+  {XOut | xout  Sorbitol                           }
+  {CLc  | clc  [Mkk4 - act]  Jnks                  }
+  =>                               
+  {XOut | xout  Sorbitol                           }
+  {CLc  | clc  [Mkk4 - act] [Jnks - act phos(TPY)] } .
+  ----------------------------------------------------
+  *** ~/evidence/Sorbitol-Evidence/Jnks.irt.Sorbitol.1764.txt
+
+*** Mekk1--
+
+rl[1765.Mekk1.irt.Sorbitol]:
+  {XOut | xout  Sorbitol     }
+  {CLc  | clc   Mekk1        }
+  =>                               
+  {XOut | xout  Sorbitol     }
+  {CLc  | clc  [Mekk1 - act] } .
+  ----------------------------------------
+  *** ~/evidence/Sorbitol-Evidence/Mekk1.irt.Sorbitol.1765.txt
+
+*** Mkk4--
+
+rl[1766.Mkk4.irt.Sorbitol]:
+  {XOut | xout  Sorbitol    }
+  {CLc  | clc   Mkk4        }
+  =>                               
+  {XOut | xout  Sorbitol    }
+  {CLc  | clc  [Mkk4 - act] } .
+  ----------------------------------------
+  *** ~/evidence/Sorbitol-Evidence/Mkk4.irt.Sorbitol.1766.txt
+
+*** Mkk7--
+
+rl[1767.Mkk7.irt.Sorbitol]:
+  {XOut | xout  Sorbitol    }
+  {CLc  | clc   Mkk7        }
+  =>                               
+  {XOut | xout  Sorbitol    }
+  {CLc  | clc  [Mkk7 - act] } .
+  ----------------------------------------
+  *** ~/evidence/Sorbitol-Evidence/Mkk7.irt.Sorbitol.1767.txt
+
+*** P38s--
+
+rl[1768.P38s.irt.Sorbitol]:
+  {XOut | xout  Sorbitol    }
+  {CLc  | clc   P38s        }
+  =>                               
+  {XOut | xout  Sorbitol    }
+  {CLc  | clc  [P38s - act] } .
+  ----------------------------------------
+  *** ~/evidence/Sorbitol-Evidence/P38s.irt.Sorbitol.1768.txt
+
+*** Pak2--
+
+rl[1769.Pak2.irt.Sorbitol]:
+  {XOut | xout  Sorbitol    }
+  {CLc  | clc   Pak2        }
+  =>                               
+  {XOut | xout  Sorbitol    }
+  {CLc  | clc  [Pak2 - act] } .
+  ----------------------------------------
+  *** ~/evidence/Sorbitol-Evidence/Pak2.irt.Sorbitol.1769.txt
+
+*** Stat1--
+
+rl[686.Stat1.irt.Sorbitol]:
+  {XOut | xout  Sorbitol             }
+  {CLc  | clc   Stat1                }
+  =>                               
+  {XOut | xout  Sorbitol             }
+  {CLc  | clc  [Stat1 - phos(S 727)] } .
+  ----------------------------------------
+  *** ~/evidence/Sorbitol-Evidence/Stat1.irt.Sorbitol.686.txt
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+endm
+

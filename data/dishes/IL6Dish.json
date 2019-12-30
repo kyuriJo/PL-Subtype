@@ -1,0 +1,10 @@
+{"stype" : "jnet",
+	 "name" : "IL6Dish",
+	 "type" : "pnet",
+	 "kbname" : "RKB",
+	 "parent" : "RKB",
+	 "rids" : ["1229c.Jak1.Gp130.complex", "1232c.Jak2.Gp130.complex", "1221.IL6R.irt.IL6", "1223.Akt1.irt.IL6", "1227.Hck.irt.IL6", "1230.Jak1.irt.IL6", "1231.Jak2.irt.IL6", "1242.Socs3-gene.irt.IL6", "1237.Stat3.to.Gp130C.irt.IL6", "1137c.Stat3.by.Hck", "1244.Tyk2.irt.IL6", "1234.Vavs.irt.IL6", "1234.Vavs.irt.IL6#1", "1234.Vavs.irt.IL6#2", "1235.Rac1.irt.IL6", "1225.Gab1.irt.IL6", "1226.Gab2.irt.IL6", "1228.Irf1-gene.irt.IL6", "1233.Mkk4.irt.IL6", "1236.Pckd.irt.IL6", "1241.Shp2.irt.IL6", "1243.Stat1.to.Gp130C.irt.IL6", "1224.Erks.irt.IL6#1", "1239.Stat3.Sphos.irt.IL6", "415c.Erks.act", "1238.Stat3.to.nuc.irt.IL6", "1240.RankL-gene.irt.IL6", "1222.A2m-gene.irt.IL6"],
+	 "init" : ["A2m-gene@NUc", "Irf1-gene@NUc", "RankL-gene@NUc", "Socs3-gene@NUc", "Akt1@CLc", "Erks@CLc", "Foxo1@NUc", "Gab1@CLc", "Gab2@CLc", "Gp130@GP130C", "Hck@CLc", "IL6@XOut", "IL6R@CLm", "Jak1@CLc", "Jak2@CLc", "Lmo4@NUc", "Mkk4@CLc", "Pkcd@CLc", "Shp2@CLc", "Stat1@CLc", "Stat3@CLc", "Tyk2@CLc", "Vav1@CLc", "Vav2@CLc", "Vav3@CLc", "Rac1-GDP@CLi"],
+	 "op" : "dishnet",
+	 "args" : "IL6Dish"
+} 

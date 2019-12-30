@@ -1,0 +1,542 @@
+mod HGFRULES is inc ALLOPS .
+
+var xout : Soup .
+vars clo clm clr cli clc nuo num nui nuc : Soup .
+vars sig hgfrc : Soup .
+vars erksmods pxnmods : ModSet .
+
+*** ~/evidence/Hgf-Evidence/00HgfEvidence.txt
+
+rl[1282.HgfR.irt.Hgf]:
+  {XOut  | xout  Hgf                    }
+  {HgfRC | hgfrc HgfR                   }
+  =>
+  {XOut  | xout                         }
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf) } .
+  -----------------------------------------
+  *** ~/evidence/Hgf-Evidence/HgfR.irt.Hgf.1282.txt
+
+*** Akt1--
+
+rl[1283.Akt1.irt.Hgf]:
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf) }
+  {CLc   | clc     Pi3k Akt1            }
+  =>
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf) }
+  {CLc   | clc     Pi3k [Akt1 - act]    } .
+  -----------------------------------------
+  *** ~/evidence/Hgf-Evidence/Akt1.irt.Hgf.1283.txt
+
+*** Bad--
+
+rl[1305.Bad.irt.Hgf]:
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf)                     }
+  {CLc   | clc   [Akt1 - act]  Bad                          }
+  =>
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf)                     }
+  {CLc   | clc   [Akt1 - act] [Bad - phos(S 75) phos(S 99)] } .
+  -------------------------------------------------------------
+  *** ~/evidence/Hgf-Evidence/Bad.irt.Hgf.1305.txt
+
+*** Cbl--
+
+rl[1320.Cbl.irt.Hgf]:
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf)               }
+  {CLc   | clc    Cbl                                 }
+  =>
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf) [Cbl - Yphos] }
+  {CLc   | clc                                        } .
+  ------------------------------------------------------
+  *** ~/evidence/Hgf-Evidence/Cbl.irt.Hgf.1320.txt
+
+*** Cdc42--
+
+rl[1311.Cdc42.irt.Hgf]:
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf) }
+  {CLi   | cli    [Cdc42 - GDP]         }
+  =>
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf) }
+  {CLi   | cli    [Cdc42 - GTP]         } .
+  --------------------------------------------
+  *** ~/evidence/Hgf-Evidence/Cdc42.irt.Hgf.1311.txt
+
+*** Creb1--
+
+rl[1284.Creb1.irt.Hgf]:
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf) }
+  {NUc   | nuc     Creb1                }
+  =>
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf) }
+  {NUc   | nuc    [Creb1 - act]         } .
+  -----------------------------------------
+  *** ~/evidence/Hgf-Evidence/Creb1.irt.Hgf.1284.txt
+
+*** Crk--
+
+rl[1314.Crk.irt.Hgf]:
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf)               }
+  {CLc   | clc    Crk                                 }
+  =>
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf) [Crk - Yphos] }
+  {CLc   | clc                                        } .
+  ------------------------------------------------------
+  *** ~/evidence/Hgf-Evidence/Crk.irt.Hgf.1314.txt
+
+*** CrkL--
+
+rl[1309.CrkL.irt.Hgf]:
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf)                }
+  {CLc   | clc    CrkL                                 }
+  =>
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf) [CrkL - Yphos] }
+  {CLc   | clc                                         } .
+  --------------------------------------------------------
+  *** ~/evidence/Hgf-Evidence/CrkL.irt.Hgf.1309.txt
+
+*** Ctnnb1--
+
+rl[1330.Ctnnb1.Yphos.irt.Hgf]:
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf)             }
+  {CLc   | clc     Ctnnb1                           }
+  =>
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf)             }
+  {CLc   | clc    [Ctnnb1 - phos(Y 654)phos(Y 670)] } .
+  -----------------------------------------------------------
+  *** ~/evidence/Hgf-Evidence/Ctnnb1.Yphos.irt.Hgf.1330.txt
+
+rl[1641.Ctnnb1.to.nuc.irt.Hgf]:
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf)             }
+  {CLc   | clc    [Ctnnb1 - phos(Y 654)phos(Y 670)] }
+  {NUc   | nuc                                      }
+  =>
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf)             }
+  {CLc   | clc                                      }
+  {NUc   | nuc    [Ctnnb1 - phos(Y 654)phos(Y 670)] } .
+  -----------------------------------------------------------
+  *** ~/evidence/Hgf-Evidence/Ctnnb1.to.nuc.irt.Hgf.1641.txt
+
+*** Eif4ebp1--
+
+rl[1332.Eif4ebp1.irt.Hgf]:
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf)   }
+  {CLc   | clc     Eif4ebp1               }
+  =>
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf)   }
+  {CLc   | clc    [Eif4ebp1 - phos(S 65)] } .
+  -------------------------------------------
+  *** ~/evidence/Hgf-Evidence/Eif4ebp1.irt.Hgf.1332.txt
+
+*** Elk1--
+
+rl[1313.Elk1.irt.Hgf]:
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf) }
+  {NUc   | nuc     Elk1                 }
+  =>
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf) }
+  {NUc   | nuc    [Elk1 - act]          } .
+  -----------------------------------------
+  *** ~/evidence/Hgf-Evidence/Elk1.irt.Hgf.1313.txt
+
+*** Erks--
+
+rl[1285.Erks.irt.Hgf]:
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf)                }
+  {CLc   | clc    [Pxn - Yphos] Erks                   }
+  =>
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf)                }
+  {CLc   | clc    [Pxn - Yphos] [Erks - act phos(TEY)] } .
+  --------------------------------------------------------
+  *** ~/evidence/Hgf-Evidence/Erks.irt.Hgf.1285.txt
+
+*** Ets--
+
+rl[1321.Ets1.irt.Hgf]:
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf) }
+  {NUc   | nuc     Ets1                 }
+  =>
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf) }
+  {NUc   | nuc    [Ets1 - act]          } .
+  -----------------------------------------
+  *** ~/evidence/Hgf-Evidence/Ets1.irt.Hgf.1321.txt
+
+*** Fak1--
+
+rl[1295.Fak1.irt.Hgf]:
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf)                    }
+  {CLc   | clc    [Pxn - Yphos  phos(S 83)] Fak1           }
+  =>
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf)                    }
+  {CLc   | clc    [Pxn - Yphos  phos(S 83)] [Fak1 - Yphos] } .
+  ------------------------------------------------------------
+  *** ~/evidence/Hgf-Evidence/Fak1.irt.Hgf.1295.txt
+
+*** Fak2--
+
+rl[1331.Fak2.irt.Hgf]:
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf)  }
+  {CLc   | clc     Fak2                  }
+  =>
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf)  }
+  {CLc   | clc    [Fak2 - phos(Y 402)]   } .
+  --------------------------------------------------
+  *** ~/evidence/Hgf-Evidence/Fak2.irt.Hgf.1331.txt
+
+*** Fos--
+
+rl[1315.Fos-gene.irt.Hgf]:
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf) }
+  {NUc   | nuc     Fos-gene             }
+  =>
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf) }
+  {NUc   | nuc    [Fos-gene - on]       } .
+  -----------------------------------------
+  *** ~/evidence/Hgf-Evidence/Fos-gene.irt.Hgf.1315.txt
+
+*** Foxo1--
+
+rl[1318.Foxo1.irt.Hgf]:
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf) }
+  {NUc   | nuc     Foxo1                }
+  =>
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf) }
+  {NUc   | nuc    [Foxo1 - phos(S 256)] } .
+  -----------------------------------------
+  *** ~/evidence/Hgf-Evidence/Foxo1.irt.Hgf.1318.txt
+
+*** Gab1--
+
+rl[1308.Gab1.irt.Hgf]:
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf)                 }
+  {CLi   | cli   [Src - act]                            }
+  {CLc   | clc    Gab1                                  }
+  =>
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf)  [Gab1 - Yphos] }
+  {CLi   | cli   [Src - act]                            }
+  {CLc   | clc                                          } .
+  ---------------------------------------------------------
+  *** ~/evidence/Hgf-Evidence/Gab1.irt.Hgf.1308.txt
+
+*** Gab2--
+
+rl[1325.Gab2.irt.Hgf]:
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf)                 }
+  {CLc   | clc    Gab2                                  }
+  =>
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf)  [Gab2 - Yphos] }
+  {CLc   | clc                                          } .
+  ---------------------------------------------------------
+  *** ~/evidence/Hgf-Evidence/Gab2.irt.Hgf.1325.txt
+
+*** Grb2--
+
+rl[1326.Grb2.irt.Hgf]:
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf)       }
+  {CLc   | clc    Grb2                        }
+  =>
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf)  Grb2 }
+  {CLc   | clc                                } .
+  -----------------------------------------------
+  *** ~/evidence/Hgf-Evidence/Grb2.irt.Hgf.1326.txt
+
+*** Gsk3s--
+
+rl[1329.Gsk3s.irt.Hgf]:
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf)            }
+  {CLc   | clc   [Akt1 - act] [Gsk3s - act]        }
+  =>
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf)            }
+  {CLc   | clc   [Akt1 - act] [Gsk3s - phos(SFAE)] } .
+  -----------------------------------------------------
+  *** ~/evidence/Hgf-Evidence/Gsk3s.irt.Hgf.1329.txt
+
+*** Hras--
+
+rl[1286.Hras.irt.Hgf]:
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf) }
+  {CLi   | cli    [Hras - GDP]          }
+  =>
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf) }
+  {CLi   | cli    [Hras - GTP]          } .
+  -----------------------------------------
+  *** ~/evidence/Hgf-Evidence/Hras.irt.Hgf.1286.txt
+
+*** IL6--
+
+rl[1333.IL6-gene.irt.Hgf]:
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf) }
+  {NUc   | nuc     IL6-gene             }
+  =>
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf) }
+  {NUc   | nuc    [IL6-gene - on]       } .
+  -----------------------------------------
+  *** ~/evidence/Hgf-Evidence/IL6-gene.irt.Hgf.1333.txt
+
+*** Jnks--
+
+rl[1287.Jnks.irt.Hgf]:
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf) [Crk - Yphos] [Gab1 - Yphos] }
+  {CLi   | cli    [Cdc42 - GTP]                                      }
+  {CLc   | clc     Jnks                                              }
+  =>
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf) [Crk - Yphos] [Gab1 - Yphos] }
+  {CLi   | cli    [Cdc42 - GTP]                                      }
+  {CLc   | clc    [Jnks - act]                                       } .
+  -----------------------------------------------------------------------
+  *** ~/evidence/Hgf-Evidence/Jnks.irt.Hgf.1287.txt
+
+*** Lkb1--
+
+rl[1288.Lkb1.irt.Hgf]:
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf) }
+  {CLc   | clc     Lkb1                 }
+  =>
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf) }
+  {CLc   | clc    [Lkb1 - phos(S 428)]  } .
+  -----------------------------------------
+  *** ~/evidence/Hgf-Evidence/Lkb1.irt.Hgf.1288.txt
+
+*** Mmp1--
+
+rl[1327.Mmp1-gene.irt.Hgf]:
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf) }
+  {NUc   | nuc     Mmp1-gene            }
+  =>
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf) }
+  {NUc   | nuc    [Mmp1-gene - on]      } .
+  -----------------------------------------
+  *** ~/evidence/Hgf-Evidence/Mmp1-gene.irt.Hgf.1327.txt
+
+*** Mmp9--
+
+rl[1328.Mmp9-gene.irt.Hgf]:
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf) }
+  {NUc   | nuc     Mmp9-gene            }
+  =>
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf) }
+  {NUc   | nuc    [Mmp9-gene - on]      } .
+  -----------------------------------------
+  *** ~/evidence/Hgf-Evidence/Mmp9-gene.irt.Hgf.1328.txt
+
+*** Mras--
+
+rl[1289.Mras.irt.Hgf]:
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf) }
+  {CLi   | cli    [Mras - GDP]          }
+  =>
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf) }
+  {CLi   | cli    [Mras - GTP]          } .
+  -----------------------------------------
+  *** ~/evidence/Hgf-Evidence/Mras.irt.Hgf.1289.txt
+
+*** Myc--
+
+rl[1316.Myc-gene.irt.Hgf]:
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf) }
+  {NUc   | nuc     Myc-gene             }
+  =>
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf) }
+  {NUc   | nuc    [Myc-gene - on]       } .
+  -----------------------------------------
+  *** ~/evidence/Hgf-Evidence/Myc-gene.irt.Hgf.1316.txt
+
+*** P38s--
+
+rl[1290.P38s.irt.Hgf]:
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf) }
+  {CLc   | clc     P38s                 }
+  =>
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf) }
+  {CLc   | clc    [P38s - act]          } .
+  -----------------------------------------
+  *** ~/evidence/Hgf-Evidence/P38s.irt.Hgf.1290.txt
+
+*** Pak1--
+
+rl[1312.Pak1.irt.Hgf]:
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf) }
+  {CLc   | clc     Pak1                 }
+  =>
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf) }
+  {CLc   | clc    [Pak1 - act]          } .
+  -----------------------------------------
+  *** ~/evidence/Hgf-Evidence/Pak1.irt.Hgf.1312.txt
+
+*** Pai1--  Pai1-gene--
+
+rl[1291.Pai1-gene.irt.Hgf]:
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf) }
+  {NUc   | nuc     Pai1-gene            }
+  =>
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf) }
+  {NUc   | nuc    [Pai1-gene - on]      } .
+  -----------------------------------------
+  *** ~/evidence/Hgf-Evidence/Pai1-gene.irt.Hgf.1291.txt
+
+*** Pi3k--
+
+rl[1319.Pi3k.irt.Hgf]:
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf)                 }
+  {CLc   | clc    Pi3k                                  }
+  =>
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf)  [Pi3k - Yphos] }
+  {CLc   | clc                                          } .
+  ---------------------------------------------------------
+  *** ~/evidence/Hgf-Evidence/Pi3k.irt.Hgf.1319.txt
+
+*** Plcg1--
+
+rl[1303.Plcg1.irt.Hgf]:
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf) }
+  {CLc   | clc     Plcg1                }
+  =>
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf) }
+  {CLc   | clc    [Plcg1 - Yphos]       } .
+  -----------------------------------------
+  *** ~/evidence/Hgf-Evidence/Plcg1.irt.Hgf.1303.txt
+
+*** Pxn--
+
+rl[1292.Pxn.Yphos.irt.Hgf]:
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf)    }
+  {CLc   | clc    [Pxn - pxnmods]          }
+  =>
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf)    }
+  {CLc   | clc    [Pxn - pxnmods Yphos]    } .
+  --------------------------------------------
+  *** ~/evidence/Hgf-Evidence/Pxn.irt.Hgf.1292.txt
+
+rl[1294.Pxn.Sphos.irt.Hgf]:
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf)            }
+  {CLc   | clc    [Pxn - pxnmods Yphos]            }
+  =>
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf)            }
+  {CLc   | clc    [Pxn - pxnmods Yphos phos(S 83)] } .
+  --------------------------------------------------------
+  *** ~/evidence/Hgf-Evidence/Pxn.irt.Erks.Hgf.1294.txt
+
+*** Rac1--
+
+rl[1293.Rac1.irt.Hgf]:
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf)    }
+  {CLc   | clc    [Pxn - Yphos phos(S 83)] }
+  {CLi   | cli    [Rac1 - GDP]             }
+  =>
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf)    }
+  {CLc   | clc    [Pxn - Yphos phos(S 83)] }
+  {CLi   | cli    [Rac1 - GTP]             } .
+  --------------------------------------------
+  *** ~/evidence/Hgf-Evidence/Rac1.irt.Hgf.1293.txt
+
+*** Raf1--
+
+rl[1297.Raf1.irt.Hgf]:
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf) }
+  {CLc   | clc    Raf1                  }
+  =>
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf) }
+  {CLc   | clc   [Raf1 - act]           } .
+  -----------------------------------------
+  *** ~/evidence/Hgf-Evidence/Raf1.irt.Hgf.1297.txt
+
+*** Rala--
+
+rl[1298.Rala.irt.Hgf]:
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf) }
+  {CLi   | cli    [Rala - GDP]          }
+  =>
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf) }
+  {CLi   | cli    [Rala - GTP]          } .
+  -----------------------------------------
+  *** ~/evidence/Hgf-Evidence/Rala.irt.Hgf.1298.txt
+
+*** Rap1a--
+
+rl[1310.Rap1a.irt.Hgf]:
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf) }
+  {CLi   | cli    [Rap1a - GDP]         }
+  =>
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf) }
+  {CLi   | cli    [Rap1a - GTP]         } .
+  -----------------------------------------
+  *** ~/evidence/Hgf-Evidence/Rap1a.irt.Hgf.1310.txt
+
+*** Rps6--
+
+rl[1299.Rps6.irt.Hgf]:
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf)            }
+  {CLc   | clc     Rps6                            }
+  =>
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf)            }
+  {CLc   | clc   [Rps6 - phos(S 235) phos(S 236) ] } .
+  -----------------------------------------------------
+  *** ~/evidence/Hgf-Evidence/Rps6.irt.Hgf.1299.txt
+
+*** Rsk1--
+
+rl[563.Rsk1.irt.Hgf]:
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf)            }
+  {CLc   | clc     Rsk1                            }
+  =>
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf)            }
+  {CLc   | clc    [Rsk1 - phos(T 359) phos(S 363)] } .
+  ----------------------------------------------------
+  *** ~/evidence/Hgf-Evidence/Rsk1.irt.Hgf.563.txt
+
+*** S6k1--
+
+rl[1302.S6k1.irt.Hgf]:
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf) }
+  {CLc   | clc     S6k1                 }
+  =>
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf) }
+  {CLc   | clc    [S6k1 - act]          } .
+  -----------------------------------------
+  *** ~/evidence/Hgf-Evidence/S6k1.irt.Hgf.1302.txt
+
+*** Smad2--
+
+rl[616.Smad2.irt.Hgf]:
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf)             }
+  {CLc   | clc     Smad2                            }
+  =>
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf)             }
+  {CLc   | clc    [Smad2 - phos(S 250) phos(S 255)] } .
+  -----------------------------------------------------
+  *** ~/evidence/Hgf-Evidence/Smad2.irt.Hgf.616.txt
+
+*** Smad3--
+
+rl[1300.Smad3.irt.Hgf]:
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf)             }
+  {CLc   | clc     Smad3                            }
+  =>
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf)             }
+  {CLc   | clc    [Smad3 - phos(S 208) phos(S 213)] } .
+  -----------------------------------------------------
+  *** ~/evidence/Hgf-Evidence/Smad3.irt.Hgf.1300.txt
+
+*** Src--
+
+rl[1301.Src.irt.Hgf]:
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf) }
+  {CLi   | cli     Src                  }
+  =>
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf) }
+  {CLi   | cli    [Src - act]           } .
+  -----------------------------------------
+  *** ~/evidence/Hgf-Evidence/Src.irt.Hgf.1301.txt
+
+*** Stat3--
+
+rl[1334.Stat3.irt.Hgf]:
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf) }
+  {CLc   | clc     Stat3                }
+  =>
+  {HgfRC | hgfrc ([HgfR - Yphos] : Hgf) }
+  {CLc   | clc    [Stat3 - phos(Y 705)] } .
+  -----------------------------------------
+  *** ~/evidence/Hgf-Evidence/Stat3.irt.Hgf.1334.txt
+
+
+
+endm

@@ -1,0 +1,372 @@
+mod PMARULES is inc ALLOPS .
+
+var xout clc cli nuc rnac cvc : Soup .
+
+  *** ~/evidence/PMA-Evidence/00PMA-evidence.txt
+
+*** Araf--
+ 
+rl[1669.Araf.irt.PMA]:
+  {XOut | xout PMA          }
+  {CLc  | clc  Araf         }
+  =>
+  {XOut | xout PMA          }
+  {CLc  | clc  [Araf - act] } .
+  ---------------------------------------
+  *** ~/evidence/PMA-Evidence/Araf.irt.PMA.1669.txt
+
+*** Atf1--
+
+rl[1670.Atf1.irt.PMA]:
+  {XOut | xout PMA                             }
+  {NUc  | nuc [Msk1 - act] Atf1                }
+  =>
+  {XOut | xout PMA                             }
+  {NUc  | nuc [Msk1 - act] [Atf1 - phos(S 63)] } .
+  ----------------------------------------------------------
+  *** ~/evidence/PMA-Evidence/Atf1.irt.PMA.1670.txt
+
+*** Atf2--
+
+rl[1671.Atf2.irt.PMA]:
+  {XOut | xout PMA                }
+  {CLc  | clc  Atf2               }
+  =>
+  {XOut | xout PMA                }
+  {CLc  | clc [Atf2 - phos(T 71)] } .
+  ----------------------------------------------------------
+  *** ~/evidence/PMA-Evidence/Atf2.irt.PMA.1671.txt
+
+*** Cbl--
+ 
+rl[1672.Cbl.Ywhaq.irt.PMA]:
+  {XOut | xout PMA           }
+  {CLc  | clc  Cbl Ywhaq     }
+  =>
+  {XOut | xout PMA           }
+  {CLc  | clc  (Cbl : Ywhaq) } .
+  -----------------------------
+  *** ~/evidence/PMA-Evidence/Cbl.Ywhaq.irt.PMA.1672.txt
+
+rl[1673.Cbl.Ywhaz.irt.PMA]:
+  {XOut | xout PMA           }
+  {CLc  | clc  Cbl Ywhaz     }
+  =>
+  {XOut | xout PMA           }
+  {CLc  | clc  (Cbl : Ywhaz) } .
+  -----------------------------
+  *** ~/evidence/PMA-Evidence/Cbl.Ywhaz.irt.PMA.1673.txt
+
+*** Creb1--
+
+rl[1674.Creb1.irt.PMA]:
+  {XOut | xout PMA                                         }
+  {NUc  | nuc  [msk12s:Msk12S - act] Creb1                 }
+  =>
+  {XOut | xout PMA                                         }
+  {NUc  | nuc  [msk12s:Msk12S - act] [Creb1 - phos(S 133)] } .
+  ----------------------------------------------------------
+  *** ~/evidence/PMA-Evidence/Creb1.irt.PMA.1674.txt
+
+*** Eef2--
+
+rl[1675.Eef2.irt.PMA]:
+  {XOut | xout PMA                 }
+  {CLc  | clc  [Eef2 - phos(T 57)] }
+  =>
+  {XOut | xout PMA                 }
+  {CLc  | clc  Eef2                } .
+  ------------------------------------
+  *** ~/evidence/PMA-Evidence/Eef2.irt.PMA.1675.txt
+
+*** Eef2k--
+
+rl[1676.Eef2k.irt.PMA]:
+  {XOut | xout  PMA                    }
+  {CLc  | clc   Eef2k                  }
+  =>
+  {XOut | xout  PMA                    }
+  {CLc  | clc   [Eef2k - phos(S 366)]  } .
+  ----------------------------------------
+  *** ~/evidence/PMA-Evidence/Eef2k.irt.PMA.1676.txt
+
+*** Egr1-gene--
+
+rl[1677.Egr1-gene.irt.PMA]:
+  {XOut | xout  PMA              }
+  {NUc  | nuc   Egr1-gene        }
+  =>
+  {XOut | xout  PMA              }
+  {NUc  | nuc   [Egr1-gene - on] } .
+  ----------------------------------------
+  *** ~/evidence/PMA-Evidence/Egr1-gene.irt.PMA.1677.txt
+
+*** Eif4e--
+
+rl[1678.Eif4e.irt.PMA]:
+  {XOut | xout  PMA                                }
+  {CLc  | clc   [Mnk1 - act] Eif4e                 }
+  =>
+  {XOut | xout  PMA                                }
+  {CLc  | clc   [Mnk1 - act] [Eif4e - phos(S 209)] } .
+  --------------------------------------------------------------------
+  *** ~/evidence/PMA-Evidence/E1f4e.irt.PMA.1678.txt
+
+*** Eif4ebp1--
+
+rl[1679.Eif4ebp1.irt.PMA]:
+  {XOut | xout  PMA                     }
+  {CLc  | clc   Eif4ebp1                }
+  =>
+  {XOut | xout  PMA                     }
+  {CLc  | clc   [Eif4ebp1 - phos(S 65)] } .
+  --------------------------------------------------------------------
+  *** ~/evidence/PMA-Evidence/Eif4ebp1.irt.PMA.1679.txt
+
+*** Elk1--
+
+rl[1680.Elk1.irt.PMA]:
+  {XOut | xout  PMA                  }
+  {NUc  | nuc   Elk1                 }
+  =>
+  {XOut | xout  PMA                  }
+  {NUc  | nuc   [Elk1 - phos(S 383)] } .
+  ----------------------------------------
+  *** ~/evidence/PMA-Evidence/Elk1.irt.PMA.1680.txt
+
+*** Erks--
+
+var erksmods : ModSet .
+
+rl[1681.Erks.irt.PMA]:
+  {XOut | xout  PMA                                       }
+  {CLc  | clc   [Erks - erksmods]                         }
+  =>
+  {XOut | xout  PMA                                       }
+  {CLc  | clc   [Erks - erksmods phos(TEY) phos(SPS) act] } .
+  --------------------------------------------------------------------
+  *** ~/evidence/PMA-Evidence/Erks.irt.PMA.1681.txt
+
+rl[1682.Erks.to.nuc.irt.PMA]:
+  {XOut | xout  PMA                         }
+  {CLc  | clc   [Erks - erksmods phos(SPS)] }
+  {NUc  | nuc                               } 
+  =>
+  {XOut | xout  PMA                         }
+  {CLc  | clc                               }
+  {NUc  | nuc   [Erks - erksmods phos(SPS)] } .
+  --------------------------------------------------------------------
+  *** ~/evidence/PMA-Evidence/Erks.to.nuc.irt.PMA.1682.txt
+
+*** Fak2--
+
+rl[1683.Fak2.irt.PMA]:
+  {XOut | xout  PMA            }
+  {CLc  | clc   Fak2           }
+  =>
+  {XOut | xout  PMA            }
+  {CLc  | clc   [Fak2 - Yphos] } .
+  --------------------------------------------------------------------
+  *** ~/evidence/PMA-Evidence/Fak2.irt.PMA.1683.txt
+
+*** Fos-gene--
+
+rl[1684.Fos-gene.irt.PMA]:
+  {XOut | xout  PMA            }
+  {NUc  | nuc   Fos-gene       }
+  =>
+  {XOut | xout  PMA            }
+  {NUc  | nuc  [Fos-gene - on] } .
+  ---------------------------------
+  *** ~/evidence/PMA-Evidence/Fos-gene.irt.PMA.1684.txt
+
+*** Gsk3s--
+
+rl[1685.Gsk3s.irt.PMA]:
+  {XOut | xout  PMA                  }
+  {CLc  | clc   [Gsk3s - act]        }
+  =>
+  {XOut | xout  PMA                  }
+  {CLc  | clc   [Gsk3s - phos(SFAE)] } .
+  --------------------------------------------------------------------
+  *** ~/evidence/PMA-Evidence/Gsk3s.irt.PMA.1685.txt
+
+*** Hras--
+
+rl[1686.Hras.irt.PMA]:
+  {XOut | xout  PMA           }
+  {CLi  | cli   [Hras - GDP]  }
+  =>
+  {XOut | xout  PMA           }
+  {CLi  | cli   [Hras - GTP]  } .
+  --------------------------------------------------------------------
+  *** ~/evidence/PMA-Evidence/Hras.irt.PMA.1686.txt
+
+*** Jun-gene--
+
+rl[1687.Jun-gene.irt.PMA]:
+  {XOut | xout  PMA            }
+  {NUc  | nuc   Jun-gene       }
+  =>
+  {XOut | xout  PMA            }
+  {NUc  | nuc  [Jun-gene - on] } .
+  ---------------------------------
+  *** ~/evidence/PMA-Evidence/Jun-gene.irt.PMA.1687.txt
+
+*** Jun--
+
+rl[1688.Jun.irt.PMA]:
+  {XOut | xout  PMA               }
+  {NUc  | nuc   Jun               }
+  =>
+  {XOut | xout  PMA               }
+  {NUc  | nuc  [Jun - phos(S 63)] } .
+  ---------------------------------
+  *** ~/evidence/PMA-Evidence/Jun.irt.PMA.1688.txt
+
+*** Junb-gene--
+
+rl[1689.Junb-gene.irt.PMA]:
+  {XOut | xout  PMA             }
+  {NUc  | nuc   Junb-gene       }
+  =>
+  {XOut | xout  PMA             }
+  {NUc  | nuc  [Junb-gene - on] } .
+  ---------------------------------
+  *** ~/evidence/PMA-Evidence/Junb-gene.irt.PMA.1689.txt
+
+*** Lkb1--
+
+rl[1690.Lkb1.irt.PMA]:
+  {XOut | xout  PMA                        }
+  {CLc  | clc   Pdpk1  Lkb1                }
+  =>
+  {XOut | xout  PMA                        }
+  {CLc  | clc   Pdpk1 [Lkb1 - phos(S 428)] } .
+  --------------------------------------------------------------------
+  *** ~/evidence/PMA-Evidence/Lkb1.irt.PMA.1690.txt
+
+*** Mek1--
+
+rl[1691.Mek1.irt.PMA]:
+  {XOut | xout  PMA          }
+  {CLc  | clc   Mek1         }
+  =>
+  {XOut | xout  PMA          }
+  {CLc  | clc   [Mek1 - act] } .
+  --------------------------------------------------------------------
+  *** ~/evidence/PMA-Evidence/Mek1.irt.PMA.1691.txt
+
+*** Mnk1--
+
+rl[1692.Mnk1.irt.PMA]:
+  {XOut | xout  PMA          }
+  {CLc  | clc   Mnk1         }
+  =>
+  {XOut | xout  PMA          }
+  {CLc  | clc   [Mnk1 - act] } .
+  --------------------------------------------------------------------
+  *** ~/evidence/PMA-Evidence/Mnk1.irt.PMA.1692.txt
+
+*** Msk1--
+
+rl[1693.Msk1.irt.PMA]:
+  {XOut | xout  PMA          }
+  {NUc  | nuc   Msk1         }
+  =>
+  {XOut | xout  PMA          }
+  {NUc  | nuc   [Msk1 - act] } .
+  --------------------------------------------------------------------
+  *** ~/evidence/PMA-Evidence/Msk1.irt.PMA.1693.txt
+
+*** Msk2--
+
+rl[1694.Msk2.irt.PMA]:
+  {XOut | xout  PMA          }
+  {NUc  | nuc   Msk2         }
+  =>
+  {XOut | xout  PMA          }
+  {NUc  | nuc   [Msk2 - act] } .
+  --------------------------------------------------------------------
+  *** ~/evidence/PMA-Evidence/Msk2.irt.PMA.1694.txt
+
+*** Pkca--
+
+rl[1695.Pkca.irt.PMA]:
+  {XOut | xout  PMA           }
+  {CLc  | clc   Pkca          }
+  =>
+  {XOut | xout  PMA           }
+  {CLc  | clc   [Pkca - act]  } .
+  -----------------------------------------------------------
+  *** ~/evidence/PMA-Evidence/Pkca.irt.PMA.1695.txt
+
+*** Raf1--
+
+rl[1696.Raf1.irt.PMA]:
+  {XOut | xout  PMA            }
+  {CLc  | clc   Raf1           }
+  =>
+  {XOut | xout  PMA            }
+  {CLc  | clc   [Raf1 - act]   } .
+  --------------------------------------------------------------------
+  *** ~/evidence/PMA-Evidence/Raf1.irt.PMA.1696.txt
+
+*** Rps6--
+
+rl[1697.Rps6.irt.PMA]:
+  {XOut | xout  PMA                                                   }
+  {CLc  | clc   Rps6                                                  }
+  =>
+  {XOut | xout  PMA                                                   }
+  {CLc  | clc  [Rps6 - phos(S 235)phos(S 236)phos(S 240)phos(S 244)]  } .
+  ------------------------------------------------------------------------
+  *** ~/evidence/PMA-Evidence/Rps6.irt.PMA.1697.txt
+
+*** Rsks--
+
+rl[1698.Rsks.irt.PMA]:
+  {XOut | xout  PMA                 }
+  {CLc  | clc   rsks:RskS           }
+  =>
+  {XOut | xout  PMA                 }
+  {CLc  | clc   [rsks:RskS - act]   } .
+  --------------------------------------------------------------------
+  *** ~/evidence/PMA-Evidence/Rsks.irt.PMA.1698.txt
+
+*** S6k1--
+
+rl[1700.S6k1.irt.PMA]:
+  {XOut | xout  PMA            }
+  {CLc  | clc   S6k1           }
+  =>
+  {XOut | xout  PMA            }
+  {CLc  | clc   [S6k1 - act]   } .
+  --------------------------------------------------------------------
+  *** ~/evidence/PMA-Evidence/S6k1.irt.PMA.1700.txt
+
+*** Tsc2--
+
+rl[1701.Tsc2.phos.irt.PMA]:
+  {XOut | xout  PMA                     }
+  {CLc  | clc   Tsc2                    }
+  =>
+  {XOut | xout  PMA                     }
+  {CLc  | clc   [Tsc2 - phos(S 1798)]   } .
+  --------------------------------------------------------------------
+  *** ~/evidence/PMA-Evidence/Tsc2.phos.irt.PMA.1701.txt
+
+*** Vav1--
+
+rl[1702.Vav1.irt.PMA]:
+  {XOut | xout  PMA            }
+  {CLc  | clc   Vav1           }
+  =>
+  {XOut | xout  PMA            }
+  {CLc  | clc   [Vav1 - act]   } .
+  --------------------------------------------------------------------
+  *** ~/evidence/PMA-Evidence/Vav1.irt.PMA.1702.txt
+
+
+endm
+

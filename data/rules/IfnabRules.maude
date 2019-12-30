@@ -1,0 +1,175 @@
+mod IFNABRULES is inc ALLOPS .
+
+var xout : Soup .
+vars clo clm clr cli clc nuo num nui nuc : Soup .
+var tak1c ifnarc : Soup .
+
+*** ~/evidence/Ifnab-Evidence/00Ifnab-Evidence.txt
+
+rl[1553.IfnaR1.IfnaR2.irt.Ifnabs]:
+  {XOut   | xout   Ifnabs                     }
+  {IfnaRC | ifnarc IfnaR2                     }
+  {CLm    | clm    IfnaR1                     }
+  =>
+  {XOut   | xout                              }
+  {IfnaRC | ifnarc (Ifnabs : IfnaR2 : IfnaR1) }
+  {CLm    | clm                               } .
+  -----------------------------------------------
+  *** ~/evidence/Ifnab-Evidence/IfnaR1.IfnaR2.irt.Ifnabs.1553.txt
+
+*** CcL3--  CcL3-gene--
+
+rl[1554.CcL3-gene.irt.Ifnabs]:
+  {IfnaRC | ifnarc (Ifnabs : IfnaR2 : IfnaR1) }
+  {NUc    | nuc    CcL3-gene                  }
+  =>
+  {IfnaRC | ifnarc (Ifnabs : IfnaR2 : IfnaR1) }
+  {NUc    | nuc    [CcL3-gene - on]           } .
+  -----------------------------------------------
+  *** ~/evidence/Ifnab-Evidence/CcL3-gene.irt.Ifnabs.1554.txt
+
+*** CrkL--
+
+rl[1555.CrkL.irt.Ifnabs]:
+  {IfnaRC | ifnarc (Ifnabs : IfnaR2 : IfnaR1) }
+  {CLc    | clc    CrkL                       }
+  =>
+  {IfnaRC | ifnarc (Ifnabs : IfnaR2 : IfnaR1) }
+  {CLc    | clc    [CrkL - Yphos]             } .
+  -----------------------------------------------
+  *** ~/evidence/Ifnab-Evidence/CrkL.irt.Ifnabs.1555.txt
+
+*** CxcL9--  CxcL9-gene--
+
+rl[1556.CxcL9-gene.irt.Ifnabs]:
+  {IfnaRC | ifnarc (Ifnabs : IfnaR2 : IfnaR1) }
+  {NUc    | nuc    CxcL9-gene                 }
+  =>
+  {IfnaRC | ifnarc (Ifnabs : IfnaR2 : IfnaR1) }
+  {NUc    | nuc    [CxcL9-gene - on]          } .
+  -----------------------------------------------
+  *** ~/evidence/Ifnab-Evidence/CxcL9-gene.irt.Ifnabs.1556.txt
+
+*** CxcL10--  CxcL10-gene--
+
+rl[1557.CxcL10-gene.irt.Ifnabs]:
+  {IfnaRC | ifnarc (Ifnabs : IfnaR2 : IfnaR1)  }
+  {NUc    | nuc    CxcL10-gene                 }
+  =>
+  {IfnaRC | ifnarc (Ifnabs : IfnaR2 : IfnaR1)  }
+  {NUc    | nuc    [CxcL10-gene - on]          } .
+  -----------------------------------------------
+  *** ~/evidence/Ifnab-Evidence/CxcL10-gene.irt.Ifnabs.1557.txt
+
+*** Gab1--
+
+rl[1558.Gab1.irt.Ifnabs]:
+  {IfnaRC | ifnarc (Ifnabs : IfnaR2 : IfnaR1) }
+  {CLc    | clc    Gab1                       }
+  =>
+  {IfnaRC | ifnarc (Ifnabs : IfnaR2 : IfnaR1) }
+  {CLc    | clc    [Gab1 - Yphos]             } .
+  -----------------------------------------------
+  *** ~/evidence/Ifnab-Evidence/Gab1.irt.Ifnabs.1558.txt
+
+*** Hif1a--  Hif1a-gene--
+
+rl[1559.Hif1a-gene.irt.Ifnabs]:
+  {IfnaRC | ifnarc (Ifnabs : IfnaR2 : IfnaR1) }
+  {NUc    | nuc    Irf9 Hif1a-gene                 }
+  =>
+  {IfnaRC | ifnarc (Ifnabs : IfnaR2 : IfnaR1) }
+  {NUc    | nuc    Irf9 [Hif1a-gene - on]          } .
+  -----------------------------------------------
+  *** ~/evidence/Ifnab-Evidence/Hif1a-gene.irt.Ifnabs.1559.txt
+
+*** Ifi6--  Ifi6-gene--
+
+rl[1560.Ifi6-gene.irt.Ifnabs]:
+  {IfnaRC | ifnarc (Ifnabs : IfnaR2 : IfnaR1) }
+  {NUc    | nuc    Irf9 Ifi6-gene             }
+  =>
+  {IfnaRC | ifnarc (Ifnabs : IfnaR2 : IfnaR1) }
+  {NUc    | nuc    Irf9 [Ifi6-gene - on]      } .
+  -----------------------------------------------
+  *** ~/evidence/Ifnab-Evidence/Ifi6-gene.irt.Ifnabs.1560.txt
+
+*** Ifit2--  Ifit2-gene--
+
+rl[469.Ifit2-gene.irt.Ifnabs]:
+  {IfnaRC | ifnarc (Ifnabs : IfnaR2 : IfnaR1)        }
+  {NUc    | nuc    [Stat2 - Yphos] Ifit2-gene        }
+  =>
+  {IfnaRC | ifnarc (Ifnabs : IfnaR2 : IfnaR1)        }
+  {NUc    | nuc    [Stat2 - Yphos] [Ifit2-gene - on] } .
+  ------------------------------------------------------
+  *** ~/evidence/Ifnab-Evidence/Ifit2-gene.irt.Ifnabs.469.txt
+
+*** Irf7--
+
+rl[481.Irf7-gene.irt.Ifnabs]:
+  {IfnaRC | ifnarc (Ifnabs : IfnaR2 : IfnaR1)        }
+  {CLc    | clc    Jak2                              }
+  {NUc    | nuc    Irf9 Irf7-gene                    }
+  =>
+  {IfnaRC | ifnarc (Ifnabs : IfnaR2 : IfnaR1)        }
+  {CLc    | clc     Jak2                             }
+  {NUc    | nuc     [Irf7-gene - on]                 } .
+  ------------------------------------------------------
+  *** ~/evidence/Ifnab-Evidence/Irf7-gene.irt.Ifnabs.481.txt
+
+*** Irf9--
+
+*** Stat1--
+
+rl[1561.Stat1.phos.irt.Ifnabs]:
+  {IfnaRC | ifnarc (Ifnabs : IfnaR2 : IfnaR1) }
+  {CLc    | clc    Stat1                      }
+  =>
+  {IfnaRC | ifnarc (Ifnabs : IfnaR2 : IfnaR1) }
+  {CLc    | clc    [Stat1 - phos(Y 701)]      } .
+  ------------------------------------------------
+  *** ~/evidence/Ifnab-Evidence/Stat1.phos.irt.Ifnabs.1561.txt
+
+rl[1563.Stat1.to.nuc.irt.Ifnabs]:
+  {IfnaRC | ifnarc (Ifnabs : IfnaR2 : IfnaR1) }
+  {CLc    | clc    [Stat1 - phos(Y 701)]      }
+  {NUc    | nuc                               }
+  =>
+  {IfnaRC | ifnarc (Ifnabs : IfnaR2 : IfnaR1) }
+  {CLc    | clc                               }
+  {NUc    | nuc    [Stat1 - phos(Y 701)]      } .
+  ------------------------------------------------
+  *** ~/evidence/Ifnab-Evidence/Stat1.to.nuc.irt.Ifnabs.1563.txt
+
+*** Stat2--
+
+rl[470.Stat2.phos.irt.Ifnabs]:
+  {IfnaRC | ifnarc (Ifnabs : IfnaR2 : IfnaR1) }
+  {CLc    | clc    Stat2                      }
+  =>
+  {IfnaRC | ifnarc (Ifnabs : IfnaR2 : IfnaR1) }
+  {CLc    | clc    [Stat2 - Yphos]      } .
+  ------------------------------------------------
+  *** ~/evidence/Ifnab-Evidence/Stat2.phos.irt.Ifnabs.470.txt
+
+rl[471.Stat2.to.nuc.irt.Ifnabs]:
+  {IfnaRC | ifnarc (Ifnabs : IfnaR2 : IfnaR1) }
+  {CLc    | clc    [Stat2 - Yphos]            }
+  {NUc    | nuc                               }
+  =>
+  {IfnaRC | ifnarc (Ifnabs : IfnaR2 : IfnaR1) }
+  {CLc    | clc                               }
+  {NUc    | nuc    [Stat2 - Yphos]            } .
+  ------------------------------------------------
+  *** ~/evidence/Ifnab-Evidence/Stat2.to.nuc.irt.Ifnabs.471.txt
+
+
+
+
+
+
+
+endm
+
+

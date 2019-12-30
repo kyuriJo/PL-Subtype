@@ -1,0 +1,2594 @@
+mod TRANSLATIONRULES is inc ALLOPS .
+
+var xout : Soup .
+vars clo clm lrm cli clc nuo num nui nuc : Soup .
+vars moo mom moi moc mio mim mii mic : Soup .
+vars ero erm eri erc pxo pxm pxi pxc : Soup .
+vars gao gam gai gac lyo lym lyi lyc : Soup .
+vars eeo eem eei eec leo lem lei lec : Soup .
+vars cpo cpm cpi cpc ptc sig : Soup .
+vars avo avm avi avc : Soup .
+vars rnac mtorc tak1c il2rc gp130c il12rb1 il12rb2 : Soup .
+var AnyComp : CompName .
+var anycomp : Soup .
+var AnyLoc : LocName .
+var anyloc : Soup .
+
+*** 0-------------------------------------------------------------------0
+*** a--------------------------------------------------------------------a
+*** aa- 
+*** aa--
+*** ab- 
+*** abc--
+*** abca1--
+*** abcg2--
+*** abi--
+*** abi1--
+*** abl--
+*** Abl1--
+*** Abl2--
+*** ac- 
+*** acc--
+*** Accs--
+*** Acc1--
+*** Acc2--
+*** ach--
+*** Achr--
+*** ack--
+*** Ack2--
+*** aco--
+*** aco1--
+*** acox--
+*** acox1--
+*** acp--
+*** Acp1--
+*** acs--
+*** acsl1--
+*** act--
+*** actin--
+*** Actb--
+*** Actn--
+*** acvr--
+*** AcvR1--
+*** Acvr1b--
+*** Acvr2--
+*** Acvr2b--
+*** AcvRl1--
+*** ad- 
+*** Tace--
+*** adcy--
+*** ado--
+*** ador--
+*** adora--
+*** adr--
+*** adra--
+*** adra1--
+*** ae- 
+*** af- 
+*** ag- 
+*** Agl--
+*** agtr--
+*** ah- 
+*** ai-
+*** aj-
+*** ak- 
+*** akt--
+*** akt1--
+*** Akt2--
+*** al- 
+*** ald--
+*** aldo--
+*** Aldoa--
+*** am- 
+*** amh--
+*** AmhR2--
+*** amp--
+*** Ampk--
+*** an- 
+*** ang--
+*** angpt14--
+*** ank--
+*** Anks1a--
+*** ant--
+*** AntxR1--
+*** anx--
+*** Anxa1--
+*** ao- 
+*** ap- 
+*** Ap2--
+*** apa--
+*** Apaf1--
+*** apb--
+*** Apbb1ip--
+*** apc--
+*** apo--
+*** Apod--
+*** Apoe--
+*** Aps--
+*** aq- 
+*** ar--
+*** ara--
+*** Araf--
+*** ard--
+*** Ard1--
+*** arf--
+*** Arf1--
+*** Arf3--
+*** Arf4--
+*** Arf5--
+*** Arf6--
+*** Arfip2--
+*** arg--
+*** arh--
+*** arhg--
+*** arhgap--
+*** arhgap5--
+*** Arhgap26--
+*** arhgdi--
+*** ArhGdia--
+*** arhgef--
+*** Arhgef1--
+*** Arhgef2--
+*** ArhGef4--
+*** Arhgef7--
+*** ArhGef11--
+*** Arhgef12--
+*** Arl1--
+*** Arl2--
+*** arp--
+*** Arp23--
+*** as- 
+*** Ask1--
+*** at- 
+*** Atf1--
+
+rl[710c.Atf1-gene.to.prot]:
+  {NUc | nuc [Atf1-gene - on]  }
+  =>
+  {NUc | nuc  [Atf1-gene - on]  Atf1  } .
+  --------------------------------
+  *** needs location evidence
+
+*** Atf2--
+*** atg--
+*** Atg3--
+*** Atg5--
+*** Atg7--
+*** Atg10--
+*** Atg12--
+*** Atm--
+*** atp--
+*** Atp2a2--
+*** au- 
+*** av- 
+*** aw- 
+*** ax- 
+*** Axin1--
+*** ay- 
+*** az- 
+*** Azi2--
+*** b--------------------------------------------------------------------b
+*** ba- 
+*** Bad--
+*** BaffR--
+*** bag--
+*** Bag4--
+*** bai--
+*** baiap2--
+*** Bak1--
+*** Bag1--
+*** Bax--
+*** bb- bc- 
+*** bca--
+*** bcar--
+*** Bcar1--
+*** Bcar3--
+*** bcl--
+*** Bcl2--
+*** Bcl3--
+
+rl[918c.Bcl3-gene.to.prot]:
+  {NUc  | nuc [Bcl3-gene - on] }
+  =>
+  {NUc  | nuc  [Bcl3-gene - on] Bcl3  } .
+  -----------------------------------
+  *** location from UniProt
+
+*** Bcl10--
+*** Bclx--
+*** Bclxl--
+*** bd- 
+*** be- 
+*** bec--
+*** becn--
+*** Becn1--
+*** bf-
+*** bf1--
+*** bh- 
+*** bhm---
+*** Bhmt--
+*** bi- 
+*** bir--
+*** bj- bk- bl- 
+*** bm- 
+*** bmp--
+*** Bmp2--
+*** bmp7--
+*** bmpr--
+*** Bmpr1a--
+*** BmpR1b--
+*** Bmpr2--
+*** Bmx--
+*** bn- bo- 
+*** bp- bq- 
+*** br- 
+*** Braf--
+*** brap--
+*** bs- 
+*** bt- 
+*** btk--
+*** Btrc--
+*** bu- bv- bw- bx- by- bz-
+*** c--------------------------------------------------------------------c
+*** c3- 
+*** C3--
+
+rl[919c.C3-gene.to.prot]:
+  {XOut  | xout               }
+  {NUc   | nuc [C3-gene - on] }
+  =>
+  {XOut  | xout  C3           }
+  {NUc   | nuc [C3-gene - on]       } .
+  --------------------------------
+  *** location from UniProt
+
+*** c5- 
+*** c5ar--
+*** ca- 
+*** ca--
+*** Ca2--
+*** Ca2+--
+*** cal--
+*** Calcoco2--
+*** Calm--
+*** cam--
+*** camk--
+*** Camk1--
+*** Camk2--
+*** Camk4--
+*** camkk--
+*** Camkk1--
+*** Camkk2--
+*** CamkkS--
+*** Cap--
+*** capn--
+*** capn2--
+*** Card8--
+*** casp--
+*** Casp1--
+*** Casp2--
+*** Casp3--
+*** Casp4--
+*** Casp5--
+*** Casp6--
+*** Casp7--
+*** Casp8--
+*** Casp9--
+*** Casp10--
+*** Casp14--
+*** cat--
+*** Cathd--
+*** cav--
+*** Cav1--
+*** cb- 
+*** Cbl--
+*** Cblb--
+*** Cbpp300--
+*** cc- 
+*** ccd--
+*** Ccd50--
+*** ccn--
+*** ccnd--
+*** ccnd1--
+*** ccnd2--
+*** ccl--
+*** CcL1--
+*** CcL2--
+
+rl[733c.CcL2-gene.to.prot]:
+  {XOut | xout                 }
+  {NUc  | nuc [CcL2-gene - on] }
+  =>
+  {XOut | xout CcL2            }
+  {NUc  | nuc [CcL2-gene - on]       } .
+  --------------------------------
+  *** location from UniProt
+
+*** CcL3--
+
+rl[955c.CcL3-gene.to.prot]:
+  {XOut | xout                 }
+  {NUc  | nuc [CcL3-gene - on] }
+  =>
+  {XOut | xout CcL3            }
+  {NUc  | nuc [CcL3-gene - on]       } .
+  --------------------------------
+  *** location from UniProt
+
+*** CcL4--
+
+rl[748c.CcL4-gene.to.prot]:
+  {XOut | xout                 }
+  {NUc  | nuc [CcL4-gene - on] }
+  =>
+  {XOut | xout CcL4            }
+  {NUc  | nuc [CcL4-gene - on]       } .
+  --------------------------------
+  *** location from UniProt
+
+*** CcL5--
+
+rl[766c.CcL5-gene.to.prot]:
+  {XOut | xout                 }
+  {NUc  | nuc [CcL5-gene - on] }
+  =>
+  {XOut | xout CcL5            }
+  {NUc  | nuc [CcL5-gene - on]       } .
+  --------------------------------
+  *** location from UniProt
+
+*** CcL7--
+
+rl[769c.CcL7-gene.to.prot]:
+  {XOut | xout                 }
+  {NUc  | nuc [CcL7-gene - on] }
+  =>
+  {XOut | xout CcL7            }
+  {NUc  | nuc [CcL7-gene - on]       } .
+  --------------------------------
+  *** location from UniProt
+
+*** ccn--
+*** ccpq--
+*** ccr-
+*** ccr2
+*** cd- 
+*** Cd247--
+*** cd2--
+*** cd2ap--
+*** cd3--
+*** cd11--
+*** Cd14--
+*** Cd36--
+*** Cd40--
+*** Cd59--
+*** cdc--
+*** Cdc37--
+*** Cdc42--
+*** cdc42bpa--
+*** Cdc42ep4--
+*** Cd44--
+*** cd80--
+*** cd86--
+*** cdh--
+*** Cdh1--
+*** Cdh2--
+*** cdk--
+*** Cdk2--
+*** cdkn--
+*** cdkn--
+*** Cdkn1a--
+
+rl[905c.Cdkn1a-gene.to.prot]:
+  {CLc  | clc                     }
+  {NUc  | nuc [Cdkn1a-gene - on]  }
+  =>
+  {CLc  | clc  Cdkn1a             }
+  {NUc  | nuc [Cdkn1a-gene - on] } .
+  -----------------------------------
+  *** location to be determined
+
+*** Cdkn1b--
+
+rl[909c.Cdkn2b-gene.to.prot]:
+  {CLc  | clc                     }
+  {NUc  | nuc [Cdkn2b-gene - on]  }
+  =>
+  {CLc  | clc  Cdkn2b             }
+  {NUc  | nuc [Cdkn2b-gene - on] } .
+  -----------------------------------
+  *** location to be determined
+
+*** Cdkn2b--
+*** ce- 
+*** cebp--
+*** Cebpa--
+*** Cebpb--
+*** Cebpd--
+*** cen--
+*** cent--
+*** Centd2--
+*** cer--
+*** ceramide--
+*** Cezanne--
+
+rl[781c.Cezanne-gene.to.prot]:
+  {CLc  | clc                      }
+  {NUc  | nuc [Cezanne-gene - on]  }
+  =>
+  {CLc  | clc  Cezanne             }
+  {NUc  | nuc [Cezanne-gene - on] } .
+  -------------------------------------
+  *** location to be determined
+
+*** cf- 
+*** Cfl1--
+*** cg- 
+*** ch- 
+*** Ch25h--
+
+rl[149c.Ch25h-gene.to.prot]:
+  {CLm  | clm                    }
+  {NUc  | nuc [Ch25h-gene - on]  }
+  =>
+  {CLm  | clm  Ch25h             }
+  {NUc  | nuc [Ch25h-gene - on] } .
+  ----------------------------------
+  *** location from UniProt
+
+*** chr--
+*** chrm--
+*** Chrm2--
+*** ChRm3--
+*** chu--
+*** ci- 
+*** cin--
+*** Cin85--
+*** Cit--
+*** Cited2--
+*** cj- 
+*** ck- 
+*** cl- 
+*** Clic4--
+
+rl[1792c.Clic4-gene.to.prot]:
+  {CLc  | clc                    }
+  {NUc  | nuc [Clic4-gene - on]  }
+  =>
+  {CLc  | clc  Clic4             }
+  {NUc  | nuc [Clic4-gene - on]  } .
+  ----------------------------------
+  *** location from UniProt
+
+*** cm- 
+*** cn- 
+*** co- 
+*** Cop1--
+
+rl[1412c.Cop1-gene.to.prot]:
+  {AnyLoc | anyloc [Cop1-gene - on]        }
+  =>
+  {AnyLoc | anyloc [Cop1-gene - on] Cop1  } .
+  ----------------------------------------------
+  *** needs location evidence
+
+*** cox--
+*** cp- 
+*** cpt--
+*** cpt1--
+*** Cpt1bgene
+*** cq- 
+*** cr- 
+*** cra--
+*** cradd--
+*** cre--
+*** Creb--
+*** Creb1--
+*** Crebbp--
+*** Crk--
+*** CrkL---
+*** cs- 
+*** csf--
+*** csf1--
+*** csf1r--
+*** Csf2--
+
+rl[1793c.Csf2-gene.to.prot]:
+  {XOut | xout                   }
+  {NUc  | nuc  [Csf2-gene - on]  }
+  =>
+  {XOut | xout  Csf2             }
+  {NUc  | nuc  [Csf2-gene - on]  } .
+  -----------------------------------
+  *** location from UniProt
+
+*** Csf3--
+
+rl[1794c.Csf3-gene.to.prot]:
+  {XOut | xout                   }
+  {NUc  | nuc  [Csf3-gene - on]  }
+  =>
+  {XOut | xout  Csf3             }
+  {NUc  | nuc  [Csf3-gene - on] } .
+  ----------------------------------
+  *** location from UniProt
+
+*** csf2r--
+*** Csf2Ra--
+*** Csf2Rb--
+*** csn--
+*** Csnk1--
+*** Csnk1a1--
+*** Csk--
+*** Csnk2--
+*** ct- 
+*** ctn--
+*** ctnn--
+*** ctnna--
+*** Ctnna1--
+*** ctnnb--
+*** Ctnnb1--
+*** ctnnd--
+*** Ctnnd1--
+*** cts--
+*** ctt--
+*** cttn--
+*** cu- 
+*** Cul1--
+*** cv- 
+*** cx- 
+*** cxc--
+*** CxcL--
+*** CxcL1--
+
+rl[783c.CxcL1-gene.to.prot]:
+  {XOut | xout                   }
+  {NUc  | nuc  [CxcL1-gene - on] }
+  =>
+  {XOut | xout CxcL1             }
+  {NUc  | nuc [CxcL1-gene - on] } .
+  -----------------------------------
+  *** location from UniProt
+
+*** CxcL2--
+
+rl[785c.CxcL2-gene.to.prot]:
+  {XOut | xout                   }
+  {NUc  | nuc  [CxcL2-gene - on] }
+  =>
+  {XOut | xout CxcL2             }
+  {NUc  | nuc [CxcL2-gene - on] } .
+  -----------------------------------
+  *** location from UniProt
+
+*** CxcL9--
+
+rl[1796c.CxcL9-gene.to.prot]:
+  {XOut | xout                   }
+  {NUc  | nuc  [CxcL9-gene - on] }
+  =>
+  {XOut | xout CxcL9             }
+  {NUc  | nuc [CxcL9-gene - on] } .
+  -----------------------------------
+  *** location from UniProt
+
+*** CxcL10--
+
+rl[791c.CxcL10-gene.to.prot]:
+  {XOut | xout                    }
+  {NUc  | nuc  [CxcL10-gene - on] }
+  =>
+  {XOut | xout CxcL10             }
+  {NUc  | nuc [CxcL10-gene - on] } .
+  -----------------------------------
+  *** location from UniProt
+
+*** cxcr--
+*** Cxcr4--
+*** cxcr5--
+*** cy- 
+*** cyb--
+*** cyba--
+*** cybb--
+*** Cycs--
+*** cyf--
+*** cyfip1--
+*** cyl--
+*** Cyld--
+*** cz- 
+*** d--------------------------------------------------------------------d
+*** da- 
+*** dab--
+*** Dab2--
+*** Dap12--
+*** db- 
+*** Dbl--
+*** dbn--
+*** Dbnl--
+*** Dbs--
+*** dc- 
+*** dd- 
+*** dde--
+*** Ddef1--
+*** ddi--
+*** ddit3--
+*** ddx--
+*** Ddx3x--
+*** de- 
+*** ded--
+*** Dedd--
+*** df- 
+*** dg- 
+*** Dgk--
+*** Dgkz--
+*** dh- 
+*** dhx--
+*** Dhx9--
+*** di- 
+*** Diaph--
+*** diablo--
+*** dix--
+*** Dixdc1--
+*** dj- 
+*** dk- 
+*** dl- 
+*** dm- 
+*** dn- 
+*** dna--
+*** Dnajc3--
+*** do- 
+*** doc--
+*** dock--
+*** Dock1--
+*** dok--
+*** Dok1--
+*** Dok2--
+*** dp- 
+*** dq- 
+*** dr- 
+*** ds- 
+*** Dsg2--
+*** dt- 
+*** du- 
+*** dv- 
+*** dvl--
+*** Dvl1--
+*** Dvl2--
+*** dw- 
+*** dx- 
+*** dy- 
+*** dz- 
+*** e--------------------------------------------------------------------e
+*** e2--
+*** e2f--
+*** E2f1--
+*** E2f4--
+*** E2f5--
+*** ea- 
+*** eb- 
+*** ec- 
+*** Ect2--
+*** Ecsit--
+*** ed- 
+*** edd--
+*** Edd1--
+*** edr--
+*** EdRa--
+*** edg--
+*** ee- 
+*** eef--
+*** Eef2--
+*** Eef2k--
+*** ef- 
+*** eg- 
+*** egf--
+*** egl--
+*** Egln2--
+*** Egln3--
+*** EgfR--
+*** egr--
+*** Egr1--
+
+rl[1797c.Egr1-gene.to.prot]:
+  {NUc | nuc [Egr1-gene - on]      }
+  =>
+  {NUc | nuc[Egr1-gene - on] Egr1 } .
+  ------------------------------------
+  *** needs location evidence
+
+*** Egr2--
+*** eh- 
+*** ei- 
+*** eif--
+*** Eif2--
+*** Eif3--
+*** eif4--
+*** eif4a--
+*** Eif4a1--
+*** Eif4b--
+*** Eif4e--
+*** Eif4ebp1--
+*** Eif4g1--
+*** ej- 
+*** ek- 
+*** el- 
+*** Eselectin--
+
+rl[740c.Eselectin-gene.to.prot]:
+  {CLm | clm                  }
+  {NUc | nuc [CcL2-gene - on] }
+  =>
+  {CLm | clm  CcL2            }
+  {NUc | nuc [CcL2-gene - on] } .
+  --------------------------------
+  *** needs location evidence
+
+*** elk--
+*** elk1--
+*** Elk4--
+*** Elmo1--
+*** em- 
+*** Emr1--
+*** en- 
+*** EndA1--
+*** Eng--
+*** eno--
+*** Eno1--
+*** eo- 
+*** ep- 
+*** epa--
+*** Epas1--
+*** eph--
+*** epha--
+*** Epha2--
+*** Epha4--
+*** ephb--
+*** Ephb1--
+*** Ephb2--
+*** Ephb3--
+*** Ephb4--
+*** Ephb6--
+*** epo--
+*** Eppk1--
+*** eps--
+*** Eps8--
+*** Eps8l1--
+*** Eps8l2--
+*** Eps8l3--
+*** Eps15--
+*** eq- 
+*** er- 
+*** era--
+*** erb--
+*** erbb--
+*** Erbb2--
+*** erbb3--
+*** erbb4--
+*** erc--
+*** Erc1--
+*** erk--
+*** Erks--
+*** Erk5--
+*** es- 
+*** esr--
+*** Esr1--
+*** et- 
+*** etr--
+*** etra--
+*** eu- 
+*** ev- 
+*** ew- 
+*** ex- 
+*** ey- 
+*** ez- 
+*** f--------------------------------------------------------------------f
+*** f2--
+*** f2r--
+*** f2rl--
+*** F2rl1--
+*** F3--
+*** fa- 
+*** Fadd--
+*** fak--
+*** Fak1--
+*** Fak2--
+*** Fan--
+*** fas--
+*** Fasn--
+*** FasR--
+*** fb- 
+*** fc- 
+*** fcg---
+*** fcgr1
+*** fcgr2b--
+*** fd- 
+*** fe- 
+*** fe3+
+*** fec--
+*** Fech--
+*** Fer--
+*** Fes--
+*** fg- 
+*** fgf--
+*** Fgf2--
+*** fgfr--
+*** fgfr1--
+*** Fgr--
+*** fh- 
+*** fi- 
+*** fil--
+*** fj- 
+*** fh- 
+*** fi- 
+*** fj- 
+*** fk- 
+*** fkbp--
+*** Fkbp1a--
+*** fl- 
+*** Flcn--
+*** fli--
+*** Flip--
+*** flj--
+*** Flj21610--
+*** Flt1--
+*** fm- 
+*** fmr--
+*** Fmr1--
+*** fn- 
+*** fn--
+*** Fn1--
+*** Fnip--
+*** Fnip1--
+*** fo- 
+*** Fos--
+
+rl[1798c.Fos-gene.to.prot]:
+  {NUc | nuc [Fos-gene - on]         }
+  =>
+  {NUc | nuc [Fos-gene - on]   Fos  } .
+  --------------------------------------
+  *** needs location evidence
+
+*** fox--
+*** foxc2--
+*** Foxo1--
+*** Foxo3--
+*** Foxo4--
+*** Foxo6--
+*** fp- 
+*** fq- 
+*** fr- 
+*** fra--
+*** frap--
+*** Freud1--
+*** frs--
+*** Frs2--
+*** Frat--
+*** fs- 
+*** ft- 
+*** fu- 
+*** fv- 
+*** fw- 
+*** fx- 
+*** fy- 
+*** Fyb--
+*** Fyn--
+*** fz-
+*** Fzd--
+*** g--------------------------------------------------------------------
+*** ga- 
+*** ga--
+*** gab--
+*** Gab1--
+*** Gab2--
+*** Gabarap--
+*** Gabarapl2--
+*** gad--
+*** gadd--
+*** gadd45b--
+*** gap--
+*** Gapdh--
+*** gb- 
+*** gbp--
+*** Gbp1--
+*** gc- 
+*** Gck--
+*** Gckr--
+*** gd- 
+*** ge- 
+*** gf- 
+*** gg- 
+*** gh- 
+*** gi- 
+*** girk--
+*** Git1--
+*** gj- 
+*** gk- 
+*** Gk--
+*** gl- 
+*** glut--
+*** Glut1--
+*** Glut4--
+*** gm- 
+*** gn- 
+*** Gna12--
+*** Gnb1--
+*** GnrhR--
+*** go- 
+*** got--
+*** Got2--
+*** gp- 
+*** Gp130--
+*** gpr--
+*** gpr6--
+*** gq- 
+*** gq--
+*** gr- 
+*** gra--
+*** grb--
+*** grb2--
+*** Grb7--
+*** Grb10--
+*** Grb14--
+*** gri--
+*** GRia2--
+*** GRik2--
+*** grk--
+*** grk1--
+*** gs- 
+*** Gs--
+*** gsk--
+*** gsk3--
+*** gsn--
+*** gt- gu- gv- gw- gx- gy- gz- 
+*** h--------------------------------------------------------------------h
+*** h3--
+*** ha- 
+*** hb- 
+*** hc- 
+*** hcf--
+*** hcfc1--
+*** Hck--
+*** hd- 
+*** he- 
+*** Hes1--
+*** Hes5--
+*** hf- 
+*** hg- 
+*** Hgs--
+*** hh- 
+*** hi- 
+*** hif--
+*** hif1--
+*** Hif1a--
+*** Hif1an--
+*** his--
+*** hist--
+*** hist1h3--
+*** hist1h3a--
+*** HistH2B--
+*** HistH2BS--
+*** hj- 
+*** hk- 
+*** hl- 
+*** hm- 
+*** Hmgn1--
+*** hn- 
+*** hnf--
+*** hnf4--
+*** hnf4a--
+*** hnr--
+*** hnrp--
+*** Hnrpa2b1--
+*** Hnrpr--
+*** Hnrpu--
+*** ho- 
+*** Hox--
+*** hp- 
+*** Hpk1--
+*** hq-
+*** hr-
+*** Hras--
+*** hs- 
+*** hsp--
+*** hsp70--
+*** hsp90--
+*** Hsp90aa1--
+*** Hspa1--
+*** Hspa5--
+*** Hspa8--
+*** Hspb1--
+*** ht- 
+*** hu- 
+*** Huwe1--
+*** hv- 
+*** hw- 
+*** hx- 
+*** hy- 
+*** hz-
+*** i--------------------------------------------------------------------i
+*** ia- 
+*** ib- 
+*** ic- 
+*** icam--
+*** Icam1--
+
+rl[754c.Icam1-gene.to.prot]:
+  {CLm | clm                    }
+  {NUc | nuc [Icam1-gene - on]  }
+  =>
+  {CLm | clm  Icam1             }
+  {NUc | nuc [Icam1-gene - on] } .
+  ----------------------------------
+  *** location from UniProt
+
+*** id- 
+*** ie- 
+*** ier--
+*** Ier3--
+*** if- 
+*** ifi--
+*** Ifi16--
+
+rl[1795c.Ifi16-gene.to.prot]:
+  {NUc  | nuc [Ifi16-gene - on] }
+  =>
+  {NUc  | nuc  Ifi16[Ifi16-gene - on] } .
+  ----------------------------------
+  *** location from UniProt
+
+*** ifit--
+*** Ifit1--
+
+rl[1803c.Ifit1-gene.to.prot]:
+  {CLc  | clc                   }
+  {NUc  | nuc [Ifit1-gene - on] }
+  =>
+  {CLc  | clc  Ifit1            }
+  {NUc  | nuc [Ifit1-gene - on]       } .
+  -----------------------------------
+  *** location to be determined
+
+*** Ifit2--
+
+rl[994c.Ifit2-gene.to.prot]:
+  {CLc  | clc                   }
+  {NUc  | nuc [Ifit2-gene - on] }
+  =>
+  {CLc  | clc  Ifit2            }
+  {NUc  | nuc [Ifit2-gene - on]       } .
+  -----------------------------------
+  *** location to be determined
+
+*** Ifit3--
+
+rl[1008c.Ifit3-gene.to.prot]:
+  {CLc  | clc                   }
+  {NUc  | nuc [Ifit3-gene - on] }
+  =>
+  {CLc  | clc  Ifit3            }
+  {NUc  | nuc [Ifit3-gene - on]       } .
+  -----------------------------------
+  *** location to be determined
+
+*** ifn--
+*** ifna--
+*** Ifnar--
+*** ifnb--
+*** Ifnb1--
+
+rl[1012c.Ifnb1-gene.to.prot]:
+  {XOut | xout                   }
+  {NUc  | nuc  [Ifnb1-gene - on] }
+  =>
+  {XOut | xout  Ifnb1            }
+  {NUc  | nuc  [Ifnb1-gene - on]       } .
+  ---------------------------------
+  *** location from UniProt
+
+*** Ifng--
+
+rl[1013c.Ifng-gene.to.prot]:
+  {XOut | xout                  }
+  {NUc  | nuc  [Ifng-gene - on] }
+  =>
+  {XOut | xout  Ifng            }
+  {NUc  | nuc  [Ifng-gene - on]       } .
+  ---------------------------------
+  *** location from UniProt
+
+*** IfngR--
+*** ig- 
+*** igf--
+*** igf1--
+*** Igf1R--
+*** Igf2--
+*** Igf2R--
+*** Igfbp5--
+*** ih- 
+*** ii- 
+*** ij- 
+*** ik- 
+*** ika--
+*** ikb--
+*** Ikba--
+
+rl[797c.Ikba-gene.to.prot]:
+  {CLc  | clc                   }
+  {NUc  | nuc  [Ikba-gene - on] }
+  =>
+  {CLc  | clc  Ikba             }
+  {NUc  | nuc [Ikba-gene - on] } .
+  ---------------------------------
+   *** location from UniProt
+
+*** Ikbb--
+
+rl[1018c.Ikbb-gene.to.prot]:
+  {CLc  | clc                   }
+  {NUc  | nuc  [Ikbb-gene - on] }
+  =>
+  {CLc  | clc  Ikba             }
+  {NUc  | nuc [Ikbb-gene - on]        } .
+  ---------------------------------
+   *** location from UniProt
+
+*** Ikbkap--
+*** ikk--
+*** ikks--
+*** Ikk1--
+*** Ikk2--
+*** Ikke--
+
+rl[1019c.Ikke-gene.to.prot]:
+  {CLc  | clc                   }
+  {NUc  | nuc  [Ikke-gene - on] }
+  =>
+  {CLc  | clc  Ikke             }
+  {NUc  | nuc [Ikke-gene - on]        } .
+  ---------------------------------
+   *** location from UniProt
+
+*** il- 
+*** IL1--
+*** IL1b--
+
+rl[757c.IL1b-gene.to.prot]:
+  {XOut | xout                 }
+  {NUc  | nuc [IL1b-gene - on] }
+  =>
+  {XOut | xout IL1b            }
+  {NUc  | nuc [IL1b-gene - on]       } .
+  --------------------------------
+  *** location indirect - requires processing
+
+*** IL1R--
+*** IL1R1--
+*** IL1rn--
+*** IL2--
+*** IL2Ra--
+*** IL3--
+*** IL4--
+*** IL4R--
+*** Il6--
+
+rl[741c.IL6-gene.to.prot]:
+  {XOut | xout                }
+  {NUc  | nuc [IL6-gene - on] }
+  =>
+  {XOut | xout IL6            }
+  {NUc  | nuc [IL6-gene - on] } .
+  --------------------------------
+  *** location indirect - requires processing
+
+*** IL6R--
+*** IL7--
+*** IL8--
+
+rl[1789c.IL8-gene.to.prot]:
+  {XOut | xout                }
+  {NUc  | nuc [IL8-gene - on] }
+  =>
+  {XOut | xout IL8            }
+  {NUc  | nuc [IL8-gene - on]       } .
+  --------------------------------
+  *** location indirect - requires processing
+
+*** IL10--
+
+rl[1033c.IL10-gene.to.prot]:
+  {XOut | xout                 }
+  {NUc  | nuc [IL10-gene - on] }
+  =>
+  {XOut | xout IL10            }
+  {NUc  | nuc [IL10-gene - on]       } .
+  --------------------------------
+  *** location indirect - requires processing
+
+*** IL10R--
+*** IL11Ra--
+*** IL12--
+*** IL12a--
+
+rl[1035c.IL12a-gene.to.prot]:
+  {XOut | xout                  }
+  {NUc  | nuc [IL12a-gene - on] }
+  =>
+  {XOut | xout IL12a            }
+  {NUc  | nuc [IL12a-gene - on]       } .
+  --------------------------------
+  *** location indirect - requires processing
+
+*** IL12b--
+
+rl[1039c.IL12b-gene.to.prot]:
+  {XOut | xout                  }
+  {NUc  | nuc [IL12b-gene - on] }
+  =>
+  {XOut | xout IL12b            }
+  {NUc  | nuc [IL12b-gene - on]       } .
+  ----------------------------------
+  *** location indirect - requires processing
+
+*** IL12R--
+*** IL15--
+*** IL18--
+*** Ilk--
+*** im- 
+*** in- 
+*** Ina--
+*** inp--
+*** inpp--
+*** Inppl1--
+*** insig--
+*** insig1--
+*** insig2--
+*** integrin--
+*** Integrins--
+*** InsR--
+*** io- 
+*** ip- 
+*** ip3--
+*** Ipaf--
+*** iq- 
+*** iqgap--
+*** Iqgap1--
+*** Iqgap2--
+*** ir- 
+*** ira--
+*** irak--
+*** Irak1--
+*** Irak1b--
+*** Irak2--
+*** Irak3--
+*** Irak4--
+*** irf--
+*** Irf1--
+
+rl[762c.Irf1-gene.to.prot]:
+  {CLc  | clc                   }
+  {NUc  | nuc [Irf1-gene - on]  }
+  =>
+  {CLc  | clc  Irf1             }
+  {NUc  | nuc [Irf1-gene - on] } .
+  --------------------------------
+
+*** Irf2--
+*** Irf3--
+*** Irf4--
+*** Irf5--
+*** Irf7--
+*** Irf8--
+*** Irf9--
+*** irp--
+*** irs--
+*** Irs1--
+*** Irs2--
+*** Irs3--
+*** Irs4--
+*** is- 
+*** isg--
+*** Isg15--
+*** isgf--
+*** it- 
+*** itg--
+*** Itgb1--
+*** Itgb3--
+*** itp--
+*** Itpr--
+*** itsn--
+*** Itsn1--
+*** iu- iv- iw- ix- iy- iz-
+*** j--------------------------------------------------------------------j
+*** ja- 
+*** jak--
+*** Jak1--
+*** Jak2--
+*** Jak3--
+*** jb- 
+*** jc- 
+*** jd- 
+*** je- 
+*** jf- 
+*** jg- 
+*** jh- 
+*** ji- 
+*** jip--
+*** Jip1--
+*** Jip2--
+*** Jip3--
+*** jj- 
+*** jk- 
+*** jl- 
+*** jm- 
+*** jn- 
+*** jnk--
+*** Jnks--
+*** jo- 
+*** jp- 
+*** jq-
+*** jr- 
+*** js- 
+*** jt- 
+*** ju- 
+*** Jun--
+
+rl[1800c.Jun-gene.to.prot]:
+  {NUc | nuc  [Jun-gene - on]        }
+  =>
+  {NUc | nuc  [Jun-gene - on]  Jun  } .
+  --------------------------------------
+  *** needs location evidence
+
+*** Junb--
+
+rl[716c.Junb-gene.to.prot]:
+  {NUc | nuc [Junb-gene - on]        }
+  =>
+  {NUc | nuc [Junb-gene - on]  Junb } .
+  --------------------------------------
+  *** needs location evidence
+
+*** Jund--
+*** jup--
+*** jv- 
+*** jw- 
+*** jx- 
+*** jy- 
+*** jz- 
+*** k--------------------------------------------------------------------k
+*** K+
+*** ka- 
+*** kb- 
+*** kc- 
+*** kd- 
+*** KdR--
+*** ke- 
+*** kf- 
+*** kg- 
+*** kh- 
+*** khd--
+*** Khdrbs1--
+*** ki- 
+*** kif--
+*** Kifap3--
+*** kin--
+*** Kit--
+*** kj- 
+*** kk- 
+*** kl- 
+*** klk--
+*** Klk2--
+*** Klk3--
+*** km- 
+*** kn- 
+*** ko- 
+*** kp- 
+*** kq-
+*** kr- 
+*** Kras--
+*** krt--
+*** ks- 
+*** ksr--
+*** ksr1--
+*** kt- 
+*** Ktn1--
+*** ku- 
+*** kv- 
+*** kw- 
+*** kx- 
+*** ky- 
+*** kz-
+*** l--------------------------------------------------------------------l
+*** la- 
+*** lb- 
+*** lc- 
+*** Lc3--
+*** lcp--
+*** Lcp2--
+*** ld- 
+*** ldh--
+*** Ldha--
+*** le- 
+*** lep--
+*** LepR--
+*** lf- 
+*** lg- 
+*** lh- 
+*** lhb--
+*** li- 
+*** lic--
+*** lif--
+*** lifr--
+*** lim--
+*** Lime1--
+*** limk--
+*** Limk1--
+*** Limk2--
+*** lip--
+*** Lipe--
+*** lj- 
+*** lk- 
+*** Lkb1--
+*** ll- 
+*** lm- 
+*** ln- 
+*** lo- 
+*** lp- 
+*** lpl--
+*** lq-
+*** lr- 
+*** ls- 
+*** Lst8--
+*** lt- 
+*** ltb--
+*** Ltbr--
+*** lu- lv- lw- 
+*** lx- 
+*** lxr--
+*** ly- 
+*** Ly6g--
+*** Lyn--
+*** lz-
+*** m--------------------------------------------------------------------m
+*** ma- 
+*** Madd--
+*** mal--
+*** Malt1--
+*** map--
+*** map2--
+*** map3--
+*** map4--
+*** Map4k2--
+*** map3k--
+*** map3k12--
+*** map4--
+*** map4k--
+*** Map4k4--
+*** Map4k5--
+*** mapkap--
+*** Mapkap1--
+*** Mapkapk2--
+*** Mapkapk5--
+*** Mapt--
+*** mar--
+*** marcks--
+*** mark3--
+*** mat--
+*** Matk--
+*** Mavs--
+*** Max--
+*** mb- 
+*** mc- 
+*** md- 
+*** Mda5--
+*** Mdm2--
+
+rl[1408c.Mdm2-gene.to.prot]:
+  {NUc | nuc [Mdm2-gene - on]        }
+  =>
+  {NUc | nuc [Mdm2-gene - on]  Mdm2  } .
+  ----------------------------------------------
+  *** ~/evidence/Translation-Evidence/Mdm2-gene.to.prot.1408c.txt
+
+*** me- 
+*** mef2--
+*** Mef2c--
+*** mek--
+*** Mek1--
+*** Mek2--
+*** Mek5--
+*** mekk--
+*** Mekk1--
+*** Mekk2--
+*** Mekk3--
+*** Mekk4--
+*** mel--
+*** Melk--
+*** mer--
+*** Merlin--
+*** Met--
+*** mf- 
+*** mg- 
+*** mh- 
+*** mi- 
+*** mj- 
+*** mk-
+*** mknk--
+*** mkk--
+*** Mkk--
+*** Mkk3--
+*** Mkk4--
+*** Mkk6--
+*** Mkk7--
+*** ml- 
+*** mlk--
+*** Mlk2--
+*** Mlk3--
+*** mll--
+*** mllt4--
+*** mm- 
+*** mn- 
+*** mo- 
+*** mp- 
+*** mo- 
+*** mq- 
+*** mr- 
+*** Mras--
+*** ms- 
+*** mse--
+*** Msk1--
+*** mt- 
+*** Mtor--
+*** mu- 
+*** Muc1--
+*** mv- 
+*** mw- 
+*** mx- 
+*** my- 
+*** myc--
+*** Myd88--
+*** myh--
+*** Myh1--
+*** myh9--
+*** myh10--
+*** myl--
+*** Myl9--
+*** Mylk--
+*** myo--
+*** Myog--
+*** myt--
+*** mz-
+*** n--------------------------------------------------------------------n
+*** na- 
+*** nab--
+*** nab2--
+*** nak--
+*** NaKATPase--
+*** Nalp1
+*** nb- 
+*** nc- 
+*** ncb--
+*** Ncbp1--
+*** nck--
+*** Nck1--
+*** Nck2--
+*** Ncl--
+*** nd- 
+*** Ndufa13--
+*** ne- 
+*** ned--
+*** nedd--
+*** Nedd9--
+*** Nek6--
+*** Nemo--
+*** nf- 
+*** nfat--
+*** Nfatc2--
+*** Nfatc4--
+*** nfkb--
+*** Nfkb1--
+*** Nfkb2--
+*** nfkbi--
+*** Nfkbiz--
+
+rl[1802c.Nfkbiz-gene.to.prot]:
+  {NUc | nuc [Nfkbiz-gene - on]    }
+  =>
+  {NUc | nuc [Nfkbiz-gene - on]  Nfkbiz  } .
+  ------------------------------------
+  *** location from UniProt
+
+*** ng- 
+*** Ngef--
+*** nh- 
+*** ni- 
+*** Nik--
+*** nj- 
+*** nk- 
+*** nki--
+*** Nkiras--
+*** Nkiras1--
+*** Nkiras2--
+*** NkirasS--
+*** nl- 
+*** nlk--
+*** Nlrp2--
+*** nm- 
+*** nn- 
+*** no- 
+*** Nod1--
+*** Nod2--
+*** nos--
+*** Nos1--
+*** nos2--
+*** Nos2a--
+*** Nos3--
+*** np- 
+*** nph--
+*** nphp1--
+*** nq- 
+*** nr- 
+*** nr1--
+*** nr1h--
+*** Nr1h2--
+*** Nr1h3--
+*** nr2--
+*** nr3--
+*** Nr3c1- 
+*** Nras--
+*** nrf--
+*** nrf1--
+*** ns- 
+*** nsm--
+*** nsmaf--
+*** nt- 
+*** ntr--
+*** ntrk--
+*** Ntrk1--
+*** nu- 
+*** Nuak1--
+*** nup--
+*** Nup153--
+*** nv- 
+*** nw- 
+*** nx- 
+*** ny- 
+*** nz- 
+*** o--------------------------------------------------------------------o
+*** oa- 
+*** ob- 
+*** oc- 
+*** od- 
+*** oe- 
+*** of- 
+*** og- 
+*** oh- 
+*** oi- 
+*** oj- 
+*** ok- 
+*** ol- 
+*** om- 
+*** on- 
+*** oo- 
+*** op- 
+*** oq- 
+*** opr--
+*** Oprd--
+*** or- 
+*** os- 
+*** os9--
+*** osm--
+*** Osmr--
+*** ot- 
+*** ou- 
+*** ov- 
+*** ow- 
+*** ox- 
+*** oxs--
+*** Oxsr1--
+*** oy- 
+*** oz- 
+*** p--------------------------------------------------------------------p
+*** p2--
+*** p2x--
+*** P2xr--
+*** p2y--
+*** p2ry--
+*** P2ry1--
+*** P38--
+*** P38s--
+*** pa- 
+*** pa--
+*** pab--
+*** Pabpc1--
+*** pag--
+*** Pag1--
+*** Pai1--
+
+rl[562c.Pai1-gene.to.prot]:
+  {CLc     | clc                       }
+  {NUc     | nuc     [Pai1-gene - on]  }
+  =>
+  {CLc     | clc     Pai1              }
+  {NUc     | nuc    [Pai1-gene - on]         } .
+  ----------------------------------------
+  *** needs location evidence
+
+*** pak--
+*** Pak1--
+*** Pak2--
+*** Pak3--
+*** pak6--
+*** pak7--
+*** pam--
+*** Pamci--
+*** pap--
+*** Pappa--
+*** par--
+*** pard--
+*** Pard6a--
+*** parp--
+*** Parp1--
+*** pb- 
+*** pc- 
+*** pd- 
+*** pdc--
+*** Pdcd6ip--
+*** pdgf--
+*** pdgfa--
+*** PdgfR--
+*** pdk--
+*** Pdpk1--
+*** pdz-
+*** pe- 
+*** pea--
+*** Pea15--
+*** Pebp1--
+*** pel--
+*** peli--
+*** Peli1--
+*** Peli2--
+*** Peli3--
+*** pex--
+*** Pex1--
+*** pf- 
+*** pfk--
+*** pfkl--
+*** Pfkfb1--
+*** Pfkfb2--
+*** Pfkfb3--
+*** pg- 
+*** pgd--
+*** pge--
+*** pge2--
+*** pgf--
+*** pgf2--
+*** pgh--
+*** pgi--
+*** pgi2--
+*** pgk--
+*** pgk1--
+*** ph- 
+*** Phb--
+*** phd--
+*** Phd2--
+*** pi- 
+*** Pi3k--
+*** pik3--
+*** Pik3ca--
+*** Pik3cb--
+*** Pik3r1--
+*** Pik3rS--
+*** pin--
+*** Pin1--
+*** pip--
+*** pip5--
+*** pip5k--
+*** Pip5k1c--
+*** Pirh2--
+
+rl[1411c.Pirh2-gene.to.prot]:
+  {AnyLoc | anyloc [Pirh2-gene - on]         }
+  =>
+  {AnyLoc | anyloc [Pirh2-gene - on] Pirh2  } .
+  ----------------------------------------------
+  *** needs location evidence
+
+*** pj- 
+*** pk- 
+*** PKA--
+*** Pkac--
+*** PkacS--
+*** Pkar--
+*** PkarS--
+*** PKC--
+*** Pkca--
+*** Pkcb1--
+*** Pkcb2--
+*** Pkcd--
+*** Pkce--
+*** Pkcg--
+*** Pkcl--
+*** Pkci--
+*** Pkcq--
+*** Pkcz--
+*** pkm--
+*** Pkm2--
+*** pkn--
+*** Pkn1--
+*** Pkn2--
+*** Pkr--
+*** pkn--
+*** Pkn2--
+*** pl- 
+*** pla--
+*** pla2--
+*** Pla2g4a--
+*** Plau--
+*** PlauR--
+*** plc--
+*** plcb--
+*** Plcb1--
+*** plcb2--
+*** plcb3--
+*** Plcd1--
+*** Plce1--
+*** plcg--
+*** Plcg1--
+*** pld--
+*** Pld1--
+*** ple--
+*** plec--
+*** plec1--
+*** pls--
+*** Plscr1--
+*** pm- 
+*** Pml--
+*** pn- 
+*** po- 
+*** Posh--
+*** pp- 
+*** PP2a--
+*** ppa--
+*** ppar--
+*** PpaRa--
+*** PpaRd--
+*** PpaRg--
+*** Ppargc1a--
+*** Ppargc1b--
+*** ppp--
+*** ppp1--
+*** ppp1c--
+*** Ppp1ca--
+*** Ppp1cb--
+*** Ppp1cc--
+*** ppp1r--
+*** Ppp1r12a--
+*** Ppp1r14a--
+*** Ppp1r9b---
+*** ppp2--
+*** ppp2c--
+*** Ppp2ca--
+*** Ppp2cb--
+*** ppp2rS--
+*** Ppp2r1a--
+*** ppp2r2--
+*** Ppp2r2a--
+*** pPP6c--
+*** pq- 
+*** pr- 
+*** pra--
+*** pre--
+*** prex--
+*** pro--
+*** prk--
+*** Prkd1--
+*** prkg--
+*** Prkg1--
+*** prl--
+*** PrlR--
+*** pro--
+*** prs--
+*** prss25--
+*** ps- 
+*** psc--
+*** pscd--
+*** psm--
+*** Psmd4--
+*** pt- 
+*** ptaf--
+*** PtafR--
+*** pte--
+*** pten--
+*** ptg--
+*** ptge--
+*** Ptges3--
+*** ptger2--
+*** ptk--
+*** Ptk6--
+*** ptp--
+*** ptpn--
+*** Ptpn2--
+*** Ptpn6--
+*** Shp2--
+*** ptpr--
+*** ptprf--
+*** pu- 
+*** pv- 
+*** pw- 
+*** px- 
+*** Pxn--
+*** py- 
+*** Pycard--
+*** Pyrin--
+*** pz- 
+*** q--------------------------------------------------------------------q
+*** qa- qb- qc- qd- qe- qf- qg- qh- qi- qj- qk- ql- qm- qn- qo- qp- qq- 
+*** qr- qs- qt- qu- qv- qw- qx- qy- qz- 
+*** r--------------------------------------------------------------------r
+*** ra- 
+*** rack--
+*** Rack1--
+*** rab--
+*** rab3--
+*** Rab3a--
+*** rab4--
+*** Rab4a--
+*** Rab5a--
+*** Rab5b--
+*** Rab5c--
+*** rab7--
+*** Rab7a--
+*** Rab8--
+*** Rab11--
+*** rac--
+*** Rac1--
+*** Rac2--
+*** racgap--
+*** racgap1--
+*** raf--
+*** Raf1--
+*** ral--
+*** Rala--
+*** Ralb--
+*** Ralbp1--
+*** RalGds--
+*** ralgps--
+*** Ralgps1--
+*** ran--
+*** RankR--
+*** rap--
+*** rap1--
+*** Rap1S--
+*** Rap1a--
+*** Rap1b--
+*** Rap1Gds1--
+*** rap2--
+*** Rap2S--
+*** rap2a--
+*** Rap2b--
+*** Rap1Gap--
+*** rapgef--
+*** Rapgef1--
+*** Rapgef2--
+*** Rapgef3--
+*** Rapgef5--
+*** Rapgef6--
+*** raph--
+*** Raph1--
+*** Raptor--
+*** rar--
+*** Rara--
+*** Rarb--
+*** ras--
+*** rasa--
+*** Rasa1--
+*** rasa2--
+*** rasa3--
+*** rasg--
+*** rasgrf--
+*** Rasgrf1--
+*** RasGrf2--
+*** rasgrp--
+*** RasGrp1--
+*** RasGrp3--
+*** Rasgrp4--
+*** rass--
+*** rassf--
+*** Rassf1d--
+*** Rassf1a--
+*** Rassf1c--
+*** Rassf2--
+*** rassf4--
+*** rassf5--
+*** rb- 
+*** Rb1--
+*** Rbl1--
+*** Rbl2--
+*** rc- 
+*** rd- 
+*** re- 
+*** rel--
+*** Rel--
+*** Rela--
+*** Relb--
+*** rf- 
+*** rg- 
+*** rgl--
+*** rgl1--
+*** rgl2--
+*** Rgl3--
+*** rgs--
+*** rgs7--
+*** rh- 
+*** rhe--
+*** rheb--
+*** rho--
+*** Rhoa--
+*** Rhob--
+*** Rhog--
+*** rhop--
+*** Rhoq--
+*** rhot--
+*** rhpn1--
+*** ri- 
+*** ric--
+*** rictor--
+*** Rig1--
+*** ril--
+*** Rilp--
+*** rin--
+*** rin1--
+*** Rin2--
+*** Rin3--
+*** rip--
+*** ripk--
+*** Ripk1--
+*** Ripk2--
+*** rit--
+*** Rit1--
+*** Rit2--
+*** rj- 
+*** rk- 
+*** rki--
+*** rl- 
+*** rm- 
+*** rn- 
+*** ro- 
+*** Rock1--
+*** Rock2--
+*** ros--
+*** rp- 
+*** rpl--
+*** Rpl28--
+*** Rplp0--
+*** Rpl6--
+*** rps--
+*** rps6--
+*** rq- 
+*** rr- 
+*** rrad--
+*** Rras--
+*** rras2--
+*** rs- 
+*** rsk--
+*** Rsk1--
+*** rt- 
+*** Rtkn--
+*** ru- 
+*** rv- 
+*** rw- 
+*** rx- 
+*** Rxr--
+*** ry- 
+*** ryr--
+*** rz- 
+*** s--------------------------------------------------------------------s
+*** S1P--
+*** s6- 
+*** S6k--
+*** S6k1--
+*** S6k2--
+*** sa- 
+*** sap--
+*** sar--
+*** Sara--
+*** Sart3--
+*** sb- 
+*** sc- 
+*** sca--
+*** Scap--
+*** Skap1--
+*** Skap2--
+*** sd- 
+*** sdc--
+*** Sdc4--
+*** Sdcbp--
+*** se- 
+*** sel--
+*** ser--
+*** Serpine--
+*** sf- 
+*** sg- 
+*** Sgk1--
+*** sh- 
+*** sh2--
+*** Sh2b1--
+*** Sh2d3a--
+*** Sh2d3c--
+*** sh3--
+*** Sh3bgrl3--
+*** shc--
+*** Shc1--
+*** sho--
+*** shoc2--
+*** shp--
+*** si- 
+*** siah1--
+*** Siah2--
+*** sir--
+*** Sirt1--
+*** sj- 
+*** sk- 
+*** Skil--
+*** Skp1--
+*** sl- 
+*** slc--
+*** slc12--
+*** Slc12a1--
+*** Slc12a2--
+*** Slc12a3--
+*** Slc25a5--
+*** slc27--
+*** Slc27a1--
+*** Slc27a4--
+*** sm- 
+*** smad--
+*** Smad1--
+*** Smad2--
+*** Smad3--
+*** Smad4--
+*** Smad5--
+*** Smad6--
+
+rl[912c.Smad6-gene.to.prot]:
+  {NUc  | nuc [Smad6-gene - on] }
+  =>
+  {NUc  | nuc [Smad6-gene - on] Smad6 } .
+  ---------------------------------
+  *** location by similarity to Smad7
+
+*** Smad7--
+
+rl[564c.Smad7-gene.to.prot]:
+  {NUc  | nuc  [Smad7-gene - on]        }
+  =>
+  {NUc  | nuc  [Smad7-gene - on] Smad7 } .
+  -----------------------------------------
+  *** ~/evidence/Common-Rule-Evidence/Smad7-gene.to.prot.564c.txt
+
+*** Smad8--
+*** Smad9--
+*** smu--
+*** Smurf1--
+*** Smurf2--
+*** smp--
+*** smpd1--
+*** smu--
+*** smu1--
+*** sn- 
+*** snc--
+*** Snca--
+*** snx--
+*** Snx1--
+*** Snx1a--
+*** Snx2--
+*** Snx3--
+*** Snx4--
+*** Snx6--
+*** so- 
+*** soc--
+*** socs--
+*** Socs1--
+*** Socs3--
+
+rl[1076c.Socs3-gene.to.prot]:
+  {CLc | clc                    }
+  {NUc | nuc [Socs3-gene - on]  }
+  =>
+  {CLc | clc  Socs3             }
+  {NUc | nuc [Socs3-gene - on] } .
+  ----------------------------------
+  *** needs location evidence
+
+*** sor--
+*** sorb--
+*** sorbs--
+*** Sorbs1--
+*** sos--
+*** Sos1--
+*** Sos2--
+*** sp- 
+*** sp1--
+*** sph--
+*** sphk--
+*** Sphk1--
+*** Sphk2--
+*** sq- 
+*** sqs--
+*** Sqstm1--
+*** sr- 
+*** Src--
+*** sre--
+*** srebf--
+*** Srebf1--
+*** Srebf2--
+*** Sri--
+*** Srf--
+*** ss- 
+*** sst--
+*** sstr--
+*** Sstr3--
+*** Ssh--
+*** st- 
+*** sta--
+*** stam--
+*** Stam2--
+*** stat--
+*** Stat1--
+*** Stat2--
+*** Stat3--
+*** stat5--
+*** Stat5a--
+*** Stat5b--
+*** Stat5S--
+*** Stat6--
+*** stau--
+*** Stau1--
+*** Stau2--
+*** stk--
+*** Stk3--
+*** Stk4--
+*** Stk39--
+*** str--
+*** Strap--
+*** su- 
+*** sv- 
+*** sx- 
+*** sy- 
+*** syn--
+*** Syncrip--
+*** Syngap1--
+*** sz-
+*** t--------------------------------------------------------------------t
+*** ta- 
+*** tab--
+*** Tab1--
+*** Tab2--
+*** Tab3--
+*** tan--
+*** Tank--
+*** tak--
+*** Tak1--
+*** tap--
+*** Tap1--
+*** tb- 
+*** Tbc1d4--
+*** tbk--
+*** tbk1--
+*** tbl--
+*** tbl1--
+*** Tbl1x--
+*** tc- 
+*** tcr--
+*** td- 
+*** te- 
+*** Tf- 
+*** tff--
+*** Tff1--
+*** tfr--
+*** Tfrc--
+*** tg- 
+*** tgf--
+*** Tgfa--
+
+rl[1799c.ProTgfa-gene.to.prot]:
+  {CLm | clm                      }
+  {NUc | nuc [ProTgfa-gene - on]  }
+  =>
+  {CLm | clm  ProTgfa             }
+  {NUc | nuc [ProTgfa-gene - on]  } .
+  -----------------------------------
+  *** location from UniProt
+
+*** tgfb--
+*** tgfb1--
+*** tgfb2--
+*** tgfb3--
+*** tgfbr--
+*** Tgfbr1--
+*** Tgfbr2--
+*** TgfbRap1--
+*** th- 
+*** thr--
+*** thrsp--
+*** thy--
+*** ti- 
+*** tia--
+*** tiam--
+*** Tiam1--
+*** ticam--
+*** Trif--
+*** Ticam2--
+*** Tifa--
+*** Tirap--
+*** tj- 
+*** tk- 
+*** tl-
+*** tln--
+*** tlr--
+*** TLR1--
+*** TLR2--
+*** TLR2/6--
+*** TLR3--
+*** TLR4--
+*** tlr6--
+*** TLR7--
+*** TLR9--
+*** tm- 
+*** tn- 
+*** tnf--
+*** Tnf--
+
+rl[867c.ProTnf-gene.to.prot]:
+  {CLm | clm                     }
+  {NUc | nuc [ProTnf-gene - on]  }
+  =>
+  {CLm | clm  ProTnf             }
+  {NUc | nuc [ProTnf-gene - on]  } .
+  --------------------------------
+  *** location from UniProt
+
+*** Tnfaip3--
+
+rl[897c.Tnfaip3-gene.to.prot]:
+  {CLc | clc                     }
+  {NUc | nuc [Tnfaip3-gene - on] }
+  =>
+  {CLc | clc  Tnfaip3            }
+  {NUc | nuc [Tnfaip3-gene - on]       } .
+  -----------------------------------
+  *** location from UniProt
+
+*** tnfr--
+*** TnfR1--
+*** TnfR2--
+*** tnfrsf--
+*** TnfRsf25--
+*** Tnfsf--
+*** Tnk2--
+*** tns--
+*** Tns1--
+*** Tns3--
+*** to- 
+*** tol--
+*** Tollip--
+*** tom--
+*** Tom1l1--
+*** Tom1l2--
+*** tp- 
+*** Tp53--
+
+rl[1414c.Tp53-gene.to.prot]:
+  {NUc | nuc [Tp53-gene - on]       }
+  =>
+  {NUc | nuc [Tp53-gene - on] Tp53  } .
+  ----------------------------------------------
+  *** ~/evidence/Translation-Evidence/Tp53-gene.to.prot.1414c.txt
+
+*** tpi--
+*** Tpi1--
+*** tpl--
+*** Tpl2--
+*** tq- 
+*** tr- 
+*** tra--
+*** Tradd--
+*** traf--
+*** Traf1--
+*** Traf2--
+*** Traf3--
+*** Traf5--
+*** Traf6--
+*** Traf7--
+*** TrailR1--
+*** Trat1--
+*** Trpc4ap--
+*** tri--
+*** Trio--
+*** trip--
+*** Trip6--
+*** Trip10--
+*** trf--
+*** trfr--
+*** ts- 
+*** tsc--
+*** Tsc1--
+*** Tsc2--
+*** tsg--
+*** Tsg101--
+*** tt- 
+*** tu- 
+*** Tuba--
+*** Tubb--
+*** Tubg--
+*** Tubgcp3--
+*** tv- 
+*** tw- 
+*** tx-
+*** txa--
+*** ty- 
+*** tyk--
+*** tyk2--
+*** tz- 
+*** u--------------------------------------------------------------------u
+*** ua- 
+*** ub- 
+*** ube--
+*** Ubc13--
+*** Ube2v2--
+*** Ubiq--
+*** uc- 
+*** ud- ue- uf- ug- uh- ui- uj- uk- ul- um- un- uo- 
+*** up- 
+*** uq- 
+*** ur- 
+*** us- 
+*** Usf1--
+*** usp--
+*** usp6--
+*** Usp6nl--
+*** ut- 
+*** uu- 
+*** uv- 
+*** uw- 
+*** ux- 
+*** uy- 
+*** uz- 
+*** v--------------------------------------------------------------------v
+*** va- 
+*** vas--
+*** Vasp--
+*** vav--
+*** Vav1--
+*** Vav2--
+*** vav3--
+*** vb- 
+*** vc- 
+*** vcl--
+*** vd- 
+*** ve- 
+*** Vegf--
+*** Vegfr--
+*** vf- 
+*** vg- 
+*** vh- 
+*** vi- 
+*** Vim--
+*** vj- vk- vl- vm- Vtn- vo- 
+*** vp- 
+*** Vps34--
+*** Vps39--
+*** vq- 
+*** vr- vs- vt- vu- vv- vw- vx- vy- vz- 
+*** w--------------------------------------------------------------------w
+*** wa- 
+*** war--
+*** Wars--
+*** was--
+*** Wasl--
+*** Wasf--
+*** Wasf1--
+*** Wasf2--
+*** Wasp--
+*** wb- 
+*** wbp--
+*** Wbp2--
+*** wc- 
+*** wd- 
+*** we- 
+*** wf- 
+*** wg- 
+*** wh- 
+*** wi- 
+*** wj- 
+*** wk- 
+*** wl- 
+*** wm- 
+*** wn- 
+*** wnk--
+*** Wnk1--
+*** Wnk4--
+*** wo- 
+*** wp- 
+*** wq- 
+*** wr- 
+*** ws- 
+*** wt- 
+*** wu- 
+*** wv- 
+*** ww- 
+*** wx- 
+*** wy- 
+*** wz- 
+*** x--------------------------------------------------------------------x
+*** xa- 
+*** xb- 
+*** xc- 
+*** xd- 
+*** xe- 
+*** xf- 
+*** xg- 
+*** xh- 
+*** xi- 
+*** xj- 
+*** xk- 
+*** xl- 
+*** xm- 
+*** xn- 
+*** xo- 
+*** xp- 
+*** xq- 
+*** xr- 
+*** xs- 
+*** xt- xu- xv- xw- x- xy- xz- 
+*** y--------------------------------------------------------------------y
+*** ya- 
+*** yb- 
+*** yc- 
+*** yd- 
+*** ye- 
+*** yes--
+*** Yes1--
+*** yf- 
+*** yg- 
+*** yh- yi- yj- yk- yl- ym- yn- yo- yp- yq- 
+*** yr- ys- yt- yu- yv- 
+*** yw- 
+*** ywh--
+*** ywhab--
+*** ywhae--
+*** ywhag--
+*** Ywhah--
+*** Ywhaq--
+*** Ywhaz--
+*** YwhaS--
+*** yx- yy- yz- 
+*** z--------------------------------------------------------------------z
+*** za- 
+*** zap--
+*** zap70--
+*** zb- 
+*** zc- 
+*** zd- 
+*** ze- 
+*** zf- 
+*** Zfand5--
+*** zg- 
+*** zh- 
+*** zi- 
+*** zj- 
+*** zk- 
+*** zl- 
+*** zm- 
+*** zn- 
+*** Znf364--
+*** zo- 
+*** zp- 
+*** zq- 
+*** zr- zs- zt- zu- zv- zw- zx- 
+*** zy- 
+*** zz- 
+
+endm

@@ -1,0 +1,331 @@
+*********1*********2*********3*********4*********5*********6*********7****
+***
+***  PdgfRules.maude
+***
+**************************************************************************
+mod PDGFRULES is inc ALLOPS .
+
+var xout : Soup .
+vars clo clm clr cli clc nuo num nui nuc : Soup .
+vars moo mom moi moc mio mim mii mic : Soup .
+vars ero erm eri erc pxo pxm pxi pxc : Soup .
+vars gao gam gai gac lyo lym lyi lyc : Soup .
+vars eeo eem eei eec leo lem lei lec : Soup .
+vars cpo cpm cpi cpc ct ptc sig : Soup .
+var pdgfrc : Soup .
+var erksmods : ModSet .
+
+  *** ~/evidence/Pdgf-Evidence/00PdgfR-evidence.txt
+
+rl[1077.PdgfR.irt.Pdgf]:
+  {XOut   | xout   Pdgf                     }
+  {PdgfRC | pdgfrc PdgfR                    }
+  =>
+  {XOut   | xout                            }
+  {PdgfRC | pdgfrc ([PdgfR - Yphos] : Pdgf) } .
+  --------------------------------------------
+  *** ~/evidence/Pdgf-Evidence/PdgfR.irt.Pdgf.1077.txt
+
+*** Akt1--
+
+rl[1078.Akt1.irt.Pdgf]:
+  {PdgfRC | pdgfrc ([PdgfR - Yphos] : Pdgf)     }
+  {CLc    | clc     Sin1 Rictor  Akt1           }
+  =>
+  {PdgfRC | pdgfrc ([PdgfR - Yphos] : Pdgf)     }
+  {CLc    | clc     Sin1 Rictor [Akt1 - act]    } .
+  -------------------------------------------------
+  *** ~/evidence/Pdgf-Evidence/Akt1.irt.Pdgf.1078.txt
+
+*** Braf--
+
+rl[1080.Braf.irt.Pdgf]:
+  {PdgfRC | pdgfrc ([PdgfR - Yphos] : Pdgf)   }
+  {CLc    | clc     IqGap1 Pin1  Braf         }
+  =>
+  {PdgfRC | pdgfrc ([PdgfR - Yphos] : Pdgf)   }
+  {CLc    | clc     IqGap1 Pin1 [Braf - act]  } .
+  ---------------------------------------------
+  *** ~/evidence/Pdgf-Evidence/Braf.irt.Pdgf.1080.txt
+
+*** Eps8--
+
+rl[1086.Eps8.irt.Pdgf]:
+  {PdgfRC | pdgfrc ([PdgfR - Yphos] : Pdgf) }
+  {CLc    | clc     Eps8                    }
+  =>
+  {PdgfRC | pdgfrc ([PdgfR - Yphos] : Pdgf) }
+  {CLc    | clc    [Eps8 - Yphos]           } .
+  ---------------------------------------------
+  *** ~/evidence/Pdgf-Evidence/Eps8.irt.Pdgf.1086.txt
+
+*** Erks--
+
+rl[1087.Erks.irt.Pdgf]:
+  {PdgfRC | pdgfrc ([PdgfR - Yphos] : Pdgf)                 }
+  {CLi    | cli    [crs:Cdc42Rac1S - GTP]                   }
+  {CLc    | clc    [Gab1 - Yphos] Mlk3 pak12s:Pak12S Shp2
+                   [Erks - erksmods]                        }
+  =>
+  {PdgfRC | pdgfrc ([PdgfR - Yphos] : Pdgf)                 }
+  {CLi    | cli    [crs:Cdc42Rac1S - GTP]                   }
+  {CLc    | clc    [Gab1 - Yphos] Mlk3 pak12s:Pak12S Shp2 
+                   [Erks - erksmods act phos(TEY)]          } .
+  -------------------------------------------------------------
+  *** ~/evidence/Pdgf-Evidence/Erks.irt.Pdgf.1087.txt
+
+*** Fer--
+
+rl[1088.Fer.irt.Pdgf]:
+  {PdgfRC | pdgfrc ([PdgfR - Yphos] : Pdgf) }
+  {CLc    | clc     Fer                     }
+  =>
+  {PdgfRC | pdgfrc ([PdgfR - Yphos] : Pdgf) }
+  {CLc    | clc    [Fer - Yphos]            } .
+  ---------------------------------------------
+  *** ~/evidence/Pdgf-Evidence/Fer.irt.Pdgf.1088.txt
+
+*** Fos--
+
+rl[1089.Fos.irt.Pdgf]:
+  {PdgfRC | pdgfrc ([PdgfR - Yphos] : Pdgf) }
+  {NUc    | nuc     Fos                     }
+  =>
+  {PdgfRC | pdgfrc ([PdgfR - Yphos] : Pdgf) }
+  {NUc    | nuc    [Fos - act]              } .
+  ---------------------------------------------
+  *** ~/evidence/Pdgf-Evidence/Fos.irt.Pdgf.1089.txt
+
+*** Fos-gene--
+
+rl[1093.Fos-gene.irt.Pdgf]:
+  {PdgfRC | pdgfrc ([PdgfR - Yphos] : Pdgf) }
+  {NUc    | nuc     Fos-gene                }
+  =>
+  {PdgfRC | pdgfrc ([PdgfR - Yphos] : Pdgf) }
+  {NUc    | nuc    [Fos-gene - on]          } .
+  ---------------------------------------------
+  *** ~/evidence/Pdgf-Evidence/Fos-gene.irt.Pdgf.1093.txt
+
+*** Gab1--
+
+rl[1095.Gab1.irt.Pdgf]:
+  {PdgfRC | pdgfrc ([PdgfR - Yphos] : Pdgf) }
+  {CLc    | clc     Gab1                    }
+  =>
+  {PdgfRC | pdgfrc ([PdgfR - Yphos] : Pdgf) }
+  {CLc    | clc    [Gab1 - Yphos]           } .
+  ---------------------------------------------
+  *** ~/evidence/Pdgf-Evidence/Gab1.irt.Pdgf.1095.txt
+
+*** Grb2--
+
+rl[1745.Grb2.to.PdgfRb.irt.Pdgf]:
+  {PdgfRC | pdgfrc ([PdgfR - Yphos] : Pdgf)      }
+  {CLc    | clc     Grb2                         }
+  =>
+  {PdgfRC | pdgfrc ([PdgfR - Yphos] : Pdgf) Grb2 }
+  {CLc    | clc                                  } .
+  -------------------------------------------------
+  *** ~/evidence/Pdgf-Evidence/Grb2.to.PdgfRb.irt.Pdgf.1745.txt
+
+*** Gsk3s--
+
+rl[011.Gsk3s.irt.Pdgf]:
+  {PdgfRC | pdgfrc ([PdgfR - Yphos] : Pdgf) }
+  {CLc    | clc    [Gsk3s - act]            }
+  =>
+  {PdgfRC | pdgfrc ([PdgfR - Yphos] : Pdgf) }
+  {CLc    | clc   [Gsk3s - phos(SFAE)]      } .
+  -----------------------------------------------
+  *** ~/evidence/Pdgf-Evidence/Gsk3s.irt.Pdgf.011.txt
+
+*** Hras--
+
+rl[1098.Hras.irt.Pdgf]:
+  {PdgfRC | pdgfrc ([PdgfR - Yphos] : Pdgf) }
+  {CLi    | cli    [Hras - GDP]             }
+  =>
+  {PdgfRC | pdgfrc ([PdgfR - Yphos] : Pdgf) }
+  {CLi    | cli    [Hras - GTP]             } .
+  ---------------------------------------------
+  *** ~/evidence/Pdgf-Evidence/Hras.irt.Pdgf.1098.txt
+
+*** Mek12s--
+
+rl[1743.Mek12s.irt.Pdgf]:
+  {PdgfRC | pdgfrc ([PdgfR - Yphos] : Pdgf)        }
+  {CLc    | clc     Pin1 pak12s:Pak12S 
+                    mek12s:Mek12S                  }
+  =>
+  {PdgfRC | pdgfrc ([PdgfR - Yphos] : Pdgf)        }
+  {CLc    | clc     Pin1 pak12s:Pak12S
+                   [mek12s:Mek12S - phos(SMANS)]   } .
+  ----------------------------------------------------
+  *** ~/evidence/Pdgf-Evidence/Mek12s.irt.Pdgf.1743.txt
+
+*** Lkb1--
+
+rl[1099.Lkb1.irt.Pdgf]:
+  {PdgfRC | pdgfrc ([PdgfR - Yphos] : Pdgf) }
+  {CLc    | clc     Lkb1                    }
+  =>
+  {PdgfRC | pdgfrc ([PdgfR - Yphos] : Pdgf) }
+  {CLc    | clc    [Lkb1 - phos]            } .
+  ---------------------------------------------
+  *** ~/evidence/Pdgf-Evidence/Lkb1.irt.Pdgf.1099.txt
+
+*** P38s--
+
+rl[1744.P38s.irt.Pdgf]:
+  {PdgfRC | pdgfrc ([PdgfR - Yphos] : Pdgf)   }
+  {CLc    | clc     P38s                      }
+  =>
+  {PdgfRC | pdgfrc ([PdgfR - Yphos] : Pdgf)   }
+  {CLc    | clc   [P38s - act]                } .
+  ------------------------------------------------------------------------
+  *** ~/evidence/Egf-Evidence/P38s.irt.Pdgf.1744.txt
+
+*** ProAreg-gene--
+
+rl[1746.ProAreg-gene.irt.Pdgf]:
+  {PdgfRC | pdgfrc ([PdgfR - Yphos] : Pdgf)   }
+  {NUc    | nuc     ProAreg-gene              }
+  =>
+  {PdgfRC | pdgfrc ([PdgfR - Yphos] : Pdgf)   }
+  {NUc    | nuc    [ProAreg-gene - on]        } .
+  ------------------------------------------------------------------------
+  *** ~/evidence/Egf-Evidence/ProAreg-gene.irt.Pdgf.1746.txt
+
+*** ProEreg-gene--
+
+rl[1747.ProEreg-gene.irt.Pdgf]:
+  {PdgfRC | pdgfrc ([PdgfR - Yphos] : Pdgf)   }
+  {NUc    | nuc     ProEreg-gene              }
+  =>
+  {PdgfRC | pdgfrc ([PdgfR - Yphos] : Pdgf)   }
+  {NUc    | nuc    [ProEreg-gene - on]        } .
+  ------------------------------------------------------------------------
+  *** ~/evidence/Egf-Evidence/ProAreg-gene.irt.Pdgf.1747.txt
+
+*** ProHbegf-gene--
+
+rl[1748.ProHbegf-gene.irt.Pdgf]:
+  {PdgfRC | pdgfrc ([PdgfR - Yphos] : Pdgf)   }
+  {NUc    | nuc     ProHbegf-gene             }
+  =>
+  {PdgfRC | pdgfrc ([PdgfR - Yphos] : Pdgf)   }
+  {NUc    | nuc    [ProHbegf-gene - on]       } .
+  ------------------------------------------------------------------------
+  *** ~/evidence/Egf-Evidence/ProHbegf-gene.irt.Pdgf.1748.txt
+
+*** Raf1--
+
+rl[409.Raf1.irt.Pdgf]:
+  {PdgfRC | pdgfrc ([PdgfR - Yphos] : Pdgf) }
+  {CLc    | clc     Raf1                    }
+  =>
+  {PdgfRC | pdgfrc ([PdgfR - Yphos] : Pdgf) }
+  {CLc    | clc    [Raf1 - act]             } .
+  -----------------------------------------------
+  *** ~/evidence/Pdgf-Evidence/Raf1.irt.Pdgf.409.txt
+
+*** Rac1--
+
+rl[1749.Rac1.irt.Pdgf]:
+  {PdgfRC | pdgfrc ([PdgfR - Yphos] : Pdgf) }
+  {CLi    | cli    [Rac1 - GDP]            }
+  {CLc    | clc    [Eps8 - Yphos]          }
+  =>
+  {PdgfRC | pdgfrc ([PdgfR - Yphos] : Pdgf) }
+  {CLi    | cli    [Rac1 - GTP]            }
+  {CLc    | clc    [Eps8 - Yphos]          } .
+  -----------------------------------------------
+  *** ~/evidence/Pdgf-Evidence/Rac1.irt.Pdgf.1749.txt
+
+*** Rps6--
+
+rl[008.Rps6.irt.Pdgf]:
+  {PdgfRC | pdgfrc ([PdgfR - Yphos] : Pdgf)       }
+  {CLc    | clc   Rps6                            }
+  =>
+  {PdgfRC | pdgfrc ([PdgfR - Yphos] : Pdgf)       }
+  {CLc    | clc   [Rps6 - phos(S 235)phos(S 236)] } .
+  ------------------------------------------------------------------------
+  *** ~/evidence/Egf-Evidence/Rps6.irt.Pdgf.008.txt
+
+*** Rsks--
+
+rl[1750.Rsks.irt.Pdgf]:
+  {PdgfRC | pdgfrc ([PdgfR - Yphos] : Pdgf) }
+  {CLc    | clc     rsks:RskS               }
+  =>
+  {PdgfRC | pdgfrc ([PdgfR - Yphos] : Pdgf) }
+  {CLc    | clc    [rsks:RskS - act]        } .
+  -----------------------------------------------
+  *** ~/evidence/Pdgf-Evidence/Rsks.irt.Pdgf.1750.txt
+
+*** S6k1--
+
+rl[1751.S6k1.irt.Pdgf]:
+  {PdgfRC | pdgfrc ([PdgfR - Yphos] : Pdgf) }
+  {CLc    | clc     S6k1                    }
+  =>
+  {PdgfRC | pdgfrc ([PdgfR - Yphos] : Pdgf) }
+  {CLc    | clc    [S6k1 - act]             } .
+  -----------------------------------------------
+  *** ~/evidence/Pdgf-Evidence/S6k1.irt.Pdgf.1751.txt
+
+*** Stat3--
+
+rl[1752.Stat3.irt.Pdgf]:
+  {PdgfRC | pdgfrc ([PdgfR - Yphos] : Pdgf)          }
+  {CLc    | clc     Stat3                            }
+  =>
+  {PdgfRC | pdgfrc ([PdgfR - Yphos] : Pdgf)          }
+  {CLc    | clc     [Stat3 - phos(Y 706)phos(S 727)] } .
+  ------------------------------------------------------
+  *** ~/evidence/Pdgf-Evidence/Stat3.irt.Pdgf.1752.txt
+
+*** Vav2--
+
+rl[1753.Vav2.irt.Pdgf]:
+  {PdgfRC | pdgfrc ([PdgfR - Yphos] : Pdgf)    }
+  {CLc    | clc     Vav2                       }
+  =>
+  {PdgfRC | pdgfrc ([PdgfR - Yphos] : Pdgf)    }
+  {CLc    | clc     [Vav2 - Yphos]             } .
+  ------------------------------------------------
+  *** ~/evidence/Pdgf-Evidence/Vav2.irt.Pdgf.1753.txt
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+endm

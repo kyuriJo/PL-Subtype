@@ -1,0 +1,183 @@
+mod IFNGRULES is inc ALLOPS .
+
+var xout : Soup .
+vars clo clm clr cli clc nuo num nui nuc : Soup .
+var tak1c ifngc : Soup .
+
+*** ~/evidence/Ifng-Evidence/00Ifng-Evidence.txt
+
+rl[1562.IfngR1.IfngR2.irt.Ifng]:
+  {XOut   | xout  Ifng                                     }
+  {IfngRC | ifngc (IfngR1 : Jak1 : IfngR2 : Jak2)          }
+  {CLm    | clm                                            }
+  =>
+  {XOut   | xout                                           }
+  {IfngRC | ifngc (Ifng : IfngR1 : Jak1 : IfngR2 : Jak2)   }
+  {CLm    | clm                                            } .
+  ------------------------------------------------------------
+  *** ~/evidence/Ifng-Evidence/IfngR1.IfngR2.irt.Ifng.1562.txt
+
+*** CxcL9--
+
+rl[1812.CxcL9-gene.irt.Ifng]:
+  {IfngRC | ifngc (Ifng : IfngR1 : [Jak1 - Yphos act] : 
+                          IfngR2 : [Jak2 - Yphos act])         } 
+  {NUc    | nuc   [Irf1 - act] [Stat1 - act phos(Y 701)] 
+                   CxcL9-gene                                  }
+  =>
+  {IfngRC | ifngc (Ifng : IfngR1 : [Jak1 - Yphos act] : 
+                          IfngR2 : [Jak2 - Yphos act])         } 
+  {NUc    | nuc   [Irf1 - act] [Stat1 - act phos(Y 701)] 
+                  [CxcL9-gene - on]                            } .
+  ----------------------------------------------------------------
+  *** ~/evidence/Ifng-Evidence/CxcL9-gene.irt.Ifng.1812.txt
+
+*** CxcL10--
+
+rl[1813.CxcL10-gene.irt.Ifng]:
+  {IfngRC | ifngc (Ifng : IfngR1 : [Jak1 - Yphos act] : 
+                          IfngR2 : [Jak2 - Yphos act])    } 
+  {NUc    | nuc   [Irf1 - act] [Stat1 - act phos(Y 701)] 
+                   CxcL10-gene                            }
+  =>
+  {IfngRC | ifngc (Ifng : IfngR1 : [Jak1 - Yphos act] : 
+                          IfngR2 : [Jak2 - Yphos act])    } 
+  {NUc    | nuc   [Irf1 - act] [Stat1 - act phos(Y 701)] 
+                  [CxcL10-gene - on]                      } .
+  -----------------------------------------------------------
+  *** ~/evidence/Ifng-Evidence/CxcL10-gene.irt.Ifng.1813.txt
+
+*** Gbp1--
+
+rl[1814.Gbp1-gene.irt.Ifng]:
+  {IfngRC | ifngc (Ifng : IfngR1 : [Jak1 - Yphos act] : 
+                          IfngR2 : [Jak2 - Yphos act])                     } 
+  {CLc    | clc    Pkr                                                     }
+  {NUc    | nuc    [Irf1 - act] [Stat1 - act phos(Y 701)] Gbp1-gene        }
+  =>
+  {IfngRC | ifngc (Ifng : IfngR1 : [Jak1 - Yphos act] : 
+                          IfngR2 : [Jak2 - Yphos act])                     } 
+  {CLc    | clc    Pkr                                                     }
+  {NUc    | nuc    [Irf1 - act] [Stat1 - act phos(Y 701)] [Gbp1-gene - on] } .
+  --------------------------------------------------------------------
+  *** ~/evidence/Ifng-Evidence/Gbp1-gene.irt.Ifng.1814.txt
+
+*** Gbp2--
+
+rl[1815.Gbp2-gene.irt.Ifng]:
+  {IfngRC | ifngc (Ifng : IfngR1 : [Jak1 - Yphos act] : 
+                          IfngR2 : [Jak2 - Yphos act])                     } 
+  {NUc    | nuc    [Irf1 - act] [Stat1 - act phos(Y 701)] Gbp2-gene        }
+  =>
+  {IfngRC | ifngc (Ifng : IfngR1 : [Jak1 - Yphos act] : 
+                          IfngR2 : [Jak2 - Yphos act])                     } 
+  {NUc    | nuc    [Irf1 - act] [Stat1 - act phos(Y 701)] [Gbp2-gene - on] } .
+  ----------------------------------------------------------------------------
+  *** ~/evidence/Ifng-Evidence/Gbp2-gene.irt.Ifng.1815.txt
+
+*** Irf1--
+
+rl[1825.Irf1.irt.Ifng]:
+  {IfngRC | ifngc (Ifng : IfngR1 : [Jak1 - Yphos act] : 
+                          IfngR2 : [Jak2 - Yphos act])       } 
+  {CLc    | clc    Pkr                                       }
+  {NUc    | nuc   Irf1                                       }
+  =>
+  {IfngRC | ifngc (Ifng : IfngR1 : [Jak1 - Yphos act] : 
+                          IfngR2 : [Jak2 - Yphos act])       } 
+  {CLc    | clc    Pkr                                       }
+  {NUc    | nuc   [Irf1 - act]                               } .
+  ---------------------------------------------------------------
+  *** ~/evidence/Ifng-Evidence/Irf1.irt.Ifng.1825.txt
+
+rl[1816.Irf1-gene.irt.Ifng]:
+  {IfngRC | ifngc (Ifng : IfngR1 : [Jak1 - Yphos act] : 
+                          IfngR2 : [Jak2 - Yphos act])       } 
+  {CLc    | clc    Pkr                                       }
+  {NUc    | nuc   [Stat1 - act phos(Y 701)]  Irf1-gene                              }
+  =>
+  {IfngRC | ifngc (Ifng : IfngR1 : [Jak1 - Yphos act] : 
+                          IfngR2 : [Jak2 - Yphos act])       } 
+  {CLc    | clc    Pkr                                       }
+  {NUc    | nuc   [Stat1 - act phos(Y 701)] [Irf1-gene - on] } .
+  ---------------------------------------------------------------
+  *** ~/evidence/Ifng-Evidence/Irf1-gene.irt.Ifng.1816.txt
+
+*** Jak1--
+
+rl[1820.Jak1.irt.Ifng]:
+  {IfngRC | ifngc (Ifng : IfngR1 : Jak1 : IfngR2 : Jak2)                }
+  =>
+  {IfngRC | ifngc (Ifng : IfngR1 : [Jak1 - Yphos act] : IfngR2 : Jak2)  } .
+  -------------------------------------------------------------------------
+  *** ~/evidence/Ifng-Evidence/Jak1.irt.Ifng.1820.txt
+
+*** Jak2--
+
+rl[1821.Jak2.irt.Ifng]:
+  {IfngRC | ifngc (Ifng : IfngR1 : [Jak1 - Yphos act] : IfngR2 : Jak2)  }
+  =>
+  {IfngRC | ifngc (Ifng : IfngR1 : [Jak1 - Yphos act] : 
+                          IfngR2 : [Jak2 - Yphos act])                  } .
+  -------------------------------------------------------------------------
+  *** ~/evidence/Ifng-Evidence/Jak2.irt.Ifng.1821.txt
+
+*** Stat1--
+
+rl[1822.Stat1.phos.irt.Ifng]:
+  {IfngRC | ifngc (Ifng : IfngR1 : [Jak1 - Yphos act] : 
+                          IfngR2 : [Jak2 - Yphos act])    } 
+  {CLc    | clc    Stat1                                  }
+  =>
+  {IfngRC | ifngc (Ifng : IfngR1 : [Jak1 - Yphos act] : 
+                          IfngR2 : [Jak2 - Yphos act])    } 
+  {CLc    | clc    [Stat1 - phos(Y 701)]                  } .
+  --------------------------------------------------------------------
+  *** ~/evidence/Ifng-Evidence/Stat1.phos.irt.Ifng.1822.txt
+
+rl[1823.Stat1.to.nuc.irt.Ifng]:
+  {IfngRC | ifngc (Ifng : IfngR1 : [Jak1 - Yphos act] : 
+                          IfngR2 : [Jak2 - Yphos act])    } 
+  {CLc    | clc    [Stat1 - phos(Y 701)]                  }
+  {NUc    | nuc                                           }
+  =>
+  {IfngRC | ifngc (Ifng : IfngR1 : [Jak1 - Yphos act] : 
+                          IfngR2 : [Jak2 - Yphos act])    } 
+  {CLc    | clc                                           }
+  {NUc    | nuc    [Stat1 - phos(Y 701)]                  } .
+  --------------------------------------------------------------------
+  *** ~/evidence/Ifng-Evidence/Stat1.to.nuc.irt.Ifng.1823.txt
+
+rl[1824.Stat1.act.irt.Ifng]:
+  {IfngRC | ifngc (Ifng : IfngR1 : [Jak1 - Yphos act] : 
+                          IfngR2 : [Jak2 - Yphos act])    } 
+  {NUc    | nuc    [Stat1 - phos(Y 701)]                  }
+  =>
+  {IfngRC | ifngc (Ifng : IfngR1 : [Jak1 - Yphos act] : 
+                          IfngR2 : [Jak2 - Yphos act])    } 
+  {NUc    | nuc    [Stat1 - act phos(Y 701)]              } .
+  --------------------------------------------------------------------
+  *** ~/evidence/Ifng-Evidence/Stat1.act.irt.Ifng.1824.txt
+
+*** Stat3--
+
+rl[1826.Stat3.phos.irt.Ifng]:
+  {IfngRC | ifngc (Ifng : IfngR1 : [Jak1 - Yphos act] : 
+                          IfngR2 : [Jak2 - Yphos act])    } 
+  {CLc    | clc     Stat3                                 }
+  =>
+  {IfngRC | ifngc (Ifng : IfngR1 : [Jak1 - Yphos act] : 
+                          IfngR2 : [Jak2 - Yphos act])    } 
+  {CLc    | clc    [Stat3 - phos(Y 701)]                  } .
+  --------------------------------------------------------------------
+  *** ~/evidence/Ifng-Evidence/Stat3.phos.irt.Ifng.1826.txt
+
+
+
+
+
+
+
+
+
+endm

@@ -1,0 +1,10 @@
+{"stype" : "jnet",
+	 "name" : "EtoposideDish",
+	 "type" : "pnet",
+	 "kbname" : "RKB",
+	 "parent" : "RKB",
+	 "rids" : ["059.Atm.phos.irt.Etoposide", "1772.H2ax.irt.Etoposide", "1776.Tp53.irt.Etoposide", "067.Atm.to.cyto.irt.Etoposide", "704c.Ikba.Rela.complex", "1771.Chek1.irt.Etoposide", "169c.Ikk1.Ikk2.Nemo.complex", "071.Nemo.sumo.irt.Etoposide", "062.Ikba.irt.Etoposide", "079.Ikks.irt.Etoposide", "1777.Erc1.irt.Etoposide", "1775.Tak1.act.irt.Etoposide", "1773.Nfkb.RE.irt.Etoposide", "070.Nemo.phos.irt.Etoposide", "074.Nemo.ubiq.irt.Etoposide", "1774.Rela.to.nuc.irt.Etoposide", "078.Nemo.to.cyto.irt.Etoposide"],
+	 "init" : ["Etoposide@XOut", "Atm@NUc", "Atrip@NUc", "Xiap@CLc", "Chek1@NUc", "Erc1@CLc", "H2ax@CHR", "Ikba@CLc", "Ikk1@CLc", "Ikk2@CLc", "Nemo@CLc", "Rela@CLc", "Tab2@CLc", "Tab3@CLc", "Tak1@CLc", "Tp53@NUc", "Traf2@CLc", "Traf5@CLc", "Ubc13@CLc"],
+	 "op" : "dishnet",
+	 "args" : "EtoposideDish"
+} 

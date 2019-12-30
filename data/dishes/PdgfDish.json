@@ -1,0 +1,10 @@
+{"stype" : "jnet",
+	 "name" : "PdgfDish",
+	 "type" : "pnet",
+	 "kbname" : "RKB",
+	 "parent" : "RKB",
+	 "rids" : ["1077.PdgfR.irt.Pdgf", "1746.ProAreg-gene.irt.Pdgf", "1747.ProEreg-gene.irt.Pdgf", "1748.ProHbegf-gene.irt.Pdgf", "409.Raf1.irt.Pdgf", "008.Rps6.irt.Pdgf", "1751.S6k1.irt.Pdgf", "1752.Stat3.irt.Pdgf", "1753.Vav2.irt.Pdgf", "1750.Rsks.irt.Pdgf", "1750.Rsks.irt.Pdgf#1", "1750.Rsks.irt.Pdgf#2", "011.Gsk3s.irt.Pdgf", "1098.Hras.irt.Pdgf", "1078.Akt1.irt.Pdgf", "1080.Braf.irt.Pdgf", "1743.Mek12s.irt.Pdgf", "1743.Mek12s.irt.Pdgf#1", "1743.Mek12s.irt.Pdgf#2", "1743.Mek12s.irt.Pdgf#3", "1737c.Mek1.act", "1086.Eps8.irt.Pdgf", "1088.Fer.irt.Pdgf", "1093.Fos-gene.irt.Pdgf", "1089.Fos.irt.Pdgf", "1095.Gab1.irt.Pdgf", "1745.Grb2.to.PdgfRb.irt.Pdgf", "1099.Lkb1.irt.Pdgf", "436c.Lkb1.by.Rsk1", "445c.Lkb1.by.S6k1", "431c.Mek1.by.Braf", "876c.Mek1.by.Raf1", "213c.Mlk3.by.Akt1", "1744.P38s.irt.Pdgf", "287c.Raf1.by.Hras", "1648c.Rps6.by.Rsk1", "1649c.Rps6.by.Rsk2", "1650c.Rps6.by.S6k1", "122c.Gsk3s.by.Akt", "014c.ErkS.by.Mek1", "1749.Rac1.irt.Pdgf", "1087.Erks.irt.Pdgf#4", "1087.Erks.irt.Pdgf#5", "622c.Lkb1.by.Erks#3"],
+	 "init" : ["Fos-gene@NUc", "ProAreg-gene@NUc", "ProEreg-gene@NUc", "ProHbegf-gene@NUc", "Akt1@CLc", "Braf@CLc", "Eps8@CLc", "Erks@CLc", "Fer@CLc", "Fos@NUc", "Gab1@CLc", "Grb2@CLc", "IqGap1@CLc", "Lkb1@CLc", "Mlk3@CLc", "Mek1@CLc", "Mek2@CLc", "P38s@CLc", "Pak1@CLc", "Pak2@CLc", "Pdgf@XOut", "PdgfR@PdgfRC", "Pin1@CLc", "Raf1@CLc", "Rictor@CLc", "Rps6@CLc", "Rsk1@CLc", "Rsk2@CLc", "Rsk3@CLc", "S6k1@CLc", "Shp2@CLc", "Sin1@CLc", "Stat3@CLc", "Vav2@CLc", "Gsk3s-act@CLc", "Hras-GDP@CLi", "Rac1-GDP@CLi"],
+	 "op" : "dishnet",
+	 "args" : "PdgfDish"
+} 

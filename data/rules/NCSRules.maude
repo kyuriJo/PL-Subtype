@@ -1,0 +1,114 @@
+mod NCSRULES is inc ALLOPS .
+
+var xout clc nuc chr : Soup .
+
+*** ~/evidence/Drug-Evidence/00NCS-evidence.txt
+
+*** Atm--
+
+rl[198.Atm.irt.NCS]:
+  {XOut | xout  NCS                  }
+  {NUc  | nuc   Atm                  }
+  =>
+  {XOut | xout  NCS                  }
+  {NUc  | nuc  [Atm -  phos(S 1981)] } .
+  --------------------------------------
+  *** ~/evidence/Drug-Evidence/Atm.irt.NCS.198.txt
+
+*** Chek1--
+
+rl[293.Chek1.irt.NCS]:
+  {XOut | xout  NCS                             }
+  {NUc  | nuc   Atr Chek1                       }
+  =>
+  {XOut | xout  NCS                             }
+  {NUc  | nuc   Atr [Chek1 - phos(S 317)]       } .
+  ------------------------------------------------------------------------
+  *** ~/evidence/Drug-Evidence/Chek1.irt.NCS.293.txt
+
+*** Chek2--
+
+rl[294.Chek2.irt.NCS]:
+  {XOut | xout  NCS                                 }
+  {NUc  | nuc   Atm Mre11 Nbs1 Chek2                }
+  =>
+  {XOut | xout  NCS                                 }
+  {NUc  | nuc   Atm Mre11 Nbs1 [Chek2 - phos(T 68)] } .
+  -----------------------------------------------------------------------------
+  *** ~/evidence/Drug-Evidence/Chek2.irt.NCS.294.txt
+
+*** H2ax--
+
+rl[1782.H2ax.irt.NCS]:
+  {XOut | xout  NCS                 }
+  {CHR  | chr   H2ax                }
+  => 
+  {XOut | xout  NCS                 }
+  {CHR  | chr  [H2ax - phos(S 140)] } .
+  -----------------------------------------------------------------------------
+  *** ~/evidence/Drug-Evidence/H2ax.irt.NCS.1782.txt
+
+*** Mdm4--
+
+rl[202.Mdm4.phos.irt.NCS]:
+  {XOut | xout  NCS                      }
+  {NUc  | nuc   Atm Mdm4                 }
+  =>
+  {XOut | xout  NCS                      }
+  {NUc  | nuc   Atm [Mdm4 - phos(S 403)] } .
+  --------------------------------------------------
+  *** ~/evidence/Drug-Evidence/Mdm4.phos.irt.NCS.202.txt
+
+rl[208.Mdm4.ubiq.irt.NCS]:
+  {XOut | xout  NCS                    }
+  {NUc  | nuc   [Mdm4 - phos(S 403)]   }
+  =>
+  {XOut | xout  NCS                    }
+  {NUc  | nuc   [Mdm4 - ubiq]          } .
+  --------------------------------------------------
+  *** ~/evidence/Drug-Evidence/Mdm4.ubiq.irt.NCS.208.txt
+
+rl[211.Mdm4.degraded.irt.NCS]:
+  {XOut | xout  NCS                    }
+  {NUc  | nuc   [Mdm4 - ubiq]          }
+  =>
+  {XOut | xout  NCS                    }
+  {NUc  | nuc   [Mdm4 - degraded]      } .
+  --------------------------------------------------
+  *** ~/evidence/Drug-Evidence/Mdm4.degraded.irt.NCS.211.txt
+
+*** Smc1a--
+
+rl[1783.Smc1a.irt.NCS]:
+  {XOut | xout  NCS                       }
+  {NUc  | nuc   Smc1a                     }
+  =>
+  {XOut | xout  NCS                       }
+  {NUc  | nuc  [Smc1a - phos(S 957)]      } .
+  -------------------------------------------------------------------------
+  *** ~/evidence/Drug-Evidence/Smc1a.irt.NCS.1783.txt
+
+*** Trim28--
+
+rl[1784.Trim28.irt.NCS]:
+  {XOut | xout  NCS                   }
+  {NUc  | nuc   Trim28                }
+  =>
+  {XOut | xout  NCS                   }
+  {NUc  | nuc  [Trim28 - phos(S 824)] } .
+  ----------------------------------------------------
+  *** ~/evidence/Drug-Evidence/Trim28.irt.NCS.1784.txt
+
+*** Tp53--
+
+rl[212.Tp53.irt.NCS]:
+  {XOut | xout  NCS                     }
+  {NUc  | nuc   Atm  Tp53               }
+  =>
+  {XOut | xout  NCS                     }
+  {NUc  | nuc   Atm [Tp53 - phos(S 15)] } .
+  -------------------------------------------------
+  *** ~/evidence/Drug-Evidence/Tp53.irt.NCS.212.txt
+
+
+endm

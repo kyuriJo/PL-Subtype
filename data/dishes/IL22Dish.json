@@ -1,0 +1,10 @@
+{"stype" : "jnet",
+	 "name" : "IL22Dish",
+	 "type" : "pnet",
+	 "kbname" : "RKB",
+	 "parent" : "RKB",
+	 "rids" : ["778.IL22Ra1.IL10Rb.irt.IL22", "1365.Defb103a-gene.irt.IL22", "1003.Defb4a-gene.irt.IL22", "1474.Psoriasin-gene.irt.IL22", "1804.S100a8-gene.irt.IL22", "1805.S100a9-gene.irt.IL22", "1806.Saa1-gene.irt.IL22", "1807.Serpina3-gene.irt.IL22", "1808.Stat3.irt.IL22", "1809.Stat5s.irt.IL22", "1809.Stat5s.irt.IL22#1", "1368.Erks.irt.IL22#1", "1379.Jnks.irt.IL22#1", "1473.P38s.irt.IL22#1", "415c.Erks.act", "464c.Jnks.act", "466c.P38s.act", "1379.Jnks.irt.IL22", "1473.P38s.irt.IL22"],
+	 "init" : ["Defb4a-gene@NUc", "Defb103a-gene@NUc", "Psoriasin-gene@NUc", "S100a8-gene@NUc", "S100a9-gene@NUc", "Saa1-gene@NUc", "Serpina3-gene@NUc", "Erks@CLc", "IL10Rb@CLm", "IL22@XOut", "IL22Ra1@IL22RC", "Jnks@CLc", "P38s@CLc", "Stat3@CLc", "Stat5a@CLc", "Stat5b@CLc"],
+	 "op" : "dishnet",
+	 "args" : "IL22Dish"
+} 

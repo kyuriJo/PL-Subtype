@@ -1,0 +1,10 @@
+{"stype" : "jnet",
+	 "name" : "SorbitolDish",
+	 "type" : "pnet",
+	 "kbname" : "RKB",
+	 "parent" : "RKB",
+	 "rids" : ["1762.Erks.irt.Sorbitol", "1765.Mekk1.irt.Sorbitol", "1766.Mkk4.irt.Sorbitol", "1767.Mkk7.irt.Sorbitol", "1768.P38s.irt.Sorbitol", "1769.Pak2.irt.Sorbitol", "686.Stat1.irt.Sorbitol", "1761.Eef2.irt.Sorbitol", "1729.Atf2.irt.Sorbitol", "1763.Gadd45b-gene.irt.Sorbitol", "063c.Atf2.by.P38s", "035c.Mkk4.by.Mekk1", "443c.P38s.by.Mkk4"],
+	 "init" : ["Sorbitol@XOut", "Gadd45b-gene@NUc", "Atf2@CLc", "Erks@CLc", "Mekk1@CLc", "Mkk4@CLc", "Mkk7@CLc", "P38s@CLc", "Pak2@CLc", "Sin1@CLc", "Stat1@CLc", "Eef2-phos!T57@CLc"],
+	 "op" : "dishnet",
+	 "args" : "SorbitolDish"
+} 

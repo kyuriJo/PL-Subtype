@@ -1,0 +1,201 @@
+*********1*********2*********3*********4*********5*********6*********7****
+***
+***  Igf1Rules.maude
+***
+**************************************************************************
+mod IGF1RULES is inc ALLOPS .
+
+var xout : Soup .
+vars clo clm clr cli clc nuo num nui nuc : Soup .
+vars moo mom moi moc mio mim mii mic : Soup .
+vars ero erm eri erc pxo pxm pxi pxc : Soup .
+vars gao gam gai gac lyo lym lyi lyc : Soup .
+vars eeo eem eei eec leo lem lei lec : Soup .
+vars cpo cpm cpi cpc ct ptc sig : Soup .
+var igf1rc : Soup .
+vars erksmods : ModSet .
+
+  *** ~/evidence/Igf1-Evidence/00Igf1-evidence.txt
+
+*** Igf1R--
+
+rl[356.Igf1R.irt.Igf1]:
+  {XOut   | xout    Igf1                  }
+  {Igf1RC | igf1rc  Igf1R                 }
+  =>
+  {XOut   | xout                          }
+  {Igf1RC | igf1rc ([Igf1R - act] : Igf1) } .
+  --------------------------------------------
+  *** ~/evidence/Igf1-Evidence/Igf1R.irt.Igf1.356.txt
+
+*** Akt1--
+
+rl[1117.Akt1.irt.Igf1]:
+  {Igf1RC | igf1rc ([Igf1R - act] : Igf1)              }
+  {CLi    | cli    Parva                               }
+  {CLc    | clc    Pdpk1 Rictor Akt1                   }
+  =>
+  {Igf1RC | igf1rc ([Igf1R - act] : Igf1) [Akt1 - act] }
+  {CLi    | cli    Parva                               }
+  {CLc    | clc    Pdpk1 Rictor                        } .
+  -----------------------------------------------------------------------
+  *** ~/evidence/Igf1-Evidence/Akt1.irt.Igf1.1117.txt
+
+*** Bcar1--
+
+rl[1277.Bcar1.irt.Igf1]:
+  {Igf1RC | igf1rc ([Igf1R - act] : Igf1)                 }
+  {CLc    | clc    Bcar1                                  }
+  =>
+  {Igf1RC | igf1rc ([Igf1R - act] : Igf1) [Bcar1 - Yphos] }
+  {CLc    | clc                                           } .
+  ----------------------------------------------------------
+  *** ~/evidence/Igf1-Evidence/Bcar1.irt.Igf1.1277.txt
+
+*** ErkS--
+
+rl[1121.Erks.irt.Igf1]:
+  {Igf1RC | igf1rc ([Igf1R - act] : Igf1) [Hras - GTP]    }
+  {CLi    | cli    Parva                                  }
+  {CLc    | clc    IqGap1 [Erks - erksmods]               }
+  =>
+  {Igf1RC | igf1rc ([Igf1R - act] : Igf1) [Hras - GTP] 
+                   [Erks - erksmods phos(TEY)]            }
+  {CLi    | cli    Parva                                  }
+  {CLc    | clc    IqGap1                                 } .
+  -----------------------------------------------------------
+  *** ~/evidence/Igf1-Evidence/Erks.irt.Igf1.1121.txt
+
+*** Fak1--
+
+rl[1278.Fak1.irt.Igf1]:
+  {Igf1RC | igf1rc ([Igf1R - act] : Igf1) }
+  {CLc    | clc    Fak1                   }
+  =>
+  {Igf1RC | igf1rc ([Igf1R - act] : Igf1) }
+  {CLc    | clc    [Fak1 - Yphos]         } .
+  -------------------------------------------
+  *** ~/evidence/Igf1-Evidence/Fak1.irt.Igf1.1278.txt
+
+*** Gsk3s--
+
+rl[1104.Gsk3s.irt.Igf1]:
+  {Igf1RC | igf1rc ([Igf1R - act] : Igf1)       }
+  {CLc    | clc    Pdpk1 [Gsk3s - act]          }
+  =>
+  {Igf1RC | igf1rc ([Igf1R - act] : Igf1)       }
+  {CLc    | clc    Pdpk1 [Gsk3s - phos(SFAE)]   } .
+  -------------------------------------------------
+  *** ~/evidence/Igf1-Evidence/Gsk3s.irt.Igf1.1104.txt
+
+*** Hras--
+
+rl[1125.Hras.irt.Igf1]:
+  {Igf1RC | igf1rc ([Igf1R - act] : Igf1)              }
+  {CLi    | cli    [Hras - GDP]                        }
+  =>
+  {Igf1RC | igf1rc ([Igf1R - act] : Igf1) [Hras - GTP] }
+  {CLi    | cli                                        } .
+  --------------------------------------------------------
+  *** ~/evidence/Igf1-Evidence/Hras.irt.Igf1.1125.txt
+
+*** Irs1--
+
+rl[104.Irs1.irt.Igf1]:
+  {Igf1RC | igf1rc ([Igf1R - act] : Igf1)                }
+  {CLc    | clc    Irs1                                  }
+  =>
+  {Igf1RC | igf1rc ([Igf1R - act] : Igf1) [Irs1 - Yphos] }
+  {CLc    | clc                                          } .
+  ----------------------------------------------------------
+  *** ~/evidence/Igf1-Evidence/Irs1.irt.Igf1.104.txt
+
+*** Irs2--
+
+rl[922.Irs2.irt.Igf1]:
+  {Igf1RC | igf1rc ([Igf1R - act] : Igf1)                }
+  {CLc    | clc    Irs2                                  }
+  =>
+  {Igf1RC | igf1rc ([Igf1R - act] : Igf1) [Irs2 - Yphos] }
+  {CLc    | clc                                          } .
+  ----------------------------------------------------------
+  *** ~/evidence/Igf1-Evidence/Irs2.irt.Igf1.922.txt
+
+*** Pi3k--
+
+rl[359.Pi3k.irt.Igf1]:
+  {Igf1RC | igf1rc ([Igf1R - act] : Igf1)      }
+  {CLc    | clc    Pi3k                        }
+  =>
+  {Igf1RC | igf1rc ([Igf1R - act] : Igf1) Pi3k }
+  {CLc    | clc                                } .
+  ----------------------------------------------------------
+  *** ~/evidence/Igf1-Evidence/Pi3k.irt.Igf1.359.txt
+
+*** Pxn--
+
+rl[1279.Pxn.irt.Igf1]:
+  {Igf1RC | igf1rc ([Igf1R - act] : Igf1) }
+  {CLc    | clc    Pxn                    }
+  =>
+  {Igf1RC | igf1rc ([Igf1R - act] : Igf1) }
+  {CLc    | clc    [Pxn - Yphos]          } .
+  -------------------------------------------
+  *** ~/evidence/Igf1-Evidence/Pxn.irt.Igf1.1279.txt
+
+*** Rala--
+
+rl[1131.Rala.irt.Igf1]:
+  {Igf1RC | igf1rc ([Igf1R - act] : Igf1)              }
+  {CLi    | cli    [Rala - GDP]                        }
+  =>
+  {Igf1RC | igf1rc ([Igf1R - act] : Igf1) [Rala - GTP] }
+  {CLi    | cli                                        } .
+  --------------------------------------------------------
+  *** ~/evidence/Igf1-Evidence/Rala.irt.Igf1.1131.txt
+
+*** Raf1--
+
+rl[1134.Raf1.irt.Igf1]:
+  {Igf1RC | igf1rc ([Igf1R - act] : Igf1)              }
+  {CLc    | clc    Raf1                                }
+  =>
+  {Igf1RC | igf1rc ([Igf1R - act] : Igf1) [Raf1 - act] }
+  {CLc    | clc                                        } .
+  --------------------------------------------------------
+  *** ~/evidence/Igf1-Evidence/Raf1.irt.Igf1.1134.txt
+
+*** Rasa1--
+
+rl[823.Rasa1.irt.Igf1]:
+  {Igf1RC | igf1rc ([Igf1R - act] : Igf1)                 }
+  {CLc    | clc    Rasa1                                  }
+  =>
+  {Igf1RC | igf1rc ([Igf1R - act] : Igf1) [Rasa1 - Yphos] }
+  {CLc    | clc                                           } .
+  ------------------------------------------------------------
+  *** ~/evidence/Igf1-Evidence/Rasa1.irt.Igf1.823.txt
+
+*** S6k1--
+
+rl[1135.S6k1.irt.Igf1]:
+  {Igf1RC | igf1rc ([Igf1R - act] : Igf1) }
+  {CLc    | clc    Pdpk1 S6k1             }
+  =>
+  {Igf1RC | igf1rc ([Igf1R - act] : Igf1) }
+  {CLc    | clc    Pdpk1 [S6k1 - act]     } .
+  ----------------------------------------------------------------------
+  *** ~/evidence/Igf1-Evidence/S6k1.irt.Igf1.1135.txt
+
+*** Shp2--
+
+rl[522.Shp2.irt.Igf1]:
+  {Igf1RC | igf1rc ([Igf1R - act] : Igf1)                  }
+  {CLc    | clc    Shp2                                  }
+  =>
+  {Igf1RC | igf1rc ([Igf1R - act] : Igf1) [Shp2 - Yphos] }
+  {CLc    | clc                                            } .
+  ------------------------------------------------------------
+  *** ~/evidence/Igf1-Evidence/Shp2.irt.Igf1.522.txt
+
+endm

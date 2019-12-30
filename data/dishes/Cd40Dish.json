@@ -1,0 +1,10 @@
+{"stype" : "jnet",
+	 "name" : "Cd40Dish",
+	 "type" : "pnet",
+	 "kbname" : "RKB",
+	 "parent" : "RKB",
+	 "rids" : ["266.Cd40.by.Cd40L", "1264c.Jak3.Cd40.complex", "276.Ciap2.to.Cd40", "270.Ciap2.from.Cd40", "283.Ikk2.to.Cd40", "1265.Jak3.irt.Cd40L", "305.Mkk4.to.Cd40", "309.Mkk7.to.Cd40", "333.Nemo.to.Cd40", "017c.Nfkb1.Tpl2.complex", "1260.Nfkb1.irt.Cd40L", "351.Tak1.to.Cd40", "488.Tpl2.to.Cd40", "354.Traf2.to.Cd40", "395.Traf3.to.Cd40", "031.Traf6.to.Cd40", "267.Ciap1.to.Cd40", "419.Ubc13.to.Cd40", "380.Traf2.ubiq.irt.Cd40L", "380.Traf2.ubiq.irt.Cd40L#1", "392.Traf3.ubiq.irt.Cd40L", "392.Traf3.ubiq.irt.Cd40L#1", "412.Traf6.from.Cd40", "412.Traf6.from.Cd40#1", "421.Ubc13.from.Cd40", "421.Ubc13.from.Cd40#1", "361.Traf2.from.Cd40", "361.Traf2.from.Cd40#1", "402.Traf3.degraded.irt.Cd40L", "402.Traf3.degraded.irt.Cd40L#1", "483.Nemo.ubiq.irt.Cd40L", "278.Mekk1.to.Cd40", "376.Tak1.phos.irt.Cd40L", "376.Tak1.phos.irt.Cd40L#1", "304.Mekk1.act.irt.Cd40L", "304.Mekk1.act.irt.Cd40L#1", "340.P38s.irt.Cd40L", "340.P38s.irt.Cd40L#1", "269.Ciap1.from.Cd40", "318.Nemo.from.Cd40", "487.Mkk4.act.irt.Cd40L", "313.Mkk7.from.Cd40", "303.Mekk1.from.Cd40", "303.Mekk1.from.Cd40#1", "308.Mkk4.from.Cd40", "282.Ikba.degraded.irt.Cd40L", "557c.Ikk2.by.Mekk1", "035c.Mkk4.by.Mekk1", "065c.Nfkb1.phos.by.Ikk2", "443c.P38s.by.Mkk4", "101c.Ikba.by.Ikk2"],
+	 "init" : ["Cd40@Cd40C", "Cd40L@XOut", "Ciap1@CLc", "Ciap2@CLc", "Ikba@CLc", "Ikk2@CLc", "Jak3@CLc", "Mekk1@CLc", "Mkk4@CLc", "Mkk7@CLc", "Nemo@CLc", "Nfkb1@CLc", "P38s@CLc", "Tak1@CLc", "Tpl2@CLc", "Traf2@CLc", "Traf3@CLc", "Traf6@CLc", "Ubc13@CLc"],
+	 "op" : "dishnet",
+	 "args" : "Cd40Dish"
+} 

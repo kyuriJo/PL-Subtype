@@ -1,0 +1,29 @@
+mod IL10RULES is inc ALLOPS .
+
+var xout : Soup .
+vars clo clm clr cli clc nuo num nui nuc : Soup .
+vars moo mom moi moc mio mim mii mic : Soup .
+vars ero erm eri erc pxo pxm pxi pxc : Soup .
+vars gao gam gai gac lyo lym lyi lyc : Soup .
+vars eeo eem eei eec leo lem lei lec : Soup .
+vars cpo cpm cpi cpc ct ptc sig : Soup .
+vars gp130c il10rc tak1c : Soup .
+vars erksmods : ModSet .
+
+*** ~/evidence/IL10-Evidence/00IL10-Evidence.txt
+
+rl[666.IL10R.irt.IL10]:
+  {XOut   | xout   IL10                     }
+  {IL10RC | il10rc IL10Ra                   }
+  {CLm    | clm    IL10Rb                   }
+  =>
+  {XOut   | xout                            }
+  {IL10RC | il10rc (IL10 : IL10Ra : IL10Rb) }
+  {CLm    | clm                             } .
+  ---------------------------------------------
+  *** ~/evidence/IL10-Evidence/IL10R.irt.IL10.666.txt
+
+
+endm
+
+

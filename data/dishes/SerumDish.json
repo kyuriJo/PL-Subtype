@@ -1,0 +1,10 @@
+{"stype" : "jnet",
+	 "name" : "SerumDish",
+	 "type" : "pnet",
+	 "kbname" : "RKB",
+	 "parent" : "RKB",
+	 "rids" : ["472c.Mlst8.Mtor.complex", "1537.Abi1.irt.Serum", "1539.Araf.irt.Serum", "1540.Atf2.irt.Serum", "1541.Braf.irt.Serum", "1659.Eif4g1.irt.Serum", "1543.Fos-gene.irt.Serum", "1663.Mek1.irt.Serum", "1665.P38s.irt.Serum", "1666c.Pkcd.irt.Serum", "1651.Rsk1.irt.Serum", "1652.Rsk2.irt.Serum", "1703.Sgk1.irt.Serum", "634.Tsc2.phos.irt.Serum", "1640.Deptor-gene.irt.Serum", "1662.Erks.to.nuc.irt.Serum#1", "420c.Eif4e.mRNA", "014c.ErkS.by.Mek1", "514c.Atf2.by.Erks#3", "1542.Egr1-gene.irt.Serum", "1642.Egr2-gene.irt.Serum", "1668.Tsc2.Ywhab.irt.Serum", "1660.Erks.irt.Serum", "498c.Mtorc2.complex", "498c.Mtorc2.complex#1", "1538.Akt1.irt.Serum", "076.Eif4b.irt.Serum", "076.Eif4b.irt.Serum#1", "1667.Raf1.irt.Serum", "619c.Akt1.act", "336c.Sgk1.act", "063c.Atf2.by.P38s", "856c.Eif4ebp1.Eif4e.mRNA.complex", "819c.Eif4ebp1.by.Akt1", "1631c.Eif4ebp1.by.Erks#3", "1632c.Eif4g1.Eif4e.complex", "790c.Mek1.by.Araf", "431c.Mek1.by.Braf", "876c.Mek1.by.Raf1", "262c.Mnk1.by.P38", "1648c.Rps6.by.Rsk1", "1649c.Rps6.by.Rsk2", "1664.Mtor.irt.Serum", "1662.Erks.to.nuc.irt.Serum#3", "1657.Eif4ebp1.irt.Serum", "1658.Eif4ebp1.from.Eif4e.irt.Serum", "1656c.Mnk1.act"],
+	 "init" : ["capped-mRNA@RNAC", "Serum@XOut", "Egr1-gene@NUc", "Egr2-gene@NUc", "Fos-gene@NUc", "Abi1@CLc", "Akt1@CLc", "Araf@CLc", "Atf2@CLc", "Braf@CLc", "Eif4b@CLc", "Eif4e@CLc", "Eif4ebp1@CLc", "Eif4g1@CLc", "Erks@CLc", "Med23@NUc", "Mek1@CLc", "Mlst8@CLc", "Mnk1@CLc", "Mtor@CLc", "P38s@CLc", "Parva@CLi", "Pdpk1@CLc", "Pkcd@CLc", "Pld1@CLi", "Pld2@CLi", "Raf1@CLc", "Rictor@CLc", "Rps6@CLc", "Rsk1@CLc", "Rsk2@CLc", "Sgk1@CLc", "Sin1@CLc", "Tsc2@CLc", "Ywhab@CLc", "Deptor-gene-on@NUc", "Rheb-GDP@CVc"],
+	 "op" : "dishnet",
+	 "args" : "SerumDish"
+} 

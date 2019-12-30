@@ -1,0 +1,524 @@
+mod UVRULES is inc ALLOPS .
+
+var xout clc nuc chr : Soup .
+vars erksmods mek1mods mnk1mods mnksmods : ModSet .
+
+*** ~/evidence/UV-Evidence/00UV-evidence.txt
+
+*** Akt1--
+
+rl[1153.Akt1.irt.UV]:
+  {XOut | xout  UV                                     }
+  {CLc  | clc  Pi3k [Erks - erksmods act] Akt1         }
+  {NUc  | nuc  [P38s - act] [Msk1 - act]               }
+  =>
+  {XOut | xout  UV                                     }
+  {CLc  | clc  Pi3k [Erks - erksmods act] [Akt1 - act] }
+  {NUc  | nuc  [P38s - act] [Msk1 - act]               } .
+  ----------------------------------------------------------
+  *** ~/evidence/UV-Evidence/Akt1.irt.UV.1153.txt
+
+*** Atf1--
+
+rl[1418.Atf1.irt.UV]:
+  {XOut | xout  UV                                       }
+  {NUc  | nuc  [msk12s:Msk12S - act] Atf1                }
+  =>
+  {XOut | xout  UV                                       }
+  {NUc  | nuc  [msk12s:Msk12S - act] [Atf1 - phos(S 63)] } .
+  ----------------------------------------------------------
+  *** ~/evidence/UV-Evidence/Atf1.irt.UV.1418.txt
+
+*** Atf2--
+
+rl[1422.Atf2.irt.UV]:
+  {XOut | xout  UV          }
+  {CLc  | clc   Atf2        }
+  {NUc  | nuc               }
+  =>
+  {XOut | xout  UV          }
+  {CLc  | clc               }
+  {NUc  | nuc  [Atf2 - act] } .
+  -----------------------------
+  *** ~/evidence/UV-Evidence/Atf2.irt.UV.1422.txt
+
+*** Atm--
+
+rl[192.Atm.irt.UV]:
+  {XOut | xout  UV                   }
+  {NUc  | nuc   Atm                  }
+  =>
+  {XOut | xout  UV                   }
+  {NUc  | nuc  [Atm -  phos(S 1981)] } .
+  --------------------------------------
+  *** ~/evidence/UV-Evidence/Atm.irt.UV.192.txt
+
+*** Bad--
+
+rl[1526.Bad.irt.UV]:
+  {XOut | xout  UV                 }
+  {CLc  | clc   Bad                }
+  =>
+  {XOut | xout  UV                 }
+  {CLc  | clc  [Bad -  phos(S 75)] } .
+  --------------------------------------
+  *** ~/evidence/UV-Evidence/Bad.irt.UV.1526.txt
+
+*** Bax-- Bax-gene--
+
+rl[1423.Bax-gene.irt.UV]:
+  {XOut | xout  UV              }
+  {CLc  | clc   Pin1            }
+  {NUc  | nuc   Bax-gene        }
+  =>
+  {XOut | xout  UV              }
+  {CLc  | clc   Pin1            }
+  {NUc  | nuc   [Bax-gene - on] } .
+  --------------------------------------
+  *** ~/evidence/UV-Evidence/Bax-gene.irt.UV.1423.txt
+
+*** Brca1--
+
+*** Cdkn1a--
+
+rl[1424.Cdkn1a-gene.irt.UV]:
+  {XOut | xout  UV                 }
+  {CLc  | clc   Pin1               }
+  {NUc  | nuc   Cdkn1a-gene        }
+  =>
+  {XOut | xout  UV                 }
+  {CLc  | clc   Pin1               }
+  {NUc  | nuc   [Cdkn1a-gene - on] } .
+  -------------------------------------------------------
+  *** ~/evidence/UV-Evidence/Cdkn1a-gene.irt.UV.1424.txt
+
+*** Chek1--
+
+rl[221.Chek1.irt.UV]:
+  {XOut | xout  UV                                                }
+  {NUc  | nuc   Atr Atrip Rad50 Chek1                             }
+  =>
+  {XOut | xout  UV                                                }
+  {NUc  | nuc   Atr Atrip Rad50 [Chek1 - phos(S 317) phos(S 345)] } .
+  ------------------------------------------------------------------------
+  *** ~/evidence/UV-Evidence/Chek1.irt.UV.221.txt
+
+*** Chek2--
+
+rl[136.Chek2.irt.UV]:
+  {XOut | xout  UV                       }
+  {NUc  | nuc   Atr Chek2                }
+  =>
+  {XOut | xout  UV                       }
+  {NUc  | nuc   Atr [Chek2 - phos(T 68)] } .
+  -------------------------------------------------------
+  *** ~/evidence/UV-Evidence/Chek2.irt.UV.136.txt
+
+*** Creb1--
+
+rl[1425.Creb1.irt.UV]:
+  {XOut | xout  UV                                                     }
+  {NUc  | nuc  [msk12s:Msk12S - act]  Creb1                            }
+  =>
+  {XOut | xout  UV                                                     }
+  {NUc  | nuc  [msk12s:Msk12S - act] [Creb1 - phos(S 133) phos(S 121)] } .
+  ------------------------------------------------------------------------
+  *** ~/evidence/UV-Evidence/Creb1.irt.UV.1425.txt
+
+*** Egr1--
+
+rl[1426.Egr1-gene.irt.UV]:
+  {XOut | xout  UV              }
+  {NUc  | nuc   Egr1-gene       }
+  =>
+  {XOut | xout  UV              }
+  {NUc  | nuc  [Egr1-gene - on] } .
+  --------------------------------------
+  *** ~/evidence/UV-Evidence/Egr1-gene.irt.UV.1426.txt
+
+*** Eif4e--
+
+rl[1758.Eif4e.irt.UV]:
+  {XOut | xout UV                                               }
+  {CLc  | clc  [mnks:MnkS - mnksmods act] Eif4e                 }
+  =>
+  {XOut | xout UV                                               }
+  {CLc  | clc  [mnks:MnkS - mnksmods act] [Eif4e - phos(S 209)] } .
+  -----------------------------------------------------------------
+  *** ~/evidence/UV-Evidence/Eif4e.irt.UV.1758.txt
+
+*** Eif4ebp1--
+
+rl[1472.Eif4ebp1.irt.UV]:
+  {XOut | xout  UV                                                    }
+  {NUc  | nuc  [P38s - act] [Msk1 - act]                              }
+  {CLc  | clc   Eif4ebp1                                              }
+  =>
+  {XOut | xout  UV                                                    }
+  {NUc  | nuc  [P38s - act] [Msk1 - act]                              }
+  {CLc  | clc  [Eif4ebp1 - phos(S 65)phos(T 37)phos(T 46) phos(T 70)] } .
+  -----------------------------------------------------------------------
+  *** ~/evidence/UV-Evidence/Eif4ebp1.irt.UV.1472.txt
+
+*** Erks--
+
+rl[1427.Erks.irt.UV]:
+  {XOut | xout  UV                             }
+  {CLc  | clc  [Erks - erksmods]               }
+  =>
+  {XOut | xout  UV                             }
+  {CLc  | clc  [Erks - erksmods act phos(TEY)] } .
+  -------------------------------------------------
+  *** ~/evidence/UV-Evidence/Erks.irt.UV.1427.txt
+
+*** Fos--
+
+rl[1428.Fos-gene.irt.UV]:
+  {XOut | xout  UV             }
+  {NUc  | nuc   Fos-gene       }
+  =>
+  {XOut | xout  UV             }
+  {NUc  | nuc  [Fos-gene - on] } .
+  --------------------------------------
+  *** ~/evidence/UV-Evidence/Fos-gene.irt.UV.1428.txt
+
+*** H2ax--
+
+rl[280.H2ax.irt.UV]:
+  {XOut | xout  UV                  }
+  {NUc  | nuc   Atr                 }
+  {CHR  | chr   H2ax                }
+  =>
+  {XOut | xout  UV                  }
+  {NUc  | nuc   Atr                 }
+  {CHR  | chr  [H2ax - phos(S 140)] } .
+  -------------------------------------------
+  *** ~/evidence/UV-Evidence/H2ax.irt.UV.280.txt
+
+*** Hipk2--
+
+rl[1456.Hipk2.irt.UV]:
+  {XOut | xout  UV           }
+  {CLc  | clc   Hipk2        }
+  =>
+  {XOut | xout  UV           }
+  {CLc  | clc  [Hipk2 - act] } .
+  ------------------------------------------
+  *** ~/evidence/UV-Evidence/Hipk2.irt.UV.1456.txt
+
+*** HistH3--
+
+rl[1754.HistH3.irt.UV]:
+  {XOut | xout  UV                                  }
+  {NUc  | nuc   [Msk1 - act] HistH3                 }
+  =>
+  {XOut | xout  UV                                  }
+  {NUc  | nuc   [Msk1 - act] [HistH3 - phos(S 29)]  } .
+  ----------------------------------------------------
+  *** ~/evidence/UV-Evidence/HistH3.irt.UV.1754.txt
+
+*** Jnks--
+
+rl[1429.Jnks.irt.UV]:
+  {XOut | xout  UV                                                   }
+  {CLc  | clc  [Map4k5 - act] [Mkk4 - act] [Mkk7 - act]  Jnks        }
+  =>
+  {XOut | xout  UV                                                   }
+  {CLc  | clc  [Map4k5 - act] [Mkk4 - act] [Mkk7 - act] [Jnks - act] } .
+  -----------------------------------------------------------------------
+  *** ~/evidence/UV-Evidence/Jnks.irt.UV.1429.txt
+
+rl[1755.Jnks.to.nuc.irt.UV]:
+  {XOut | xout  UV              }
+  {CLc  | clc  [Jnks - act]     }
+  {NUc  | nuc                   }
+  =>
+  {XOut | xout  UV              }
+  {CLc  | clc                   }
+  {NUc  | nuc  [Jnks - act]     } .
+  -----------------------------------------------------------------------
+  *** ~/evidence/UV-Evidence/Jnks.to.nuc.irt.UV.1755.txt
+
+*** Jun-gene--
+
+rl[1756.Jun-gene.irt.UV]:
+  {XOut | xout  UV              }
+  {NUc  | nuc   Jun-gene        }
+  =>
+  {XOut | xout  UV              }
+  {NUc  | nuc   [Jun-gene - on] } .
+  ---------------------------------
+  *** ~/evidence/UV-Evidence/Jun-gene.irt.UV.1756.txt
+
+*** Junb-gene--
+
+rl[1757.Junb-gene.irt.UV]:
+  {XOut | xout  UV               }
+  {NUc  | nuc   Junb-gene        }
+  =>
+  {XOut | xout  UV               }
+  {NUc  | nuc   [Junb-gene - on] } .
+  -----------------------------------
+  *** ~/evidence/UV-Evidence/Junb-gene.irt.UV.1757.txt
+
+*** Map4k5--
+
+rl[1430.Map4k5.irt.UV]:
+  {XOut | xout  UV            }
+  {CLc  | clc   Map4k5        }
+  =>
+  {XOut | xout  UV            }
+  {CLc  | clc  [Map4k5 - act] } .
+  ------------------------------------------
+  *** ~/evidence/UV-Evidence/Map4k5.irt.UV.1430.txt
+
+*** Mapkapk2--
+
+rl[1432.Mapkapk2.irt.UV]:
+  {XOut | xout  UV                           }
+  {CLc  | clc  [P38s - act]  Mapkapk2        }
+  =>
+  {XOut | xout  UV                           }
+  {CLc  | clc  [P38s - act] [Mapkapk2 - act] } .
+  -----------------------------------------------
+  *** ~/evidence/UV-Evidence/Mapkapk2.irt.UV.1432.txt
+
+*** Mdm2--
+
+rl[1434.Mdm2-gene.irt.UV]:
+  {XOut | xout  UV               }
+  {NUc  | nuc   Mdm2-gene        }
+  =>
+  {XOut | xout  UV               }
+  {NUc  | nuc   [Mdm2-gene - on] } .
+  ----------------------------------------------
+  *** ~/evidence/UV-Evidence/Mdm2-gene.irt.UV.1434.txt
+
+*** Mkk3--
+
+rl[1421.Mkk3.irt.UV]:
+  {XOut | xout  UV          }
+  {CLc  | clc   Mkk3        }
+  =>
+  {XOut | xout  UV          }
+  {CLc  | clc  [Mkk3 - act] } .
+  ------------------------------
+  *** ~/evidence/UV-Evidence/Mkk3.irt.UV.1421.txt
+
+*** Mkk4--
+
+rl[1431.Mkk4.irt.UV]:
+  {XOut | xout  UV          }
+  {CLc  | clc   Mkk4        }
+  =>
+  {XOut | xout  UV          }
+  {CLc  | clc  [Mkk4 - act] } .
+  ------------------------------------------
+  *** ~/evidence/UV-Evidence/Mkk4.irt.UV.1431.txt
+
+*** Mkk6--
+
+rl[1435.Mkk6.irt.UV]:
+  {XOut | xout  UV          }
+  {CLc  | clc   Mkk6        }
+  =>
+  {XOut | xout  UV          }
+  {CLc  | clc  [Mkk6 - act] } .
+  ------------------------------------------
+  *** ~/evidence/UV-Evidence/Mkk6.irt.UV.1435.txt
+
+*** Mkk7--
+
+rl[626.Mkk7.irt.UV]:
+  {XOut | xout  UV          }
+  {CLc  | clc   Mkk7        }
+  =>
+  {XOut | xout  UV          }
+  {CLc  | clc  [Mkk7 - act] } .
+  ------------------------------------------
+  *** ~/evidence/UV-Evidence/Mkk7.irt.UV.626.txt
+
+*** Mnk1--
+
+rl[1759.Mnk1.irt.UV]:
+  {XOut | xout  UV                             }
+  {CLc  | clc   Mnk1                           }
+  =>
+  {XOut | xout  UV                             }
+  {CLc  | clc  [Mnk1 - phos(T 250)phos(T 257)] } .
+  ------------------------------------------------
+  *** ~/evidence/UV-Evidence/Mnk1.irt.UV.1759.txt
+
+*** Msk1--
+
+rl[1419.Msk1.irt.UV]:
+  {XOut | xout  UV                       }
+  {NUc  | nuc  [P38s - act]  Msk1        }
+  =>
+  {XOut | xout  UV                       }
+  {NUc  | nuc  [P38s - act] [Msk1 - act] } .
+  ------------------------------------------
+  *** ~/evidence/UV-Evidence/Msk1.irt.UV.1419.txt
+
+*** Msk2--
+
+rl[1436.Msk2.irt.UV]:
+  {XOut | xout  UV                       }
+  {NUc  | nuc  [P38s - act]  Msk2        }
+  =>
+  {XOut | xout  UV                       }
+  {NUc  | nuc  [P38s - act] [Msk2 - act] } .
+  ------------------------------------------
+  *** ~/evidence/UV-Evidence/Msk2.irt.UV.1436.txt
+
+*** Mre11--
+
+*** Nbs1--
+
+rl[290.Nbs1.phos.irt.UV]:
+  {XOut | xout  UV                          }
+  {NUc  | nuc   Brca1  Nbs1                 }
+  =>
+  {XOut | xout  UV                          }
+  {NUc  | nuc   Brca1  [Nbs1 - phos(S 343)] } .
+  --------------------------------------------------------------
+  *** ~/evidence/UV-Evidence/Nbs1.phos.irt.UV.290.txt
+
+*** Nemo--
+
+*** P38s--
+
+rl[1420.P38s.irt.UV]:
+  {XOut | xout  UV                       }
+  {CLc  | clc  [Mkk3 - act]  P38s        }
+  =>
+  {XOut | xout  UV                       }
+  {CLc  | clc  [Mkk3 - act] [P38s - act] } .
+  ------------------------------------------
+  *** ~/evidence/UV-Evidence/P38s.irt.UV.1420.txt
+
+rl[1433.P38s.to.nuc.irt.UV]:
+  {XOut | xout  UV           }
+  {CLc  | clc  [P38s - act]  }
+  {NUc  | nuc                }
+  =>
+  {XOut | xout  UV           }
+  {CLc  | clc                }
+  {NUc  | nuc  [P38s - act]  } .
+  ------------------------------------------
+  *** ~/evidence/UV-Evidence/P38s.to.nuc.irt.UV.1433.txt
+
+*** Pak1--
+
+rl[1437.Pak1.irt.UV]:
+  {XOut | xout  UV          }
+  {CLc  | clc   Pak1        }
+  =>
+  {XOut | xout  UV          }
+  {CLc  | clc  [Pak1 - act] } .
+  ------------------------------
+  *** ~/evidence/UV-Evidence/Pak1.irt.UV.1437.txt
+
+*** Rad17--
+
+rl[1760.Rad17.irt.UV]:
+  {XOut | xout  UV                                   }
+  {NUc  | nuc   Atr Rad17                            }
+  =>
+  {XOut | xout  UV                                   }
+  {NUc  | nuc   Atr [Rad17 - phos(S 646)phos(S 656)] } .
+  ------------------------------------------------------
+  *** ~/evidence/UV-Evidence/Rad17.irt.UV.1760.txt
+
+*** Rsk2--
+
+rl[1591.Rsk2.irt.UV]:
+  {XOut | xout  UV                                }
+  {CLc  | clc  [Erks - erksmods act] Rsk2         }
+  =>
+  {XOut | xout  UV                                }
+  {CLc  | clc  [Erks - erksmods act] [Rsk2 - act] } .
+  ---------------------------------------------------
+  *** ~/evidence/UV-Evidence/Rsk2.irt.UV.1591.txt
+
+*** Rsk3--
+
+rl[1438.Rsk3.irt.UV]:
+  {XOut | xout  UV                       }
+  {CLc  | clc  [Erks - act] Rsk3         }
+  =>
+  {XOut | xout  UV                       }
+  {CLc  | clc  [Erks - act] [Rsk3 - act] } .
+  ------------------------------------------
+  *** ~/evidence/UV-Evidence/Rsk3.irt.UV.1438.txt
+
+*** Smc1a--
+
+rl[153.Smc1a.irt.UV]:
+  {XOut | xout  UV                                         }
+  {NUc  | nuc   Atr Rad50 Smc1a                            }
+  =>
+  {XOut | xout  UV                                         }
+  {NUc  | nuc  Atr Rad50 [Smc1a - phos(S 957) phos(S 966)] } .
+  -------------------------------------------------------------------------
+  *** ~/evidence/UV-Evidence/Smc1a.irt.UV.153.txt
+
+*** Stat3--
+
+rl[1413.Stat3.irt.UV]:
+  {XOut | xout  UV                   }
+  {CLc  | clc   Stat3                }
+  =>
+  {XOut | xout  UV                   }
+  {CLc  | clc  [Stat3 - phos(S 727)] } .
+  --------------------------------------------------------------------------
+  *** ~/evidence/UV-Evidence/Stat3.irt.UV.1413.txt
+
+*** Tab1--
+
+rl[1439.Tab1.irt.UV]:
+  {XOut | xout  UV                                                       }
+  {CLc  | clc  [P38s - act]  Tab1                                        }
+  =>
+  {XOut | xout  UV                                                       }
+  {CLc  | clc  [P38s - act] [Tab1 - phos(S 423) phos(T 431) phos(S 438)] } .
+  --------------------------------------------------------------------------
+  *** ~/evidence/UV-Evidence/Tab1.irt.UV.1439.txt
+
+*** Tp53--
+
+rl[1440.Tp53.irt.UV]:
+  {XOut | xout  UV                  }
+  {CLc  | clc   Pin1                }
+  {NUc  | nuc   Tp53                }
+  =>
+  {XOut | xout  UV                  }
+  {CLc  | clc   Pin1                }
+  {NUc  | nuc   [Tp53 - phos(S 15)] } .
+  ------------------------------------------
+  *** ~/evidence/UV-Evidence/Tp53.irt.UV.1440.txt
+
+*** Tp53aip1--
+
+rl[1442.Tp53aip1-gene.irt.UV]:
+  {XOut | xout  UV                  }
+  {NUc  | nuc   Tp53aip1-gene       }
+  =>
+  {XOut | xout  UV                  }
+  {NUc  | nuc  [Tp53aip1-gene - on] } .
+  --------------------------------------
+  *** ~/evidence/UV-Evidence/Tp53aip1-gene.irt.UV.1442.txt
+
+*** TrailR2--
+
+rl[1441.TrailR2-gene.irt.UV]:
+  {XOut | xout  UV                 }
+  {NUc  | nuc   TrailR2-gene       }
+  =>
+  {XOut | xout  UV                 }
+  {NUc  | nuc  [TrailR2-gene - on] } .
+  --------------------------------------
+  *** ~/evidence/UV-Evidence/TrailR2-gene.irt.UV.1441.txt
+
+endm
+

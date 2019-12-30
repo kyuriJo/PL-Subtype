@@ -1,0 +1,181 @@
+mod ETOPOSIDERULES is inc ALLOPS .
+
+var xout clc nuc chr sig : Soup .
+var atmmods : ModSet .
+
+*** ~/evidence/Drug-Evidence/00Etoposide-evidence.txt
+
+*** Atm--
+
+rl[059.Atm.phos.irt.Etoposide]:
+  {XOut | xout  Etoposide           }
+  {NUc  | nuc   Atm                 }
+  =>
+  {XOut | xout  Etoposide           }
+  {NUc  | nuc  [Atm - phos(S 1981)] } .
+  -------------------------------------
+  *** ~/evidence/Drug-Evidence/Atm.phos.irt.Etoposide.059.txt
+
+rl[067.Atm.to.cyto.irt.Etoposide]:
+  {XOut | xout  Etoposide           }
+  {CLc  | clc                       }
+  {NUc  | nuc  [Atm - phos(S 1981)] }
+  =>
+  {XOut | xout  Etoposide           }
+  {CLc  | clc  [Atm - phos(S 1981)] }
+  {NUc  | nuc                       } .
+  -------------------------------------
+  *** ~/evidence/Drug-Evidence/Atm.to.cyto.irt.Etoposide.067.txt
+
+*** Chek1--
+
+rl[1771.Chek1.irt.Etoposide]:
+  {XOut | xout  Etoposide                   }
+  {NUc  | nuc   Atrip  Chek1                }
+  =>
+  {XOut | xout  Etoposide                   }
+  {NUc  | nuc   Atrip [Chek1 - phos(S 317)] } .
+  ------------------------------------------------------------------------
+  *** ~/evidence/Drug-Evidence/Chek1.irt.Etoposide.1771.txt
+
+*** Erc1--
+
+rl[1777.Erc1.irt.Etoposide]:
+  {XOut | xout  Etoposide                   }
+  {CLc  | clc   Ubc13 Xiap  Erc1            }
+  =>
+  {XOut | xout  Etoposide                   }
+  {CLc  | clc   Ubc13 Xiap [Erc1 - K63ubiq] } .
+  ------------------------------------------------------------------------
+  *** ~/evidence/Drug-Evidence/Erc1.irt.Etoposide.1777.txt
+
+*** H2ax--
+
+rl[1772.H2ax.irt.Etoposide]:
+  {XOut | xout  Etoposide            }
+  {CHR  | chr   H2ax                 }
+  =>
+  {XOut | xout  Etoposide            }
+  {CHR  | chr   [H2ax - phos(S 140)] } .
+  -------------------------------------------
+  *** ~/evidence/Drug-Evidence/H2ax.irt.Etoposide.1772.txt
+
+*** Ikba--
+
+rl[062.Ikba.irt.Etoposide]:
+  {XOut | xout Etoposide                   }
+  {CLc  | clc  Erc1 Nemo Ikba              }
+  =>
+  {XOut | xout Etoposide                   }
+  {CLc  | clc  Erc1 Nemo [Ikba - degraded] } .
+  -----------------------------------------------------
+  *** ~/evidence/Drug-Evidence/Ikba.irt.Etoposide.062.txt
+
+*** Ikks--
+
+rl[079.Ikks.irt.Etoposide]:
+  {XOut | xout Etoposide                                               }
+  {CLc  | clc  Erc1 Tak1 (Ikk1 : Ikk2 : Nemo)                          }
+  =>
+  {XOut | xout Etoposide                                               }
+  {CLc  | clc  Erc1 Tak1 ([Ikk1 - act] : [Ikk2 - act] : [Nemo - ubiq]) } .
+  ------------------------------------------------------------------------
+  *** ~/evidence/Drug-Evidence/Ikks.irt.Etoposide.079.txt
+
+*** Nemo--
+
+rl[071.Nemo.sumo.irt.Etoposide]:
+  {XOut | xout Etoposide               }
+  {CLc  | clc  Nemo                    }
+  {NUc  | nuc  Atm Chek1               } 
+  =>
+  {XOut | xout Etoposide               }
+  {CLc  | clc                          }
+  {NUc  | nuc  Atm Chek1 [Nemo - sumo] } .
+  ---------------------------------------------------------
+  *** ~/evidence/Drug-Evidence/Nemo.sumo.irt.Etoposide.071.txt
+
+rl[070.Nemo.phos.irt.Etoposide]:
+  {XOut | xout  Etoposide                    }
+  {NUc  | nuc   Atm [Nemo - sumo]            }
+  =>
+  {XOut | xout  Etoposide                    }
+  {NUc  | nuc   Atm [Nemo - sumo phos(S 85)] } .
+  ----------------------------------------------------------
+  *** ~/evidence/Drug-Evidence/Nemo.phos.irt.Etoposide.070.txt
+
+rl[074.Nemo.ubiq.irt.Etoposide]:
+  {XOut | xout  Etoposide                    }
+  {NUc  | nuc   Atm [Nemo - sumo phos(S 85)] }
+  => 
+  {XOut | xout  Etoposide                    }
+  {NUc  | nuc   Atm [Nemo - ubiq phos(S 85)]            } .
+  ----------------------------------------------------------
+  *** ~/evidence/Drug-Evidence/Nemo.ubiq.irt.Etoposide.074.txt
+
+rl[078.Nemo.to.cyto.irt.Etoposide]:
+  {XOut | xout  Etoposide                   }
+  {CLc  | clc                               }
+  {NUc  | nuc   [Nemo - ubiq phos(S 85)]    }
+  => 
+  {XOut | xout  Etoposide                   }
+  {CLc  | clc   [Nemo - ubiq phos(S 85)]    }
+  {NUc  | nuc                               } .
+  -------------------------------------------------
+  *** ~/evidence/Drug-Evidence/Nemo.to.cyto.irt.Etoposide.078.txt
+
+*** Nfkb--
+
+rl[1773.Nfkb.RE.irt.Etoposide]:
+  {XOut | xout  Etoposide                                 }
+  {CLc  | clc  Erc1 Nemo Tab2 Tab3 Tak1 Traf2 Traf5 Ubc13 }
+  {NUc  | nuc   Atm                                       }
+  {Sig  | sig                                             }
+  =>
+  {XOut | xout  Etoposide                                 }
+  {CLc  | clc  Erc1 Nemo Tab2 Tab3 Tak1 Traf2 Traf5 Ubc13 }
+  {NUc  | nuc   Atm                                       }
+  {Sig | sig NFKB-RESPONSE-ELEMENT-BOUND                  } .
+  -----------------------------------------------------------
+  *** ~/evidence/Drug-Evidence/Nfkb.RE.irt.Etoposide.1773.txt
+
+*** Rela--
+
+rl[1774.Rela.to.nuc.irt.Etoposide]:
+  {XOut | xout  Etoposide                        }
+  {CLc  | clc  Rela                              }
+  {NUc  | nuc  [Nemo - sumo phos(S 85)]          }
+  =>
+  {XOut | xout  Etoposide                        }
+  {CLc  | clc                                    }
+  {NUc  | nuc  [Nemo - sumo phos(S 85)] Rela     } .
+  -----------------------------------------------------------
+  *** ~/evidence/Drug-Evidence/Rela.to.nuc.irt.Etoposide.1774.txt
+
+*** Tab2--  Tak1--
+
+rl[1775.Tak1.act.irt.Etoposide]:
+  {XOut | xout  Etoposide                           }
+  {CLc  | clc   Erc1 Tak1 Tab2 Ubc13                }
+  =>
+  {XOut | xout  Etoposide                           }
+  {CLc  | clc   (Erc1 : [Tak1 - act] : Tab2) Ubc13  } .
+  -----------------------------------------------------------
+  *** ~/evidence/Drug-Evidence/Tak1.act.irt.Etoposide.1775.txt
+
+*** Tp53--
+
+rl[1776.Tp53.irt.Etoposide]:
+  {XOut | xout  Etoposide                                     }
+  {NUc  | nuc   Tp53                                          }
+  =>
+  {XOut | xout  Etoposide                                     }
+  {NUc  | nuc   [Tp53 - phos(S 15)acetyl(K 373)acetyl(K 382)] } .
+  ---------------------------------------------------------------
+  *** ~/evidence/Drug-Evidence/Tp53.irt.Etoposide.1776.txt
+
+
+
+
+
+endm

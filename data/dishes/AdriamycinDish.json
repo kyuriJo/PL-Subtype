@@ -1,0 +1,10 @@
+{"stype" : "jnet",
+	 "name" : "AdriamycinDish",
+	 "type" : "pnet",
+	 "kbname" : "RKB",
+	 "parent" : "RKB",
+	 "rids" : ["1471.Bax-gene.irt.Adriamycin", "1445.Chek2.irt.Adriamycin", "043.Nemo.irt.Adriamycin", "1444.Tp53.irt.Adriamycin", "1446.Mdm2-gene.irt.Adriamycin", "1447.Tp53aip1-gene.irt.Adriamycin", "1448.TrailR2-gene.irt.Adriamycin", "1443.Cdkn1a-gene.irt.Adriamycin"],
+	 "init" : ["Adriamycin@XOut", "Bax-gene@NUc", "Cdkn1a-gene@NUc", "Mdm2-gene@NUc", "Tp53aip1-gene@NUc", "TrailR2-gene@NUc", "Chek2@NUc", "Nemo@CLc", "Pin1@CLc", "Tp53@NUc"],
+	 "op" : "dishnet",
+	 "args" : "AdriamycinDish"
+} 

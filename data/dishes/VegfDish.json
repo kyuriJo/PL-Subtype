@@ -1,0 +1,10 @@
+{"stype" : "jnet",
+	 "name" : "VegfDish",
+	 "type" : "pnet",
+	 "kbname" : "RKB",
+	 "parent" : "RKB",
+	 "rids" : ["394.VegfR2.irt.Vegfa", "416.Mek12s.irt.Vegfa", "416.Mek12s.irt.Vegfa#1", "1737c.Mek1.act", "1307.Ampk.irt.Vegfa", "411.Erks.irt.Vegfa", "1306.Fak1.irt.Vegfa", "1103.Fak2.irt.Vegfa", "406.Plcg1.irt.Vegfa", "1742.Src.irt.Vegfa", "1740.Nos3.irt.Vegfa", "1739.Gsk3s.irt.Vegfa", "1741.Rac1.irt.Vegfa", "415c.Erks.act"],
+	 "init" : ["Ampk@CLc", "Erks@CLc", "Fak1@CLc", "Fak2@CLc", "Mek1@CLc", "Mek2@CLc", "Nos3@CLc", "Plcg1@CLc", "Src@CLi", "Vegfa@XOut", "VegfR2@VegfR2C", "Gsk3s-act@CLc", "Rac1-GDP@CLi"],
+	 "op" : "dishnet",
+	 "args" : "VegfDish"
+} 

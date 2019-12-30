@@ -1,0 +1,466 @@
+*********1*********2*********3*********4*********5*********6*********7****
+***
+***  InsRules.maude
+***
+**************************************************************************
+mod INSRULES is inc ALLOPS .
+
+vars xout clo clm cli clc nuc sig rnac cvc chr : Soup .
+var insrc : Soup .
+vars erksmods : ModSet .
+
+
+*** ~/evidence/Ins-Evidence/00Ins-evidence.txt
+
+rl[271.InsR.by.Ins]:
+  {XOut  | xout  Ins                    }
+  {InsRC | insrc InsR                   }
+  =>
+  {XOut  | xout                         }
+  {InsRC | insrc ([InsR - Yphos] : Ins) } .
+  ---------------------------------------
+  *** ~/evidence/Ins-Evidence/InsR.by.Ins.271.txt
+
+*** Akt1--
+
+rl[051.Akt1.irt.Ins]:
+  {InsRC | insrc ([InsR - Yphos] : Ins) Pi3k                              }
+  {CLi   | cli   plds:PldS                                                }
+  {CLc   | clc   (Mtor : Mlst8 : Sin1 : Rictor) RalGds Tsc2 Pras40 Akt1   }
+  =>
+  {InsRC | insrc ([InsR - Yphos] : Ins) Pi3k [Akt1 - act]                 }
+  {CLi   | cli   plds:PldS                                                }
+  {CLc   | clc   (Mtor : Mlst8 : Sin1 : Rictor) RalGds Tsc2 Pras40        } .
+  ---------------------------------------------------------------------------
+  *** ~/evidence/Ins-Evidence/Akt1.irt.Ins.051.txt
+
+*** Atf2--
+
+rl[637.Atf2.irt.Ins]:
+  {InsRC | insrc ([InsR - Yphos] : Ins) [Hras - GTP] [Rala - GTP] }
+  {CLc   | clc   Atf2                                             }
+  =>
+  {InsRC | insrc ([InsR - Yphos] : Ins) [Hras - GTP] [Rala - GTP] }
+  {CLc   | clc   [Atf2 - act]                                     } .
+  -------------------------------------------------------------------
+  *** ~/evidence/Ins-Evidence/Atf2.irt.Ins.637.txt
+
+*** Crk--
+
+rl[651.Crk.irt.Ins]:
+  {InsRC | insrc ([InsR - Yphos] : Ins)               }
+  {CLc   | clc   Crk                                  }
+  =>
+  {InsRC | insrc ([InsR - Yphos] : Ins) [Crk - Yphos] }
+  {CLc   | clc                                        } .
+  -------------------------------------------------------
+  *** ~/evidence/Ins-Evidence/Crk.irt.Ins.651.txt
+
+*** Dok1--
+
+rl[652.Dok1.irt.Ins]:
+  {InsRC | insrc ([InsR - Yphos] : Ins)                }
+  {CLc   | clc   Dok1                                  }
+  =>
+  {InsRC | insrc ([InsR - Yphos] : Ins) [Dok1 - Yphos] }
+  {CLc   | clc                                         } .
+  ---------------------------------------------------------
+  *** ~/evidence/Ins-Evidence/Dok1.irt.Ins.652.txt
+
+*** Eef2--
+
+rl[164.Eef2.irt.Ins]:
+  {InsRC | insrc ([InsR - Yphos] : Ins)  }
+  {CLc   | clc   [Eef2 - phos(T 57)]     }
+  =>
+  {InsRC | insrc ([InsR - Yphos] : Ins)  }
+  {CLc   | clc   Eef2                    } .
+  ----------------------------------------
+  *** ~/evidence/Ins-Evidence/Eef2.irt.Ins.164.txt
+
+*** Eef2k--
+
+rl[670.Eef2k.irt.Ins]:
+  {InsRC | insrc ([InsR - Yphos] : Ins)             }
+  {CLc   | clc   Eef2k                              }
+  =>
+  {InsRC | insrc ([InsR - Yphos] : Ins)             }
+  {CLc   | clc   [Eef2k - phos(S 78) phos(S 359)]   } .
+  -----------------------------------------------------
+  *** ~/evidence/Ins-Evidence/Eef2k.irt.Ins.670.txt
+
+*** Egr1-- Egr1-gene--
+
+rl[1628.Egr1-gene.irt.Ins]:
+  {InsRC | insrc ([InsR - Yphos] : Ins)             }
+  {NUc   | nuc   Egr1-gene                          }
+  =>
+  {InsRC | insrc ([InsR - Yphos] : Ins)             }
+  {NUc   | nuc   [Egr1-gene - on]                   } .
+  -----------------------------------------------------
+  *** ~/evidence/Ins-Evidence/Egr1-gene.irt.Ins.1628.txt
+
+*** Eif3--
+
+rl[864.Eif3.irt.Ins]:
+  {InsRC | insrc ([InsR - Yphos] : Ins)               }
+  {CLc   | clc   Eif3                                 }
+  {RNAC  | rnac  (capped-mRNA : Eif4e : Eif4g1)       }
+  =>
+  {InsRC | insrc ([InsR - Yphos] : Ins)               }
+  {CLc   | clc                                        } 
+  {RNAC  | rnac  (capped-mRNA : Eif4e : Eif4g1) Eif3  } .
+  --------------------------------------------------------
+  *** ~/evidence/Ins-Evidence/Eif3.irt.Ins.864.txt
+
+*** Eif4a1--
+
+rl[874.Eif4a1.irt.Ins]:
+  {InsRC | insrc ([InsR - Yphos] : Ins)                }
+  {CLc   | clc   Eif4a1                                }
+  {RNAC  | rnac  (capped-mRNA : Eif4e : Eif4g1)        }
+  =>
+  {InsRC | insrc ([InsR - Yphos] : Ins)                }
+  {CLc   | clc                                         }
+  {RNAC  | rnac  (capped-mRNA : Eif4e : Eif4g1) Eif4a1 } .
+  --------------------------------------------------------
+  *** ~/evidence/Ins-Evidence/Eif4a1.irt.Ins.874.txt
+
+*** Eif4b--
+
+rl[865.Eif4b.irt.Ins]:
+  {InsRC | insrc ([InsR - Yphos] : Ins)                               }
+  {CLc   | clc   Eif4b                                                }
+  {RNAC  | rnac  (capped-mRNA : Eif4e : Eif4g1)                       }
+  =>
+  {InsRC | insrc ([InsR - Yphos] : Ins)                               }
+  {CLc   | clc                                                        }
+  {RNAC  | rnac  (capped-mRNA : Eif4e : Eif4g1) [Eif4b - phos(S 422)] } .
+  -----------------------------------------------------------------------
+  *** ~/evidence/Ins-Evidence/Eif4b.irt.Ins.865.txt
+
+*** Eif4ebp1--
+
+rl[776.Eif4ebp1.irt.Ins]:
+  {InsRC | insrc ([InsR - Yphos] : Ins)   }
+  {CLc   | clc   Eif4ebp1                 }
+  =>
+  {InsRC | insrc ([InsR - Yphos] : Ins)   }
+  {CLc   | clc   [Eif4ebp1 - phos]        } .
+  -----------------------------------------------------------
+  *** ~/evidence/Ins-Evidence/Eif4ebp1.irt.Ins.776.txt
+
+*** Eif4g1--
+
+rl[820.Eif4g1.irt.Ins]:
+  {InsRC | insrc ([InsR - Yphos] : Ins)         }
+  {CLc   | clc     Eif4g1                       }
+  {RNAC  | rnac   (capped-mRNA : Eif4e)         }
+  =>
+  {InsRC | insrc ([InsR - Yphos] : Ins)         }
+  {CLc   | clc                                  }
+  {RNAC  | rnac  (capped-mRNA : Eif4e : Eif4g1) } .
+  ------------------------------------------------
+  *** ~/evidence/Ins-Evidence/Eif4g1.irt.Ins.820.txt
+
+*** Erks--
+**** clt correction 15jan30 removed [Erks -act] from InsRC
+rl[653.Erks.irt.Ins]:
+  {InsRC | insrc ([InsR - Yphos] : Ins)              }
+  {CLc   | clc    [Erks - erksmods]                  }
+  =>
+  {InsRC | insrc ([InsR - Yphos] : Ins)  }
+  {CLc   | clc    [Erks - erksmods act phos(TEY)]    } .
+  ------------------------------------------------------
+  *** ~/evidence/Ins-Evidence/Erks.irt.Ins.653.txt
+
+*** Foxo1--
+
+rl[1624.Foxo1.irt.Ins]:
+  {InsRC | insrc ([InsR - Yphos] : Ins)                }
+  {NUc   | nuc   Foxo1                                 }
+  =>
+  {InsRC | insrc ([InsR - Yphos] : Ins) [Foxo1 - phos] }
+  {NUc   | nuc                                         } .
+  ------------------------------------------------------
+  *** ~/evidence/Ins-Evidence/Foxo1.irt.Ins.1624.txt
+
+*** Foxo4--
+
+rl[1625.Foxo4.irt.Ins]:
+  {InsRC | insrc ([InsR - Yphos] : Ins)                }
+  {NUc   | nuc   Foxo4                                 }
+  =>
+  {InsRC | insrc ([InsR - Yphos] : Ins) [Foxo4 - phos] }
+  {NUc   | nuc                                         } .
+  ------------------------------------------------------
+  *** ~/evidence/Ins-Evidence/Foxo4.irt.Ins.1625.txt
+
+*** Grb10--
+
+rl[659.Grb10.irt.Ins]:
+  {InsRC | insrc ([InsR - Yphos] : Ins)       }
+  {CLc   | clc   Grb10                        }
+  =>
+  {InsRC | insrc ([InsR - Yphos] : Ins) Grb10 }
+  {CLc   | clc                                } .
+  ------------------------------------------------
+  *** ~/evidence/Ins-Evidence/Grb10.irt.Ins.659.txt
+
+*** Gsk3--
+*** Gsk3s--
+
+rl[676.Gsk3s.irt.Ins]:
+  {InsRC | insrc ([InsR - Yphos] : Ins)        }
+  {CLc   | clc   RalGds [Gsk3s - act]          }
+  =>
+  {InsRC | insrc ([InsR - Yphos] : Ins)        }
+  {CLc   | clc   RalGds [Gsk3s - phos(SFAE)]   } .
+  ------------------------------------------------
+  *** ~/evidence/Ins-Evidence/Gsk3s.irt.Ins.676.txt
+
+*** Hras--
+
+rl[644.Hras.irt.Ins]:
+  {InsRC | insrc ([InsR - Yphos] : Ins)              }
+  {CLi   | cli   [Hras - GDP]                        }
+  =>
+  {InsRC | insrc ([InsR - Yphos] : Ins) [Hras - GTP] }
+  {CLi   | cli                                       } .
+  ----------------------------------------------------
+  *** ~/evidence/Ins-Evidence/Hras.irt.Ins.644.txt
+
+*** Irs1--
+
+rl[657.Irs1.irt.Ins]:
+  {InsRC | insrc ([InsR - Yphos] : Ins)                }
+  {CLc   | clc    Irs1                                 }
+  =>
+  {InsRC | insrc ([InsR - Yphos] : Ins) [Irs1 - Yphos] }
+  {CLc   | clc                                         } .
+  --------------------------------------------------------
+  *** ~/evidence/Ins-Evidence/Irs1.irt.Ins.657.txt
+
+*** Irs2--
+
+rl[923.Irs2.irt.Ins]:
+  {InsRC | insrc ([InsR - Yphos] : Ins)                 }
+  {CLc   | clc Irs2                                     }
+  =>
+  {InsRC | insrc ([InsR - Yphos] : Ins)  [Irs2 - Yphos] }
+  {CLc   | clc                                          } .
+  -------------------------------------------------------
+  *** ~/evidence/Ins-Evidence/Irs2.irt.Ins.923.txt
+
+*** Jnks--
+
+rl[667.Jnks.irt.Ins]:
+  {InsRC | insrc ([InsR - Yphos] : Ins) [Irs1 - Yphos] }
+  {CLc   | clc    Jnks                                 }
+  =>
+  {InsRC | insrc ([InsR - Yphos] : Ins) [Irs1 - Yphos] }
+  {CLc   | clc    [Jnks - act]                         } .
+  --------------------------------------------------------
+  *** ~/evidence/Ins-Evidence/Jnks.irt.Ins.667.txt
+
+*** Jun--
+
+rl[668.Jun.irt.Ins]:
+  {InsRC | insrc ([InsR - Yphos] : Ins) [Hras - GTP] [Rala - GTP] }
+  {NUc   | nuc    Jun                                           }
+  =>
+  {InsRC | insrc ([InsR - Yphos] : Ins) [Hras - GTP] [Rala - GTP] }
+  {NUc   | nuc    [Jun - act]                                   } .
+  -----------------------------------------------------------------
+  *** ~/evidence/Ins-Evidence/Jun.irt.Ins.668.txt
+
+*** Mtor--
+
+rl[827.Mtor.irt.Ins]:
+  {InsRC | insrc ([InsR - Yphos] : Ins)          }
+  {CLc   | clc   (Mtor : Mlst8 : Raptor)         }
+  =>
+  {InsRC | insrc ([InsR - Yphos] : Ins)          }
+  {CLc   | clc   ([Mtor - act] : Mlst8 : Raptor) } .
+  --------------------------------------------------
+  *** ~/evidence/Ins-Evidence/Mtor.irt.Ins.827.txt
+
+*** Pi3k--
+
+rl[691.Pi3k.irt.Ins]:
+  {InsRC | insrc ([InsR - Yphos] : Ins)              }
+  {CLc   | clc    Pi3k                               }
+  =>
+  {InsRC | insrc ([InsR - Yphos] : Ins) Pi3k         }
+  {CLc   | clc                                       } .
+  ------------------------------------------------------
+  *** ~/evidence/Ins-Evidence/Pi3k.irt.Ins.691.txt
+
+*** Pras40--
+
+rl[1603.Pras40.irt.Ins]:
+  {InsRC | insrc ([InsR - Yphos] : Ins)       }
+  {CLc   | clc   Pras40                       }
+  =>
+  {InsRC | insrc ([InsR - Yphos] : Ins)       }
+  {CLc   | clc   [Pras40 - phos(T 246)]       } .
+  -------------------------------------------------------------------
+  *** ~/evidence/Ins-Evidence/Pras40.irt.Ins.1603.txt
+
+*** Rala--
+
+rl[647.Rala.irt.Ins]:
+  {InsRC | insrc ([InsR - Yphos] : Ins)              }
+  {CLi   | cli   [Rala - GDP]                        }
+  =>
+  {InsRC | insrc ([InsR - Yphos] : Ins) [Rala - GTP] }
+  {CLi   | cli                                       } .
+  ----------------------------------------------------
+  *** ~/evidence/Ins-Evidence/Rala.irt.Ins.647.txt
+
+*** Raptor--
+
+rl[868.Raptor.irt.Ins]:
+  {InsRC | insrc ([InsR - Yphos] : Ins) }
+  {RNAC  | rnac                         }
+  {CLc   | clc   Raptor                 }
+  =>
+  {InsRC | insrc ([InsR - Yphos] : Ins) }
+  {RNAC  | rnac  Raptor                 }
+  {CLc   | clc                          } .
+  ---------------------------------------
+  *** ~/evidence/Ins-Evidence/Raptor.irt.Ins.868.txt
+
+*** Rasa1--
+
+rl[749.Rasa1.irt.Ins]:
+  {InsRC | insrc ([InsR - Yphos] : Ins)                 }
+  {CLc   | clc   Rasa1                                  }
+  =>
+  {InsRC | insrc ([InsR - Yphos] : Ins) [Rasa1 - Yphos] }
+  {CLc   | clc                                          } .
+  ----------------------------------------------------------
+  *** ~/evidence/Ins-Evidence/Rasa1.irt.Ins.749.txt
+
+*** Rheb--
+
+rl[1623.Rheb.irt.Ins]:
+  {InsRC | insrc ([InsR - Yphos] : Ins)  }
+  {CVc   | cvc   [Rheb - GDP]            } 
+  =>
+  {InsRC | insrc ([InsR - Yphos] : Ins)  }
+  {CVc   | cvc   [Rheb - GTP]            } .
+  -------------------------------------------
+  *** ~/evidence/Ins-Evidence/Rheb.irt.Ins.1623.txt
+
+*** Rhoq--
+
+rl[694.Rhoq.irt.Ins]:
+  {InsRC | insrc ([InsR - Yphos] : Ins)              }
+  {CLi   | cli   [Rhoq - GDP]                        }
+  =>
+  {InsRC | insrc ([InsR - Yphos] : Ins) [Rhoq - GTP] }
+  {CLi   | cli                                       } .
+  ----------------------------------------------------
+  *** ~/evidence/Ins-Evidence/Rhoq.irt.Ins.694.txt
+
+*** Rin1--
+
+rl[1574.Rin1.irt.Ins]:
+  {InsRC | insrc ([InsR - Yphos] : Ins)        }
+  {CLc   | clc   Rin1                          }
+  =>
+  {InsRC | insrc ([InsR - Yphos] : Ins) Rin1   }
+  {CLc   | clc                                 } .
+  ----------------------------------------------------------
+  *** ~/evidence/Ins-Evidence/Rin1.irt.Ins.1574.txt
+
+*** Rps6--
+
+rl[240.Rps6.irt.Ins]:
+  {InsRC | insrc ([InsR - Yphos] : Ins)  }
+  {CLc   | clc   Rps6                    }
+  =>
+  {InsRC | insrc ([InsR - Yphos] : Ins)  }
+  {CLc   | clc   [Rps6 - phos]           } .
+  ----------------------------------------
+  *** ~/evidence/Ins-Evidence/Rps6.irt.Ins.240.txt
+
+*** S6k1--
+
+rl[747.S6k1.irt.Ins]:
+  {InsRC | insrc ([InsR - Yphos] : Ins) Pi3k          }
+  {CVc   | cvc   [Rheb - GTP]                         }
+  {CLc   | clc   S6k1                                 }
+  =>
+  {InsRC | insrc ([InsR - Yphos] : Ins) Pi3k          }
+  {CVc   | cvc   [Rheb - GTP]                         }
+  {CLc   | clc   [S6k1 - act]                         } .
+  ------------------------------------------------------
+  *** ~/evidence/Ins-Evidence/S6k1.irt.Ins.747.txt
+
+*** Shc1--
+
+rl[381.Shc1.irt.Ins]:
+  {InsRC | insrc ([InsR - Yphos] : Ins)                 }
+  {CLc   | clc   Shc1                                   }
+  =>
+  {InsRC | insrc ([InsR - Yphos] : Ins) [Shc1 - Yphos]  }
+  {CLc   | clc                                          } .
+  ---------------------------------------------------------
+  *** ~/evidence/Ins-Evidence/Shc1.irt.Ins.381.txt
+
+*** Sh2b1--
+
+rl[323.Sh2b1.irt.Ins]:
+  {InsRC | insrc ([InsR - Yphos] : Ins)                 }
+  {CLc   | clc   Sh2b1                                  }
+  =>
+  {InsRC | insrc ([InsR - Yphos] : Ins) [Sh2b1 - Yphos] }
+  {CLc   | clc                                          } .
+  ---------------------------------------------------------
+  *** ~/evidence/Ins-Evidence/Sh2b1.irt.Ins.323.txt
+
+*** Sos1--
+
+rl[1626.Sos1.irt.Ins]:
+  {InsRC | insrc ([InsR - Yphos] : Ins)              }
+  {CLc   | clc   (Sos1 : Grb2)                       }
+  =>
+  {InsRC | insrc ([InsR - Yphos] : Ins)              }
+  {CLc   | clc   [Sos1 - phos]  Grb2                 } .
+  ---------------------------------------------------------
+  *** ~/evidence/Ins-Evidence/Sos1.irt.Ins.1626.txt
+
+*** Tsc2--
+
+rl[1604.Tsc2.phos.irt.Ins]:
+  {InsRC | insrc ([InsR - Yphos] : Ins)                     }
+  {CVc   | cvc   (Tsc1 : Tsc2)                              }
+  =>
+  {InsRC | insrc ([InsR - Yphos] : Ins)                     }
+  {CVc   | cvc   (Tsc1 : [Tsc2 - phos(S 939) phos(S 1492)]) } .
+  ------------------------------------------------------------
+  *** ~/evidence/Ins-Evidence/Tsc2.phos.irt.Ins.1604.txt
+
+rl[1627.Tsc2.to.Ywhab.irt.Ins]:
+  {InsRC | insrc ([InsR - Yphos] : Ins)                             }
+  {CLc   | clc   Ywhab                                              }
+  {CVc   | cvc   (Tsc1 : [Tsc2 - phos(S 939) phos(S 1492)])         }
+  =>
+  {InsRC | insrc ([InsR - Yphos] : Ins)                             }
+  {CLc   | clc                                                      }
+  {CVc   | cvc   (Ywhab : Tsc1 : [Tsc2 - phos(S 939) phos(S 1492)]) } .
+  ----------------------------------------------------------------------
+  *** ~/evidence/Ins-Evidence/Tsc2.to.Ywhab.irt.Ins.1627.txt
+
+
+
+
+
+
+
+
+
+
+endm

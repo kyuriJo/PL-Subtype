@@ -1,0 +1,183 @@
+mod IL12RULES is inc ALLOPS .
+
+var xout : Soup .
+vars clo clm lrm cli clc nuo num nui nuc : Soup .
+vars rnac mtorc tak1c il2rc gp130c : Soup .
+vars il12rc il12rb1c il12rb2c : Soup .
+var AnyComp : CompName .
+var anycomp : Soup .
+var AnyLoc : LocName .
+var anyloc : Soup .
+
+*** ~/evidence/IL12-Evidence/00IL12-evidence.txt
+
+
+rl[1248.IL12R.irt.IL12]:
+  {XOut     | xout     IL12                                 }
+  {IL12Rb1C | il12rb1c IL12Rb1 Tyk2                         }
+  {IL12Rb2C | il12rb2c IL12Rb2 Jak2                         }
+  {IL12RC   | il12rc                                        }
+  =>
+  {XOut     | xout                                          }
+  {IL12Rb1C | il12rb1c                                      }
+  {IL12Rb2C | il12rb2c                                      }
+  {IL12RC   | il12rc   (IL12 : IL12Rb1 : IL12Rb2) Tyk2 Jak2 } .
+  --------------------------------------------------------------
+  *** ~/evidence/IL12-Evidence/IL12R.irt.IL12.1248.txt
+
+*** Gzmb--
+
+rl[1251.Gzmb-gene.irt.IL12]:
+  {IL12RC   | il12rc   (IL12 : IL12Rb1 : IL12Rb2) }
+  {NUc      | nuc       Gzmb-gene                 }
+  =>
+  {IL12RC   | il12rc   (IL12 : IL12Rb1 : IL12Rb2) }
+  {NUc      | nuc      [Gzmb-gene - on]           } .
+  ----------------------------------------------------
+  *** ~/evidence/IL12-Evidence/Gzmb-gene.irt.IL12.1251.txt
+
+*** Ifng--
+
+rl[1252.Ifng-gene.irt.IL12]:
+  {IL12RC   | il12rc   (IL12 : IL12Rb1 : IL12Rb2)     }
+  {NUc      | nuc      [Stat4 - act]  Ifng-gene       }
+  =>
+  {IL12RC   | il12rc   (IL12 : IL12Rb1 : IL12Rb2)     }
+  {NUc      | nuc      [Stat4 - act] [Ifng-gene - on] } .
+  -------------------------------------------------------
+  *** ~/evidence/IL12-Evidence/Ifng-gene.irt.IL12.1252.txt
+
+*** IL2Ra--
+
+rl[1254.IL2Ra-gene.irt.IL12]:
+  {IL12RC   | il12rc   (IL12 : IL12Rb1 : IL12Rb2)      }
+  {NUc      | nuc      [Stat4 - act]  IL2Ra-gene       }
+  =>
+  {IL12RC   | il12rc   (IL12 : IL12Rb1 : IL12Rb2)      }
+  {NUc      | nuc      [Stat4 - act] [IL2Ra-gene - on] } .
+  -------------------------------------------------------
+  *** ~/evidence/IL12-Evidence/IL2Ra-gene.irt.IL12.1254.txt
+
+*** IL18R1--
+
+rl[1255.IL18R1-gene.irt.IL12]:
+  {IL12RC   | il12rc   (IL12 : IL12Rb1 : IL12Rb2)       }
+  {NUc      | nuc      [Stat4 - act]  IL18R1-gene       }
+  =>
+  {IL12RC   | il12rc   (IL12 : IL12Rb1 : IL12Rb2)       }
+  {NUc      | nuc      [Stat4 - act] [IL18R1-gene - on] } .
+  ---------------------------------------------------------
+  *** ~/evidence/IL12-Evidence/IL18R1-gene.irt.IL12.1255.txt
+
+*** IL18Rap--
+
+rl[1256.IL18Rap-gene.irt.IL12]:
+  {IL12RC   | il12rc   (IL12 : IL12Rb1 : IL12Rb2)        }
+  {NUc      | nuc      [Stat4 - act]  IL18Rap-gene       }
+  =>
+  {IL12RC   | il12rc   (IL12 : IL12Rb1 : IL12Rb2)        }
+  {NUc      | nuc      [Stat4 - act] [IL18Rap-gene - on] } .
+  ---------------------------------------------------------
+  *** ~/evidence/IL12-Evidence/IL18Rap-gene.irt.IL12.1256.txt
+
+*** Irf1--
+
+rl[1257.Irf1-gene.irt.IL12]:
+  {IL12RC   | il12rc   (IL12 : IL12Rb1 : IL12Rb2) }
+  {NUc      | nuc       Irf1-gene                 }
+  =>
+  {IL12RC   | il12rc   (IL12 : IL12Rb1 : IL12Rb2) }
+  {NUc      | nuc      [Irf1-gene - on]           } .
+  ---------------------------------------------------
+  *** ~/evidence/IL12-Evidence/Irf1-gene.irt.IL12.1257.txt
+
+*** Jak2--
+
+rl[1250.Jak2.irt.IL12]:
+  {IL12RC   | il12rc   (IL12 : IL12Rb1 : IL12Rb2)  Jak2          }
+  =>
+  {IL12RC   | il12rc   (IL12 : IL12Rb1 : IL12Rb2) [Jak2 - Yphos] } .
+  -------------------------------------------------------------------
+  *** ~/evidence/IL12-Evidence/Jak2.irt.IL12.1250.txt
+
+*** Jun--
+
+rl[1258.Jun.irt.IL12]:
+  {IL12RC   | il12rc   (IL12 : IL12Rb1 : IL12Rb2) }
+  {NUc      | nuc      [Stat4 - act]  Jun         }
+  =>
+  {IL12RC   | il12rc   (IL12 : IL12Rb1 : IL12Rb2) }
+  {NUc      | nuc      [Stat4 - act] [Jun - act]  } .
+  ---------------------------------------------------
+  *** ~/evidence/IL12-Evidence/Jun.irt.IL12.1258.txt
+
+*** Lck--
+
+rl[1259.Lck.irt.IL12]:
+  {IL12RC   | il12rc   (IL12 : IL12Rb1 : IL12Rb2) }
+  {CLi      | cli      Lck                        }
+  =>
+  {IL12RC   | il12rc   (IL12 : IL12Rb1 : IL12Rb2) }
+  {CLi      | cli      [Lck - act]                } .
+  ---------------------------------------------------
+  *** ~/evidence/IL12-Evidence/Lck.irt.IL12.1259.txt
+
+*** Nfkb1--
+
+rl[1261.Nfkb1.irt.IL12]:
+  {IL12RC   | il12rc   (IL12 : IL12Rb1 : IL12Rb2) }
+  {CLc      | clc       Nfkb1                     }
+  {NUc      | nuc                                 }
+  =>
+  {IL12RC   | il12rc   (IL12 : IL12Rb1 : IL12Rb2) }
+  {CLc      | clc                                 }
+  {NUc      | nuc      [Nfkb1 - act]              } .
+  ---------------------------------------------------
+  *** ~/evidence/IL12-Evidence/Nfkb1.irt.IL12.1261.txt
+
+*** P38s--
+
+rl[1262.P38s.irt.IL12]:
+  {IL12RC   | il12rc   (IL12 : IL12Rb1 : IL12Rb2) }
+  {CLc      | clc       P38s                      }
+  =>
+  {IL12RC   | il12rc   (IL12 : IL12Rb1 : IL12Rb2) }
+  {CLc      | clc      [P38s - act]               } .
+  ---------------------------------------------------
+  *** ~/evidence/IL12-Evidence/P38s.irt.IL12.1262.txt
+
+*** Prf1--
+
+rl[1263.Prf1-gene.irt.IL12]:
+  {IL12RC   | il12rc   (IL12 : IL12Rb1 : IL12Rb2) }
+  {NUc      | nuc       Prf1-gene                 }
+  =>
+  {IL12RC   | il12rc   (IL12 : IL12Rb1 : IL12Rb2) }
+  {NUc      | nuc      [Prf1-gene - on]           } .
+  ---------------------------------------------------
+  *** ~/evidence/IL12-Evidence/Prf1-gene.irt.IL12.1263.txt
+
+*** Stat4--
+
+rl[1253.Stat4.irt.IL12]:
+  {IL12RC   | il12rc   (IL12 : IL12Rb1 : IL12Rb2) }
+  {CLc      | clc       Stat4                     }
+  {NUc      | nuc                                 }
+  =>
+  {IL12RC   | il12rc   (IL12 : IL12Rb1 : IL12Rb2) }
+  {CLc      | clc                                 }
+  {NUc      | nuc      [Stat4 - act]              } .
+  ---------------------------------------------------
+  *** ~/evidence/IL12-Evidence/Stat4.irt.IL12.1253.txt
+
+*** Tyk2--
+
+rl[1249.Tyk2.irt.IL12]:
+  {IL12RC   | il12rc   (IL12 : IL12Rb1 : IL12Rb2)  Tyk2          }
+  =>
+  {IL12RC   | il12rc   (IL12 : IL12Rb1 : IL12Rb2) [Tyk2 - Yphos] } .
+  -------------------------------------------------------------------
+  *** ~/evidence/IL12-Evidence/Tyk2.irt.IL12.1249.txt
+
+
+endm

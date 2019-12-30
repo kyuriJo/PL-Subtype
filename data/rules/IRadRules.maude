@@ -1,0 +1,364 @@
+mod IRADRULES is inc ALLOPS .
+
+var xout clc nuc chr : Soup .
+var atmmods : ModSet .
+
+  *** ~/evidence/IRad-Evidence/00IRad-Evidence.txt
+
+*** formation of DNA strand breaks and DNA Damage Foci
+
+rl[1738.DSB.irt.IR]:
+  {XOut | xout IR                    }
+  {CHR  | chr                        }
+  =>
+  {XOut | xout IR                    }
+  {CHR  | chr  DSB                   } .
+  -----------------------------------------
+  *** ~/evidence/IRad-Evidence/DSB.irt.IR.1738.txt
+
+*** Abl1--
+
+rl[106.Abl1.irt.IR]:
+  {XOut | xout IR                    }
+  {CLc  | clc  Abl1                  }
+  {NUc  | nuc                        }
+  {CHR  | chr  [Atm - atmmods act]   }
+  =>
+  {XOut | xout IR                    }
+  {CLc  | clc                        }
+  {NUc  | nuc  [Abl1 - act]          }
+  {CHR  | chr  [Atm - atmmods act]   } .
+  ----------------------------------------------------------
+  *** ~/evidence/IRad-Evidence/Abl1.irt.IR.106.txt
+
+*** Atm--
+
+rl[322.Atm.to.DDF.irt.IR]:
+  {XOut | xout  IR                             }
+  {NUc  | nuc   Atm                            }
+  {CHR  | chr   DSB (Mre11 : Rad50 : Nbs1)     }
+  =>
+  {XOut | xout  IR                             }
+  {NUc  | nuc                                  }
+  {CHR  | chr   DSB (Mre11 : Rad50 : Nbs1) Atm } .
+  ------------------------------------------------------------------------------
+  *** ~/evidence/IRad-Evidence/Atm.to.DDF.irt.IR.322.txt
+
+rl[329.Atm.acetyl.irt.IR]:
+  {XOut | xout  IR                           }
+  {CHR  | chr   Tip60 Atm                    }
+  =>
+  {XOut | xout  IR                           }
+  {CHR  | chr   Tip60 [Atm - acetyl(K 3016)] } .
+  ------------------------------------------------------------------------------
+  *** ~/evidence/IRad-Evidence/Atm.acetyl.irt.IR.329.txt
+
+rl[1449.Atm.phos.irt.IR]:
+  {XOut | xout  IR                   }
+  {CHR  | chr   Atm                  }
+  =>
+  {XOut | xout  IR                   }
+  {CHR  | chr   [Atm - phos(S 1981)] } .
+  ------------------------------------------------------------------------------
+  *** ~/evidence/IRad-Evidence/Atm.phos.irt.IR.1449.txt
+
+*** Atr--
+
+rl[289.Atr.to.DDF.irt.IR]:
+  {XOut | xout  IR                                            }
+  {NUc  | nuc   Atr                                           }
+  {CHR  | chr   DSB  [Atm - phos(S 1981)]
+               (Mre11 : Rad50 : [Nbs1 - phos(S 343)])         }
+  =>
+  {XOut | xout  IR                                            }
+  {NUc  | nuc                                                 }
+  {CHR  | chr   DSB [Atm - phos(S 1981)]
+               (Mre11 : Rad50 : [Nbs1 - phos(S 343)]) Atr     } .
+  ---------------------------------------------------------------
+  *** ~/evidence/IRad-Evidence/Atr.to.DDF.irt.IR.289.txt
+
+*** Brca1--
+
+rl[277.Brca1.to.DDF.irt.IR]:
+  {XOut | xout  IR                                                        }
+  {NUc  | nuc   Brca1                                                     }
+  {CHR  | chr   DSB [H2ax - phos(S 140)] [Mdc1 - phos(TQXF)] Rnf8         }
+  =>
+  {XOut | xout  IR                                                        }
+  {NUc  | nuc                                                             }
+  {CHR  | chr   DSB [H2ax - phos(S 140)] [Mdc1 - phos(TQXF)] Rnf8 Brca1   } .
+  ---------------------------------------------------------------------------
+  *** ~/evidence/IRad-Evidence/Brca1.to.DDF.irt.IR.277.txt
+
+*** Cdkn1a--
+
+rl[1450.Cdkn1a-gene.irt.IR]:
+  {XOut | xout  IR                      }
+  {NUc  | nuc   Tp53 Cdkn1a-gene        }
+  =>
+  {XOut | xout  IR                      }
+  {NUc  | nuc   Tp53 [Cdkn1a-gene - on] } .
+  ------------------------------------------------------
+  *** ~/evidence/IRad-Evidence/Cdkn1a-gene.irt.IR.1450.txt
+
+*** Chek1--
+
+rl[214.Chek1.irt.IR]:
+  {XOut | xout IR                                             }
+  {NUc  | nuc  Claspin Chek1                                  }
+  {CHR  | chr  DSB [Atm - phos(S 1981)]
+               (Mre11 : Rad50 : [Nbs1 - phos(S 343)]) Atr     }
+  =>
+  {XOut | xout IR                                             }
+  {NUc  | nuc  Claspin [Chek1 - phos(S 317) phos(S 345)]      }
+  {CHR  | chr  DSB [Atm - phos(S 1981)]
+               (Mre11 : Rad50 : [Nbs1 - phos(S 343)]) Atr     } .
+  ------------------------------------------------------------------------
+  *** ~/evidence/IRad-Evidence/Chek1.irt.IR.214.txt
+
+*** Chek2--
+
+rl[368.Chek2.to.DDF.irt.IR]:
+  {XOut | xout  IR                                     }
+  {NUc  | nuc   Chek2                                  }
+  {CHR  | chr   DSB [Mdc1 - phos(TQXF)] Tp53bp1        }
+  =>
+  {XOut | xout  IR                                     }
+  {NUc  | nuc                                          }
+  {CHR  | chr   DSB [Mdc1 - phos(TQXF)] Tp53bp1 Chek2  } .
+  -----------------------------------------------------------------------------
+  *** ~/evidence/IRad-Evidence/Chek2.to.DDF.irt.IR.368.txt
+
+rl[1451.Chek2.irt.IR]:
+  {XOut | xout  IR                                              }
+  {CHR  | chr   DSB [Atm - atmmods act] 
+               (Mre11 : Rad50 : [Nbs1 - phos(S 343)]) Chek2     }
+  =>
+  {XOut | xout  IR                                              }
+  {CHR  | chr   DSB  [Atm - atmmods act] 
+               (Mre11 : Rad50 : [Nbs1 - phos(S 343)])
+                [Chek2 - phos(T 68)]                            } .
+  -----------------------------------------------------------------------------
+  *** ~/evidence/IRad-Evidence/Chek2.irt.IR.1451.txt
+
+*** Creb1--
+
+rl[088.Creb1.irt.IR]:
+  {XOut | xout  IR                    }
+  {NUc  | nuc   Creb1                 }
+  =>
+  {XOut | xout  IR                    }
+  {NUc  | nuc   [Creb1 - phos(S 121)] } .
+  ------------------------------------------------------------------------
+  *** ~/evidence/IRad-Evidence/Creb1.irt.IR.088.txt
+
+*** Fancd2--
+
+rl[371.Fancd2.to.DDF.irt.IR]:
+  {XOut | xout  IR         }
+  {NUc  | nuc   Fancd2     }
+  {CHR  | chr   DSB        }
+  =>
+  {XOut | xout  IR         }
+  {NUc  | nuc              }
+  {CHR  | chr   DSB Fancd2 } .
+  -----------------------------------------------
+  *** ~/evidence/IRad-Evidence/Fancd2.to.DDF.irt.IR.371.txt
+
+*** H2ax--
+
+rl[167.H2ax.irt.IR]:
+  {XOut | xout  IR                                           }
+  {CHR  | chr   DSB [Atm - atmmods act] H2ax                 }
+  =>
+  {XOut | xout  IR                                           }
+  {CHR  | chr   DSB [Atm - atmmods act] [H2ax - phos(S 140)] } .
+  --------------------------------------------------------------
+  *** ~/evidence/IRad-Evidence/H2ax.irt.IR.167.txt
+
+*** Mdc1--
+
+rl[260.Mdc1.to.DDF.irt.IR]:
+  {XOut | xout  IR                            }
+  {NUc  | nuc   Mdc1                          }
+  {CHR  | chr   DSB [H2ax - phos(S 140)]      }
+  =>
+  {XOut | xout  IR                            }
+  {NUc  | nuc                                 }
+  {CHR  | chr   DSB [H2ax - phos(S 140)] Mdc1 } .
+  -----------------------------------------------
+  *** ~/evidence/IRad-Evidence/Mdc1.to.DDF.irt.IR.260.txt
+
+rl[372.Mdc1.phos.irt.IR]:
+  {XOut | xout  IR                                          }
+  {CHR  | chr   DSB [Atm - atmmods act] Mdc1                }
+  =>
+  {XOut | xout  IR                                          }
+  {CHR  | chr   DSB [Atm - atmmods act] [Mdc1 - phos(TQXF)] } .
+  -------------------------------------------------------------
+  *** ~/evidence/IRad-Evidence/Mdc1.phos.irt.IR.372.txt
+
+*** Mdm2--
+
+rl[1452.Mdm2-gene.irt.IR]:
+  {XOut | xout  IR                    }
+  {NUc  | nuc   Tp53  Mdm2-gene       }
+  =>
+  {XOut | xout  IR                    }
+  {NUc  | nuc   Tp53 [Mdm2-gene - on] } .
+  ----------------------------------------------
+  *** ~/evidence/IRad-Evidence/Mdm2-gene.irt.IR.1452.txt
+
+*** MRN--
+
+rl[279.MRN.to.DDF.irt.IR]:
+  {XOut | xout  IR                         }
+  {NUc  | nuc   (Mre11 : Rad50 : Nbs1)     }
+  {CHR  | chr   DSB                        }
+  =>
+  {XOut | xout  IR                         }
+  {NUc  | nuc                              }
+  {CHR  | chr   DSB (Mre11 : Rad50 : Nbs1) } .
+  -------------------------------------------------
+  *** ~/evidence/IRad-Evidence/Mre11.to.DDF.irt.IR.279.txt
+  *** ~/evidence/IRad-Evidence/Nbs1.to.DDF.irt.IR.279.txt
+  *** ~/evidence/IRad-Evidence/Rad50.to.DDF.irt.IR.279.txt
+
+*** Nbs1--
+
+rl[110.Nbs1.phos.irt.IR]:
+  {XOut | xout IR                                                             }
+  {CHR  | chr  DSB [Atm - atmmods act] (Mre11 : Rad50 : Nbs1)                 }
+  =>
+  {XOut | xout IR                                                             }
+  {CHR  | chr  DSB [Atm - atmmods act] (Mre11 : Rad50 : [Nbs1 - phos(S 343)]) } .
+  -------------------------------------------------------------------------------
+  *** ~/evidence/IRad-Evidence/Nbs1.phos.irt.IR.110.txt
+
+*** Nemo--
+
+rl[058.Nemo.irt.IR]:
+  {XOut | xout  IR                  }
+  {CLc  | clc   Nemo                }
+  =>
+  {XOut | xout  IR                  }
+  {CLc  | clc   [Nemo - phos(S 85)] } .
+  ------------------------------------------
+  *** ~/evidence/IRad-Evidence/Nemo.irt.IR.058.txt
+
+*** Pirh2--
+
+rl[1453.Pirh2-gene.irt.IR]:
+  {XOut | xout  IR                     }
+  {NUc  | nuc   Tp53  Pirh2-gene       }
+  =>
+  {XOut | xout  IR                     }
+  {NUc  | nuc   Tp53 [Pirh2-gene - on] } .
+  ----------------------------------------------
+  *** ~/evidence/IRad-Evidence/Pirh2-gene.irt.IR.1453.txt
+
+*** Rap80--
+
+rl[383.Rap80.to.DDF.irt.IR]:
+  {XOut | xout  IR                                  }
+  {NUc  | nuc   Rap80                               }
+  {CHR  | chr   DSB  [Mdc1 - phos(TQXF)] Rnf8       }
+  =>
+  {XOut | xout  IR                                  }
+  {NUc  | nuc                                       }
+  {CHR  | chr   DSB  [Mdc1 - phos(TQXF)] Rnf8 Rap80 } .
+  ------------------------------------------------------
+  *** ~/evidence/IRad-Evidence/Rap80.to.DDF.irt.IR.383.txt
+
+*** Rnf8--
+
+rl[265.Rnf8.to.DDF.irt.IR]:
+  {XOut | xout  IR                            }
+  {NUc  | nuc   Rnf8                          }
+  {CHR  | chr   DSB  [Mdc1 - phos(TQXF)]      }
+  =>
+  {XOut | xout  IR                            }
+  {NUc  | nuc                                 }
+  {CHR  | chr   DSB  [Mdc1 - phos(TQXF)] Rnf8 } .
+  -----------------------------------------------
+  *** ~/evidence/IRad-Evidence/Rnf8.to.DDF.irt.IR.265.txt
+
+*** Smc1a--
+
+rl[140.Smc1a.irt.IR]:
+  {XOut | xout IR                                    }
+  {NUc  | nuc  Smc1a                                 }
+  {CHR  | chr  DSB [Atm - atmmods act] Brca1 
+              (Mre11 : Rad50 : [Nbs1 - phos(S 343)]) }
+  =>
+  {XOut | xout IR                                    }
+  {NUc  | nuc  [Smc1a - phos(S 957) phos(S 966)]     }
+  {CHR  | chr  DSB [Atm - atmmods act] Brca1 
+              (Mre11 : Rad50 : [Nbs1 - phos(S 343)]) } .
+  ------------------------------------------------------------------------------
+  *** ~/evidence/IRad-Evidence/Smc1a.irt.IR.140.txt
+
+*** Tip60--
+
+rl[341.Tip60.to.DDF.irt.IR]:
+  {XOut | xout  IR              }
+  {NUc  | nuc   Tip60           }
+  {CHR  | chr   DSB             }
+  =>
+  {XOut | xout  IR              }
+  {NUc  | nuc                   }
+  {CHR  | chr   DSB Tip60       } .
+  ---------------------------------------------------------------------
+  *** ~/evidence/IRad-Evidence/Tip60.to.DDF.irt.IR.341.txt
+
+*** Tp53--
+
+rl[1454.Tp53.irt.IR]:
+  {XOut | xout  IR                                    }
+  {NUc  | nuc   [Atm - atmmods act] Mre11 Tp53                }
+  =>
+  {XOut | xout  IR                                    }
+  {NUc  | nuc   [Atm - atmmods act] Mre11 [Tp53 - phos(S 15)] } .
+  -------------------------------------------------------
+  *** ~/evidence/IRad-Evidence/Tp53.irt.IR.1454.txt
+
+*** Tp53aip1--
+
+rl[1455.Tp53aip1-gene.irt.IR]:
+  {XOut | xout  IR                        }
+  {NUc  | nuc   Tp53  Tp53aip1-gene       }
+  =>
+  {XOut | xout  IR                        }
+  {NUc  | nuc   Tp53 [Tp53aip1-gene - on] } .
+  --------------------------------------------------
+  *** ~/evidence/IRad-Evidence/Tp53aip1-gene.irt.IR.1455.txt
+
+*** Tp53bp1--
+
+rl[274.Tp53bp1.to.DDF.irt.IR]:
+  {XOut | xout  IR                                   }
+  {NUc  | nuc   Tp53bp1                              }
+  {CHR  | chr   DSB [Mdc1 - phos(TQXF)] Rnf8         }
+  =>
+  {XOut | xout  IR                                   }
+  {NUc  | nuc                                        }
+  {CHR  | chr   DSB [Mdc1 - phos(TQXF)] Rnf8 Tp53bp1 } .
+  ------------------------------------------------------
+  *** ~/evidence/IRad-Evidence/Tp53bp1.to.DDF.irt.IR.274.txt
+
+*** Trim28--
+
+rl[292.Trim28.irt.IR]:
+  {XOut | xout  IR                     }
+  {NUc  | nuc   Trim28                 }
+  {CHR  | chr  [Atm - atmmods act]             }
+  =>
+  {XOut | xout  IR                     }
+  {NUc  | nuc  [Trim28 - phos(S 824)]  }
+  {CHR  | chr  [Atm - atmmods act]             } .
+  ----------------------------------------------------
+  *** ~/evidence/IRad-Evidence/Trim28.irt.IR.292.txt
+
+
+endm
+

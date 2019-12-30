@@ -1,0 +1,1088 @@
+*********1*********2*********3*********4*********5*********6*********7****
+***
+***  TnfRules.maude
+***
+**************************************************************************
+mod TNFRULES is inc ALLOPS .
+
+vars xout clo clm cli clc nuc sig rnac cvc chr : Soup .
+var tnfr1c egfrc : Soup .
+vars erksmods : ModSet .
+
+
+*** ~/evidence/Tnf-Evidence/00Tnf-Evidence.txt
+
+rl[107.TnfR1.by.Tnf]:
+  {XOut   | xout   Tnf           }
+  {TnfR1C | tnfr1c TnfR1         }
+  =>
+  {XOut   | xout                 }
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) } .
+  ----------------------------------------------
+  *** ~/evidence/Tnf-Evidence/TnfR1.by.Tnf.107.txt
+
+*** Akt1--
+
+rl[730.Akt1.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)                    }
+  {CLc    | clc    Akt1                             }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)                    }
+  {CLc    | clc    [Akt1 - phos(S 473)phos(T 308)]  } .
+  -----------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Akt1.irt.Tnf.730.txt
+
+*** Ask1--
+
+rl[953.Ask1.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) Traf2               }
+  {CLc    | clc    Ask1                              }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) Traf2  [Ask1 - act] }
+  {CLc    | clc                                      } .
+  ------------------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Ask1.irt.Tnf.953.txt
+
+*** Atf1--
+
+rl[1005.Atf1.irt.Tnf]:
+  {TnfR1C | tnfr1c  (TnfR1 : Tnf)       }
+  {NUc    | nuc     Atf1                }
+  =>
+  {TnfR1C | tnfr1c  (TnfR1 : Tnf)       }
+  {NUc    | nuc     [Atf1 - phos(S 63)] } .
+  ---------------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Atf1.irt.Tnf.1005.txt
+
+*** Atf2--
+
+rl[899.Atf2.irt.Tnf]:
+  {TnfR1C | tnfr1c  (TnfR1 : Tnf)                  }
+  {CLc    | clc     Atf2                           }
+  {NUc    | nuc                                    }
+  =>
+  {TnfR1C | tnfr1c  (TnfR1 : Tnf)                  }
+  {CLc    | clc                                    }
+  {NUc    | nuc     [Atf2 - phos] } .
+  ---------------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Atf2.irt.Tnf.899.txt
+
+*** Ciap1--
+
+rl[114.Ciap1.to.TnfR1]:
+  {TnfR1C | tnfr1c  (TnfR1 : Tnf) Tradd Traf2       }
+  {CLc    | clc     Ciap1                           }
+  =>
+  {TnfR1C | tnfr1c  (TnfR1 : Tnf) Tradd Traf2 Ciap1 }
+  {CLc    | clc                                     } .
+  -----------------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Ciap1.to.TnfR1.114.txt
+
+*** CcL2--  CcL2-gene
+
+rl[774.CcL2-gene.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) Ciap1 [Ripk1 - ubiq] }
+  {NUc    | nuc     CcL2-gene                         }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) Ciap1 [Ripk1 - ubiq] }
+  {NUc    | nuc    [CcL2-gene - on]                   } .
+  -------------------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/CcL2-gene.irt.Tnf.774.txt
+
+*** CcL5--  CcL5-gene
+
+rl[779.CcL5-gene.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) [Ripk1 - ubiq] }
+  {NUc    | nuc    [Rela - act] CcL5-gene       }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) [Ripk1 - ubiq] }
+  {NUc    | nuc    [Rela - act] [CcL5-gene - on]} .
+  -------------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/CcL5-gene.irt.Tnf.779.txt
+
+*** Cezanne-- Cezanne-gene--
+
+rl[780.Cezanne-gene.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)          }
+  {NUc    | nuc    Cezanne-gene           }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)          }
+  {NUc    | nuc    [Cezanne-gene - on]    } .
+  -----------------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Cezanne-gene.irt.Tnf.780.txt
+
+*** Creb1--
+
+rl[1787.Creb1.irt.Tnf]:
+  {TnfR1C | tnfr1c  (TnfR1 : Tnf)         }
+  {NUc    | nuc     Creb1                 }
+  =>
+  {TnfR1C | tnfr1c  (TnfR1 : Tnf)         }
+  {NUc    | nuc     [Creb1 - phos(S 133)] } .
+  ---------------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Creb1.irt.Tnf.1787.txt
+
+*** CxcL1-- CxcL1-gene--
+
+rl[782.CxcL1-gene.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)       }
+  {NUc    | nuc    CxcL1-gene          }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)       }
+  {NUc    | nuc    [CxcL1-gene - on]   } .
+  ------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/CxcL1-gene.irt.Tnf.782.txt
+
+*** CxcL2-- CxcL2-gene--
+
+rl[786.CxcL2-gene.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)       }
+  {NUc    | nuc    CxcL2-gene          }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)       }
+  {NUc    | nuc    [CxcL2-gene - on]   } .
+  -----------------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/CxcL2-gene.irt.Tnf.786.txt
+
+*** CxcL10-- CxcL10-gene--
+
+rl[788.CxcL10-gene.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)       }
+  {NUc    | nuc    CxcL10-gene         }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)       }
+  {NUc    | nuc    [CxcL10-gene - on]  } .
+  -----------------------------------------------
+  *** ~/evidence/Tnf-Evidence/CxcL10-gene.irt.Tnf.788.txt
+
+*** EgfR--
+
+rl[034.EgfR.Sphos.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)                                   
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S) }
+  {EgfRC  | egfrc  EgfR                                                        }
+  {CLc    | clc    [P38s - act]                                                }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)                                   
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S) }
+  {EgfRC  | egfrc  [EgfR - phos(S 1070)phos(S 1071)]                           }
+  {CLc    | clc    [P38s - act]                                                } .
+  --------------------------------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/EgfR.Sphos.irt.Tnf.034.txt
+
+rl[036.EgfR.Tphos.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)                                   
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S) }
+  {EgfRC  | egfrc  EgfR                                                        }
+  {CLi    | cli    Cltc                                                        }
+  {CLc    | clc    [Erks - erksmods]                                           }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)                                   
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S) }
+  {EgfRC  | egfrc  [EgfR - phos(T 693)]                                        }
+  {CLi    | cli    Cltc                                                        }
+  {CLc    | clc    [Erks - erksmods]                                           } .
+  --------------------------------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/EgfR.Tphos.irt.Tnf.036.txt
+
+*** Egr1-- Egr1-gene--
+
+rl[793.Egr1-gene.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) }
+  {NUc    | nuc    Egr1-gene                 }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) }
+  {NUc    | nuc    [Egr1-gene - on]          } .
+  ----------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Egr1-gene.irt.Tnf.793.txt
+
+*** Eif4e--
+
+rl[1639.Eif4e.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) }
+  {CLc    | clc    [Mnk1 - act] Eif4e        }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) }
+  {CLc    | clc    [Mnk1 - act] Eif4e        } .
+  ----------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Eif4e.irt.Tnf.1639.txt
+
+*** Eif4ebp1--
+***(
+rl[1613.Eif4ebp1.phos.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) }
+  {CLc    | clc    Eif4ebp1                  }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) }
+  {CLc    | clc    Eif4ebp1                  } .
+  ----------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Eif4ebp1.phos.irt.Tnf.1613.txt
+)
+rl[1613.Eif4ebp1.phos.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) }
+  {CLc    | clc    Eif4ebp1                  }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) }
+  {CLc    | clc    [Eif4ebp1 - phos(S 65)]   } .
+----------------------------------------------
+*** ~/evidence/Tnf-Evidence/Eif4ebp1.phos.irt.Tnf.1613.txt
+ 
+*** Eselectin-- Eselectin-gene--
+
+rl[795.Eselectin-gene.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)              }
+  {CLc    | clc    [Tbk1 - act] [Gsk3s - act] }
+  {NUc    | nuc    Eselectin-gene             }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)              }
+  {CLc    | clc    [Tbk1 - act] [Gsk3s - act] }
+  {NUc    | nuc    [Eselectin-gene - on]      } .
+  ----------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Eselectin-gene.irt.Tnf.795.txt
+
+*** ErkS--
+
+rl[839.ErkS.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) [Ripk1 - ubiq]
+                   [Syk - act] [Tpl2 - act] Tradd Traf2                  
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S) }
+  {CLc    | clc    [Mek1 - act]  [Erks - erksmods]                             }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) [Ripk1 - ubiq]
+                   [Syk - act] [Tpl2 - act] Tradd Traf2                  
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S) }
+  {CLc    | clc    [Mek1 - act] [Erks - erksmods act phos(TEY)]                } .
+  --------------------------------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/ErkS.irt.Tnf.839.txt
+
+*** Fos-- Fos-gene--
+
+rl[1317.Fos-gene.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)             }
+  {NUc    | nuc    Fos-gene                  }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)             }
+  {NUc    | nuc    [Fos-gene - on]           } .
+  -----------------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Fos-gene.irt.Tnf.1317.txt
+
+*** Hif1a--  Hif1a-gene--
+
+*** Cd54-- Cd54-gene--
+
+rl[883.Cd54-gene.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) [Ripk1 - ubiq] }
+  {NUc    | nuc     Cd54-gene                   }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) [Ripk1 - ubiq] }
+  {NUc    | nuc    [Cd54-gene - on]             } .
+  -------------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Cd54-gene.irt.Tnf.883.txt
+
+*** Ikba--
+
+rl[809.Ikba.Rela.to.Ikk.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) [Mekk3 - act]                   
+                   ([Ikk1 - act] : [Ikk2 - act] : [Nemo - ubiq])  }
+  {CLc    | clc    (Ikba : Rela)                                  }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) [Mekk3 - act]
+                   ([Ikk1 - act] : [Ikk2 - act] : [Nemo - ubiq])
+                   (Ikba : Rela)                                  }
+  {CLc    | clc                                                   } .
+  --------------------------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Ikba.Rela.to.Ikk.irt.Tnf.809.txt
+
+rl[542.Ikba.phosed.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) ciap12:Ciap12S
+                   ([Ikk1 - act] : [Ikk2 - act] : [Nemo - ubiq])
+                   [Mekk3 - act] Muc1 [Ripk1 - ubiq] [Rsk2 - act] [Syk - act]
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S)
+                   Tradd  (Ikba : Rela)                                        }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) ciap12:Ciap12S
+                   ([Ikk1 - act] : [Ikk2 - act] : [Nemo - ubiq])
+                   [Mekk3 - act] Muc1 [Ripk1 - ubiq] [Rsk2 - act] [Syk - act]
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S)
+                   Tradd  ([Ikba - phos] : Rela)                               } .
+  -------------------------------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Ikba.phosed.irt.Tnf.542.txt
+
+rl[636.Ikba.degraded.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) ciap12:Ciap12S
+                   ([Ikk1 - act] : [Ikk2 - act] : [Nemo - ubiq])
+                   [Mekk3 - act] Muc1 [Ripk1 - ubiq] [Syk - act]
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S)
+                   Tradd Traf2 [Tpl2 - act] 
+                   ([Ikba - phos] : Rela)                                    }
+  {CLc    | clc                                                              }
+  {Sig    | sig                                                              }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) ciap12:Ciap12S
+                   ([Ikk1 - act] : [Ikk2 - act] : [Nemo - ubiq])
+                   [Mekk3 - act] Muc1 [Ripk1 - ubiq] [Syk - act]
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S)
+                   Tradd Traf2 [Tpl2 - act] Rela                             } 
+  {CLc    | clc    [Ikba - degraded]                                         }
+  {Sig    | sig                                                              } .
+  ------------------------------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Ikba.degraded.irt.Tnf.636.txt
+
+*** Ikba-gene--
+
+rl[796.Ikba-gene.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) Rnf11  }
+  {CLc    | clc    [Ikba - degraded]    }
+  {NUc    | nuc    Ikba-gene            }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) Rnf11  }
+  {CLc    | clc    [Ikba - degraded]    }
+  {NUc    | nuc    [Ikba-gene - on]     } .
+  ---------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Ikba-gene.irt.Tnf.796.txt
+
+*** Ikbb--
+
+rl[814.Ikbb.to.Ikk.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) [Mekk2 - act]
+                   ([Ikk1 - act] : [Ikk2 - act] : [Nemo - ubiq])  }
+
+  {CLc    | clc    (Ikbb :  Rela)                                        }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) [Mekk2 - act]
+                   ([Ikk1 - act] : [Ikk2 - act] : [Nemo - ubiq])
+                   (Ikbb : Rela)                                         }
+  {CLc    | clc                                                          } .
+  -------------------------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Ikbb.to.Ikk.irt.Tnf.814.txt
+
+rl[829.Ikbb.degraded.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) [Mekk2 - act]
+                   ([Ikk1 - act] : [Ikk2 - act] : [Nemo - ubiq])
+                   (Ikbb : Rela)                                   }
+  {CLc | clc                                                       }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) [Mekk2 - act] 
+                   ([Ikk1 - act] : [Ikk2 - act] : [Nemo - ubiq])   }
+  {CLc    | clc    [Ikbb - degraded] Rela                          } .
+  --------------------------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Ikbb.degraded.irt.Tnf.829.txt
+
+*** Ikk1--
+*** Ikk2--
+*** Ikks--
+
+rl[168.Ikks.to.TnfR1]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) Tradd Traf2   }
+  {CLc    | clc    (Ikk1 : Ikk2 : Nemo)                    }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) Tradd Traf2 
+                   (Ikk1 : Ikk2 : Nemo)                    }
+  {CLc    | clc                                            } .
+  ---------------------------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Ikks.to.TnfR1.168.txt
+
+rl[891.Ikks.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) ciap12:Ciap12S
+                   [Mekk3 - act] Muc1 [Pkci - act] [Ripk1 - ubiq] Traf2
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S)
+                   (Ikk1 : Ikk2 : Nemo)                                        }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) ciap12:Ciap12S
+                   [Mekk3 - act] Muc1 [Pkci - act] [Ripk1 - ubiq] Traf2
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S)
+                   ([Ikk1 - act] : [Ikk2 - act] : [Nemo - ubiq])               } .
+  ------------------------------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Ikks.irt.Tnf.891.txt
+
+*** IL1b-- IL1b-gene--
+
+rl[799.IL1b-gene.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)      }
+  {NUc    | nuc    IL1b-gene          }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)      }
+  {NUc    | nuc    [IL1b-gene - on]   } .
+  ----------------------------------------------
+  *** ~/evidence/Tnf-Evidence/IL1b-gene.irt.Tnf.799.txt
+
+*** IL6-- IL6-gene--
+
+rl[816.IL6-gene.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)
+                   ([Ikk1 - act] : [Ikk2 - act] : [Nemo - ubiq])
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S)
+                   [Ripk1 - ubiq]  [Syk - act] [Tpl2 - act]                  }
+  {CLc    | clc    [Ikba - degraded]                                         }
+  {NUc    | nuc    [msk12s:Msk12S - act] IL6-gene                            }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)
+                   ([Ikk1 - act] : [Ikk2 - act] : [Nemo - ubiq])
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S)
+                    [Ripk1 - ubiq]  [Syk - act] [Tpl2 - act]                 }
+  {CLc    | clc    [Ikba - degraded]                                         }
+  {NUc    | nuc    [msk12s:Msk12S - act] [IL6-gene - on]                     } .
+  ------------------------------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/IL6-gene.irt.Tnf.816.txt
+
+*** IL8-- IL8-gene--
+
+rl[818.IL8-gene.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) [Tank - phos] 
+                   ([Ikk1 - act] : [Ikk2 - act] : [Nemo - ubiq]) }
+  {CLc    | clc    Irak1                                         }
+  {NUc    | nuc    IL8-gene                                      }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) [Tank - phos]
+                   ([Ikk1 - act] : [Ikk2 - act] : [Nemo - ubiq]) }
+  {CLc    | clc    Irak1                                         }
+  {NUc    | nuc    [IL8-gene - on]                               } .
+  -----------------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/IL8-gene.irt.Tnf.818.txt
+
+*** Irf1-- Irf1-gene--
+
+rl[489.Irf1-gene.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)    }
+  {NUc    | nuc    Irf1-gene        }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)    }
+  {NUc    | nuc    [Irf1-gene - on] } .
+  -------------------------------------
+  *** ~/evidence/Tnf-Evidence/Irf1-gene.irt.Tnf.489.txt
+
+*** Itch--
+
+rl[1566.Itch.to.TnfR1]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)
+                   ([Ikk1 - act] : [Ikk2 - act] : [Nemo - ubiq])
+                   [Tax1bp1 - phos] Tnfaip3                             }
+  {CLc    | clc     Itch                                                }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)
+                   ([Ikk1 - act] : [Ikk2 - act] : [Nemo - ubiq])
+                   [Tax1bp1 - phos] Tnfaip3 Itch                        }
+  {CLc    | clc                                                         } .
+  -------------------------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Itch.to.TnfR1.1566.txt
+
+*** JnkS--
+
+rl[832.JnkS.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) [Ask1 - act]
+                   ([Ikk1 - act] : [Ikk2 - act] : [Nemo - ubiq])
+                   [Map4k5 - act] [Mekk1 - act] [Mlk3 - act] [Ripk1 - ubiq]
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S)
+                   [Syk - act] Tradd [Traf2 - K63ubiq]                       }
+  {CLc    | clc    [mkk47s:Mkk47S - act] Jnks  Ubc13                         }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) [Ask1 - act]
+                   ([Ikk1 - act] : [Ikk2 - act] : [Nemo - ubiq])
+                   [Map4k5 - act] [Mekk1 - act] [Mlk3 - act] [Ripk1 - ubiq]
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S)
+                   [Syk - act] Tradd [Traf2 - K63ubiq]                       }
+  {CLc    | clc    [mkk47s:Mkk47S - act] [Jnks - act] Ubc13                  } .
+  ------------------------------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/JnkS.irt.Tnf.832.txt
+
+*** Jun--
+
+rl[903.Jun.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) [Ripk1 - ubiq] Tradd
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S) }
+  {CLc    | clc    [Jnks - act]                                              }
+  {NUc    | nuc    Jun                                                       }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) [Ripk1 - ubiq] Tradd
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S) }
+  {CLc    | clc    [Jnks - act]                                              } 
+  {NUc    | nuc    [Jun - act]                                               } .
+  ------------------------------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Jun.irt.Tnf.903.txt
+
+*** Junb-- Junb-gene--
+
+rl[825.Junb-gene.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) }
+  {NUc    | nuc    Junb-gene                 }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) }
+  {NUc    | nuc    [Junb-gene - on]          } .
+  -----------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Junb-gene.irt.Tnf.825.txt
+
+*** Map4k5--
+
+rl[943.Map4k5.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) [Traf2 - K63ubiq] }
+  {CLc    | clc    Map4k5                                      }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) [Traf2 - K63ubiq]
+                   [Map4k5 - act]                              }
+  {CLc    | clc                                                } .
+  ----------------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Map4k5.irt.Tnf.943.txt
+
+*** Mapkapk2--
+
+rl[1050.Mapkapk2.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)      }
+  {CLc    | clc    Mapkapk2           }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)      }
+  {CLc    | clc    [Mapkapk2 - act]   } .
+  ------------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Mapkapk2.irt.Tnf.1050.txt
+
+*** Mek1--
+
+rl[840.Mek1.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) [Tpl2 - act]  }
+  {CLc    | clc    Mek1                                    }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) [Tpl2 - act]  }
+  {CLc    | clc    [Mek1 - act]                            } .
+  ------------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Mek1.irt.Tnf.840.txt
+
+*** Mekk1--
+
+rl[086.Mekk1.irt.Tnf]:
+  {TnfR1C | tnfr1c  (TnfR1 : Tnf)               }
+  {CLc    | clc     Mekk1                                   }
+  =>
+  {TnfR1C | tnfr1c  (TnfR1 : Tnf) [Mekk1 - act] }
+  {CLc    | clc                                             } .
+  -------------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Mekk1.irt.Tnf.086.txt
+
+*** Mekk2--
+
+rl[942.Mekk2.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)               }
+  {CLc    | clc    Mekk2                                   }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) [Mekk2 - act] }
+  {CLc    | clc                                            } .
+  ------------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Mekk2.irt.Tnf.942.txt
+
+*** Mekk3--
+
+rl[821.Mekk3.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)               }
+  {CLc    | clc    Mekk3                                   }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) [Mekk3 - act] }
+  {CLc    | clc                                            } .
+  ------------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Mekk3.irt.Tnf.821.txt
+
+*** Mkk4--
+
+rl[846.Mkk4.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) [Tpl2 - act] }
+  {CLc    | clc    Mkk4                                   }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) [Tpl2 - act] }
+  {CLc    | clc    [Mkk4 - act]                           } .
+  -----------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Mkk4.irt.Tnf.846.txt
+
+*** Mkk7--
+
+rl[072.Mkk7.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) }
+  {CLc    | clc     Mkk7                     }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) }
+  {CLc    | clc    [Mkk7 - act]              } .
+  ----------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Mkk7.irt.Tnf.072.txt
+
+*** Mlk3--
+
+rl[163.Mlk3.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)              }
+  {CLc    | clc    Mlk3                                   }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) [Mlk3 - act] }
+  {CLc    | clc                                           } .
+  -----------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Mlk3.irt.Tnf.163.txt
+
+*** Mnk1--
+
+rl[1638.Mnk1.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)   }
+  {CLc    | clc    Mnk1                        }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)   }
+  {CLc    | clc    [Mnk1 - act]                } .
+  ------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Mnk1.irt.Tnf.1638.txt
+
+*** Msk1--
+
+rl[302.Msk1.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) [Tpl2 - act] }
+  {NUc    | nuc    Msk1                                   }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) [Tpl2 - act] }
+  {NUc    | nuc    [Msk1 - act]                           } .
+  -----------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Msk1.irt.Tnf.302.txt
+
+*** Muc1--
+
+rl[802.Muc1.to.TnfR1]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) Tradd Traf2       }
+  {CLm    | clm    Muc1                                        }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) Tradd Traf2 Muc1  }
+  {CLm    | clm                                                } .
+  ----------------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Muc1.to.TnfR1.802.txt
+
+*** Nfkb--
+
+rl[957.Nfkb.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) Ciap1
+                   ([Ikk1 - act] : [Ikk2 - act] : [Nemo - ubiq])
+                   [Mekk3 - act] [Ripk1 - ubiq]
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S)
+                   [Syk - act] [Tank - phos] [Tpl2 - act]
+                    Tradd traf25s:Traf25S                                    }
+  {CLc    | clc    Azi2 Csnk1a1 [Ikba - degraded] Pin1 Pkcz                  }
+  {NUc    | nuc    [Rela - act]                                              }
+  {Sig    | sig                                                              }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) Ciap1
+                   ([Ikk1 - act] : [Ikk2 - act] : [Nemo - ubiq])
+                   [Mekk3 - act] [Ripk1 - ubiq]
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S)
+                   [Syk - act] [Tank - phos] [Tpl2 - act]
+                    Tradd traf25s:Traf25S                                    }
+  {CLc    | clc    Azi2 Csnk1a1 [Ikba - degraded] Pin1 Pkcz                  }
+  {NUc    | nuc    [Rela - act]                                              }
+  {Sig    | sig    NFKB-REPORTER-ON                                          } .
+  ------------------------------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Nfkb.irt.Tnf.957.txt
+
+*** Nfkb1--
+
+rl[069.Nfkb1.phos.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)                       
+                   ([Ikk1 - act] : [Ikk2 - act] : [Nemo - ubiq])    } 
+  {CLc    | clc    Nfkb1                                            }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)                             
+                   ([Ikk1 - act] : [Ikk2 - act] : [Nemo - ubiq])    } 
+  {CLc    | clc    [Nfkb1 - phos(S 927)phos(S 932)]                 } .
+  ---------------------------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Nfkb1.phos.irt.Tnf.069.txt
+
+rl[066.Nfkb1.degraded.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)                            
+                   ([Ikk1 - act] : [Ikk2 - act] : [Nemo - ubiq])        }    
+  {CLc    | clc     [Nfkb1 - phos(S 927)phos(S 932)]     }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)                            
+                   ([Ikk1 - act] : [Ikk2 - act] : [Nemo - ubiq])        } 
+  {CLc    | clc     [Nfkb1 - p50]                                       } .
+  ------------------------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Nfkb1.degraded.irt.Tnf.066.txt
+
+rl[073.Nfkb1.to.nuc.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)  [Rsk2 - act] }
+  {CLc    | clc   [Nfkb1 - p50]                }
+  {NUc    | nuc                                }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)  [Rsk2 - act] }
+  {CLc    | clc                                }
+  {NUc    | nuc   [Nfkb1 - p50]                } .
+  ------------------------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Nfkb1.to.nuc.irt.Tnf.073.txt
+
+*** P38s--
+
+rl[833.P38s.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) [Mekk1 - act]
+                   ([Ikk1 - act] : [Ikk2 - act] : [Nemo - ubiq])
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S)
+                   [Ripk1 - ubiq] [Syk - act] Tradd                          }
+  {CLc    | clc    P38s                                                      }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) [Mekk1 - act]
+                   ([Ikk1 - act] : [Ikk2 - act] : [Nemo - ubiq])
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S)
+                   [Ripk1 - ubiq] [Syk - act] Tradd                          }
+  {CLc    | clc    [P38s - act]                                              } .
+  ------------------------------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/P38s.irt.Tnf.833.txt
+
+*** Pkci--
+
+rl[944.Pkci.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)              }
+  {CLc    | clc     Pkci                                  }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) [Pkci - act] }
+  {CLc    | clc                                           } .
+  -----------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Pkci.irt.Tnf.944.txt
+
+*** Rela--
+
+rl[121.Rela.S536.phos.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) Traf2
+                   ([Ikk1 - act] : [Ikk2 - act] : [Nemo - ubiq])
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S)
+                   [Mekk3 - act]
+                    Rela                                                     }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) Traf2
+                   ([Ikk1 - act] : [Ikk2 - act] : [Nemo - ubiq])
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S)
+                   [Mekk3 - act]
+                   [Rela - phos(S 536)]                                      } .
+  ------------------------------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Rela.S536.phos.irt.Tnf.121.txt
+
+rl[248.Rela.to.Nuc.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) Muc1
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S)
+                   [Rela - phos(S 536)]                                      }
+  {NUc    | nuc                                                              }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) Muc1          
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S) }
+  {NUc    | nuc    [Rela - phos(S 536)]                                      } .
+  ------------------------------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Rela.to.Nuc.irt.Tnf.248.txt
+
+rl[324.Rela.S276.phos.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) [Tpl2 - act]      }
+  {NUc    | nuc  [Msk1 - act] [Rela - phos(S 536)]             }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) [Tpl2 - act]      }
+  {NUc    | nuc  [Msk1 - act] [Rela - phos(S 276)phos(S 536)]  } .
+  ----------------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Rela.S276.phos.irt.Tnf.324.txt
+
+rl[258.Rela.acetyl.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)                          }
+  {NUc    | nuc     Ep300 [Msk1 - act]
+                   [Rela - phos(S 276)phos(S 536)]                    }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)                          }
+  {NUc    | nuc     Ep300 [Msk1 - act] 
+                   [Rela - phos(S 276)phos(S 536)acetyl(K 310)]       } .
+  -----------------------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Rela.acetyl.irt.Tnf.258.txt
+
+rl[577.Rela.act.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)
+                   ([Ikk1 - act] : [Ikk2 - act] : [Nemo - ubiq])      }
+  {NUc    | nuc    [Msk1 - act] 
+                   [Rela - phos(S 276)phos(S 536)acetyl(K 310)]       }
+  => 
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)
+                   ([Ikk1 - act] : [Ikk2 - act] : [Nemo - ubiq])      }
+  {NUc    | nuc    [Msk1 - act] [Rela - act]                          } .
+  ---------------------------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Rela.act.irt.Tnf.577.txt
+
+*** Ripk1--
+
+rl[896.Ripk1.to.TnfR1]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)       }
+  {CLc    | clc    Ripk1                           }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) Ripk1 }
+  {CLc    | clc                                    } .
+  ----------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Ripk1.to.TnfR1.896.txt
+
+rl[981.Ripk1.ubiq.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)  Ripk1         Tradd Traf2 }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) [Ripk1 - ubiq] Tradd Traf2 } .
+  -------------------------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Ripk1.ubiq.irt.Tnf.981.txt
+
+*** Rnf11--
+
+rl[1568.Rnf11.to.TnfR1]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)       }
+  {CLc    | clc    Rnf11                           }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) Rnf11 }
+  {CLc    | clc                                    } .
+  ----------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Rnf11.to.TnfR1.1568.txt
+
+*** Rps6--
+
+rl[1614.Rps6.phos.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)       }
+  {CLc    | clc    Rps6                            }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)       }
+  {CLc    | clc    [Rps6 - phos]                   } .
+  ----------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Rps6.phos.irt.Tnf.1614.txt
+
+*** Rsk1--
+
+rl[1056.Rsk1.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)      }
+  {CLc    | clc    Rsk1               }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)      }
+  {CLc    | clc    [Rsk1 - act]       } .
+  ----------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Rsk1.irt.Tnf.1056.txt
+
+*** Rsk2--
+
+rl[023.Rsk2.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)              }
+  {CLc    | clc    Rsk2                       }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) [Rsk2 - act] }
+  {CLc    | clc                               } .
+  ----------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Rsk2.irt.Tnf.023.txt
+
+*** S6k1--
+
+rl[1615.S6k1.act.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)                                 
+                   ([Ikk1 - act] : [Ikk2 - act] : [Nemo - ubiq])        }     
+  {CLc    | clc    ([Mtor - act] : Mlst8 : Raptor) S6k1                 }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)                                 
+                   ([Ikk1 - act] : [Ikk2 - act] : [Nemo - ubiq])        }
+  {CLc    | clc    ([Mtor - act] : Mlst8 : Raptor) [S6k1 - phos(T 412)] } .
+  -------------------------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/S6k1.act.irt.Tnf.1615.txt
+
+*** Stat1--
+
+rl[830.Stat1.to.TnfR1]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)       }
+  {CLc    | clc     Stat1              }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) Stat1 }
+  {CLc    | clc                        } .
+  ----------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Stat1.to.TnfR1.830.txt
+
+rl[842.Stat1.phos.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)  Stat1         }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) [Stat1 - phos] } .
+  ------------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Stat1.phos.irt.Tnf.842.txt
+
+*** Syk--
+
+rl[841.Syk.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)             }
+  {CLc    | clc    Syk                       }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) [Syk - act] }
+  {CLc    | clc                              } .
+  ----------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Syk.irt.Tnf.841.txt
+
+*** Tank--
+
+rl[255.Tank.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)               }
+  {CLc    | clc    Tank                                    }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) [Tank - phos] }
+  {CLc    | clc                                            } .
+  ------------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Tank.irt.Tnf.255.txt
+
+*** Tak1--
+
+rl[561.Tak1.TabS.to.TnfR1]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) Muc1 [Ripk1 - ubiq]  }
+  {CLc    | clc    (Tak1 : Tab1 : tab23s:Tab23S)                    }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) Muc1 [Ripk1 - ubiq] 
+                   (Tak1 : Tab1 : tab23s:Tab23S)                    }
+  {CLc    | clc                                                   } .
+  ------------------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Tak1.TabS.to.TnfR1.561.txt
+
+rl[844.Tak1.Tabs.irt.TnfR1]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) 
+                   (Tak1 : Tab1 : tab23s:Tab23S)                               }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S) } .
+  ------------------------------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Tak1.irt.Tnf.844.txt
+
+*** Tax1bp1--
+
+rl[1564.Tax1bp1.to.TnfR1]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)         }
+  {CLc    | clc    Tax1bp1                           }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) Tax1bp1 }
+  {CLc    | clc                                      } .
+  ----------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Tax1bp1.to.TnfR1.1564.txt
+
+rl[1565.Tax1bp1.phos.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) Tax1bp1
+                   ([Ikk1 - act] : [Ikk2 - act] : [Nemo - ubiq])           }
+  {CLc    | clc                                                            }  
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) [Tax1bp1 - phos] 
+                   ([Ikk1 - act] : [Ikk2 - act] : [Nemo - ubiq])           }
+  {CLc    | clc                                                            } .
+  -----------------------------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Tax1bp1.phos.irt.Tnf.1565.txt
+
+*** Tbk1--
+
+rl[784.Tbk1.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) }
+  {CLc    | clc     Tbk1                     }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) }
+  {CLc    | clc    [Tbk1 - act]              } .
+  ----------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Tbk1.irt.Tnf.784.txt
+
+*** TLR2-- TLR2-gene--
+
+rl[884.TLR2-gene.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)                }
+  {CLc    | clc    [Tbk1 - act]                 }
+  {NUc    | nuc    [Rela - act] TLR2-gene       }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)                 }
+  {CLc    | clc    [Tbk1 - act]                  }
+  {NUc    | nuc    [Rela - act] [TLR2-gene - on] } .
+  ----------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/TLR2-gene.irt.Tnf.884.txt
+
+*** Tnf-- ProTnf-gene--
+
+rl[855.ProTnf-gene.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)                          }
+  {CLc    | clc    [Erks - erksmods act] [Jnks - act]     }
+  {NUc    | nuc    Egr1 ProTnf-gene                       }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)                          }
+  {CLc    | clc    [Erks - erksmods act] [Jnks - act]     }
+  {NUc    | nuc    Egr1 [ProTnf-gene - on]                } .
+  -----------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/ProTnf-gene.irt.Tnf.855.txt
+
+*** Tnfaip3--
+
+rl[1567.Tnfaip3.to.TnfR1]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)          }
+  {CLc    | clc    Tnfaip3                            }
+  =>
+  {TnfR1C | tnfr1c  (TnfR1 : Tnf) Tnfaip3 }
+  {CLc    | clc                                       } .
+  -------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Tnfaip3.to.TnfR1.1567.txt
+
+*** Tnfaip3-gene--
+
+rl[888.Tnfaip3-gene.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)
+                   ([Ikk1 - act] : [Ikk2 - act] : [Nemo - ubiq])
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S)
+                   Rnf11                                                       }
+  {NUc    | nuc    [Rela - act] Tnfaip3-gene                                   }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)
+                   ([Ikk1 - act] : [Ikk2 - act] : [Nemo - ubiq])
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S)
+                   Rnf11                                                       }
+  {NUc    | nuc    [Rela - act] [Tnfaip3-gene - on]                            } .
+  -------------------------------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Tnfaip3-gene.irt.Tnf.888.txt
+
+*** Tpl2--
+
+rl[843.Tpl2.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) [Ripk1 - ubiq] [Syk - act] 
+                   ([Ikk1 - act] : [Ikk2 - act] : [Nemo - ubiq])
+                   Traf2                                                }
+  {CLc    | clc    Tpl2                                                 }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) [Ripk1 - ubiq] [Syk - act]
+                   ([Ikk1 - act] : [Ikk2 - act] : [Nemo - ubiq])
+                   Traf2 [Tpl2 - act]                                   }
+  {CLc    | clc                                                         } .
+  -------------------------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Tpl2.irt.Tnf.843.txt
+
+*** Tradd--
+
+rl[894.Tradd.to.TnfR1]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)        }
+  {CLc    | clc    Tradd                            }
+  =>
+  {TnfR1C | tnfr1c  (TnfR1 : Tnf) Tradd }
+  {CLc    | clc                                     } .
+  -----------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Tradd.to.TnfR1.894.txt
+
+*** Traf2--
+
+rl[895.Traf2.to.TnfR1]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) Tradd       }
+  {CLc    | clc    Traf2                                 }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) Tradd Traf2 }
+  {CLc    | clc                                          } .
+  -----------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Traf2.to.TnfR1.895.txt
+
+rl[698.Traf2.ubiq.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)  Traf2            }
+  {CLc    | clc    Ubc13                                       }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) [Traf2 - K63ubiq] }
+  {CLc    | clc    Ubc13                                       } .
+  ----------------------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Traf2.ubiq.irt.Tnf.698.txt
+
+*** Tsc1--
+
+rl[1616.Tsc1.phos.irt.Tnf]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)     }
+  {CVc    | cvc    Tsc1              }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)     }
+  {CVc    | cvc    [Tsc1 - phos]     } .
+  ---------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Tsc1.phos.irt.Tnf.1616.txt
+
+*** Ubc13--
+
+rl[1569.Ubc13.to.TnfR1]:
+  {TnfR1C | tnfr1c (TnfR1 : Tnf)       }
+  {CLc    | clc    Ubc13                           }
+  =>
+  {TnfR1C | tnfr1c (TnfR1 : Tnf) Ubc13 }
+  {CLc    | clc                                    } .
+  ----------------------------------------------------
+  *** ~/evidence/Tnf-Evidence/Ubc13.to.TnfR1.1569.txt
+
+
+endm

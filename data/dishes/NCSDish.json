@@ -1,0 +1,10 @@
+{"stype" : "jnet",
+	 "name" : "NCSDish",
+	 "type" : "pnet",
+	 "kbname" : "RKB",
+	 "parent" : "RKB",
+	 "rids" : ["198.Atm.irt.NCS", "1782.H2ax.irt.NCS", "1783.Smc1a.irt.NCS", "1784.Trim28.irt.NCS", "202.Mdm4.phos.irt.NCS", "212.Tp53.irt.NCS", "293.Chek1.irt.NCS", "294.Chek2.irt.NCS", "234c.Chek2.act#1", "208.Mdm4.ubiq.irt.NCS", "211.Mdm4.degraded.irt.NCS"],
+	 "init" : ["NCS@XOut", "Atm@NUc", "Atr@NUc", "Chek1@NUc", "Chek2@NUc", "H2ax@CHR", "Mdm4@NUc", "Mre11@NUc", "Nbs1@NUc", "Smc1a@NUc", "Tp53@NUc", "Trim28@NUc"],
+	 "op" : "dishnet",
+	 "args" : "NCSDish"
+} 

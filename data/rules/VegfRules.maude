@@ -1,0 +1,137 @@
+mod VEGFRULES is inc ALLOPS .
+
+var xout : Soup .
+vars clm cli clc nuc : Soup .
+var sig : Soup .
+var vrc : Soup .
+
+*** ~/evidence/Vegf-Evidence/00VegfEvidence.txt
+
+rl[394.VegfR2.irt.Vegfa]:
+  {XOut    | xout Vegfa                      }
+  {VegfR2C | vrc  VegfR2                     }
+  =>
+  {XOut    | xout                            }
+  {VegfR2C | vrc  ([VegfR2 - Yphos] : Vegfa) } .
+  ------------------------------------------------
+  *** ~/evidence/Vegf-Evidence/VegfR2.irt.Vegfa.394.txt
+
+*** Ampk--
+
+rl[1307.Ampk.irt.Vegfa]:
+  {VegfR2C | vrc  ([VegfR2 - Yphos] : Vegfa) }
+  {CLc     | clc   Ampk                      }
+  =>
+  {VegfR2C | vrc  ([VegfR2 - Yphos] : Vegfa) }
+  {CLc     | clc   [Ampk - act]              } .
+  ------------------------------------------------
+  *** ~/evidence/Vegf-Evidence/Ampk.irt.Vegfa.1307.txt
+
+*** Erks--
+
+rl[411.Erks.irt.Vegfa]:
+  {VegfR2C | vrc  ([VegfR2 - Yphos] : Vegfa) }
+  {CLc     | clc   Erks                      }
+  =>
+  {VegfR2C | vrc  ([VegfR2 - Yphos] : Vegfa) }
+  {CLc     | clc  [Erks - phos(TEY)]         } .
+  ----------------------------------------------
+  *** ~/evidence/Vegf-Evidence/Erks.irt.Vegfa.411.txt
+
+*** Fak1--
+
+rl[1306.Fak1.irt.Vegfa]:
+  {VegfR2C | vrc  ([VegfR2 - Yphos] : Vegfa) }
+  {CLc     | clc   Fak1                      }
+  =>
+  {VegfR2C | vrc  ([VegfR2 - Yphos] : Vegfa) }
+  {CLc     | clc  [Fak1 - Yphos]             } .
+  ----------------------------------------------
+  *** ~/evidence/Vegf-Evidence/Fak1.irt.Vegfa.1306.txt
+
+*** Fak2--
+
+rl[1103.Fak2.irt.Vegfa]:
+  {VegfR2C | vrc  ([VegfR2 - Yphos] : Vegfa) }
+  {CLc     | clc   Fak2                      }
+  =>
+  {VegfR2C | vrc  ([VegfR2 - Yphos] : Vegfa) }
+  {CLc     | clc  [Fak2 - Yphos]             } .
+  ----------------------------------------------
+  *** ~/evidence/Vegf-Evidence/Fak2.irt.Vegfa.1103.txt
+
+*** Gsk3s--
+
+rl[1739.Gsk3s.irt.Vegfa]:
+  {VegfR2C | vrc  ([VegfR2 - Yphos] : Vegfa)         }
+  {CLc     | clc   [Ampk - act] [Gsk3s - act]        }
+  =>
+  {VegfR2C | vrc  ([VegfR2 - Yphos] : Vegfa)         }
+  {CLc     | clc  [Ampk - act] [Gsk3s - phos(SFAE)]  } .
+  ------------------------------------------------------
+  *** ~/evidence/Vegf-Evidence/Gsk3s.irt.Vegfa.1739.txt
+
+*** Mek12s--
+
+rl[416.Mek12s.irt.Vegfa]:
+  {VegfR2C | vrc  ([VegfR2 - Yphos] : Vegfa)    }
+  {CLc     | clc   mek12s:Mek12S                }
+  =>
+  {VegfR2C | vrc  ([VegfR2 - Yphos] : Vegfa)    }
+  {CLc     | clc  [mek12s:Mek12S - phos(SMANS)] } .
+  -------------------------------------------------
+  *** ~/evidence/Vegf-Evidence/Mek12s.irt.Vegfa.416.txt
+
+*** Nos3--
+
+rl[1740.Nos3.irt.Vegfa]:
+  {VegfR2C | vrc  ([VegfR2 - Yphos] : Vegfa)          }
+  {CLc     | clc   [Ampk - act] Nos3                  }
+  =>
+  {VegfR2C | vrc  ([VegfR2 - Yphos] : Vegfa)          }
+  {CLc     | clc  [Ampk - act] [Nos3 - phos(S 1177)]  } .
+  ------------------------------------------------------
+  *** ~/evidence/Vegf-Evidence/Nos3.irt.Vegfa.1740.txt
+
+*** Plcgs--
+
+rl[406.Plcg1.irt.Vegfa]:
+  {VegfR2C | vrc  ([VegfR2 - Yphos] : Vegfa)                 }
+  {CLc     | clc  Plcg1                                      }
+  =>
+  {VegfR2C | vrc  ([VegfR2 - Yphos] : Vegfa) [Plcg1 - Yphos] }
+  {CLc     | clc                                             } .
+  --------------------------------------------------------------
+  *** ~/evidence/Vegf-Evidence/Plcg1.irt.Vegfa.406.txt
+
+*** Rac1--
+
+rl[1741.Rac1.irt.Vegfa]:
+  {VegfR2C | vrc  ([VegfR2 - Yphos] : Vegfa)    }
+  {CLi     | cli   [Rac1 - GDP]                 }
+  {CLc     | clc   [Ampk - act]                 }
+  =>
+  {VegfR2C | vrc  ([VegfR2 - Yphos] : Vegfa)    }
+  {CLi     | cli   [Rac1 - GTP]                 }
+  {CLc     | clc   [Ampk - act]                 } .
+  ------------------------------------------------------
+  *** ~/evidence/Vegf-Evidence/Rac1.irt.Vegfa.1741.txt
+
+*** Src--
+
+rl[1742.Src.irt.Vegfa]:
+  {VegfR2C | vrc  ([VegfR2 - Yphos] : Vegfa)                     }
+  {CLi     | cli   Src                                           }
+  =>
+  {VegfR2C | vrc  ([VegfR2 - Yphos] : Vegfa) [Src - phos(Y 419)] }
+  {CLi     | cli                                                 } .
+  -------------------------------------------------------------------
+  *** ~/evidence/Vegf-Evidence/Src.irt.Vegfa.1742.txt
+
+
+
+
+
+
+
+endm

@@ -1,0 +1,10 @@
+{"stype" : "jnet",
+	 "name" : "Igf1Dish",
+	 "type" : "pnet",
+	 "kbname" : "RKB",
+	 "parent" : "RKB",
+	 "rids" : ["356.Igf1R.irt.Igf1", "104.Irs1.irt.Igf1", "922.Irs2.irt.Igf1", "359.Pi3k.irt.Igf1", "1279.Pxn.irt.Igf1", "1134.Raf1.irt.Igf1", "823.Rasa1.irt.Igf1", "522.Shp2.irt.Igf1", "1125.Hras.irt.Igf1", "1131.Rala.irt.Igf1", "1135.S6k1.irt.Igf1", "1104.Gsk3s.irt.Igf1", "1117.Akt1.irt.Igf1", "1121.Erks.irt.Igf1#1", "415c.Erks.act#2", "1277.Bcar1.irt.Igf1", "1278.Fak1.irt.Igf1"],
+	 "init" : ["Akt1@CLc", "Bcar1@CLc", "Erks@CLc", "Fak1@CLc", "Igf1@XOut", "Igf1R@Igf1RC", "IqGap1@CLc", "Irs1@CLc", "Irs2@CLc", "Parva@CLi", "Pdpk1@CLc", "Pi3k@CLc", "Pxn@CLc", "Raf1@CLc", "Rasa1@CLc", "Rictor@CLc", "S6k1@CLc", "Shp2@CLc", "Gsk3s-act@CLc", "Hras-GDP@CLi", "Rala-GDP@CLi"],
+	 "op" : "dishnet",
+	 "args" : "Igf1Dish"
+} 

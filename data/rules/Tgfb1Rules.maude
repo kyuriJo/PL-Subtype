@@ -1,0 +1,676 @@
+*********1*********2*********3*********4*********5*********6*********7****
+***
+***  Tgfb1Rules.maude
+***
+**************************************************************************
+mod TGFB1RULES is inc ALLOPS .
+
+var xout : Soup .
+vars clo clm clr cli clc nuo num nui nuc : Soup .
+vars moo mom moi moc mio mim mii mic : Soup .
+vars ero erm eri erc pxo pxm pxi pxc : Soup .
+vars gao gam gai gac lyo lym lyi lyc : Soup .
+vars eeo eem eei eec leo lem lei lec : Soup .
+vars cpo cpm cpi cpc ct ptc sig : Soup .
+var tgfb1rc : Soup .
+vars fak1mods smad2mods smad3mods tak1mods : ModSet .
+
+*** ~/evidence/Tgfb1-Evidence/00Tgfb1evidence.txt
+
+rl[931.TgfbR1.TgfbR2.by.Tgfb1]:
+  {XOut    | xout Tgfb1                                        }
+  {Tgfb1RC | tgfb1rc  TgfbR1 TgfbR2                            }
+  =>
+  {XOut    | xout                                              }
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) } .
+  ----------------------------------------------------------------
+  *** ~/evidence/Tgfb1-Evidence/TgfbR1.TgfbR2.by.Tgfb1.931.txt
+
+*** Abl1--
+
+rl[1719.Abl1.irt.Tgfb1]:
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) }
+  {CLc     | clc      [Fak1 - fak1mods] Abl1                   }
+  =>
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) }
+  {CLc     | clc      [Fak1 - fak1mods] [Abl1 - act]           } .
+  ----------------------------------------------------------------
+  *** ~/evidence/Tgfb1-Evidence/Abl1.irt.Tgfb1.1719.txt
+
+*** Akt1--
+
+rl[915.Akt1.irt.Tgfb1]:
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) }
+  {CLc     | clc      Akt1                                     }
+  =>
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) }
+  {CLc     | clc      [Akt1 - phos(S 473)phos(T 308)]          } .
+  ----------------------------------------------------------------
+  *** ~/evidence/Tgfb1-Evidence/Akt1.irt.Tgfb1.915.txt
+
+*** Atf2--
+
+rl[541.Atf2.irt.Tgfb1]:
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) }
+  {CLc     | clc     [P38s - act] Atf2                         }
+  =>
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) }
+  {CLc     | clc     [P38s - act] [Atf2 - phos]                } .
+  ----------------------------------------------------------------
+  *** ~/evidence/Tgfb1-Evidence/Atf2.irt.Tgfb1.541.txt
+
+*** Cdc6--  Cdc6-gene--
+
+rl[1724.Cdc6-gene.irt.Tgfb1]:
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) }
+  {NUc     | nuc       Cdc6-gene                             }
+  =>
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) }
+  {NUc     | nuc      [Cdc6-gene - on]                       } .
+  ----------------------------------------------------------------
+  *** ~/evidence/Tgfb1-Evidence/Cdc6-gene.irt.Tgfb1.1724.txt
+
+*** Cdc42--
+
+rl[1708.Cdc42.irt.Tgfb1]:
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) }
+  {CLi     | cli    [Cdc42 - GDP]                              }
+  =>
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) }
+  {CLi     | cli    [Cdc42 - GTP]                              } .
+  ----------------------------------------------------------------
+  *** ~/evidence/Tgfb1-Evidence/Cdc42.irt.Tgfb1.1708.txt
+
+*** Cdkn1a--  Cdkn1a-gene--
+
+rl[902.Cdkn1a-gene.irt.Tgfb1]:
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1)    }
+  {NUc     | nuc      Ets1 [Smad2 - smad2mods] Cdkn1a-gene        }
+  =>
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1)    }
+  {NUc     | nuc      Ets1 [Smad2 - smad2mods] [Cdkn1a-gene - on] } .
+  -------------------------------------------------------------------
+  *** ~/evidence/Tgfb1-Evidence/Cdkn1a-gene.irt.Tgfb1.902.txt
+
+*** Cdkn2b--  Cdkn2b-gene--
+
+rl[904.Cdkn2b-gene.irt.Tgfb1]:
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) }
+  {NUc     | nuc       Cdkn2b-gene                             }
+  =>
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) }
+  {NUc     | nuc      [Cdkn2b-gene - on]                       } .
+  ----------------------------------------------------------------
+  *** ~/evidence/Tgfb1-Evidence/Cdkn2b-gene.irt.Tgfb1.904.txt
+
+*** Col1a1--  Col1a1-gene--
+
+rl[1713.Col1a1-gene.irt.Tgfb1]:
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) }
+  {CLc     | clc      [Fak1 - fak1mods phos(Y 397)]            }
+  {NUc     | nuc       Col1a1-gene                             }
+  =>
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) }
+  {CLc     | clc      [Fak1 - fak1mods phos(Y 397)]            }
+  {NUc     | nuc      [Col1a1-gene - on]                       } .
+  ----------------------------------------------------------------
+  *** ~/evidence/Tgfb1-Evidence/Col1a1-gene.irt.Tgfb1.1713.txt
+
+*** Col3a1--  Col3a1-gene--
+
+rl[1714.Col3a1-gene.irt.Tgfb1]:
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) }
+  {NUc     | nuc       Col3a1-gene                             }
+  =>
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) }
+  {NUc     | nuc      [Col3a1-gene - on]                       } .
+  ----------------------------------------------------------------
+  *** ~/evidence/Tgfb1-Evidence/Col3a1-gene.irt.Tgfb1.1714.txt
+
+*** Csrp2--  Csrp2-gene--
+
+rl[1734.Csrp2-gene.irt.Tgfb1]:
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1)     }
+  {CLc     | clc      [Atf2 - phos]                                }
+  {NUc     | nuc      [Smad3 - smad3mods act] Csrp2-gene           }
+  =>
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1)     }
+  {CLc     | clc      [Atf2 - phos]                                }
+  {NUc     | nuc      [Smad3 - smad3mods act] [Csrp2-gene - on]    } .
+  --------------------------------------------------------------------
+  *** ~/evidence/Tgfb1-Evidence/Csrp2-gene.irt.Tgfb1.1734.txt
+
+*** Cst6--  Cst6-gene--
+
+rl[1725.Cst6-gene.irt.Tgfb1]:
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1)     }
+  {NUc     | nuc      [Smad3 - smad3mods act] Cst6-gene            }
+  =>
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1)     }
+  {NUc     | nuc      [Smad3 - smad3mods act] [Cst6-gene - on]     } .
+  --------------------------------------------------------------------
+  *** ~/evidence/Tgfb1-Evidence/Cst6-gene.irt.Tgfb1.1725.txt
+
+*** Ctgf--  Ctgf-gene--
+
+rl[1715.Ctgf-gene.irt.Tgfb1]:
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) }
+  {NUc     | nuc       Ctgf-gene                               }
+  =>
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) }
+  {NUc     | nuc      [Ctgf-gene - on]                         } .
+  ----------------------------------------------------------------
+  *** ~/evidence/Tgfb1-Evidence/Ctgf-gene.irt.Tgfb1.1715.txt
+
+*** Dst--  Dst-gene--
+
+rl[1726.Dst-gene.irt.Tgfb1]:
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) }
+  {NUc     | nuc      [Smad2 - smad2mods] Dst-gene             }
+  =>
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) }
+  {NUc     | nuc      [Smad2 - smad2mods] [Dst-gene - on]      } .
+  ----------------------------------------------------------------
+  *** ~/evidence/Tgfb1-Evidence/Dst-gene.irt.Tgfb1.1726.txt
+
+*** Erks--
+
+rl[921.Erks.irt.Tgfb1]:
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) }
+  {CLi     | cli     [Hras - GTP]
+                     ([cr:Cdc42Rac1S - GTP] : [Pak2 - act])    }
+  {CLc     | clc      Erks                                     }
+  =>
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) }
+  {CLi     | cli     [Hras - GTP]
+                     ([cr:Cdc42Rac1S - GTP] : [Pak2 - act])    }
+  {CLc     | clc      [Erks - phos(TEY)]                       } .
+  ----------------------------------------------------------------
+  *** ~/evidence/Tgfb1-Evidence/Erks.irt.Tgfb1.921.txt
+
+*** Fak1--
+
+rl[1720.Fak1.irt.Tgfb1]:
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1)     }
+  {CLc     | clc      Fak1                                         }
+  =>
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1)     }
+  {CLc     | clc      [Fak1 - phos(Y 397) phos(Y 577) phos(Y 925)] } .
+  --------------------------------------------------------------------
+  *** ~/evidence/Tgfb1-Evidence/Fak1.irt.Tgfb1.1720.txt
+
+*** Fn1-- Fn1-gene--
+
+rl[1712.Fn1-gene.irt.Tgfb1]:
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) }
+  {CLc     | clc      [Fak1 - fak1mods]                        }
+  {NUc     | nuc     Fn1-gene                                  }
+  =>
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) }
+  {CLc     | clc      [Fak1 - fak1mods]                        }
+  {NUc     | nuc     [Fn1-gene - on]                           } .
+  ----------------------------------------------------------------
+  *** ~/evidence/Tgfb1-Evidence/Fn1-gene.irt.Tgfb1.1712.txt
+
+*** GFi1--  Gfi1-gene--
+
+rl[1733.Gfi1-gene.irt.Tgfb1]:
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1)  }
+  {NUc     | nuc      Gfi1-gene                                 }
+  =>
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1)  }
+  {NUc     | nuc      [Gfi1-gene - off]                         } .
+  -----------------------------------------------------------------
+  *** ~/evidence/Tgfb1-Evidence/Gfi1-gene.irt.Tgfb1.1733.txt
+
+*** Hras--
+
+rl[1722.Hras.irt.Tgfb1]:
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) }
+  {CLi     | cli     [Hras - GDP]                              }
+  =>
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) }
+  {CLi     | cli     [Hras - GTP]                              } .
+  ----------------------------------------------------------------
+  *** ~/evidence/Tgfb1-Evidence/Hras.irt.Tgfb1.1722.txt
+
+*** Jnks--
+
+rl[929.Jnks.irt.Tgfb1]:
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) 
+                     ([Tak1 - act tak1mods] : Tab1 : tab23s:Tab23S)  }
+  {CLc     | clc     Jnks                                            }
+  =>
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) 
+                     ([Tak1 - act tak1mods] : Tab1 : tab23s:Tab23S)  }
+  {CLc     | clc     [Jnks - act]                                    } .
+  -----------------------------------------------------------------------------
+  *** ~/evidence/Tgfb1-Evidence/Jnks.irt.Tgfb1.929.txt
+
+*** Mlk3--
+
+rl[1723.Mlk3.irt.Tgfb1]:
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) }
+  {CLc     | clc     Mlk3                                      }
+  =>
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) }
+  {CLc     | clc     [Mlk3 - act]                              } .
+  ----------------------------------------------------------------
+  *** ~/evidence/Tgfb1-Evidence/Mlk3.irt.Tgfb1.1723.txt
+
+*** Mmp2--  Mmp2-gene--
+
+rl[1716.Mmp2-gene.irt.Tgfb1]:
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) }
+  {NUc     | nuc       Mmp2-gene                               }
+  =>
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) }
+  {NUc     | nuc      [Mmp2-gene - on]                         } .
+  ----------------------------------------------------------------
+  *** ~/evidence/Tgfb1-Evidence/Mmp2-gene.irt.Tgfb1.1716.txt
+
+*** Mmp9--  Mmp9-gene--
+
+rl[648.Mmp9-gene.irt.Tgfb1]:
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1)  }
+  {NUc     | nuc      [Smad2 - smad2mods act] 
+                      [Smad3 - smad3mods act]  Mmp9-gene        }
+  =>
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1)  }
+  {NUc     | nuc      [Smad2 - smad2mods act] 
+                      [Smad3 - smad3mods act] [Mmp9-gene - on]  } .
+  --------------------------------------------------------------------------------
+  *** ~/evidence/Tgfb1-Evidence/Mmp9-gene.irt.Tgfb1.648.txt
+
+*** Myc--  Myc-gene--
+
+rl[1732.Myc-gene.irt.Tgfb1]:
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1)  }
+  {NUc     | nuc      [Smad2 - smad2mods] Myc-gene              }
+  =>
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1)  }
+  {NUc     | nuc      [Smad2 - smad2mods] [Myc-gene - off]      } .
+  -----------------------------------------------------------------
+  *** ~/evidence/Tgfb1-Evidence/Myc-gene.irt.Tgfb1.1732.txt
+
+*** Mylk--  Mylk-gene--
+
+rl[1727.Mylk-gene.irt.Tgfb1]:
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1)  }
+  {NUc     | nuc      [Smad2 - smad2mods] Mylk-gene             }
+  =>
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1)  }
+  {NUc     | nuc      [Smad2 - smad2mods] [Mylk-gene - on]      } .
+  -----------------------------------------------------------------
+  *** ~/evidence/Tgfb1-Evidence/Mylk-gene.irt.Tgfb1.1727.txt
+
+*** P38s--
+
+rl[543.P38s.irt.Tgfb1]:
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) Smad7
+                     ([Tak1 - act tak1mods] : Tab1 : tab23s:Tab23S)
+                      [Traf6 - ubiq]                                       }
+  {CLc     | clc     [Mlk3 - act] P38s                                     }
+  =>
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) Smad7
+                     ([Tak1 - act tak1mods] : Tab1 : tab23s:Tab23S)        
+                      [Traf6 - ubiq]                                       }
+  {CLc     | clc     [Mlk3 - act] [P38s - act]                             } .
+  ----------------------------------------------------------------------------
+  *** ~/evidence/Tgfb1-Evidence/P38s.irt.Tgfb1.543.txt
+
+*** Pai1--  Pai1-gene
+
+rl[549.Pai1-gene.irt.Tgfb1]:
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) 
+                     ([Tak1 - act tak1mods] : Tab1 : tab23s:Tab23S)      }
+  {CLc     | clc     Mekk1 Pml Zfyve16                                   }
+  {NUc     | nuc     Ets1 [Smad3 - smad3mods act] Pai1-gene              }
+  =>
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) 
+                     ([Tak1 - act tak1mods] : Tab1 : tab23s:Tab23S)      }
+  {CLc     | clc     Mekk1 Pml Zfyve16                                   }
+  {NUc     | nuc     Ets1 [Smad3 - smad3mods act] [Pai1-gene - on]       } .
+  --------------------------------------------------------------------------
+  *** ~/evidence/Tgfb1-Evidence/Pai1-gene.irt.Tgfb1.549.txt
+
+*** Pak2--
+
+rl[1710.Pak2.to.Cdc42Rac1s]:
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) }
+  {CLi     | cli      [cr:Cdc42Rac1S - GTP]                    }
+  {CLc     | clc      Pak2                                     }
+  =>
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) }
+  {CLi     | cli     ([cr:Cdc42Rac1S - GTP] : Pak2)            }
+  {CLc     | clc                                               } .
+  ----------------------------------------------------------------------
+  *** ~/evidence/Tgfb1-Evidence/Pak2.to.Cdc42Rac1s.1710.txt
+
+
+rl[1709.Pak2.irt.Tgfb1]:
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) }
+  {CLi     | cli     ([cr:Cdc42Rac1S - GTP] : Pak2)            }
+  {CLc     | clc      [Fak1 - fak1mods]                        }
+  =>
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) }
+  {CLi     | cli     ([cr:Cdc42Rac1S - GTP] : [Pak2 - act])    }
+  {CLc     | clc      [Fak1 - fak1mods]                        } .
+  ----------------------------------------------------------------------
+  *** ~/evidence/Tgfb1-Evidence/Pak2.irt.Tgfb1.1709.txt
+
+*** Pthlh--  Pthlh-gene--
+
+rl[1728.Pthlh-gene.irt.Tgfb1]:
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1)   }
+  {NUc     | nuc      Pthlh-gene                                 }
+  =>
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1)   }
+  {NUc     | nuc      [Pthlh-gene - on]                          } .
+  -------------------------------------------------------------------
+  *** ~/evidence/Tgfb1-Evidence/Pthlh-gene.irt.Tgfb1.1728.txt
+
+*** Rac1--
+
+rl[1711.Rac1.irt.Tgfb1]:
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) }
+  {CLi     | cli    [Rac1 - GDP]                               }
+  =>
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) }
+  {CLi     | cli    [Rac1 - GTP]                               } .
+  ----------------------------------------------------------------
+  *** ~/evidence/Tgfb1-Evidence/Rac1.irt.Tgfb1.1711.txt
+
+*** Raf1--
+
+rl[1721.Raf1.irt.Tgfb1]:
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) }
+  {CLi     | cli     [Hras - GTP]
+                     ([cr:Cdc42Rac1S - GTP] : [Pak2 - act])    }
+  {CLc     | clc     Raf1                                      }
+  =>
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) }
+  {CLi     | cli     [Hras - GTP]
+                     ([cr:Cdc42Rac1S - GTP] : [Pak2 - act])    }
+  {CLc     | clc     [Raf1 - act]                              } .
+  ----------------------------------------------------------------------
+  *** ~/evidence/Tgfb1-Evidence/Raf1.irt.Tgfb1.1721.txt
+
+*** RoRc-- RoRc-gene--
+
+rl[1827.RoRc-gene.irt.Tgfb1]:
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1)   }
+  {NUc     | nuc      RoRc-gene                                  }
+  =>
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1)   }
+  {NUc     | nuc      [RoRc-gene - on]                           } .
+  -------------------------------------------------------------------
+  *** ~/evidence/Tgfb1-Evidence/RoRc-gene.irt.Tgfb1.1827.txt
+
+*** Smad2--
+
+rl[569.Smad2.to.Tgfb1RC]:
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1)       }
+  {CLc     | clc     Smad2                                           }
+  =>
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) Smad2 }
+  {CLc     | clc                                                     } .
+  ----------------------------------------------------------------------
+  *** ~/evidence/Tgfb1-Evidence/Smad2.to.Tgfb1RC.569.txt
+
+rl[969.Smad2.phos.irt.Tgfb1]:
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) 
+                      [Smad2 - smad2mods]                         }
+  =>
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) 
+                      [Smad2 - smad2mods phos(S 465)phos(S 467) ] } .
+  -----------------------------------------------------------------------------------------
+  *** ~/evidence/Tgfb1-Evidence/Smad2.phos.irt.Tgfb1.969.txt
+
+rl[673.Smad2.to.nuc.irt.Tgfb1]:
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1)
+                     [Smad2 - smad2mods phos(S 465)phos(S 467)]  }
+  {NUc     | nuc                                                 }
+  =>
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1)   }
+  {NUc     | nuc     [Smad2 - smad2mods phos(S 465)phos(S 467)]  } .
+  ----------------------------------------------------------------
+  *** ~/evidence/Tgfb1-Evidence/Smad2.to.nuc.irt.Tgfb1.673.txt
+
+rl[705.Smad2.acetyl.irt.Tgfb1]:
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) }
+  {NUc     | nuc     [Smad2 - smad2mods]                       }
+  =>
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) }
+  {NUc     | nuc     [Smad2 - smad2mods acetyl(K 19)]          } .
+  ----------------------------------------------------------------
+  *** ~/evidence/Tgfb1-Evidence/Smad2.acetyl.irt.Tgfb1.705.txt
+
+rl[568.Smad2.act.irt.Tgfb1]:
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) }
+  {NUc     | nuc     [Smad2 - smad2mods acetyl(K 19)]                    }
+  =>
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) }
+  {NUc     | nuc     [Smad2 - smad2mods act]                             } .
+  ----------------------------------------------------------------
+  *** ~/evidence/Tgfb1-Evidence/Smad2.act.irt.Tgfb1.568.txt
+
+rl[182.Smad2.Smad4.irt.Tgfb1]:
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) }
+  {CLc     | clc     Zfyve16                                   }
+  {NUc     | nuc     [Smad2 - smad2mods] Smad4                 }
+  =>
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) }
+  {CLc     | clc     Zfyve16                                   }
+  {NUc     | nuc     ([Smad2 - smad2mods] : Smad4)             } .
+  ----------------------------------------------------------------
+  *** ~/evidence/Tgfb1-Evidence/Smad2.Smad4.irt.Tgfb1.182.txt
+
+*** Smad3--
+
+rl[924.Smad3.to.Tgfb1RC]:
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1)       }
+  {CLc     | clc     Smad3                                           }
+  =>
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) Smad3 }
+  {CLc     | clc                                                     } .
+  ----------------------------------------------------------------------
+  *** ~/evidence/Tgfb1-Evidence/Smad3.to.Tgfb1RC.924.txt
+
+rl[560.Smad3.phos.irt.Tgfb1]:
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1)
+                       Smad3                                                }
+  {CLc     | clc     [Jnks - act]                                           }
+  =>
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) 
+                     [Smad3 - phos(S 423)phos(S 425)phos(S 416)phos(S 418)] }
+  {CLc     | clc     [Jnks - act]                                           } .
+  -------------------------------------------------------------------------------
+  *** ~/evidence/Tgfb1-Evidence/Smad3.phos.irt.Tgfb1.560.txt
+
+rl[731.Smad3.to.nuc.irt.Tgfb1]:
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1)
+                     [Smad3 - smad3mods phos(S 416)phos(S 418)]    }
+  {CLc     | clc     Pml                                           }
+  {NUc     | nuc                                                   }
+  =>
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1)     }
+  {CLc     | clc     Pml                                           }
+  {NUc     | nuc     [Smad3 - smad3mods phos(S 416)phos(S 418)]    } .
+  ---------------------------------------------------------------------
+  *** ~/evidence/Tgfb1-Evidence/Smad3.to.nuc.irt.Tgfb1.731.txt
+
+rl[845.Smad3.act.irt.Tgfb1]:
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) }
+  {NUc     | nuc     [Smad3 - smad3mods]                       }
+  =>
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) }
+  {NUc     | nuc     [Smad3 - smad3mods act]                   } .
+  ----------------------------------------------------------------
+  *** ~/evidence/Tgfb1-Evidence/Smad3.act.irt.Tgfb1.845.txt
+
+rl[737.Smad3.Smad4.irt.Tgfb1]:
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) }
+  {NUc     | nuc     [Smad3 - smad3mods] Smad4                 }
+  =>
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) }
+  {NUc     | nuc     ([Smad3 - smad3mods] : Smad4)             } .
+  ----------------------------------------------------------------
+  *** ~/evidence/Tgfb1-Evidence/Smad3.Smad4.irt.Tgfb1.737.txt
+
+*** Smad4--
+
+rl[768.Smad4.to.nuc.irt.Tgfb1]:
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) }
+  {CLc     | clc     Smad4                                     }
+  {NUc     | nuc                                               }
+  =>
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) }
+  {CLc     | clc                                               }
+  {NUc     | nuc     Smad4                                     } .
+  ----------------------------------------------------------------
+  *** ~/evidence/Tgfb1-Evidence/Smad4.to.nuc.irt.Tgfb1.768.txt
+
+*** Smad6-- Smad6-gene--
+
+rl[910.Smad6-gene.irt.Tgfb1]:
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) }
+  {NUc     | nuc       Smad6-gene                              }
+  =>
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) }
+  {NUc     | nuc      [Smad6-gene - on]                        } .
+  ----------------------------------------------------------------
+  *** ~/evidence/Tgfb1-Evidence/Smad6-gene.irt.Tgfb1.910.txt
+
+*** Smad7--
+
+rl[869.Smad7.from.nuc.irt.Tgfb1]:
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1)       }
+  {NUc     | nuc     Smad7                                           }
+  =>
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) Smad7 }
+  {NUc     | nuc                                                     } .
+  ----------------------------------------------------------------------
+  *** ~/evidence/Tgfb1-Evidence/Smad7.from.nuc.irt.Tgfb1.869.txt
+
+*** Smad7-gene--
+
+rl[567.Smad7-gene.irt.Tgfb1]:
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) }
+  {NUc     | nuc     ctdsps:CtdspS Smad7-gene                  }
+  =>
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) }
+  {NUc     | nuc     ctdsps:CtdspS [Smad7-gene - on]           } .
+  ----------------------------------------------------------------
+  *** ~/evidence/Tgfb1-Evidence/Smad7-gene.irt.Tgfb1.567.txt
+
+*** Smurf1--
+
+rl[316.Smurf1.to.Tgfb1RC]:
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) Smad7  }
+  {CLc     | clc     Smurf1                                           }
+  =>
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) Smad7 
+                     Smurf1                                           }
+  {CLc     | clc                                                      } .
+  -----------------------------------------------------------------------
+  *** ~/evidence/Tgfb1-Evidence/Smurf1.to.Tgfb1RC.316.txt
+
+*** Smurf2--
+
+rl[492.Smurf2.to.Tgfb1RC]:
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) Smad7 }
+  {CLc     | clc     Smurf2                                          }
+  =>
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) Smad7 
+                     Smurf2                                          }
+  {CLc     | clc                                                     } .
+  ----------------------------------------------------------------------
+  *** ~/evidence/Tgfb1-Evidence/Smurf2.to.Tgfb1RC.492.txt
+
+*** Tak1--
+
+rl[1735.Tak1.to.Tgfb1RC]:
+  {Tgfb1RC | tgfb1rc  TgfbR1 TgfbR2                               }
+  {CLc     | clc      (Tak1 : Tab1 : tab23s:Tab23S)               }
+  =>
+  {Tgfb1RC | tgfb1rc  TgfbR1 TgfbR2 (Tak1 : Tab1 : tab23s:Tab23S) }
+  {CLc     | clc                                                  } .
+  -----------------------------------------------------------------------------
+  *** ~/evidence/Tgfb1-Evidence/Tak1.to.Tgfb1RC.1735.txt
+
+rl[1589.Tak1.ubiq.irt.Tgfb1]:
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) 
+                      [Traf6 - ubiq]
+                     (Tak1 : Tab1 : tab23s:Tab23S)              }
+  =>
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) 
+                      [Traf6 - ubiq]
+                     ([Tak1 - K63ubiq] : Tab1 : tab23s:Tab23S)  } .
+  -----------------------------------------------------------------------------
+  *** ~/evidence/Tgfb1-Evidence/Tak1.ubiq.irt.Tgfb1.1589.txt
+
+rl[641.Tak1.phos.irt.Tgfb1]:
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1)  
+                      [Traf6 - ubiq]  
+                     ([Tak1 - K63ubiq] : Tab1 : tab23s:Tab23S)          } 
+  =>
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) 
+                      [Traf6 - ubiq] 
+                     ([Tak1 - K63ubiq act phos] : Tab1 : tab23s:Tab23S) } .
+  -----------------------------------------------------------------------------
+  *** ~/evidence/Tgfb1-Evidence/Tak1.phos.irt.Tgfb1.641.txt
+
+*** Tgfb1--  Tgfb1-gene--
+
+rl[1717.Tgfb1-gene.irt.Tgfb1]:
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) }
+  {NUc     | nuc       Tgfb1-gene                              }
+  =>
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) }
+  {NUc     | nuc      [Tgfb1-gene - on]                        } .
+  ----------------------------------------------------------------
+  *** ~/evidence/Tgfb1-Evidence/Tgfb1-gene.irt.Tgfb1.1717.txt
+
+*** Timp1--  Timp1-gene--
+
+rl[1718.Timp1-gene.irt.Tgfb1]:
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) }
+  {NUc     | nuc       Timp1-gene                              }
+  =>
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) }
+  {NUc     | nuc      [Timp1-gene - on]                        } .
+  ----------------------------------------------------------------
+  *** ~/evidence/Tgfb1-Evidence/Timp1-gene.irt.Tgfb1.1718.txt
+
+*** TgfbR1--
+
+rl[875.TgfbR1.ubiq.by.Smurf1]:
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) 
+                     Smad7 Smurf1                               }
+  =>
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - ubiq] : [TgfbR2 - act] : Tgfb1) 
+                     Smad7 Smurf1                               } .
+  ----------------------------------------------------------------
+  *** ~/evidence/Tgfb1-Evidence/TgfbR1.ubiq.by.Smurf1.875.txt
+
+*** Traf6--
+
+rl[1736.Traf6.to.Tgfb1RC]:
+  {Tgfb1RC | tgfb1rc  TgfbR1 TgfbR2                               }
+  {CLc     | clc      Traf6                                       }
+  =>
+  {Tgfb1RC | tgfb1rc  TgfbR1 TgfbR2 Traf6                         }
+  {CLc     | clc                                                  } .
+  -----------------------------------------------------------------------------
+  *** ~/evidence/Tgfb1-Evidence/Traf6.to.Tgfb1RC.1736.txt
+
+rl[1590.Traf6.ubiq.irt.Tgfb1]:
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) Traf6          }
+  =>
+  {Tgfb1RC | tgfb1rc ([TgfbR1 - act] : [TgfbR2 - act] : Tgfb1) [Traf6 - ubiq] }.
+  -------------------------------------------------------------------------------
+  *** ~/evidence/Tgfb1-Evidence/Traf6.ubiq.irt.Tgfb1.1590.txt
+
+endm
+

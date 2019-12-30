@@ -1,0 +1,10 @@
+{"stype" : "jnet",
+	 "name" : "HgfDish",
+	 "type" : "pnet",
+	 "kbname" : "RKB",
+	 "parent" : "RKB",
+	 "rids" : ["1282.HgfR.irt.Hgf", "1333.IL6-gene.irt.Hgf", "1288.Lkb1.irt.Hgf", "1327.Mmp1-gene.irt.Hgf", "1328.Mmp9-gene.irt.Hgf", "1316.Myc-gene.irt.Hgf", "1290.P38s.irt.Hgf", "1291.Pai1-gene.irt.Hgf", "1312.Pak1.irt.Hgf", "1319.Pi3k.irt.Hgf", "1303.Plcg1.irt.Hgf", "1297.Raf1.irt.Hgf", "1299.Rps6.irt.Hgf", "563.Rsk1.irt.Hgf", "1302.S6k1.irt.Hgf", "616.Smad2.irt.Hgf", "1300.Smad3.irt.Hgf", "1301.Src.irt.Hgf", "1334.Stat3.irt.Hgf", "1311.Cdc42.irt.Hgf", "1286.Hras.irt.Hgf", "1289.Mras.irt.Hgf", "1292.Pxn.Yphos.irt.Hgf", "1294.Pxn.Sphos.irt.Hgf", "1298.Rala.irt.Hgf", "1310.Rap1a.irt.Hgf", "1283.Akt1.irt.Hgf", "1305.Bad.irt.Hgf", "1285.Erks.irt.Hgf", "1295.Fak1.irt.Hgf", "1308.Gab1.irt.Hgf", "1329.Gsk3s.irt.Hgf", "1293.Rac1.irt.Hgf", "576c.Bad.phos.by.Akt1", "587c.Bad.phos.by.S6k1", "1320.Cbl.irt.Hgf", "1284.Creb1.irt.Hgf", "1314.Crk.irt.Hgf", "1309.CrkL.irt.Hgf", "1330.Ctnnb1.Yphos.irt.Hgf", "1332.Eif4ebp1.irt.Hgf", "819c.Eif4ebp1.by.Akt1", "1631c.Eif4ebp1.by.Erks#3", "1313.Elk1.irt.Hgf", "1321.Ets1.irt.Hgf", "1331.Fak2.irt.Hgf", "1315.Fos-gene.irt.Hgf", "1318.Foxo1.irt.Hgf", "1325.Gab2.irt.Hgf", "1326.Grb2.irt.Hgf", "622c.Lkb1.by.Erks#3", "445c.Lkb1.by.S6k1", "565c.Pak1.by.Cdc42", "287c.Raf1.by.Hras", "1650c.Rps6.by.S6k1", "1067c.Smad2.by.Erks#3", "1641.Ctnnb1.to.nuc.irt.Hgf", "122c.Gsk3s.by.Akt", "1287.Jnks.irt.Hgf", "738c.Smad2.by.Jnks", "764c.Smad3.by.Jnks"],
+	 "init" : ["Fos-gene@NUc", "IL6-gene@NUc", "Mmp1-gene@NUc", "Mmp9-gene@NUc", "Myc-gene@NUc", "Pai1-gene@NUc", "Akt1@CLc", "Bad@CLc", "Cbl@CLc", "Creb1@NUc", "Crk@CLc", "CrkL@CLc", "Ctnnb1@CLc", "Eif4ebp1@CLc", "Elk1@NUc", "Erks@CLc", "Ets1@NUc", "Fak1@CLc", "Fak2@CLc", "Foxo1@NUc", "Gab1@CLc", "Gab2@CLc", "Grb2@CLc", "Hgf@XOut", "HgfR@HgfRC", "Jnks@CLc", "Lkb1@CLc", "P38s@CLc", "Pak1@CLc", "Pi3k@CLc", "Plcg1@CLc", "Pxn@CLc", "Raf1@CLc", "Rps6@CLc", "Rsk1@CLc", "S6k1@CLc", "Smad2@CLc", "Smad3@CLc", "Src@CLi", "Stat3@CLc", "Cdc42-GDP@CLi", "Gsk3s-act@CLc", "Hras-GDP@CLi", "Mras-GDP@CLi", "Rac1-GDP@CLi", "Rala-GDP@CLi", "Rap1a-GDP@CLi"],
+	 "op" : "dishnet",
+	 "args" : "HgfDish"
+} 

@@ -1,0 +1,10 @@
+{"stype" : "jnet",
+	 "name" : "BleomycinDish",
+	 "type" : "pnet",
+	 "kbname" : "RKB",
+	 "parent" : "RKB",
+	 "rids" : ["1770.DSB.irt.Bleomycin", "338.Tip60.irt.Bleomycin", "251.Atm.acetyl.irt.Bleomycin", "256.Chek2.irt.Bleomycin", "331.H2ax.irt.Bleomycin", "247.Prkdc.irt.Bleomycin", "234c.Chek2.act#1", "328c.Atm.acetyl.by.Tip60", "238.Atm.phos.irt.Bleomycin"],
+	 "init" : ["Bleomycin@XOut", "Atm@NUc", "Chek2@NUc", "H2ax@CHR", "Prkdc@NUc", "Tip60@NUc"],
+	 "op" : "dishnet",
+	 "args" : "BleomycinDish"
+} 

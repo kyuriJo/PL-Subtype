@@ -1,0 +1,1483 @@
+mod EGFRULES is inc ALLOPS .
+
+var xout : Soup .
+vars clm cli clc nuc : Soup .
+var sig : Soup .
+var egfrc : Soup .
+vars erksmods : ModSet .
+
+*** ../evidence/Egf-Evidence/00EgfEvidence.txt
+*** ~/PLA/Models/STM/SDishes/EgfDish.maude
+
+rl[001.EgfR.irt.Egf]:
+  {XOut  | xout Egf                     }
+  {EgfRC | egfrc EgfR                   }
+  =>
+  {XOut  | xout                         }
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) } .
+  -----------------------------------------
+  *** ../evidence/Egf-Evidence/EgfR.irt.Egf.001.txt
+
+*** Abl1--
+
+rl[222.Abl1.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) }
+  {CLc   | clc   Abl1                   }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) }
+  {CLc   | clc   [Abl1 - act]           } .
+  -----------------------------------------
+  *** ../evidence/Egf-Evidence/Abl1.irt.Egf.222.txt
+
+*** Akt1--  
+
+rl[227.Akt1.irt.Egf]:
+  {EgfRC  | egfrc ([EgfR - Yphos] : Egf) Pi3k [Gab1 - Yphos]
+                  Freud1 gnai13s:Gnai13S                     }
+  {CLi    | cli   RalGds                                     }
+  {CLc    | clc   Sin1 Rictor Akt1                           }
+  =>
+  {EgfRC  | egfrc ([EgfR - Yphos] : Egf) Pi3k [Gab1 - Yphos] 
+                  Freud1 gnai13s:Gnai13S                     }
+  {CLi    | cli   RalGds                                     }
+  {CLc    | clc   Sin1 Rictor [Akt1 - act]                   } .
+  ----------------------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Akt1.irt.Egf.227.txt
+
+*** Araf--
+
+rl[815.Araf.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) }
+  {CLc   | clc   Araf                   }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) }
+  {CLc   | clc    [Araf - act]          } .
+  ----------------------------------------------------
+  *** ../evidence/Egf-Evidence/Araf.irt.Egf.815.txt
+
+*** ArhGap5--
+
+rl[1271.ArhGap5.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Src - act] }
+  {CLc   | clc    ArhGap5                           }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Src - act] }
+  {CLc   | clc   [ArhGap5 - Yphos]                                                     } .
+  ----------------------------------------------------------------------
+  *** ../evidence/Egf-Evidence/ArhGap5.irt.Egf.1271.txt
+
+*** ArhGef4--
+
+rl[156.ArhGef4.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Src - act]                   }
+  {CLc   | clc     ArhGef4                                            }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Src - act] [ArhGef4 - Yphos] }
+  {CLc   | clc                                                        } .
+  ----------------------------------------------------------------------
+  *** ../evidence/Egf-Evidence/ArhGef4.irt.Egf.156.txt
+
+*** ArhGef7--
+
+rl[264.ArhGef7.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Src - act]                   }
+  {CLc   | clc   Fak1 ArhGef7                                         }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Src - act] [ArhGef7 - Yphos] }
+  {CLc   | clc   Fak1                                                 } .
+  ---------------------------------------------------------------------
+  *** ../evidence/Egf-Evidence/ArhGef7.irt.Egf.264.txt
+
+*** Atf1--
+
+rl[628.Atf1.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)                     }
+  {NUc   | nuc    [msk12s:Msk12S - act] Atf1                }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)                     }
+  {NUc   | nuc    [msk12s:Msk12S - act] [Atf1 - phos(S 63)] } .
+  --------------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Atf1.irt.Egf.628.txt
+
+*** Atf2--
+
+rl[352.Atf2.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) }
+  {CLc   | clc   [Jnks - act] Atf2      }
+  {NUc   | nuc                          }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) }
+  {CLc   | clc   [Jnks - act]           }
+  {NUc   | nuc   [Atf2 - phos]          } .
+  -----------------------------------------
+  *** ../evidence/Egf-Evidence/Atf2.irt.Egf.352.txt
+
+*** Bmx--
+
+rl[263.Bmx.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)               }
+  {CLc   | clc   Bmx                                  }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Bmx - Yphos] }
+  {CLc   | clc                                        } .
+  -------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Bmx.irt.Egf.263.txt
+
+*** Braf--
+
+rl[310.Braf.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)           }
+  {CLi   | cli    [Hras - GTP]                    }
+  {CLc   | clc   IqGap1 [Mlk3 - act]  Braf        }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)           }
+  {CLi   | cli    [Hras - GTP]                    }
+  {CLc   | clc   IqGap1 [Mlk3 - act] [Braf - act] } .
+  ---------------------------------------------------
+  *** ../evidence/Egf-Evidence/Braf.irt.Egf.310.txt
+
+*** Cbl--
+
+rl[096.Cbl.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)               }
+  {CLc   | clc   Cbl                                  }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Cbl - Yphos] }
+  {CLc   | clc                                        } .
+  -------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Cbl.irt.Egf.096.txt
+
+*** Cblb--
+
+rl[353.Cblb.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)                }
+  {CLc   | clc   Cblb                                  }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Cblb - Yphos] }
+  {CLc   | clc                                         } .
+  --------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Cblb.irt.Egf.353.txt
+
+*** Cdc42--
+
+rl[399.Cdc42.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Src - act] 
+                  [cdc42gef:Cdc42GEF - Yphos]         }
+  {CLi   | cli    [Cdc42 - GDP]                       }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Src - act] 
+                  [cdc42gef:Cdc42GEF - Yphos]         }
+  {CLi   | cli    [Cdc42 - GTP]                       } .
+  -------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Cdc42.irt.Egf.399.txt
+
+*** Cin85--
+
+rl[550.Cin85.irt.Egf.Cbl]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Cbl - Yphos]       }
+  {CLc   | clc   Cin85                                      }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Cbl - Yphos] Cin85 }
+  {CLc   | clc                                              } .
+  -----------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Cin85.irt.Egf.Cbl.550.txt
+
+rl[579.Cin85.irt.Egf.Cblb]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Cblb - Yphos]       }
+  {CLc   | clc     Cin85                                     }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Cblb - Yphos] Cin85 }
+  {CLc   | clc                                               } .
+  ------------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Cin85.irt.Egf.Cblb.579.txt
+
+*** Creb1--
+
+rl[403.Creb1.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)                       }
+  {NUc   | nuc   [msk12s:Msk12S - act] Creb1                  }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)                       }
+  {NUc   | nuc   [msk12s:Msk12S - act] [Creb1 - phos(S 133)]  } .
+  ---------------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Creb1.irt.Egf.403.txt
+
+*** Crk--
+
+rl[102.Crk.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)               }
+  {CLc   | clc   Crk                                  }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Crk - Yphos] }
+  {CLc   | clc                                        } .
+  -------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Crk.irt.Egf.102.txt
+
+*** CrkL--
+
+rl[115.CrkL.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)                }
+  {CLc   | clc   CrkL                                  }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [CrkL - Yphos] }
+  {CLc   | clc                                         } .
+  ------------------------------------------------------
+  *** ../evidence/Egf-Evidence/CrkL.irt.Egf.115.txt
+
+*** Csk--
+
+rl[474.Csk.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)  [Pag1 - Yphos]     }
+  {CLc   | clc   Csk                                        }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)  [Pag1 - Yphos] Csk }
+  {CLc   | clc                                              } .
+  -----------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Csk.irt.Egf.474.txt
+
+*** Dbl--
+
+rl[389.Dbl.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)               }
+  {CLc   | clc   Dbl                                  }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Dbl - Yphos] }
+  {CLc   | clc                                        } .
+  -------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Dbl.irt.Egf.389.txt
+
+*** Dok1--
+
+rl[486.Dok1.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Shp2 - Yphos]                }
+  {CLc   | clc   Dok1                                                 }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Shp2 - Yphos] [Dok1 - Yphos] }
+  {CLc   | clc                                                        } .
+  -----------------------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Dok1.irt.Egf.486.txt
+
+*** Dok2--
+
+rl[103.Dok2.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)                 }
+  {CLc   | clc   Dok2                                   }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)  [Dok2 - Yphos] }
+  {CLc   | clc                                          } .
+  -------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Dok2.irt.Egf.103.txt
+
+*** EgfR--
+
+rl[828.EgfR.ubiq.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Cbl - Yphos] [Src - act]  }
+  {CLc   | clc   Ube2l3                                            }
+  =>
+  {EgfRC | egfrc ([EgfR - ubiq] : Egf)  [Cbl - Yphos] [Src - act] }
+  {CLc   | clc   Ube2l3                                           } .
+  -------------------------------------------------------------------
+  *** ../evidence/Egf-Evidence/EgfR.ubiq.irt.Egf.828.txt
+
+***(
+rl[580.EgfR.Internalized]:
+  {EgfRC | egfrc ([EgfR - ubiq] : Egf)  [cbls:CblS - Yphos] 
+                 Cin85 [Tnk2 - Yphos]                         }
+  {EEm   | eem                                                }
+  =>
+  {EgfRC | egfrc                                              }
+  {EEm   | eem   ([EgfR - ubiq] : Egf) [Tnk2 - Yphos]
+                 [cbls:CblS - Yphos] Cin85                    } .
+  ---------------------------------------------------------------
+  *** ../evidence/Egf-Evidence/EgfR.Internalized.580.txt
+
+rl[585.EgfR.Degraded]:
+  {CLi   | cli    [Rala - GTP]                                        }
+  {EEm | eem ([EgfR - ubiq] : Egf) [Tnk2 - Yphos] [cbls:CblS - Yphos] }
+  {Sig | sig                                                          }
+  =>
+  {CLi   | cli    [Rala - GTP]                                        }
+  {EEm | eem  [Tnk2 - Yphos]  [cbls:CblS - Yphos]                     }
+  {Sig | sig  [EgfR - degraded] [Egf - degraded]                      } .
+  -----------------------------------------------------------------------
+  *** ../evidence/Egf-Evidence/EgfR.Degraded.585.txt
+)***
+
+*** Egr1--  Egr1-gene--
+
+rl[620.Egr1-gene.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)  }
+  {NUc   | nuc   Egr1-gene               }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)  }
+  {NUc   | nuc   [Egr1-gene - on]        } .
+  -------------------------------------------
+  *** ../evidence/Egf-Evidence/Egr1-gene.irt.Egf.620.txt
+
+*** Eif4ebp1--
+
+rl[016.Eif4ebp1.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) gnai13s:Gnai13S }
+  {CLc   | clc   Eif4ebp1                               }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) gnai13s:Gnai13S }
+  {CLc   | clc   [Eif4ebp1 - phos(S 65)]                } .
+  -----------------------------------------------------------
+  *** ../evidence/Ins-Evidence/Eif4ebp1.irt.Egf.016.txt
+
+*** Elk1--
+
+rl[946.Elk1.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)               }
+  {CLi   | cli    [Hras - GTP]                        }
+  {NUc   | nuc    [Erks - erksmods act] Elk1          }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)               }
+  {CLi   | cli    [Hras - GTP]                        }
+  {NUc   | nuc    [Erks - erksmods act] [Elk1 - act]  } .
+  --------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Elk1.irt.Egf.946.txt
+
+*** EndA1--
+
+rl[546.EndA1.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)       }
+  {CLc   | clc   EndA1                        }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) EndA1 }
+  {CLc   | clc                                } .
+  ------------------------------------------------
+  *** ../evidence/Egf-Evidence/EndA1.irt.Egf.546.txt
+
+*** Eps8--
+
+rl[112.Eps8.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)                }
+  {CLc   | clc   Eps8                                  }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Eps8 - Yphos] }
+  {CLc   | clc                                         } .
+  --------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Eps8.irt.Egf.112.txt
+
+*** Eps15--
+
+rl[1100.Eps15.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) }
+  {CLc   | clc   Eps15                  }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) }
+  {CLc   | clc    [Eps15 - Yphos]       } .
+  -----------------------------------------
+  *** ../evidence/Egf-Evidence/Eps15.irt.Egf.1100.txt
+
+*** Erbb2--
+
+rl[113.Erbb2.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)                 }
+  {CLm   | clm   Erbb2                                  }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Erbb2 - Yphos] }
+  {CLm   | clm                                          } .
+  ---------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Erbb2.irt.Egf.113.txt
+
+*** ErkS--
+
+rl[196.Erks.act.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)  [Fak2 - act] [gab:GabS - Yphos]
+                  [Git1 - Yphos] Pi3k [Shp2 - Yphos] 
+                  [Shc1 - Yphos] [Src - act]                               }
+  {CLi   | cli   [Hras - GTP] plds:PldS                                    }
+  {CLc   | clc   [Braf - act] IqGap1 [Mek1 - act] [Mlk3 - act] Shoc2 
+                 [Erks - erksmods]                                         }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Fak2 - act] [gab:GabS - Yphos]
+                  [Git1 - Yphos] Pi3k [Shp2 - Yphos] 
+                  [Shc1 - Yphos] [Src - act]                               }
+  {CLi   | cli   [Hras - GTP] plds:PldS                                    }
+  {CLc   | clc   [Braf - act] IqGap1 [Mek1 - act] [Mlk3 - act] Shoc2 
+                 [Erks - erksmods act phos(TEY)]                               } .
+  -----------------------------------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Erks.act.irt.Egf.196.txt
+  *** ../evidence/Egf-Evidence/Erks.TEY.phos.irt.Egf.196.txt
+  *** ../evidence/Egf-Evidence/196.Chemicals.txt
+  *** ../evidence/Egf-Evidence/196.Gabs.txt
+  *** ../evidence/Egf-Evidence/196.NoExtras.txt
+  *** ../evidence/Egf-Evidence/196.Index.txt
+
+rl[1122.Erks.SPS.phos.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)                           }
+  {CLc   | clc    [Erks - erksmods]                               }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)                           }
+  {CLc   | clc   [Erks - erksmods phos(SPS)]                      } .
+  ----------------------------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Erks.SPS.phos.irt.Egf.1122.txt
+
+rl[1730.Erks.Ipo7.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)                           }
+  {CLc   | clc    [Erks - erksmods phos(SPS)] Ipo7                }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)                           }
+  {CLc   | clc   ([Erks - erksmods phos(SPS)] : Ipo7)             } .
+  ----------------------------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Erks.Ipo7.irt.Egf.1730.txt
+
+rl[1602.Erks.to.nuc.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)                      }
+  {CLc   | clc   ([Erks - erksmods phos(SPS)] : Ipo7)        }
+  {NUc   | nuc                                               }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)                      }
+  {CLc   | clc                                               }
+  {NUc   | nuc    [Erks - erksmods phos(SPS)]   Ipo7         } .
+  ---------------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Erks.to.nuc.irt.Egf.1602.txt
+
+*** Erk5--
+
+rl[028.Erk5.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)                             }
+  {CLi   | cli    [Hras - GTP]                                      }
+  {CLc   | clc    [Mek5 - act]  [mekk23:Mekk23S - act]Erk5          }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)                             }
+  {CLi   | cli    [Hras - GTP]                                      }
+  {CLc   | clc    [Mek5 - act]  [mekk23:Mekk23S - act] [Erk5 - act] } .
+  ---------------------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Erk5.irt.Egf.028.txt
+
+*** Fak2--
+
+rl[669.Fak2.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Src - act]              }
+  {CLc   | clc   Fak2                                            }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Src - act] [Fak2 - act] }
+  {CLc   | clc                                                   } .
+  ------------------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Fak2.irt.Egf.669.txt
+
+*** Flna--
+
+rl[1274.Flna.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)          }
+  {CLc   | clc   [rsks:RskS - act] Flna          }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)          }
+  {CLc   | clc   [rsks:RskS - act] [Flna - phos] } .
+  --------------------------------------------------
+  *** ../evidence/Egf-Evidence/Flna.irt.Egf.1274.txt
+
+*** Fos--
+
+rl[246.Fos.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)                    }
+  {NUc   | nuc   [Erks - erksmods  act] Fos                }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)                    }
+  {NUc   | nuc   [Erks - erksmods act] [Fos - phos(T 325)] } .
+  ------------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Fos.irt.Egf.246.txt
+
+*** Fos-gene--
+
+rl[631.Fos-gene.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)  }
+  {NUc   | nuc   Fos-gene                }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)  }
+  {NUc   | nuc   [Fos-gene - on]         } .
+  ------------------------------------------
+  *** ../evidence/Egf-Evidence/Fos-gene.irt.Egf.631.txt
+
+*** Gab1--
+
+rl[116.Gab1.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) gnai13s:Gnai13S                }
+  {CLc   | clc   Gab1                                                  }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) gnai13s:Gnai13S [Gab1 - Yphos] }
+  {CLc   | clc                                                         } .
+  ------------------------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Gab1.irt.Egf.116.txt
+
+*** Gab2--
+
+rl[075.Gab2.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)                }
+  {CLc   | clc   Gab2                                  }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Gab2 - Yphos] }
+  {CLc   | clc                                         } .
+  --------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Gab2.irt.Egf.075.txt
+
+*** Git1--
+
+rl[398.Git1.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Src - act]                }
+  {CLc   | clc   Git1                                              }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Src - act] [Git1 - Yphos] }
+  {CLc   | clc                                                     } .
+  ---------------------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Git1.irt.Egf.398.txt
+
+*** Gnai1--
+
+rl[012.Gnai1.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)       }
+  {CLi   | cli   Gnai1                        }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) Gnai1 }
+  {CLi   | cli                                } .
+  -----------------------------------------------
+  *** ../evidence/Egf-Evidence/Gnai1.irt.Egf.012.txt
+
+*** Gnai3--
+
+rl[013.Gnai3.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)       }
+  {CLi   | cli   Gnai3                        }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) Gnai3 }
+  {CLi   | cli                                } .
+  -----------------------------------------------
+  *** ../evidence/Egf-Evidence/Gnai3.irt.Egf.013.txt
+
+*** Grb2--
+
+rl[117.Grb2.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)      }
+  {CLc   | clc   Grb2                        }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) Grb2 }
+  {CLc   | clc                               } .
+  -----------------------------------------------
+  *** ../evidence/Egf-Evidence/Grb2.irt.Egf.117.txt
+
+*** Gsk3s--
+
+rl[1601.Gsk3s.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) }
+  {CLc   | clc    [Gsk3s - act]         }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) }
+  {CLc   | clc   [Gsk3s - phos(SFAE)]   } .
+  -----------------------------------------------
+  *** ../evidence/Egf-Evidence/Gsk3s.irt.Egf.1601.txt
+
+*** HistH3--
+
+rl[1057.HistH3.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) }
+  {NUc   | nuc   HistH3                 }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) }
+  {NUc   | nuc   [HistH3 - phos(S 11)]  } .
+  -----------------------------------------------
+  *** ../evidence/Egf-Evidence/HistH3.irt.Egf.1057.txt
+
+*** Hpk1--
+
+rl[218.Hpk1.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [crks:CrkS - Yphos]              }
+  {CLc   | clc   Hpk1                                                    }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [crks:CrkS - Yphos] [Hpk1 - act] }
+  {CLc   | clc                                                           } .
+  --------------------------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Hpk1.irt.Egf.218.txt
+
+*** Hras--
+
+rl[529.Hras.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [gab:GabS - Yphos]
+                  [hrasgef:HrasGEF - Yphos] Pi3k [Shp2 - Yphos] }
+  {CLi   |  cli   [Hras - GDP]                                  }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [gab:GabS - Yphos]
+                  [hrasgef:HrasGEF - Yphos] Pi3k [Shp2 - Yphos] }
+  {CLi   | cli    [Hras - GTP]                                  } .
+  ---------------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Hras.irt.Egf.529.txt
+
+*** Irf1--
+
+rl[760.Irf1-gene.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)  }
+  {NUc   | nuc   Irf1-gene               }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)  }
+  {NUc   | nuc   [Irf1-gene - on]        } .
+  -------------------------------------------
+  *** ../evidence/Egf-Evidence/Irf1-gene.irt.Egf.760.txt
+
+*** Jak1--
+
+rl[913.Jak1.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)                }
+  {CLc   | clc   Jak1                                  }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Jak1 - Yphos] }
+  {CLc   | clc                                         } .
+  --------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Jak1.irt.Egf.913.txt
+
+*** Jak2--
+
+rl[126.Jak2.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)                }
+  {CLc   | clc   Jak2                                  }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Jak2 - Yphos] }
+  {CLc   | clc                                         } .
+  --------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Jak2.irt.Egf.126.txt
+
+*** JnkS--
+
+rl[678.JnkS.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Eps8 - Yphos] }
+  {CLi   | cli    [Cdc42 - GTP]                        }
+  {CLc   | clc    [Mlk3 - act] Jnks                    }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Eps8 - Yphos] }
+  {CLi   | cli    [Cdc42 - GTP]                        }
+  {CLc   | clc    [Mlk3 - act] [Jnks - act]            } .
+  --------------------------------------------------------
+  *** ../evidence/Egf-Evidence/JnkS.irt.Egf.678.txt
+
+*** Jun--
+
+rl[627.Jun.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)  }
+  {CLi   | cli    [Hras - GTP]           }
+  {NUc   | nuc     Jun                   }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)  }
+  {CLi   | cli    [Hras - GTP]           }
+  {NUc   | nuc    [Jun - phos]           } .
+  ------------------------------------------
+  *** ../evidence/Egf-Evidence/Jun.irt.Egf.627.txt
+
+*** Jun-gene--
+
+rl[664.Jun-gene.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)  }
+  {NUc   | nuc      Jun-gene             }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)  }
+  {NUc   | nuc    [Jun-gene - on]        } .
+  ------------------------------------------
+  *** ../evidence/Egf-Evidence/Jun-gene.irt.Egf.664.txt
+
+*** Junb--  Junb-gene--
+
+rl[661.Junb-gene.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)  }
+  {NUc   | nuc   Junb-gene               }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)  }
+  {NUc   | nuc   [Junb-gene - on]        } .
+  -------------------------------------------
+  *** ../evidence/Egf-Evidence/Junb-gene.irt.Egf.661.txt
+
+*** Kras--
+
+rl[161.Kras.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) }
+  {CLi   | cli   [Kras - GDP]           }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) }
+  {CLi   | cli    [Kras - GTP]          } .
+  ---------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Kras.irt.Egf.161.txt
+
+*** Lkb1--
+
+rl[530.Lkb1.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)               }
+  {CLc   | clc    [Mek1 - act] Lkb1                   }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)               }
+  {CLc   | clc    [Mek1 - act] [Lkb1 - phos(S 431)]   } .
+  ---------------------------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Lkb1.irt.Egf.530.txt
+
+*** Mapkapk2--
+
+rl[662.Mapkapk2.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)        }
+  {CLc   | clc   [P38s - act]  Mapkapk2        }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)        }
+  {CLc   | clc   [P38s - act] [Mapkapk2 - act] } .
+  -----------------------------------------------
+  *** ../evidence/Egf-Evidence/Mapkapk2.irt.Egf.662.txt
+
+*** Mek1--
+
+rl[639.Mek1.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [gab:GabS - Yphos] }
+  {CLc   | clc   [Mlk3 - act] [Braf - act]  Mek1           }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [gab:GabS - Yphos] }
+  {CLc   | clc   [Mlk3 - act] [Braf - act] [Mek1 - act]    } .
+  -------------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Mek1.irt.Egf.639.txt
+
+*** Mek5--
+
+rl[570.Mek5.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) }
+  {CLc   | clc   Mek5                   }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) }
+  {CLc   | clc   [Mek5 - act]           } .
+  ------------------------------------------
+  *** ../evidence/Egf-Evidence/Mek5.irt.Egf.570.txt
+
+*** Mekk1--
+
+rl[480.Mekk1.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) }
+  {CLc   | clc   Mekk1                  }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) }
+  {CLc   | clc    [Mekk1 - act]         } .
+  -----------------------------------------
+  *** ../evidence/Egf-Evidence/Mekk1.irt.Egf.480.txt
+
+*** Mekk2--
+
+rl[1106.Mekk2.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) }
+  {CLc   | clc   Mekk2                  }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) }
+  {CLc   | clc    [Mekk2 - act]         } .
+  -------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Mekk2.irt.Egf.1106.txt
+
+*** Mekk3--
+
+rl[217.Mekk3.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)               }
+  {CLc   | clc   Mekk3                                }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Mekk3 - act] }
+  {CLc   | clc                                        } .
+  -------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Mekk3.irt.Egf.217.txt
+
+*** Mlk3--
+
+rl[1063.Mlk3.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)              }
+  {CLi   | cli    [cdc42rac1s:Cdc42Rac1S - GTP]      }
+  {CLc   | clc     Mlk3                              }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) }
+  {CLi   | cli    [cdc42rac1s:Cdc42Rac1S - GTP]      }
+  {CLc   | clc    [Mlk3 - act]                       } .
+  ------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Mlk3.irt.Egf.1063.txt
+
+*** Mras--
+
+rl[334.Mras.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)  }
+  {CLi   | cli   [Mras - GDP]            }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)  }
+  {CLi   | cli    [Mras - GTP]           } .
+  -------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Mras.irt.Egf.334.txt
+
+*** Msk1--
+
+rl[166.Msk1.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)      }
+  {CLc   | clc    [Mek1 - act] [P38s - act]  }
+  {NUc   | nuc     Msk1                      }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)      }
+  {CLc   | clc    [Mek1 - act] [P38s - act]  }
+  {NUc   | nuc    [Msk1 - act]               } .
+  -------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Msk1.irt.Egf.166.txt
+
+*** Msk2--
+
+rl[763.Msk2.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)               }
+  {CLc   | clc    [Mek1 - act] [P38s - act]           }
+  {NUc   | nuc     Msk2                               }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)               }
+  {CLc   | clc    [Mek1 - act] [P38s - act]           }
+  {NUc   | nuc    [Msk2 - act]                        } .
+  -------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Msk2.irt.Egf.763.txt
+
+*** Myc--  
+
+rl[808.Myc.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)          }
+  {NUc   | nuc   Myc                             }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)          }
+  {NUc   | nuc   [Myc - phos(S 62)]              } .
+  --------------------------------------------------
+  *** ../evidence/Egf-Evidence/Myc.irt.Egf.808.txt
+
+*** Myc-gene--
+
+rl[193.Myc-gene.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)  [Shc1 - Yphos] }
+  {NUc   | nuc     Myc-gene                             }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)  [Shc1 - Yphos] }
+  {NUc   | nuc    [Myc-gene - on]                       } .
+  ----------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Myc-gene.irt.Egf.193.txt
+
+*** Nckipsd--
+
+rl[1272.Nckipsd.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Src - act] }
+  {CLc   | clc    Nckipsd                           }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Src - act] }
+  {CLc   | clc   [Nckipsd - Yphos]                                                     } .
+  ----------------------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Nckipsd.irt.Egf.1272.txt
+
+*** Nos2a--  Nos2a-gene--
+
+rl[173.Nos2a-gene.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)          }
+  {NUc   | nuc   [Stat3 - act] Nos2a-gene        }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)          }
+  {NUc   | nuc   [Stat3 - act] [Nos2a-gene - on] } .
+  ----------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Nos2a-gene.irt.Egf.173.txt
+
+*** Nras--
+
+rl[165.Nras.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)  }
+  {CLi   | cli    [Nras - GDP]           }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)  }
+  {CLi   | cli    [Nras - GTP]           } .
+  ----------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Nras.irt.Egf.165.txt
+
+*** P38s--
+
+rl[940.P38s.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) }
+  {CLc   | clc     P38s                 }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) }
+  {CLc   | clc    [P38s - act]          } .
+  -----------------------------------------
+  *** ../evidence/Egf-Evidence/P38s.irt.Egf.940.txt
+
+*** Pag1--
+
+rl[147.Pag1.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)                }
+  {CLm   | clm   Pag1                                  }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Pag1 - Yphos] }
+  {CLm   | clm                                         } .
+  ---------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Pag1.irt.Egf.147.txt
+
+*** Pak1--
+
+rl[937.Pak1.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)          }
+  {CLi   | cli    [cdc42rac1s:Cdc42Rac1S - GTP]  }
+  {CLc   | clc     Pak1                          }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)          }
+  {CLi   | cli    [cdc42rac1s:Cdc42Rac1S - GTP]  }
+  {CLc   | clc    [Pak1 - act]                   } .
+  --------------------------------------------------
+  *** ../evidence/Egf-Evidence/Pak1.irt.Egf.937.txt
+
+*** Pdpk1-- Freud1--
+
+rl[1079.Pdpk1.Freud1.to.EgfR]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) Pi3k                      }
+  {CLc   | clc     Freud1  Pdpk1                                  } 
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) Pi3k Freud1 [Pdpk1 - act] }
+  {CLc   | clc                                                    } .
+  -------------------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Pdpk1.Freud1.to.EgfR.1079.txt
+
+*** Pi3k--
+
+rl[172.Pi3k.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)      }
+  {CLc   | clc     Pi3k                      }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) Pi3k }
+  {CLc   | clc                               } .
+  ----------------------------------------------
+  *** ../evidence/Egf-Evidence/Pi3k.irt.Egf.172.txt
+
+*** Pkcd--
+
+rl[724.Pkcd.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)            }
+  {CLc   | clc     Pkcd                            }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)            }
+  {CLc   | clc    [Pkcd - phos(T 507) phos(S 645)] } .
+  --------------------------------------------------
+  *** ../evidence/Egf-Evidence/Pkcd.irt.Egf.724.txt
+
+*** Pkcz--
+
+rl[002.Pkcz.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) Pi3k }
+  {CLc   | clc     Pkcz                      }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) Pi3k }
+  {CLc   | clc    [Pkcz - act]               } .
+  -----------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Pkcz.irt.Egf.002.txt
+
+*** Plce1--
+
+rl[311.Plce1.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)       }
+  {CLi   | cli    [Rap2b - GTP]               }
+  {CLc   | clc     Plce1                      }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) Plce1 }
+  {CLi   | cli    [Rap2b - GTP]               }
+  {CLc   | clc                                } .
+  ------------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Plce1.irt.Egf.311.txt
+
+*** Plcg1--
+
+rl[176.Plcg1.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Shp2 - Yphos] [Src - act]   }
+  {CLc   | clc     Plcg1                                             }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Shp2 - Yphos] [Src - act]
+                  [Plcg1 - phos(Y 783)]                              }
+  {CLc   | clc                                                       } .
+  ------------------------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Plcg1.irt.Egf.176.txt
+
+*** Plscr1--
+
+rl[184.Plscr1.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)                   }
+  {CLm   | clm   Plscr1                                   }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)  [Plscr1 - Yphos] }
+  {CLm   | clm                                            } .
+  -----------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Plscr1.irt.Egf.184.txt
+
+*** Ptk6--
+
+rl[532.Ptk6.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)              }
+  {CLc   | clc     Ptk6                              }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Ptk6 - act] }
+  {CLc   | clc                                       } .
+  ------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Ptk6.irt.Egf.532.txt
+
+*** Shp2--
+
+rl[188.Shp2.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)                 }
+  {CLc   | clc   Shp2                                   }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)  [Shp2 - Yphos] }
+  {CLc   | clc                                          } .
+  ---------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Shp2.irt.Egf.188.txt
+
+*** Pxn--
+
+rl[1102.Pxn.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Ptk6 - act]               }
+  {CLc   | clc    Pxn                                              }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Ptk6 - act] [Pxn - Yphos] }
+  {CLc   | clc                                                     } .
+  --------------------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Pxn.irt.Egf.1102.txt
+
+*** Rac1--
+
+rl[683.Rac1.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Pxn - Yphos] [Ptk6 - act]
+                  [rac1gef:Rac1GEF - Yphos]                         }
+  {CLi   | cli    [Rac1 - GDP]                                      }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Pxn - Yphos] [Ptk6 - act] 
+                  [rac1gef:Rac1GEF - Yphos]                         }
+  {CLi   | cli    [Rac1 - GTP]                                      } .
+  ----------------------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Rac1.irt.Egf.683.txt
+
+*** Raf1--
+
+rl[378.Raf1.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Gab1 - Yphos] }
+  {CLi   | cli   [Hras - GTP]                          }
+  {CLc   | clc   [Braf - act] Raf1                     }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Gab1 - Yphos] }
+  {CLi   | cli   [Hras - GTP]                          }
+  {CLc   | clc   [Braf - act]  [Raf1 - act]            } .
+  -------------------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Raf1.irt.Egf.378.txt
+
+*** Rala--
+
+rl[1064.Rala.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) }
+  {CLi   | cli    RalGds [Rala - GDP]   }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) }
+  {CLi   | cli    RalGds [Rala - GTP]   } .
+  --------------------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Rala.irt.Egf.1064.txt
+
+*** Ralb--
+
+rl[1107.Ralb.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)         }
+  {CLi   | cli    [Ralb - GDP]                  }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)         }
+  {CLi   | cli    [Rala - GTP]                  } .
+  -------------------------------------------------
+  *** ../evidence/Egf-Evidence/Ralb.irt.Egf.1107.txt
+
+*** RalGds--
+
+rl[1085.RalGds.to.EgfR]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)                }
+  {CLi   | cli    [ralgdspull:RalGdsPull - GTP]        }
+  {CLc   | clc   RalGds                                }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)                }
+  {CLi   | cli    [ralgdspull:RalGdsPull - GTP] RalGds }
+  {CLc   | clc                                         } .
+  --------------------------------------------------------
+  *** ../evidence/Egf-Evidence/RalGds.to.EgfR.1085.txt
+  *** requirement for a RalGdsPull from common rules
+
+*** Rap1a--
+
+rl[369.Rap1a.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Cbl - Yphos]
+                  [rap1agef:Rap1aGEF - Yphos]              }
+  {CLi   | cli    [Rap1a - GDP]                            }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Cbl - Yphos] 
+                  [rap1agef:Rap1aGEF - Yphos]              }
+  {CLi   | cli    [Rap1a - GTP]                            } .
+  ------------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Rap1a.irt.Egf.369.txt
+
+*** Rap2b--
+
+rl[365.Rap2b.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Src - act]  }
+  {CLi   | cli    [Rap2b - GDP]                      }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Src - act]  }
+  {CLi   | cli    [Rap2b - GTP]                      } .
+  ------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Rap2b.irt.Egf.365.txt
+
+*** RapGef1--
+
+rl[452.RapGef1.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Crk - Yphos]  [Src - act]     }
+  {CLc   | clc     RapGef1                                             }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Crk - Yphos]  [Src - act]
+                  [RapGef1 - Yphos]                                    }
+  {CLc   | clc                                                         } .
+  ------------------------------------------------------------------------
+  *** ../evidence/Egf-Evidence/RapGef1.irt.Egf.452.txt
+
+*** Rasa1--
+
+rl[537.Rasa1.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)                  }
+  {CLc   | clc     Rasa1                                 }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)  [Rasa1 - Yphos] }
+  {CLc   | clc                                           } .
+  ----------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Rasa1.irt.Egf.537.txt
+
+*** RasGrp3--
+
+rl[440.RasGrp3.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Src - act]                   }
+  {CLc   | clc   RasGrp3                                              }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Src - act] [RasGrp3 - Yphos] }
+  {CLc   | clc                                                        } .
+  ---------------------------------------------------------------------
+  *** ../evidence/Egf-Evidence/RasGrp3.irt.Egf.440.txt
+
+*** Rela--
+
+rl[727.Rela.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) }
+  {CLc   | clc    Rela                  }
+  {NUc   | nuc                          }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) }
+  {CLc   | clc                          }
+  {NUc   | nuc   [Rela - act]           } .
+  -----------------------------------------
+  *** ../evidence/Egf-Evidence/Rela.irt.Egf.727.txt
+
+*** Rps6--
+
+rl[1600.Rps6.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) gnai13s:Gnai13S                }
+  {CLc   | clc   Rps6                                                  }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) gnai13s:Gnai13S                }
+  {CLc   | clc   [Rps6 - phos(S 235)phos(S 236)phos(S 240)phos(S 244)] } .
+  ------------------------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Rps6.irt.Egf.1600.txt
+
+*** Rin1--
+
+rl[1570.Rin1.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)      }
+  {CLc   | clc    Rin1                       }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) Rin1 }
+  {CLc   | clc                               } .
+  ----------------------------------------------
+  *** ../evidence/Egf-Evidence/Rin1.irt.Egf.1570.txt
+
+*** Rit1--
+
+rl[281.Rit1.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) }
+  {CLi   | cli    [Rit1 - GDP]          }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) }
+  {CLi   | cli    [Rit1 - GTP]          } .
+  -----------------------------------------
+  *** ../evidence/Egf-Evidence/Rit1.irt.Egf.281.txt
+
+*** Rsk1--
+
+rl[1108.Rsk1.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)                           }
+  {CLc   | clc   [Erks - erksmods act] [Mek1 - act]  Rsk1         }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)                           }
+  {CLc   | clc   [Erks - erksmods act] [Mek1 - act] [Rsk1 - act]  } .
+  --------------------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Rsk1.irt.Egf.1108.txt
+  *** ../evidence/Egf-Evidence/Rsks.irt.Egf.txt
+
+*** Rsk2--
+
+rl[1267.Rsk2.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)      }
+  {CLc   | clc    [Mek1 - act]   Rsk2        }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)      }
+  {CLc   | clc    [Mek1 - act]  [Rsk2 - act] } .
+  ----------------------------------------------
+  *** ../evidence/Egf-Evidence/Rsk2.irt.Egf.1267.txt
+
+*** Rsk3--
+
+rl[663.Rsk3.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)     }
+  {CLc   | clc    [Mek1 - act] Rsk3         }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)     }
+  {CLc   | clc    [Mek1 - act] [Rsk3 - act] } .
+  ---------------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Rsk3.irt.Egf.663.txt
+
+*** S6k1--
+
+rl[1111.S6k1.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) Pi3k gnai13s:Gnai13S  }
+  {CLi   | cli   [Cdc42 - GTP]                                }
+  {CLc   | clc   (Mlst8 : Mtor : Raptor) S6k1                 }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)  Pi3k gnai13s:Gnai13S }
+  {CLi   | cli   [Cdc42 - GTP]                                }
+  {CLc   | clc   (Mlst8 : Mtor : Raptor) [S6k1 - act]         } .
+  ----------------------------------------------------------------
+  *** ../evidence/Egf-Evidence/S6k1.irt.Egf.1111.txt
+
+*** Sh2d3a--
+
+rl[454.Sh2d3a.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)                  }
+  {CLc   | clc   Sh2d3a                                  }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Sh2d3a - Yphos] }
+  {CLc   | clc                                           } .
+  ----------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Sh2d3a.irt.Egf.454.txt
+
+*** Sh2d3c--
+
+rl[545.Sh2d3c.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)                  }
+  {CLc   | clc   Sh2d3c                                  }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Sh2d3c - Yphos] }
+  {CLc   | clc                                           } .
+  ----------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Sh2d3c.irt.Egf.545.txt
+
+*** Shc1--
+
+rl[191.Shc1.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)                }
+  {CLc   | clc   Shc1                                  }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Shc1 - Yphos] }
+  {CLc   | clc                                         } .
+  ------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Shc1.irt.Egf.191.txt
+
+*** Smad3--
+
+rl[906.Smad3.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)                 }
+  {CLc   | clc    [Erks - erksmods act] Smad3           }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)                 }
+  {CLc   | clc    [Erks - erksmods act] [Smad3 - phos]  } .
+  ---------------------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Smad3.irt.Egf.906.txt
+
+*** Socs3-- Socs3-gene--
+
+rl[1075.Socs3-gene.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)  }
+  {NUc   | nuc   Socs3-gene              }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)  }
+  {NUc   | nuc   [Socs3-gene - on]       } .
+  -------------------------------------------
+  *** ../evidence/Egf-Evidence/Socs3-gene.irt.Egf.1075.txt
+
+*** Sos1--
+
+rl[197.Sos1.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) Grb2                }
+  {CLc   | clc   Sos1                                       }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) Grb2 [Sos1 - Yphos] }
+  {CLc   | clc                                              } .
+  -------------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Sos1.irt.Egf.197.txt
+
+*** Src--
+
+rl[207.Src.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Shp2 - Yphos]             }
+  {CLi   | cli   Src                                               }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Shp2 - Yphos] [Src - act] }
+  {CLi   | cli                                                     } .
+  ---------------------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Src.irt.Egf.207.txt
+
+*** Stat1--
+
+rl[235.Stat1.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)                 }
+  {CLc   | clc   Stat1                                  }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Stat1 - Yphos] }
+  {CLc   | clc                                          } .
+  ---------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Stat1.irt.Egf.235.txt
+
+
+rl[964.Stat1.to.nuc.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Stat1 - Yphos] }
+  {NUc   | nuc                                          }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)                 }
+  {NUc   | nuc   [Stat1 - Yphos]                        } .
+  ---------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Stat1.to.nuc.irt.Egf.964.txt
+
+*** Stat3--
+
+rl[241.Stat3.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Src - act] [Fak2 - act]  }
+  {CLc   | clc   [Mekk1 - act] Stat3                              }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Src - act] [Fak2 - act]
+                  [Stat3 - Yphos]                                 }
+  {CLc   | clc    [Mekk1 - act]                                   } .
+  -------------------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Stat3.irt.Egf.241.txt
+
+rl[963.Stat3.to.nuc.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Stat3 - Yphos]   }
+  {NUc   | nuc                                            }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)                   }
+  {NUc   | nuc   [Stat3 - act]                            } .
+  ---------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Stat3.to.nuc.irt.Egf.963.txt
+
+*** Stat5a--
+
+rl[253.Stat5a.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)                  }
+  {CLc   | clc   Stat5a                                  }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Stat5a - Yphos] }
+  {CLc   | clc                                           } .
+  ----------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Stat5a.irt.Egf.253.txt
+
+
+rl[948.Stat5a.to.nuc.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Stat5a - Yphos] }
+  {NUc   | nuc                                           }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)                  }
+  {NUc   | nuc   [Stat5a - Yphos]                        } .
+  ----------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Stat5a.to.nuc.irt.Egf.948.txt
+
+*** Stat5b--
+
+rl[907.Stat5b.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)                  }
+  {CLc   | clc   Stat5b                                  }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Stat5b - Yphos] }
+  {CLc   | clc                                           } .
+  ----------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Stat5b.irt.Egf.907.txt
+
+
+rl[947.Stat5b.to.nuc.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Stat5b - Yphos] }
+  {NUc   | nuc                                           }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)                  }
+  {NUc   | nuc   [Stat5b - Yphos]                        } .
+  ----------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Stat5b.to.nuc.irt.Egf.947.txt
+
+*** Tbp--  Tbp-gene--
+
+rl[1547.Tbp-gene.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Stat5b - Yphos] }
+  {CLc   | clc    [Jnks - act]                           }
+  {NUc   | nuc    [Elk1 - act] Tbp-gene                  }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Stat5b - Yphos] }
+  {CLc   | clc    [Jnks - act]                           }
+  {NUc   | nuc    [Elk1 - act] [Tbp-gene - on]           } .
+  ----------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Tbp-gene.irt.Egf.1547.txt
+
+*** Tnk2--
+
+rl[254.Tnk2.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - ubiq] : Egf)                 }
+  {CLc   | clc   Tnk2                                  }
+  =>
+  {EgfRC | egfrc ([EgfR - ubiq] : Egf)  [Tnk2 - Yphos] }
+  {CLc   | clc                                         } .
+  ---------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Tnk2.irt.Egf.254.txt
+
+*** Tns3--
+
+rl[551.Tns3.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)                }
+  {CLc   | clc     Tns3                                }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Tns3 - Yphos] }
+  {CLc   | clc                                         } .
+  ------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Tns3.irt.Egf.551.txt
+
+*** Vav1--
+
+rl[388.Vav1.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)                }
+  {CLc   | clc   Vav1                                  }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Vav1 - Yphos] }
+  {CLc   | clc                                         } .
+  --------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Vav1.irt.Egf.388.txt
+
+*** Vav2--
+
+rl[268.Vav2.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Shp2 - Yphos] [Src - act] }
+  {CLc   | clc   Vav2                                              }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Shp2 - Yphos] [Src - act]
+                 [Vav2 - Yphos]                                    }
+  {CLc   | clc                                                     } .
+  ----------------------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Vav2.irt.Egf.268.txt
+
+*** Vav3--
+
+rl[374.Vav3.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)                }
+  {CLc   | clc   Vav3                                  }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) [Vav3 - Yphos] }
+  {CLc   | clc                                         } .
+  ------------------------------------------------------
+  *** ../evidence/Egf-Evidence/Vav3.irt.Egf.374.txt
+
+*** Ywhaz--
+
+rl[552.Ywhaz.irt.Egf]:
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf)       }
+  {CLc   | clc   Ywhaz                        }
+  =>
+  {EgfRC | egfrc ([EgfR - Yphos] : Egf) Ywhaz }
+  {CLc   | clc                                } .
+  -----------------------------------------------
+  *** ../evidence/Egf-Evidence/Ywhaz.irt.Egf.552.txt
+
+endm

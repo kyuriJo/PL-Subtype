@@ -1,0 +1,96 @@
+mod HYDROXYUREARULES is inc ALLOPS .
+
+var xout clc nuc chr : Soup .
+
+*** ~/evidence/Drug-Evidence/00Hydroxyurea-evidence.txt
+
+*** Atm--
+
+rl[230.Atm.irt.Hydroxyurea]:
+  {XOut | xout  Hydroxyurea          }
+  {NUc  | nuc   Atm                  }
+  =>
+  {XOut | xout  Hydroxyurea          }
+  {NUc  | nuc  [Atm -  phos(S 1981)] } .
+  --------------------------------------
+  *** ~/evidence/Drug-Evidence/Atm.irt.Hydroxyurea.230.txt
+
+*** Chek1--
+
+rl[229.Chek1.irt.Hydroxyurea]:
+  {XOut | xout  Hydroxyurea                     }
+  {NUc  | nuc   Atr Chek1                       }
+  =>
+  {XOut | xout  Hydroxyurea                     }
+  {NUc  | nuc   Atr [Chek1 - phos(S 317)]       } .
+  ------------------------------------------------------------------------
+  *** ~/evidence/Drug-Evidence/Chek1.irt.Hydroxyurea.229.txt
+
+*** Chek2--
+
+rl[045.Chek2.irt.Hydroxyurea]:
+  {XOut | xout  Hydroxyurea          }
+  {NUc  | nuc   Chek2                }
+  =>
+  {XOut | xout  Hydroxyurea          }
+  {NUc  | nuc   [Chek2 - phos(T 68)] } .
+  ------------------------------------------------------------------------
+  *** ~/evidence/Drug-Evidence/Chek2.irt.Hydroxyurea.045.txt
+
+*** H2ax--
+
+rl[1778.H2ax.irt.Hydroxyurea]:
+  {XOut | xout  Hydroxyurea          }
+  {CHR  | chr   H2ax                 }
+  =>
+  {XOut | xout  Hydroxyurea          }
+  {CHR  | chr   [H2ax - phos(S 140)] } .
+  -------------------------------------------
+  *** ~/evidence/Drug-Evidence/H2ax.irt.Hydroxyurea.1778.txt
+
+*** Rad17--
+
+rl[1779.Rad17.irt.Hydroxyurea]:
+  {XOut | xout  Hydroxyurea                     }
+  {NUc  | nuc   Rad17                           }
+  =>
+  {XOut | xout  Hydroxyurea                     }
+  {NUc  | nuc  [Rad17 - phos(S 646)phos(S 656)] } .
+  ------------------------------------------------------
+  *** ~/evidence/Drug-Evidence/Rad17.irt.Hydroxyurea.1779.txt
+
+*** Smc1a--
+
+rl[1780.Smc1a.irt.Hydroxyurea]:
+  {XOut | xout  Hydroxyurea                      }
+  {NUc  | nuc   Smc1a                            }
+  =>
+  {XOut | xout  Hydroxyurea                      }
+  {NUc  | nuc  [Smc1a - phos(S 957) phos(S 966)] } .
+  -------------------------------------------------------------------------
+  *** ~/evidence/Drug-Evidence/Smc1a.irt.Hydroxyurea.1780.txt
+
+*** Trim28--
+
+rl[1781.Trim28.irt.Hydroxyurea]:
+  {XOut | xout  Hydroxyurea                }
+  {NUc  | nuc   Atm Trim28                 }
+  =>
+  {XOut | xout  Hydroxyurea                }
+  {NUc  | nuc   Atm [Trim28 - phos(S 824)] } .
+  ----------------------------------------------------
+  *** ~/evidence/Drug-Evidence/Trim28.irt.Hydroxyurea.1781.txt
+
+
+
+
+
+
+
+
+
+
+
+
+endm
+

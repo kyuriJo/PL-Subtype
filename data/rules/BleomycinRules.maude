@@ -1,0 +1,93 @@
+mod BLEOMYCINRULES is inc ALLOPS .
+
+var xout clc nuc chr : Soup .
+
+*** ~/evidence/Drug-Evidence/00Bleomycin-evidence.txt
+
+*** formation of DNA strand breaks and DNA Damage Foci
+
+rl[1770.DSB.irt.Bleomycin]:
+  {XOut | xout Bleomycin             }
+  {CHR  | chr                        }
+  =>
+  {XOut | xout Bleomycin             }
+  {CHR  | chr  DSB                   } .
+  -----------------------------------------
+  *** ~/evidence/Drug-Evidence/DSB.irt.Bleomycin.1770.txt
+
+*** Atm--
+
+rl[251.Atm.acetyl.irt.Bleomycin]:
+  {XOut | xout  Bleomycin                            }
+  {NUc  | nuc   [Tip60 - act] Atm                    }
+  =>
+  {XOut | xout  Bleomycin                            }
+  {NUc  | nuc   [Tip60 - act] [Atm - acetyl(K 3016)] } .
+  ----------------------------------------------
+  *** ~/evidence/Drug-Evidence/Atm.acetyl.irt.Bleomycin.251.txt
+
+rl[238.Atm.phos.irt.Bleomycin]:
+  {XOut | xout  Bleomycin                          }
+  {NUc  | nuc  [Atm - acetyl(K 3016)]              }
+  =>
+  {XOut | xout  Bleomycin                          }
+  {NUc  | nuc  [Atm - acetyl(K 3016) phos(S 1981)] } .
+  -----------------------------------------------------
+  *** ~/evidence/Drug-Evidence/Atm.phos.irt.Bleomycin.238.txt
+
+*** Chek2--
+
+rl[256.Chek2.irt.Bleomycin]:
+  {XOut | xout  Bleomycin                                   }
+  {NUc  | nuc   [Atm - acetyl(K 3016)]  Chek2               }
+  =>
+  {XOut | xout  Bleomycin                                   }
+  {NUc  | nuc   [Atm - acetyl(K 3016)] [Chek2 - phos(T 68)] } .
+  ------------------------------------------------------------------------
+  *** ~/evidence/Drug-Evidence/Chek2.irt.Bleomycin.256.txt
+
+*** H2ax--
+
+rl[331.H2ax.irt.Bleomycin]:
+  {XOut | xout  Bleomycin                }
+  {CHR  | chr   DSB  H2ax                }
+  =>
+  {XOut | xout  Bleomycin                }
+  {CHR  | chr   DSB [H2ax - phos(S 140)] } .
+  -----------------------------------------------------------
+  *** ~/evidence/Drug-Evidence/H2ax.irt.Bleomycin.331.txt
+
+*** Prkdc--
+
+rl[247.Prkdc.irt.Bleomycin]:
+  {XOut | xout  Bleomycin                                 }
+  {NUc  | nuc   Tip60 Prkdc                               }
+  =>
+  {XOut | xout  Bleomycin                                 }
+  {NUc  | nuc   Tip60 [Prkdc - phos(S 2056) phos(T 2609)] } .
+  -----------------------------------------------------------
+  *** ~/evidence/Drug-Evidence/Prkdc.irt.Bleomycin.247.txt
+
+*** Tip60--
+
+rl[338.Tip60.irt.Bleomycin]:
+  {XOut | xout  Bleomycin     }
+  {NUc  | nuc   Tip60         }
+  =>
+  {XOut | xout  Bleomycin     }
+  {NUc  | nuc   [Tip60 - act] } .
+  -----------------------------------
+  *** ~/evidence/Drug-Evidence/Tip60.irt.Bleomycin.338.txt
+
+*** Tp53--
+
+rl[259.Tp53.irt.Bleomycin]:
+  {XOut | xout  Bleomycin                                  }
+  {NUc  | nuc   [Atm - acetyl(K 3016)]  Tp53               }
+  =>
+  {XOut | xout  Bleomycin                                  }
+  {NUc  | nuc   [Atm - acetyl(K 3016)] [Tp53 - phos(S 15)] } .
+  ------------------------------------------------------------
+  *** ~/evidence/Drug-Evidence/Tp53.irt.Bleomycin.259.txt
+
+endm

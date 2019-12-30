@@ -1,0 +1,101 @@
+mod ADRIAMYCINRULES is inc ALLOPS .
+
+var xout clc nuc chr : Soup .
+
+*** ~/evidence/Drug-Evidence/00Adriamycin-evidence.txt
+
+*** Bax--
+
+rl[1471.Bax-gene.irt.Adriamycin]:
+  {XOut | xout  Adriamycin      }
+  {NUc  | nuc   Bax-gene        }
+  =>
+  {XOut | xout  Adriamycin      }
+  {NUc  | nuc   [Bax-gene - on] } .
+  --------------------------------------
+  *** ~/evidence/Drug-Evidence/Bax-gene.irt.Adriamycin.1471.txt
+
+*** Cdkn1a--
+
+rl[1443.Cdkn1a-gene.irt.Adriamycin]:
+  {XOut | xout  Adriamycin                   }
+  {CLc  | clc   Pin1                         }
+  {NUc  | nuc   Tp53 Cdkn1a-gene             }
+  =>
+  {XOut | xout  Adriamycin                   }
+  {CLc  | clc   Pin1                         }
+  {NUc  | nuc   Tp53 [Cdkn1a-gene - on]      } .
+  -------------------------------------------------------
+  *** ~/evidence/Drug-Evidence/Cdkn1a-gene.irt.Adriamycin.1443.txt
+
+*** Chek2--
+
+rl[1445.Chek2.irt.Adriamycin]:
+  {XOut | xout  Adriamycin       }
+  {NUc  | nuc   Chek2            }
+  =>
+  {XOut | xout  Adriamycin       }
+  {NUc  | nuc   [Chek2 - phos]   } .
+  -------------------------------------------------------
+  *** ~/evidence/Drug-Evidence/Chek2.irt.Adriamycin.1445.txt
+
+*** Mdm2--  Mdm2-gene--
+
+rl[1446.Mdm2-gene.irt.Adriamycin]:
+  {XOut | xout  Adriamycin            }
+  {CLc  | clc   Pin1                  }
+  {NUc  | nuc   Mdm2-gene             }
+  =>
+  {XOut | xout  Adriamycin            }
+  {CLc  | clc   Pin1                  }
+  {NUc  | nuc   [Mdm2-gene - on]      } .
+  ----------------------------------------
+  *** ~/evidence/Drug-Evidence/Mdm2-gene.irt.Adriamycin.1446.txt
+
+*** Nemo--
+
+rl[043.Nemo.irt.Adriamycin]:
+  {XOut | xout Adriamycin          }
+  {CLc  | clc  Nemo                }
+  =>
+  {XOut | xout Adriamycin          }
+  {CLc  | clc  [Nemo - phos(S 85)] } .
+  ------------------------------------------
+  *** ~/evidence/Drug-Evidence/Nemo.irt.Adriamycin.043.txt
+
+*** Tp53--
+
+rl[1444.Tp53.irt.Adriamycin]:
+  {XOut | xout  Adriamycin   }
+  {NUc  | nuc   Tp53         }
+  =>
+  {XOut | xout  Adriamycin          }
+  {NUc  | nuc   [Tp53 - phos(S 15)] } .
+  -----------------------------------
+  *** ~/evidence/Drug-Evidence/Tp53.irt.Adriamycin.1444.txt
+
+*** Tp53aip1--
+
+rl[1447.Tp53aip1-gene.irt.Adriamycin]:
+  {XOut | xout  Adriamycin                }
+  {NUc  | nuc   Tp53  Tp53aip1-gene       }
+  =>
+  {XOut | xout  Adriamycin                }
+  {NUc  | nuc   Tp53 [Tp53aip1-gene - on] } .
+  --------------------------------------------------
+  *** ~/evidence/Drug-Evidence/Tp53aip1-gene.irt.Adriamycin.1447.txt
+
+*** TrailR2--
+
+rl[1448.TrailR2-gene.irt.Adriamycin]:
+  {XOut | xout  Adriamycin              }
+  {CLc  | clc   Pin1                    }
+  {NUc  | nuc  TrailR2-gene             }
+  =>
+  {XOut | xout  Adriamycin              }
+  {CLc  | clc   Pin1                    }
+  {NUc  | nuc  [TrailR2-gene - on]      } .
+  --------------------------------------------------
+  *** ~/evidence/Drug-Evidence/TrailR2-gene.irt.Adriamycin.1448.txt
+
+endm

@@ -1,0 +1,10 @@
+{"stype" : "jnet",
+	 "name" : "NoStimDish",
+	 "type" : "pnet",
+	 "kbname" : "RKB",
+	 "parent" : "RKB",
+	 "rids" : ["1268c.ArhGap5.Nckipsd.complex", "1264c.Jak3.Cd40.complex", "870c.Smad7.by.Ep300", "1229c.Jak1.Gp130.complex", "1232c.Jak2.Gp130.complex", "1113c.Grb2.Sos1.complex", "1247c.Tyk2.IL12Rb1.complex", "1246c.Jak2.IL12Rb2.complex", "1157c.Jak1.IL2Rb.complex", "1810.Jak1.IL4R.complex", "1818.Jak1.IfngR1.complex", "1819.Jak2.IfngR2.complex", "704c.Ikba.Rela.complex", "807c.Ikbb.Rela.complex", "1503.Ikk1.irt.Ngf", "472c.Mlst8.Mtor.complex", "017c.Nfkb1.Tpl2.complex", "1605c.Tsc2.to.Tsc1", "420c.Eif4e.mRNA", "1817c.IfngR1.IfngR2.complex", "169c.Ikk1.Ikk2.Nemo.complex", "348c.Mre11.Rad50.Nbs1.complex", "916c.Mtorc1.complex", "916c.Mtorc1.complex#1", "555c.Tab1.Tab23.Tak1.complex", "555c.Tab1.Tab23.Tak1.complex#1", "1736.Traf6.to.Tgfb1RC", "1735.Tak1.to.Tgfb1RC", "1735.Tak1.to.Tgfb1RC#1", "498c.Mtorc2.complex", "498c.Mtorc2.complex#1", "856c.Eif4ebp1.Eif4e.mRNA.complex", "1632c.Eif4g1.Eif4e.complex", "1608c.Pras40.Mtorc1.complex", "1635c.Eif4a1.Eif4e.complex"],
+	 "init" : ["capped-mRNA@RNAC", "ArhGap5@CLc", "Cd40@Cd40C", "Eif4a1@CLc", "Eif4e@CLc", "Eif4ebp1@CLc", "Eif4g1@CLc", "Ep300@NUc", "Gp130@GP130C", "Grb2@CLc", "IfngR1@CLm", "IfngR2@CLm", "Ikba@CLc", "Ikbb@CLc", "Ikk1@CLc", "Ikk2@CLc", "IL2Rb@IL2RC", "IL4R@IL4RC", "IL12Rb1@IL12Rb1C", "IL12Rb2@IL12Rb2C", "Jak1@CLc", "Jak2@CLc", "Jak3@CLc", "Mlst8@CLc", "Mre11@NUc", "Mtor@CLc", "Nbs1@NUc", "Nckipsd@CLc", "Nemo@CLc", "Nfkb1@CLc", "NgfR@NgfRC", "Pld1@CLi", "Pld2@CLi", "Pras40@CLc", "Rad50@NUc", "Raptor@CLc", "Rela@CLc", "Rictor@CLc", "Sin1@CLc", "Smad7@NUc", "Sos1@CLc", "Tab1@CLc", "Tab2@CLc", "Tab3@CLc", "Tak1@CLc", "TgfbR1@Tgfb1RC", "TgfbR2@Tgfb1RC", "Tpl2@CLc", "Traf6@CLc", "Tsc1@CVc", "Tsc2@CLc", "Tyk2@CLc"],
+	 "op" : "dishnet",
+	 "args" : "NoStimDish"
+} 

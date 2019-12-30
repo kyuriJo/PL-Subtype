@@ -1,0 +1,10 @@
+{"stype" : "jnet",
+	 "name" : "HydroxyureaDish",
+	 "type" : "pnet",
+	 "kbname" : "RKB",
+	 "parent" : "RKB",
+	 "rids" : ["230.Atm.irt.Hydroxyurea", "045.Chek2.irt.Hydroxyurea", "1778.H2ax.irt.Hydroxyurea", "1779.Rad17.irt.Hydroxyurea", "1780.Smc1a.irt.Hydroxyurea", "1781.Trim28.irt.Hydroxyurea", "229.Chek1.irt.Hydroxyurea", "234c.Chek2.act#1"],
+	 "init" : ["Hydroxyurea@XOut", "Atm@NUc", "Atr@NUc", "Chek1@NUc", "Chek2@NUc", "H2ax@CHR", "Rad17@NUc", "Smc1a@NUc", "Trim28@NUc"],
+	 "op" : "dishnet",
+	 "args" : "HydroxyureaDish"
+} 

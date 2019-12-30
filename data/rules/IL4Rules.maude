@@ -1,0 +1,359 @@
+mod IL4RULES is inc ALLOPS .
+
+var xout : Soup .
+vars clo clm clr cli clc nuo num nui nuc : Soup .
+vars moo mom moi moc mio mim mii mic : Soup .
+vars ero erm eri erc pxo pxm pxi pxc : Soup .
+vars gao gam gai gac lyo lym lyi lyc : Soup .
+vars eeo eem eei eec leo lem lei lec : Soup .
+vars cpo cpm cpi cpc ct ptc sig : Soup .
+var il4rc : Soup .
+
+*** ~/evidence/IL4-Evidence/00IL4-evidence.txt
+
+
+rl[1191.IL4R.irt.IL4]:
+  {XOut  | xout  IL4                      }
+  {IL4RC | il4rc IL4R                     }
+  {CLm   | clm   IL2Rg                    }
+  =>
+  {XOut  | xout                           }
+  {IL4RC | il4rc [IL4R - Yphos] IL2Rg IL4 }
+  {CLm   | clm                            } .
+  --------------------------------------------------
+  *** ~/evidence/IL4-Evidence/IL4R.irt.IL4.1191.txt
+
+*** Aicda-- Aicda-gene--
+
+rl[1204.Aicda-gene.irt.IL4]:
+  {IL4RC | il4rc IL4 [IL4R - Yphos]  }
+  {NUc   | nuc    Aicda-gene         }
+  =>
+  {IL4RC | il4rc IL4 [IL4R - Yphos]  }
+  {NUc   | nuc   [Aicda-gene - on]   } .
+  --------------------------------------------------
+  *** ~/evidence/IL4-Evidence/Aicda-gene.irt.IL4.1204.txt
+
+*** Alox15-- Alox15-gene--
+
+rl[1205.Alox15-gene.irt.IL4]:
+  {IL4RC | il4rc IL4 [IL4R - Yphos]                     }
+  {NUc   | nuc   [Stat6 - Yphos act]  Alox15-gene       }
+  =>
+  {IL4RC | il4rc IL4 [IL4R - Yphos]                     }
+  {NUc   | nuc   [Stat6 - Yphos act] [Alox15-gene - on] } .
+  ---------------------------------------------------------
+  *** ~/evidence/IL4-Evidence/Alox15-gene.irt.IL4.1205.txt
+
+*** Akt1--
+
+rl[1192.Akt1.irt.IL4]:
+  {IL4RC | il4rc [IL4R - Yphos] IL4 }
+  {CLc   | clc    Akt1              }
+  =>
+  {IL4RC | il4rc [IL4R - Yphos] IL4 }
+  {CLc   | clc   [Akt1 - act]       } .
+  -------------------------------------
+  *** ~/evidence/IL4-Evidence/Akt1.irt.IL4.1192.txt
+
+*** Arg1-- Arg1-gene--
+
+rl[1206.Arg1-gene.irt.IL4]:
+  {IL4RC | il4rc IL4 [IL4R - Yphos]                   }
+  {NUc   | nuc   [Stat6 - Yphos act]  Arg1-gene       }
+  =>
+  {IL4RC | il4rc IL4 [IL4R - Yphos]                   }
+  {NUc   | nuc   [Stat6 - Yphos act] [Arg1-gene - on] } .
+  ---------------------------------------------------------
+  *** ~/evidence/IL4-Evidence/Arg1-gene.irt.IL4.1206.txt
+
+*** Bcl2-- Bcl2-gene--
+
+rl[1207.Bcl2-gene.irt.IL4]:
+  {IL4RC | il4rc IL4 [IL4R - Yphos] }
+  {NUc   | nuc   Bcl2-gene          }
+  =>
+  {IL4RC | il4rc IL4 [IL4R - Yphos] }
+  {NUc   | nuc   [Bcl2-gene - on]   } .
+  -------------------------------------
+  *** ~/evidence/IL4-Evidence/Bcl2-gene.irt.IL4.1207.txt
+
+*** Bclxl-- Bclxl-gene--
+
+rl[1208.Bclxl-gene.irt.IL4]:
+  {IL4RC | il4rc IL4 [IL4R - Yphos] }
+  {NUc   | nuc   Bclxl-gene         }
+  =>
+  {IL4RC | il4rc IL4 [IL4R - Yphos] }
+  {NUc   | nuc   [Bclxl-gene - on]  } .
+  -------------------------------------
+  *** ~/evidence/IL4-Evidence/Bclxl-gene.irt.IL4.1208.txt
+
+*** CcL11-- CcL11-gene--
+
+rl[1209.CcL11-gene.irt.IL4]:
+  {IL4RC | il4rc IL4 [IL4R - Yphos] }
+  {NUc   | nuc   CcL11-gene         }
+  =>
+  {IL4RC | il4rc IL4 [IL4R - Yphos] }
+  {NUc   | nuc   [CcL11-gene - on]  } .
+  -------------------------------------
+  *** ~/evidence/IL4-Evidence/CcL11-gene.irt.IL4.1209.txt
+
+*** CcL17-- CcL17-gene--
+
+rl[1210.CcL17-gene.irt.IL4]:
+  {IL4RC | il4rc IL4 [IL4R - Yphos] }
+  {NUc   | nuc   CcL17-gene         }
+  =>
+  {IL4RC | il4rc IL4 [IL4R - Yphos] }
+  {NUc   | nuc   [CcL17-gene - on]  } .
+  -------------------------------------
+  *** ~/evidence/IL4-Evidence/CcL17-gene.irt.IL4.1210.txt
+
+*** CcL26-- CcL26-gene--
+
+rl[1211.CcL26-gene.irt.IL4]:
+  {IL4RC | il4rc IL4 [IL4R - Yphos] }
+  {NUc   | nuc   CcL26-gene         }
+  =>
+  {IL4RC | il4rc IL4 [IL4R - Yphos] }
+  {NUc   | nuc   [CcL26-gene - on]  } .
+  -------------------------------------
+  *** ~/evidence/IL4-Evidence/CcL26-gene.irt.IL4.1211.txt
+
+*** FceR2-- FceR2-gene--
+
+rl[1212.FceR2-gene.irt.IL4]:
+  {IL4RC | il4rc IL4 [IL4R - Yphos] }
+  {NUc   | nuc   FceR2-gene         }
+  =>
+  {IL4RC | il4rc IL4 [IL4R - Yphos] }
+  {NUc   | nuc   [FceR2-gene - on]  } .
+  -------------------------------------
+  *** ~/evidence/IL4-Evidence/FceR2-gene.irt.IL4.1212.txt
+
+*** Fes--
+
+rl[1193.Fes.irt.IL4]:
+  {IL4RC | il4rc IL4 [IL4R - Yphos]               }
+  {CLc   | clc   [Jak1 - Yphos] Fes               }
+  =>
+  {IL4RC | il4rc IL4 [IL4R - Yphos] [Fes - Yphos] }
+  {CLc   | clc   [Jak1 - Yphos]                   } .
+  ---------------------------------------------------
+  *** ~/evidence/IL4-Evidence/Fes.irt.IL4.1193.txt
+
+*** Hif1a-- Hif1a-gene--
+
+rl[1213.Hif1a-gene.irt.IL4]:
+  {IL4RC | il4rc IL4 [IL4R - Yphos] }
+  {NUc   | nuc    Hif1a-gene        }
+  =>
+  {IL4RC | il4rc IL4 [IL4R - Yphos] }
+  {NUc   | nuc   [Hif1a-gene - on]  } .
+  -------------------------------------
+  *** ~/evidence/IL4-Evidence/Hif1a-gene.irt.IL4.1213.txt
+
+*** IL4R-- IL4R-gene--
+
+rl[1214.IL4R-gene.irt.IL4]:
+  {IL4RC | il4rc IL4 [IL4R - Yphos] }
+  {NUc   | nuc    IL4R-gene         }
+  =>
+  {IL4RC | il4rc IL4 [IL4R - Yphos] }
+  {NUc   | nuc   [IL4R-gene - on]   } .
+  -------------------------------------
+  *** ~/evidence/IL4-Evidence/IL4R-gene.irt.IL4.1214.txt
+
+*** IL13Ra2-- IL13Ra2-gene--
+
+rl[1215.IL13Ra2-gene.irt.IL4]:
+  {IL4RC | il4rc IL4 [IL4R - Yphos]  }
+  {NUc   | nuc    IL13Ra2-gene       }
+  =>
+  {IL4RC | il4rc IL4 [IL4R - Yphos]  }
+  {NUc   | nuc   [IL13Ra2-gene - on] } .
+  --------------------------------------
+  *** ~/evidence/IL4-Evidence/IL13Ra2-gene.irt.IL4.1215.txt
+
+*** Irs1--
+
+rl[1194.Irs1.irt.IL4]:
+  {IL4RC | il4rc IL4 [IL4R - Yphos] [Fes - Yphos] }
+  {CLc   | clc   Irs1                             }
+  =>
+  {IL4RC | il4rc IL4 [IL4R - Yphos] [Fes - Yphos] }
+  {CLc   | clc   [Irs1 - Yphos]                   } .
+  ---------------------------------------------------
+  *** ~/evidence/IL4-Evidence/Irs1.irt.IL4.1194.txt
+
+*** Irs1--
+
+rl[1195.Irs2.irt.IL4]:
+  {IL4RC | il4rc IL4 [IL4R - Yphos] [Fes - Yphos]                 }
+  {CLc   | clc   Irs2                                             }
+  =>
+  {IL4RC | il4rc IL4 [IL4R - Yphos] [Fes - Yphos]  [Irs2 - Yphos] }
+  {CLc   | clc                                                    } .
+  ------------------------------------------------------------------
+  *** ~/evidence/IL4-Evidence/Irs2.irt.IL4.1195.txt
+
+*** Jak1--
+
+rl[1196.Jak1.irt.IL4]:
+  {IL4RC | il4rc IL4 [IL4R - Yphos] }
+  {CLc   | clc   Jak1               }
+  =>
+  {IL4RC | il4rc IL4 [IL4R - Yphos] }
+  {CLc   | clc   [Jak1 - Yphos]     } .
+  -------------------------------------
+  *** ~/evidence/IL4-Evidence/Jak1.irt.IL4.1196.txt
+
+*** Jak3--
+
+rl[1197.Jak3.irt.IL4]:
+  {IL4RC | il4rc IL4 [IL4R - Yphos] }
+  {CLc   | clc   Jak3               }
+  =>
+  {IL4RC | il4rc IL4 [IL4R - Yphos] }
+  {CLc   | clc   [Jak3 - Yphos]     } .
+  -------------------------------------
+  *** ~/evidence/IL4-Evidence/Jak3.irt.IL4.1197.txt
+
+*** Myc-- Myc-gene--
+
+rl[1216.Myc-gene.irt.IL4]:
+  {IL4RC | il4rc IL4 [IL4R - Yphos] }
+  {NUc   | nuc    Myc-gene          }
+  =>
+  {IL4RC | il4rc IL4 [IL4R - Yphos] }
+  {NUc   | nuc   [Myc-gene - on]    } .
+  -------------------------------------
+  *** ~/evidence/IL4-Evidence/Myc-gene.irt.IL4.1216.txt
+
+*** Nfil3-- Nfil3-gene--
+
+rl[1217.Nfil3-gene.irt.IL4]:
+  {IL4RC | il4rc IL4 [IL4R - Yphos]                    }
+  {NUc   | nuc   [Stat6 - Yphos act] Nfil3-gene        }
+  =>
+  {IL4RC | il4rc IL4 [IL4R - Yphos]                    }
+  {NUc   | nuc   [Stat6 - Yphos act] [Nfil3-gene - on] } .
+  ---------------------------------------------------------
+  *** ~/evidence/IL4-Evidence/Nfil3-gene.irt.IL4.1217.txt
+
+*** OpRm1-- OpRm1-gene--
+
+rl[1218.OpRm1-gene.irt.IL4]:
+  {IL4RC | il4rc IL4 [IL4R - Yphos] }
+  {NUc   | nuc    OpRm1-gene        }
+  =>
+  {IL4RC | il4rc IL4 [IL4R - Yphos] }
+  {NUc   | nuc   [OpRm1-gene - on]  } .
+  -------------------------------------
+  *** ~/evidence/IL4-Evidence/OpRm1-gene.irt.IL4.1218.txt
+
+*** P38s--
+
+rl[1198.P38s.irt.IL4]:
+  {IL4RC | il4rc IL4 [IL4R - Yphos] }
+  {CLc   | clc   P38s               }
+  =>
+  {IL4RC | il4rc IL4 [IL4R - Yphos] }
+  {CLc   | clc   [P38s - act]       } .
+  -------------------------------------
+  *** ~/evidence/IL4-Evidence/P38s.irt.IL4.1198.txt
+
+*** Pi3k--
+*** Pik3rs--
+
+rl[1199.Pi3k.irt.IL4]:
+  {IL4RC | il4rc IL4 [IL4R - Yphos]                }
+  {CLc   | clc   Pi3k                              }
+  =>
+  {IL4RC | il4rc IL4 [IL4R - Yphos] [Pi3k - Yphos] }
+  {CLc   | clc                                     } .
+  ---------------------------------------------------
+  *** ~/evidence/IL4-Evidence/Pi3k.irt.IL4.1199.txt
+
+*** S6k1--
+
+rl[1200.S6k1.irt.IL4]:
+  {IL4RC | il4rc IL4 [IL4R - Yphos] }
+  {CLc   | clc   S6k1               }
+  =>
+  {IL4RC | il4rc IL4 [IL4R - Yphos] }
+  {CLc   | clc   [S6k1 - Yphos]     } .
+  -------------------------------------
+  *** ~/evidence/IL4-Evidence/S6k1.irt.IL4.1200.txt
+
+*** Shc1--
+
+rl[1201.Shc1.irt.IL4]:
+  {IL4RC | il4rc IL4 [IL4R - Yphos] }
+  {CLc   | clc   Shc1               }
+  =>
+  {IL4RC | il4rc IL4 [IL4R - Yphos] }
+  {CLc   | clc   [Shc1 - Yphos]     } .
+  -------------------------------------
+  *** ~/evidence/IL4-Evidence/Shc.irt.IL4.1201.txt
+
+*** Socs1-- Socs1-gene--
+
+rl[1219.Socs1-gene.irt.IL4]:
+  {IL4RC | il4rc IL4 [IL4R - Yphos]                     }
+  {NUc   | nuc   [Stat6 - Yphos act]  Socs1-gene        }
+  =>
+  {IL4RC | il4rc IL4 [IL4R - Yphos]                     }
+  {NUc   | nuc   [Stat6 - Yphos act] [Socs1-gene - on]  } .
+  ---------------------------------------------------------
+  *** ~/evidence/IL4-Evidence/Socs1-gene.irt.IL4.1219.txt
+
+*** Socs3-- Socs3-gene--
+
+rl[1220.Socs3-gene.irt.IL4]:
+  {IL4RC | il4rc IL4 [IL4R - Yphos]                    }
+  {NUc   | nuc   [Stat6 - Yphos act]  Socs3-gene       }
+  =>
+  {IL4RC | il4rc IL4 [IL4R - Yphos]                    }
+  {NUc   | nuc   [Stat6 - Yphos act] [Socs3-gene - on] } .
+  ---------------------------------------------------------
+  *** ~/evidence/IL4-Evidence/Socs3-gene.irt.IL4.1220.txt
+
+*** Stat6--
+
+rl[1202.Stat6.irt.IL4]:
+  {IL4RC | il4rc IL4 [IL4R - Yphos]  }
+  {CLc   | clc   Stat6               }
+  {NUc   | nuc                       }
+  =>
+  {IL4RC | il4rc IL4 [IL4R - Yphos]  }
+  {CLc   | clc                       }
+  {NUc   | nuc   [Stat6 - Yphos act] } .
+  -------------------------------------
+  *** ~/evidence/IL4-Evidence/Stat6.irt.IL4.1202.txt
+
+**********************************************************************
+*** Proliferation - Thymidine Incorporation
+
+rl[1203.Proliferation.irt.IL4]:
+  {IL4RC | il4rc IL4 [IL4R - Yphos] IL2Rg [Fes - Yphos] }
+  {CLc   | clc   [Irs1 - Yphos]                         }
+  {NUc   | nuc   [Stat6 - Yphos act]                    }
+  {Sig   | sig                                          }
+  =>
+  {IL4RC | il4rc IL4 [IL4R - Yphos] IL2Rg [Fes - Yphos] }
+  {CLc   | clc   [Irs1 - Yphos]                         }
+  {NUc   | nuc   [Stat6 - Yphos act]                    }
+  {Sig   | sig   PROLIFERATION                          } .
+  ---------------------------------------------------------
+  *** ~/evidence/IL4-Evidence/Proliferation.irt.IL4.1203.txt
+
+
+
+
+
+
+endm
+

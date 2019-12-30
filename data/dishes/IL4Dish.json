@@ -1,0 +1,10 @@
+{"stype" : "jnet",
+	 "name" : "IL4Dish",
+	 "type" : "pnet",
+	 "kbname" : "RKB",
+	 "parent" : "RKB",
+	 "rids" : ["1810.Jak1.IL4R.complex", "1191.IL4R.irt.IL4", "1196.Jak1.irt.IL4", "1197.Jak3.irt.IL4", "1198.P38s.irt.IL4", "1199.Pi3k.irt.IL4", "1200.S6k1.irt.IL4", "1201.Shc1.irt.IL4", "1202.Stat6.irt.IL4", "1214.IL4R-gene.irt.IL4", "1216.Myc-gene.irt.IL4", "1218.OpRm1-gene.irt.IL4", "1205.Alox15-gene.irt.IL4", "1206.Arg1-gene.irt.IL4", "1193.Fes.irt.IL4", "1194.Irs1.irt.IL4", "1195.Irs2.irt.IL4", "1217.Nfil3-gene.irt.IL4", "1219.Socs1-gene.irt.IL4", "1220.Socs3-gene.irt.IL4", "1203.Proliferation.irt.IL4", "1204.Aicda-gene.irt.IL4", "1192.Akt1.irt.IL4", "1207.Bcl2-gene.irt.IL4", "1208.Bclxl-gene.irt.IL4", "1209.CcL11-gene.irt.IL4", "1210.CcL17-gene.irt.IL4", "1211.CcL26-gene.irt.IL4", "1212.FceR2-gene.irt.IL4", "1213.Hif1a-gene.irt.IL4", "1215.IL13Ra2-gene.irt.IL4"],
+	 "init" : ["Aicda-gene@NUc", "Alox15-gene@NUc", "Arg1-gene@NUc", "Bcl2-gene@NUc", "Bclxl-gene@NUc", "CcL11-gene@NUc", "CcL17-gene@NUc", "CcL26-gene@NUc", "FceR2-gene@NUc", "Hif1a-gene@NUc", "IL4R-gene@NUc", "IL13Ra2-gene@NUc", "Myc-gene@NUc", "Nfil3-gene@NUc", "OpRm1-gene@NUc", "Socs1-gene@NUc", "Socs3-gene@NUc", "Akt1@CLc", "Fes@CLc", "IL2Rg@CLm", "IL4@XOut", "IL4R@IL4RC", "Irs1@CLc", "Irs2@CLc", "Jak1@CLc", "Jak3@CLc", "P38s@CLc", "Pi3k@CLc", "S6k1@CLc", "Shc1@CLc", "Stat6@CLc"],
+	 "op" : "dishnet",
+	 "args" : "IL4Dish"
+} 

@@ -1,0 +1,351 @@
+mod SERUMRULES is inc ALLOPS .
+
+vars xout clo clm cli clc nuc sig rnac cvc chr : Soup .
+vars erksmods : ModSet .
+
+*** ~/evidence/Serum-Evidence/00Serum-evidence.txt
+
+*** Abi1--
+
+rl[1537.Abi1.irt.Serum]:
+  {XOut | xout Serum          }
+  {CLc  | clc  Abi1           }
+  =>
+  {XOut | xout Serum          }
+  {CLc  | clc  [Abi1 - Yphos] } .
+  -------------------------------
+  *** ~/evidence/Serum-Evidence/Abi1.irt.Serum.1537.txt
+
+*** Akt1--
+
+rl[1538.Akt1.irt.Serum]:
+  {XOut | xout Serum                                 }
+  {CLi  | cli  Parva                                 }
+  {CLc  | clc  Sin1 Akt1                             }
+  =>
+  {XOut | xout Serum                                 }
+  {CLi  | cli  Parva                                 }
+  {CLc  | clc  Sin1 [Akt1 - phos(S 473) phos(T 308)] } .
+  ----------------------------------------------------------
+  *** ~/evidence/Serum-Evidence/Akt1.irt.Serum.1538.txt
+
+*** Araf--
+ 
+rl[1539.Araf.irt.Serum]:
+  {XOut | xout Serum        }
+  {CLc  | clc  Araf         }
+  =>
+  {XOut | xout Serum        }
+  {CLc  | clc  [Araf - act] } .
+  ---------------------------------------
+  *** ~/evidence/Serum-Evidence/Araf.irt.Serum.1539.txt
+
+*** Atf2--
+
+rl[1540.Atf2.irt.Serum]:
+  {XOut | xout Serum                        }
+  {CLc  | clc  Atf2                         }
+  =>
+  {XOut | xout Serum                        }
+  {CLc  | clc [Atf2 - phos(T 69)phos(T 71)] } .
+  ----------------------------------------------------------
+  *** ~/evidence/Serum-Evidence/Atf2.irt.Serum.1540.txt
+
+*** Braf--
+ 
+rl[1541.Braf.irt.Serum]:
+  {XOut | xout Serum        }
+  {CLc  | clc  Braf         }
+  =>
+  {XOut | xout Serum        }
+  {CLc  | clc  [Braf - act] } .
+  -----------------------------
+  *** ~/evidence/Serum-Evidence/Braf.irt.Serum.1541.txt
+
+*** Deptor-gene--
+
+rl[1640.Deptor-gene.irt.Serum]:
+  {XOut | xout Serum               }
+  {NUc  | nuc  [Deptor-gene - on]  }
+  =>
+  {XOut | xout Serum               }
+  {NUc  | nuc  Deptor-gene         } .
+  ------------------------------------
+  *** ~/evidence/Serum-Evidence/Deptor-gene.irt.Serum.1640.txt
+
+*** Egr1-gene--
+
+rl[1542.Egr1-gene.irt.Serum]:
+  {XOut | xout  Serum                  }
+  {NUc  | nuc   Med23 Egr1-gene        }
+  =>
+  {XOut | xout  Serum                  }
+  {NUc  | nuc   Med23 [Egr1-gene - on] } .
+  ----------------------------------------
+  *** ~/evidence/Serum-Evidence/Egr1-gene.irt.Serum.1542.txt
+
+*** Egr2-gene--
+
+rl[1642.Egr2-gene.irt.Serum]:
+  {XOut | xout  Serum                  }
+  {NUc  | nuc   Med23 Egr2-gene        }
+  =>
+  {XOut | xout  Serum                  }
+  {NUc  | nuc   Med23 [Egr2-gene - on] } .
+  ----------------------------------------
+  *** ~/evidence/Serum-Evidence/Egr2-gene.irt.Serum.1642.txt
+
+*** Eif4b--
+
+rl[076.Eif4b.irt.Serum]:
+  {XOut | xout  Serum                                             }
+  {CLc  | clc   Pdpk1 [rsk12s:Rsk12S - act]  Eif4b                }
+  =>
+  {XOut | xout  Serum                                             }
+  {CLc  | clc   Pdpk1 [rsk12s:Rsk12S - act] [Eif4b - phos(S 422)] } .
+  --------------------------------------------------------------------
+  *** ~/evidence/Serum-Evidence/Eif4b.irt.Serum.076.txt
+
+*** Eif4e--
+
+rl[1655.Eif4e.irt.Serum]:
+  {XOut | xout  Serum                              }
+  {CLc  | clc   [Mnk1 - act] Eif4e                 }
+  =>
+  {XOut | xout  Serum                              }
+  {CLc  | clc   [Mnk1 - act] [Eif4e - phos(S 209)] } .
+  --------------------------------------------------------------------
+  *** ~/evidence/Serum-Evidence/Eif4e.irt.Serum.1655.txt
+
+*** Eif4ebp1--
+
+rl[1657.Eif4ebp1.irt.Serum]:
+  {XOut | xout  Serum                          }
+  {CLc  | clc   [Akt1 - act]  Eif4ebp1         }
+  =>
+  {XOut | xout  Serum                          }
+  {CLc  | clc   [Akt1 - act] [Eif4ebp1 - phos] } .
+  --------------------------------------------------------------------
+  *** ~/evidence/Serum-Evidence/Eif4ebp1.irt.Serum.1657.txt
+
+rl[1658.Eif4ebp1.from.Eif4e.irt.Serum]:
+  {XOut | xout  Serum                           }
+  {CLc  | clc  [Akt1 - act]                     }
+  {RNAC | rnac (capped-mRNA : Eif4e : Eif4ebp1) }
+  =>
+  {XOut | xout  Serum                           }
+  {CLc  | clc  [Akt1 - act] [Eif4ebp1 - phos]   }
+  {RNAC | rnac (capped-mRNA : Eif4e)            } .
+  --------------------------------------------------------------------
+  *** ~/evidence/Serum-Evidence/Eif4ebp1.from.Eif4e.irt.Serum.1658.txt
+
+*** Eif4g1--
+
+rl[1659.Eif4g1.irt.Serum]:
+  {XOut | xout  Serum                   }
+  {CLc  | clc   Eif4g1                  }
+  =>
+  {XOut | xout  Serum                   }
+  {CLc  | clc   [Eif4g1 - phos(S 1147)] } .
+  --------------------------------------------------------------------
+  *** ~/evidence/Serum-Evidence/Eif4g1.irt.Serum.1659.txt
+
+*** Erks--
+
+rl[1660.Erks.irt.Serum]:
+  {XOut | xout  Serum                                        }
+  {CLc  | clc   [Mek1 - act] [Erks - erksmods]               }
+  =>
+  {XOut | xout  Serum                                        }
+  {CLc  | clc   [Mek1 - act] [Erks - erksmods act phos(TEY)] } .
+  --------------------------------------------------------------------
+  *** ~/evidence/Serum-Evidence/Erks.irt.Serum.1660.txt
+
+rl[1662.Erks.to.nuc.irt.Serum]:
+  {XOut | xout  Serum                     }
+  {CLc  | clc   [Erks - erksmods]         }
+  {NUc  | nuc                             } 
+  =>
+  {XOut | xout  Serum                     }
+  {CLc  | clc                             }
+  {NUc  | nuc   [Erks - erksmods]         } .
+  --------------------------------------------------------------------
+  *** ~/evidence/Serum-Evidence/Erks.to.nuc.irt.Serum.1662.txt
+
+*** Erk5--
+
+rl[1661.Erk5.irt.Serum]:
+  {XOut | xout  Serum                     }
+  {CLc  | clc   [Mek5 - act] Erk5         }
+  =>
+  {XOut | xout  Serum                     }
+  {CLc  | clc   [Mek5 - act] [Erk5 - act] } .
+  --------------------------------------------------------------------
+  *** ~/evidence/Serum-Evidence/Erk5.irt.Serum.1661.txt
+
+*** Fos-gene--
+
+rl[1543.Fos-gene.irt.Serum]:
+  {XOut | xout  Serum          }
+  {NUc  | nuc   Fos-gene       }
+  =>
+  {XOut | xout  Serum          }
+  {NUc  | nuc  [Fos-gene - on] } .
+  ---------------------------------
+  *** ~/evidence/Serum-Evidence/Fos-gene.irt.Serum.1543.txt
+
+*** Mek1--
+
+rl[1663.Mek1.irt.Serum]:
+  {XOut | xout  Serum        }
+  {CLc  | clc   Mek1         }
+  =>
+  {XOut | xout  Serum        }
+  {CLc  | clc   [Mek1 - act] } .
+  --------------------------------------------------------------------
+  *** ~/evidence/Serum-Evidence/Mek1.irt.Serum.1663.txt
+
+*** Mtor--
+
+rl[1664.Mtor.irt.Serum]:
+  {XOut | xout Serum                                  }
+  {CLc  | clc  (Mtor : Mlst8 : Sin1 : Rictor)         }
+  =>
+  {XOut | xout Serum                                  }
+  {CLc  | clc  ([Mtor - act] : Mlst8 : Sin1 : Rictor) } .
+  --------------------------------------------------------------------
+  *** ~/evidence/Serum-Evidence/Mtor.irt.Serum.1664.txt
+
+*** P38s--
+
+rl[1665.P38s.irt.Serum]:
+  {XOut | xout  Serum        }
+  {CLc  | clc   P38s         }
+  =>
+  {XOut | xout  Serum        }
+  {CLc  | clc   [P38s - act] } .
+  --------------------------------------------------------------------
+  *** ~/evidence/Serum-Evidence/P38s.irt.Serum.1665.txt
+
+*** Pkcd--
+
+rl[1666c.Pkcd.irt.Serum]:
+  {XOut | xout  Serum                }
+  {CLc  | clc    Pkcd                }
+  =>
+  {XOut | xout  Serum                }
+  {CLc  | clc   [Pkcd - phos(S 664)] } .
+  -----------------------------------------------------------
+  *** ~/evidence/Serum-Evidence/Pkcd.irt.Serum.1666c.txt
+
+*** Raf1--
+
+rl[1667.Raf1.irt.Serum]:
+  {XOut | xout  Serum               }
+  {CVc  | cvc   [Rheb - GDP]        }
+  {CLc  | clc   Tsc2 Raf1           }
+  =>
+  {XOut | xout  Serum               }
+  {CVc  | cvc   [Rheb - GDP]        }
+  {CLc  | clc   Tsc2 [Raf1 - act]   } .
+  --------------------------------------------------------------------
+  *** ~/evidence/Serum-Evidence/Raf1.irt.Serum.1667.txt
+
+*** Rps6--
+
+rl[1654.Rps6.irt.Serum]:
+  {XOut | xout  Serum                                                 }
+  {CLc  | clc  [rsk12s:Rsk12S - act] [S6k1 - act] Tsc2  Rps6          }
+  =>
+  {XOut | xout  Serum                                                 }
+  {CLc  | clc  [rsk12s:Rsk12S - act] [S6k1 - act] Tsc2 [Rps6 - phos]  } .
+  ------------------------------------------------------------------------
+  *** ~/evidence/Serum-Evidence/Rps6.irt.Serum.1654.txt
+
+*** Rsk1--
+
+rl[1651.Rsk1.irt.Serum]:
+  {XOut | xout  Serum          }
+  {CLc  | clc   Rsk1           }
+  =>
+  {XOut | xout  Serum          }
+  {CLc  | clc   [Rsk1 - act]   } .
+  --------------------------------------------------------------------
+  *** ~/evidence/Serum-Evidence/Rsk1.irt.Serum.1651.txt
+
+*** Rsk2--
+
+rl[1652.Rsk2.irt.Serum]:
+  {XOut | xout  Serum          }
+  {CLc  | clc   Rsk2           }
+  =>
+  {XOut | xout  Serum          }
+  {CLc  | clc   [Rsk2 - act]   } .
+  --------------------------------------------------------------------
+  *** ~/evidence/Serum-Evidence/Rsk2.irt.Serum.1652.txt
+
+*** Sgk1--
+
+rl[1703.Sgk1.irt.Serum]:
+  {XOut | xout  Serum                           }
+  {CLc  | clc   Sgk1                            }
+  =>
+  {XOut | xout  Serum                           }
+  {CLc | clc    [Sgk1 - phos(S 422)phos(T 256)] } .
+  --------------------------------------------------------------------
+  *** ~/evidence/Serum-Evidence/Sgk1.irt.Serum.1703.txt
+
+*** S6k1--
+
+rl[1653.S6k1.irt.Serum]:
+  {XOut | xout  Serum          }
+  {CLc  | clc   S6k1           }
+  =>
+  {XOut | xout  Serum          }
+  {CLc  | clc   [S6k1 - act]   } .
+  --------------------------------------------------------------------
+  *** ~/evidence/Serum-Evidence/S6k1.irt.Serum.1653.txt
+
+*** Tsc2--
+
+rl[634.Tsc2.phos.irt.Serum]:
+  {XOut | xout  Serum                              }
+  {CLc  | clc   Tsc2                               }
+  =>
+  {XOut | xout  Serum                              }
+  {CLc  | clc   [Tsc2 - phos(S 939)phos(T 1462)]   } .
+  --------------------------------------------------------------------
+  *** ~/evidence/Serum-Evidence/Tsc2.phos.irt.Serum.634.txt
+
+rl[1668.Tsc2.Ywhab.irt.Serum]:
+  {XOut | xout  Serum                                      }
+  {CLc  | clc   Ywhab [Tsc2 - phos(S 939)phos(T 1462)]     } 
+  =>
+  {XOut | xout  Serum                                      }
+  {CLc  | clc   (Ywhab : [Tsc2 - phos(S 939)phos(T 1462)]) } .
+  --------------------------------------------------------------------
+  *** ~/evidence/Serum-Evidence/Tsc2.Ywhab.irt.Serum.1668.txt
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+endm
+

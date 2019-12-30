@@ -1,0 +1,320 @@
+mod ANISORULES is inc ALLOPS .
+
+var xout clc cli clm nuc rnac cvc : Soup .
+
+  *** ~/evidence/Aniso-Evidence/00Aniso-evidence.txt
+
+*** Adam17--
+
+rl[862.Adam17.irt.Aniso]:
+  {XOut | xout  Anisomycin     }
+  {CLm  | clm   Adam17         }
+  =>
+  {XOut | xout  Anisomycin     }
+  {CLm  | clm   [Adam17 - act] } .
+  --------------------------------
+  *** ~/evidence/Aniso-Evidence/Adam17.irt.Aniso.862.txt
+
+*** Atf1--
+
+rl[650.Atf1.irt.Aniso]:
+  {XOut | xout  Anisomycin                              }
+  {NUc  | nuc  [msk12:Msk12S - act] Atf1                }
+  =>
+  {XOut | xout  Anisomycin                              }
+  {NUc  | nuc  [msk12:Msk12S - act] [Atf1 - phos(S 63)] } .
+  --------------------------------------------------------
+  *** ~/evidence/Aniso-Evidence/Atf1.irt.Aniso.650.txt
+
+*** Atf2--
+
+rl[655.Atf2.irt.Aniso]:
+  {XOut | xout  Anisomycin                                          }
+  {CLc  | clc  [Jnks - act]  Atf2                                   }
+  =>
+  {XOut | xout  Anisomycin                                          }
+  {CLc  | clc  [Jnks - act] [Atf2 - phos(T 69)phos(T 71)phos(S 90)] } .
+  ---------------------------------------------------------------------
+  *** ~/evidence/Aniso-Evidence/Atf2.irt.Aniso.655.txt
+
+*** Cbl--
+*** Creb1--
+
+rl[656.Creb1.irt.Aniso]:
+  {XOut | xout  Anisomycin                                }
+  {NUc  | nuc  [msk12:Msk12S - act]  Creb1                }
+  =>
+  {XOut | xout  Anisomycin                                }
+  {NUc  | nuc  [msk12:Msk12S - act] [Creb1 - phos(S 133)] } .
+  -----------------------------------------------------------
+  *** ~/evidence/Aniso-Evidence/Creb1.irt.Aniso.656.txt
+
+*** Egr1-gene--
+
+rl[658.Egr1-gene.irt.Aniso]:
+  {XOut | xout  Anisomycin      }
+  {NUc  | nuc   Egr1-gene       }
+  =>
+  {XOut | xout  Anisomycin      }
+  {NUc  | nuc  [Egr1-gene - on] } .
+  ---------------------------------
+  *** ~/evidence/Aniso-Evidence/Egr1-gene.irt.Aniso.658.txt
+
+*** Eif4e--
+
+rl[665.Eif4e.irt.Aniso]:
+  {XOut | xout  Anisomycin                        }
+  {CLc  | clc  [Mnk1 - act]  Eif4e                }
+  =>
+  {XOut | xout  Anisomycin                        }
+  {CLc  | clc  [Mnk1 - act] [Eif4e - phos(S 209)] } .
+  ---------------------------------------------------
+  *** ~/evidence/Aniso-Evidence/Eif4e.irt.Aniso.665.txt
+
+*** Elk1--
+
+rl[681.Elk1.irt.Aniso]:
+  {XOut | xout  Anisomycin          }
+  {NUc  | nuc   Elk1                }
+  =>
+  {XOut | xout  Anisomycin          }
+  {NUc  | nuc  [Elk1 - phos(S 383)] } .
+  --------------------------------------
+  *** ~/evidence/Aniso-Evidence/Elk1.irt.Aniso.681.txt
+
+*** Erks--
+
+rl[682.Erks.irt.Aniso]:
+  {XOut | xout  Anisomycin        }
+  {CLc  | clc   Erks              }
+  =>
+  {XOut | xout  Anisomycin        }
+  {CLc  | clc  [Erks - phos(TEY)] } .
+  ------------------------------------
+  *** ~/evidence/Aniso-Evidence/Erks.irt.Aniso.682.txt
+
+*** Fak2--
+*** Fos-gene--
+
+rl[685.Fos-gene.irt.Aniso]:
+  {XOut | xout  Anisomycin                          }
+  {NUc  | nuc  [msk12:Msk12S - act] Fos-gene        }
+  =>
+  {XOut | xout  Anisomycin                          }
+  {NUc  | nuc  [msk12:Msk12S - act] [Fos-gene - on] } .
+  -----------------------------------------------------
+  *** ~/evidence/Aniso-Evidence/Fos-gene.irt.Aniso.685.txt
+
+*** Gsk3s--
+
+rl[1801.Gsk3s.irt.Aniso]:
+  {XOut | xout  Anisomycin          }
+  {CLc  | clc  [Gsk3s - act]        }
+  =>
+  {XOut | xout  Anisomycin          }
+  {CLc  | clc  [Gsk3s - phos(SFAE)] } .
+  -------------------------------------------
+  *** ~/evidence/Aniso-Evidence/Gsk3s.irt.Aniso.1801.txt
+
+*** Hras--
+*** Jnks--
+
+rl[693.Jnks.irt.Aniso]:
+  {XOut | xout  Anisomycin                                }
+  {CLc  | clc  [Mkk4 - act] [Mkk7 - act] jnks:JnkS        }
+  =>
+  {XOut | xout  Anisomycin                                }
+  {CLc  | clc  [Mkk4 - act] [Mkk7 - act][jnks:JnkS - act] } .
+  -----------------------------------------------------------
+  *** ~/evidence/Aniso-Evidence/Jnks.irt.Aniso.693.txt
+
+*** Jun--
+
+rl[739.Jun.irt.Aniso]:
+  {XOut | xout  Anisomycin                                      }
+  {CLc  | clc  [Jnks - act]                                     }
+  {NUc  | nuc   Jun                                             }
+  =>
+  {XOut | xout  Anisomycin                                      }
+  {CLc  | clc  [Jnks - act]                                     }
+  {NUc  | nuc  [Jun - phos(S 63)phos(S 73)phos(T 91)phos(T 93)] } .
+  -----------------------------------------------------------------
+  *** ~/evidence/Aniso-Evidence/Jun.irt.Aniso.739.txt
+
+*** Jun-gene--
+
+rl[736.Jun-gene.irt.Aniso]:
+  {XOut | xout  Anisomycin      }
+  {NUc  | nuc   Jun-gene        }
+  =>
+  {XOut | xout  Anisomycin      }
+  {NUc  | nuc  [Jun-gene - on]  } .
+  ---------------------------------
+  *** ~/evidence/Aniso-Evidence/Jun-gene.irt.Aniso.736.txt
+
+*** Junb-gene--
+
+rl[744.Junb-gene.irt.Aniso]:
+  {XOut | xout  Anisomycin       }
+  {NUc  | nuc   Junb-gene        }
+  =>
+  {XOut | xout  Anisomycin       }
+  {NUc  | nuc  [Junb-gene - on]  } .
+  ----------------------------------
+  *** ~/evidence/Aniso-Evidence/Junb-gene.irt.Aniso.744.txt
+
+*** Mapkapk2--
+
+rl[787.Mapkapk2.irt.Aniso]:
+  {XOut | xout  Anisomycin      }
+  {CLc  | clc   Mapkapk2        }
+  =>
+  {XOut | xout  Anisomycin      }
+  {CLc  | clc  [Mapkapk2 - act] } .
+  ---------------------------------
+  *** ~/evidence/Aniso-Evidence/Mapkapk2.irt.Aniso.787.txt
+
+*** Mek1--
+*** Mkk4--
+
+rl[792.Mkk4.irt.Aniso]:
+  {XOut | xout  Anisomycin  }
+  {CLc  | clc   Mkk4        }
+  =>
+  {XOut | xout  Anisomycin  }
+  {CLc  | clc  [Mkk4 - act] } .
+  ---------------------------------
+  *** ~/evidence/Aniso-Evidence/Mkk4.irt.Aniso.792.txt
+
+*** Mkk7--
+
+rl[798.Mkk7.irt.Aniso]:
+  {XOut | xout  Anisomycin  }
+  {CLc  | clc   Mkk7        }
+  =>
+  {XOut | xout  Anisomycin  }
+  {CLc  | clc  [Mkk7 - act] } .
+  ---------------------------------
+  *** ~/evidence/Aniso-Evidence/Mkk7.irt.Aniso.798.txt
+
+*** Mlk3--
+
+rl[803.Mlk3.irt.Aniso]:
+  {XOut | xout  Anisomycin  }
+  {CLc  | clc   Mlk3        }
+  =>
+  {XOut | xout  Anisomycin  }
+  {CLc  | clc  [Mlk3 - act] } .
+  ---------------------------------
+  *** ~/evidence/Aniso-Evidence/Mlk3.irt.Aniso.803.txt
+
+*** Mnk1--
+
+rl[810.Mnk1.irt.Aniso]:
+  {XOut | xout  Anisomycin  }
+  {CLc  | clc   Mnk1        }
+  =>
+  {XOut | xout  Anisomycin  }
+  {CLc  | clc  [Mnk1 - act] } .
+  ---------------------------------
+  *** ~/evidence/Aniso-Evidence/Mnk1.irt.Aniso.810.txt
+
+*** Msk1--
+
+rl[811.Msk1.irt.Aniso]:
+  {XOut | xout  Anisomycin  }
+  {NUc  | nuc   Msk1        }
+  =>
+  {XOut | xout  Anisomycin  }
+  {NUc  | nuc  [Msk1 - act] } .
+  ---------------------------------
+  *** ~/evidence/Aniso-Evidence/Msk1.irt.Aniso.811.txt
+
+*** Msk2--
+
+rl[813.Msk2.irt.Aniso]:
+  {XOut | xout  Anisomycin  }
+  {NUc  | nuc   Msk2        }
+  =>
+  {XOut | xout  Anisomycin  }
+  {NUc  | nuc  [Msk2 - act] } .
+  ---------------------------------
+  *** ~/evidence/Aniso-Evidence/Msk2.irt.Aniso.813.txt
+
+*** P38s--
+
+rl[848.P38s.irt.Aniso]:
+  {XOut | xout  Anisomycin  }
+  {CLc  | clc   P38s        }
+  =>
+  {XOut | xout  Anisomycin  }
+  {CLc  | clc  [P38s - act] } .
+  ---------------------------------
+  *** ~/evidence/Aniso-Evidence/P38s.irt.Aniso.848.txt
+
+*** Rsk3--
+
+rl[850.Rsk3.irt.Aniso]:
+  {XOut | xout  Anisomycin  }
+  {CLc  | clc   Rsk3        }
+  =>
+  {XOut | xout  Anisomycin  }
+  {CLc  | clc  [Rsk3 - act] } .
+  -----------------------------
+  *** ~/evidence/Aniso-Evidence/Rsk3.irt.Aniso.850.txt
+
+*** Stat3--
+
+rl[854.Stat3.irt.Aniso]:
+  {XOut | xout  Anisomycin           }
+  {CLc  | clc   Stat3                }
+  =>
+  {XOut | xout  Anisomycin           }
+  {CLc  | clc  [Stat3 - phos(S 727)] } .
+  --------------------------------------
+  *** ~/evidence/Aniso-Evidence/Stat3.irt.Aniso.854.txt
+
+*** Tab1--
+
+rl[858.Tab1.irt.Aniso]:
+  {XOut | xout  Anisomycin                                  }
+  {CLc  | clc   Tab1                                        }
+  =>
+  {XOut | xout  Anisomycin                                  }
+  {CLc  | clc  [Tab1 - phos(S 423) phos(T 431) phos(S 438)] } .
+  -------------------------------------------------------------
+  *** ~/evidence/Aniso-Evidence/Tab1.irt.Aniso.858.txt
+
+*** Tbp-gene--
+
+rl[872.Tbp-gene.irt.Aniso]:
+  {XOut | xout  Anisomycin       }
+  {CLc  | clc  [jnks:JnkS - act] }
+  {NUc  | nuc   Tbp-gene         }
+  =>
+  {XOut | xout  Anisomycin       }
+  {CLc  | clc  [jnks:JnkS - act] }
+  {NUc  | nuc  [Tbp-gene - on]   } .
+  ---------------------------------
+  *** ~/evidence/Aniso-Evidence/Tbp-gene.irt.Aniso.872.txt
+
+*** Tgfa--
+
+rl[887.Tgfa.irt.Aniso]:
+  {XOut | xout  Anisomycin              }
+  {CLm  | clm  [Adam17 - act] ProTgfa   }
+  {CLc  | clc  [P38s - act]             }
+  =>
+  {XOut | xout  Anisomycin Tgfa         }
+  {CLm  | clm  [Adam17 - act]           }
+  {CLc  | clc  [P38s - act]             } .
+  -----------------------------------------
+  *** ~/evidence/Aniso-Evidence/Tgfa.irt.Aniso.887.txt
+
+*** Tsc2--
+*** Vav1--
+
+ 
+
+endm
+

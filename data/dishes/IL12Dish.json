@@ -1,0 +1,10 @@
+{"stype" : "jnet",
+	 "name" : "IL12Dish",
+	 "type" : "pnet",
+	 "kbname" : "RKB",
+	 "parent" : "RKB",
+	 "rids" : ["1247c.Tyk2.IL12Rb1.complex", "1246c.Jak2.IL12Rb2.complex", "1248.IL12R.irt.IL12", "1251.Gzmb-gene.irt.IL12", "1257.Irf1-gene.irt.IL12", "1250.Jak2.irt.IL12", "1259.Lck.irt.IL12", "1261.Nfkb1.irt.IL12", "1262.P38s.irt.IL12", "1263.Prf1-gene.irt.IL12", "1253.Stat4.irt.IL12", "1249.Tyk2.irt.IL12", "1255.IL18R1-gene.irt.IL12", "1256.IL18Rap-gene.irt.IL12", "1254.IL2Ra-gene.irt.IL12", "1258.Jun.irt.IL12"],
+	 "init" : ["Gzmb-gene@NUc", "IL2Ra-gene@NUc", "IL18R1-gene@NUc", "IL18Rap-gene@NUc", "Irf1-gene@NUc", "Prf1-gene@NUc", "IL12@XOut", "IL12Rb1@IL12Rb1C", "IL12Rb2@IL12Rb2C", "Jak2@CLc", "Jun@NUc", "Lck@CLi", "Nfkb1@CLc", "P38s@CLc", "Stat4@CLc", "Tyk2@CLc"],
+	 "op" : "dishnet",
+	 "args" : "IL12Dish"
+} 

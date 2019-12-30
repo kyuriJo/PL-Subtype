@@ -1,0 +1,111 @@
+mod WNTRULES is inc ALLOPS .
+
+var xout : Soup .
+vars clo clm cli clc nuc sig : Soup .
+vars dnac rnac tak1c pxnc axinc : Soup .
+var AnyComp : CompName .
+var anycomp : Soup .
+var AnyLoc : LocName .
+var anyloc : Soup .
+var fzdc : Soup .
+
+*** ~/evidence/Wnt-Evidence/00Wnt-evidence.txt
+
+rl[1362.Fzds.Lrp56s.irt.Wnts]:
+  {XOut | xout wnts:WntS                                }
+  {CLm  | clm  fzds:FzdS lrp56s:Lrp56S                  }
+  =>
+  {XOut | xout                                          }
+  {CLm  | clm  (fzds:FzdS : wnts:WntS : lrp56s:Lrp56S)  } .
+  --------------------------------------------------------
+  *** ~/evidence/Wnt-Evidence/Fzds.Lrp56s.irt.Wnts.1362.txt
+
+*** Axin1--
+
+rl[1366.Axin1.to.Lrp6]:
+  {CLm   | clm   (fzds:FzdS : wnts:WntS : Lrp6)   }
+  {AxinC | axinc  Axin1                           }
+  =>
+  {CLm   | clm                                    }
+  {AxinC | axinc  Axin1 fzds:FzdS wnts:WntS  Lrp6 } .
+  --------------------------------------------------------
+  *** ~/evidence/Wnt-Evidence/Axin1.to.Lrp6.1366.txt
+
+*** Axin2-- Axin2-gene--
+
+rl[1372.Axin2-gene.irt.Wnt3a]:
+  {XOut | xout Wnt3a             }
+  {NUc  | nuc  Axin2-gene        }
+  =>
+  {XOut | xout Wnt3a             }
+  {NUc  | nuc  [Axin2-gene - on] } .
+  ----------------------------------
+  *** ~/evidence/Wnt-Evidence/Axin2-gene.irt.Wnt3a.1372.txt
+
+*** Csnk1e--
+
+rl[1367.Csnk1e.irt.Wnt3a]:
+  {AxinC | axinc  Axin1 fzds:FzdS Wnt3a Lrp6  Csnk1e        }
+  =>
+  {AxinC | axinc  Axin1 fzds:FzdS Wnt3a Lrp6 [Csnk1e - act] } .
+  -----------------------------------------------------------------------
+  *** ~/evidence/Wnt-Evidence/Csnk1e.irt.Wnt3a.1367.txt
+
+*** Ctnnb1--
+
+***(
+rl[1373.Ctnnb1.stabilized.irt.Wnt3a]:
+  {CLc | clc Ctnnb1 }
+  =>
+  {CLc | clc Ctnnb1 } .
+  ---------------------
+  *** ~/evidence/Wnt-Evidence/Ctnnb1.stabilized.irt.Wnt3a.1373.txt
+)***
+*** Dkk1--
+
+rl[1363.Fzds.Lrp56s.irt.Dkk1]:
+  {XOut | xout Dkk1                          }
+  {CLm  | clm  Fzd8 lrp56s:Lrp56S            }
+  =>
+  {XOut | xout                               }
+  {CLm  | clm  (Fzd8 : Dkk1 : lrp56s:Lrp56S) } .
+  ----------------------------------------------
+  *** ~/evidence/Wnt-Evidence/Fzds.Lrp56s.irt.Dkk1.1363.txt
+
+*** Lrp6--
+
+rl[1364.Lrp6.phos.irt.Wnt3a]:
+  {AxinC | axinc  axins:AxinS dvls:DvlS fzd245s:Fzd245S [Gsk3s - act] 
+                  [Pi4k2a - act] [Pip5k1b - act] Wnt3a Lrp6                 }
+  =>
+  {AxinC | axinc  axins:AxinS dvls:DvlS fzd245s:Fzd245S [Gsk3s - act] 
+                  [Pi4k2a - act] [Pip5k1b - act] Wnt3a [Lrp6 - phos]        } .
+  -----------------------------------------------------------------------------
+  *** ~/evidence/Wnt-Evidence/Lrp6.phos.irt.Wnt3a.1364.txt
+
+*** Pi4k2a--
+
+rl[1370.Pi4k2a.irt.Wnt3a]:
+  {AxinC | axinc axins:AxinS dvls:DvlS fzd245s:Fzd245S  Wnt3a                }
+  {CLc   | clc   Pi4k2a                                                      }
+  =>
+  {AxinC | axinc axins:AxinS dvls:DvlS fzd245s:Fzd245S  Wnt3a [Pi4k2a - act] }
+  {CLc   | clc                                                               } .
+  ------------------------------------------------------------------------------
+  *** ~/evidence/Wnt-Evidence/Pi4k2a.irt.Wnt3a.1370.txt
+
+*** Pip5k1b--
+
+rl[1371.Pip5k1b.irt.Wnt3a]:
+  {AxinC | axinc axins:AxinS dvls:DvlS fzd245s:Fzd245S  Wnt3a                 }
+  {CLc   | clc   Pip5k1b                                                      }
+  =>
+  {AxinC | axinc axins:AxinS dvls:DvlS fzd245s:Fzd245S  Wnt3a [Pip5k1b - act] }
+  {CLc   | clc                                                                } .
+  -------------------------------------------------------------------------------
+  *** ~/evidence/Wnt-Evidence/Pip5k1b.irt.Wnt3a.1371.txt
+
+
+
+
+endm

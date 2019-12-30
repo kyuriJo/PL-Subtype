@@ -1,0 +1,198 @@
+mod IL22RULES is inc ALLOPS .
+
+var xout : Soup .
+vars clo clm clr cli clc nuo num nui nuc : Soup .
+vars moo mom moi moc mio mim mii mic : Soup .
+vars ero erm eri erc pxo pxm pxi pxc : Soup .
+vars gao gam gai gac lyo lym lyi lyc : Soup .
+vars eeo eem eei eec leo lem lei lec : Soup .
+vars cpo cpm cpi cpc ct ptc sig : Soup .
+vars gp130c il22rc il10rc tak1c : Soup .
+vars erkmods jnkmods p38mods : ModSet .
+
+*** ~/evidence/IL22-Evidence/00IL22-Evidence.txt
+
+rl[778.IL22Ra1.IL10Rb.irt.IL22]:
+  {XOut   | xout   IL22                      }
+  {IL22RC | il22rc IL22Ra1                   }
+  {CLm    | clm    IL10Rb                    }
+  =>
+  {XOut   | xout                             }
+  {IL22RC | il22rc (IL22 : IL22Ra1 : IL10Rb) }
+  {CLm    | clm                              } .
+  ---------------------------------------------
+  *** ~/evidence/IL22-Evidence/IL22R.irt.IL22.778.txt
+
+*** Defb4a--  Defb4a-gene--
+
+rl[1003.Defb4a-gene.irt.IL22]:
+  {IL22RC | il22rc (IL22 : IL22Ra1 : IL10Rb) }
+  {NUc    | nuc     Defb4a-gene              }
+  =>
+  {IL22RC | il22rc (IL22 : IL22Ra1 : IL10Rb) }
+  {NUc    | nuc    [Defb4a-gene - on]        } .
+  ----------------------------------------------
+  *** ~/evidence/IL22-Evidence/Defb4a-gene.irt.IL22.1003.txt
+
+*** Defb103a--  Defb103a-gene--
+
+rl[1365.Defb103a-gene.irt.IL22]:
+  {IL22RC | il22rc (IL22 : IL22Ra1 : IL10Rb)   }
+  {NUc    | nuc     Defb103a-gene              }
+  =>
+  {IL22RC | il22rc (IL22 : IL22Ra1 : IL10Rb)   }
+  {NUc    | nuc    [Defb103a-gene - on]        } .
+  ----------------------------------------------
+  *** ~/evidence/IL22-Evidence/Defb103a-gene.irt.IL22.1365.txt
+
+*** Erks--
+
+rl[1368.Erks.irt.IL22]:
+  {IL22RC | il22rc (IL22 : IL22Ra1 : IL10Rb)    }
+  {CLc    | clc    [Erks - erkmods]            }
+  =>
+  {IL22RC | il22rc (IL22 : IL22Ra1 : IL10Rb)    }
+  {CLc    | clc    [Erks - erkmods phos(TEY)]  } .
+  ----------------------------------------------
+  *** ~/evidence/IL22-Evidence/Erks.irt.IL22.1368.txt
+
+*** IL10--  IL10-gene--
+
+rl[1369.IL10-gene.irt.IL22]:
+  {IL22RC | il22rc (IL22 : IL22Ra1 : IL10Rb) }
+  {NUc    | nuc     IL10-gene                }
+  =>
+  {IL22RC | il22rc (IL22 : IL22Ra1 : IL10Rb) }
+  {NUc    | nuc    [IL10-gene - on]          } .
+  ----------------------------------------------
+  *** ~/evidence/IL22-Evidence/IL10-gene.irt.IL22.1369.txt
+
+*** Jnks--
+
+rl[1379.Jnks.irt.IL22]:
+  {IL22RC | il22rc (IL22 : IL22Ra1 : IL10Rb)    }
+  {CLc    | clc    [Jnks - jnkmods]            }
+  =>
+  {IL22RC | il22rc (IL22 : IL22Ra1 : IL10Rb)    }
+  {CLc    | clc    [Jnks - jnkmods phos(TPY)]  } .
+  ----------------------------------------------
+  *** ~/evidence/IL22-Evidence/Jnks.irt.IL22.1379.txt
+
+*** P38s--
+
+rl[1473.P38s.irt.IL22]:
+  {IL22RC | il22rc (IL22 : IL22Ra1 : IL10Rb)   }
+  {CLc    | clc    [P38s - p38mods]            }
+  =>
+  {IL22RC | il22rc (IL22 : IL22Ra1 : IL10Rb)   }
+  {CLc    | clc    [P38s - p38mods phos(TGY)]  } .
+  ----------------------------------------------
+  *** ~/evidence/IL22-Evidence/P38s.irt.IL22.1473.txt
+
+*** Psoriasin--  Psoriasin-gene--
+
+rl[1474.Psoriasin-gene.irt.IL22]:
+  {IL22RC | il22rc (IL22 : IL22Ra1 : IL10Rb) }
+  {NUc    | nuc     Psoriasin-gene           }
+  =>
+  {IL22RC | il22rc (IL22 : IL22Ra1 : IL10Rb) }
+  {NUc    | nuc    [Psoriasin-gene - on]     } .
+  ----------------------------------------------
+  *** ~/evidence/IL22-Evidence/Psoriasin-gene.irt.IL22.1474.txt
+
+*** S100a8--  S100a8-gene--
+
+rl[1804.S100a8-gene.irt.IL22]:
+  {IL22RC | il22rc (IL22 : IL22Ra1 : IL10Rb) }
+  {NUc    | nuc     S100a8-gene              }
+  =>
+  {IL22RC | il22rc (IL22 : IL22Ra1 : IL10Rb) }
+  {NUc    | nuc    [S100a8-gene - on]        } .
+  ----------------------------------------------
+  *** ~/evidence/IL22-Evidence/S100a8-gene.irt.IL22.1804.txt
+
+*** S100a9--  S100a9-gene--
+
+rl[1805.S100a9-gene.irt.IL22]:
+  {IL22RC | il22rc (IL22 : IL22Ra1 : IL10Rb) }
+  {NUc    | nuc     S100a9-gene              }
+  =>
+  {IL22RC | il22rc (IL22 : IL22Ra1 : IL10Rb) }
+  {NUc    | nuc    [S100a9-gene - on]        } .
+  ----------------------------------------------
+  *** ~/evidence/IL22-Evidence/S100a9-gene.irt.IL22.1805.txt
+
+*** Saa1--  Saa1-gene--
+
+rl[1806.Saa1-gene.irt.IL22]:
+  {IL22RC | il22rc (IL22 : IL22Ra1 : IL10Rb) }
+  {NUc    | nuc     Saa1-gene                }
+  =>
+  {IL22RC | il22rc (IL22 : IL22Ra1 : IL10Rb) }
+  {NUc    | nuc    [Saa1-gene - on]          } .
+  ----------------------------------------------
+  *** ~/evidence/IL22-Evidence/Saa1-gene.irt.IL22.1806.txt
+
+*** Serpina3--  Serpina3-gene--
+
+rl[1807.Serpina3-gene.irt.IL22]:
+  {IL22RC | il22rc (IL22 : IL22Ra1 : IL10Rb) }
+  {NUc    | nuc     Serpina3-gene            }
+  =>
+  {IL22RC | il22rc (IL22 : IL22Ra1 : IL10Rb) }
+  {NUc    | nuc    [Serpina3-gene - on]      } .
+  ----------------------------------------------
+  *** ~/evidence/IL22-Evidence/Serpina3-gene.irt.IL22.1807.txt
+
+*** Stat3--
+
+rl[1808.Stat3.irt.IL22]:
+  {IL22RC | il22rc (IL22 : IL22Ra1 : IL10Rb)          }
+  {CLc    | clc    Stat3                              }
+  =>
+  {IL22RC | il22rc (IL22 : IL22Ra1 : IL10Rb)          }
+  {CLc    | clc    [Stat3 - phos(Y 705) phos(Y 727)]  } .
+  ------------------------------------------------------
+  *** ~/evidence/IL22-Evidence/Stat3.irt.IL22.1808.txt
+
+*** Stat5s--
+
+rl[1809.Stat5s.irt.IL22]:
+  {IL22RC | il22rc (IL22 : IL22Ra1 : IL10Rb)     }
+  {CLc    | clc    s5:Stat5S                     }
+  =>
+  {IL22RC | il22rc (IL22 : IL22Ra1 : IL10Rb)     }
+  {CLc    | clc    [s5:Stat5S - phos(DGYV)]      } .
+  ------------------------------------------------------
+  *** ~/evidence/IL22-Evidence/Stat5s.irt.IL22.1809.txt
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+endm
+
+

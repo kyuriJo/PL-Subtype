@@ -1,0 +1,10 @@
+{"stype" : "jnet",
+	 "name" : "NgfDish",
+	 "type" : "pnet",
+	 "kbname" : "RKB",
+	 "parent" : "RKB",
+	 "rids" : ["1496.Foxo1.irt.Ngf", "704c.Ikba.Rela.complex", "1503.Ikk1.irt.Ngf", "1482.NgfR.irt.Ngf", "1481.Trka.irt.Ngf", "1507.Pi3k.irt.Ngf", "1508.Plcg1.irt.Ngf", "1509.Pxn.irt.Ngf", "1511.Raf1.irt.Ngf", "099.RapGef1.irt.Ngf", "1528.Rela.irt.Ngf", "1513.Ripk2.irt.Ngf", "1517.Sh2b1.irt.Ngf", "1515.Shc1.irt.Ngf", "1494.Traf6.irt.Ngf", "003.Crks.irt.Ngf", "003.Crks.irt.Ngf#1", "003.Crks.irt.Ngf#2", "1505.Mek12s.irt.Ngf", "1505.Mek12s.irt.Ngf#1", "1501.Hras.irt.Ngf", "1512.Rap1a.irt.Ngf", "1514.Rit1.irt.Ngf", "014c.ErkS.by.Mek1", "531c.ErkS.by.Mek2", "525.Jnks.irt.Ngf", "108.Znf274.ubiq.irt.Ngf", "1490.Elk1.irt.Ngf", "618.P38s.irt.Ngf", "1485.Erks.irt.Ngf", "1484.Akt1.irt.NgfR.Ngf", "1510.Akt1.irt.Trka.Ngf", "1516.Aps.irt.Ngf", "1488.Araf.irt.Ngf", "1521.Arms.irt.Ngf", "1489.Braf.irt.Ngf", "1486.Egr1-gene.irt.Ngf", "1495.Erk5.irt.Ngf", "1487.Fos-gene.irt.Ngf", "1497.Foxo3.irt.Ngf", "1498.Frs2.irt.Ngf", "1520.Gab1.irt.Ngf", "1499.Gab2.irt.Ngf", "1502.Ikba.irt.Ngf", "1491.Irak1.irt.Ngf", "1519.Matk.irt.Ngf", "790c.Mek1.by.Araf", "431c.Mek1.by.Braf", "876c.Mek1.by.Raf1", "1506.Myd88.irt.Ngf", "287c.Raf1.by.Hras", "1527.Znf274.to.nuc.irt.Ngf", "1492.Sqstm1.irt.Ngf", "1504.Ikk2.irt.Ngf"],
+	 "init" : ["Egr1-gene@NUc", "Fos-gene@NUc", "Akt1@CLc", "Aps@CLc", "Araf@CLc", "Arms@CLc", "Braf@CLc", "Crk@CLc", "CrkI@CLc", "CrkL@CLc", "Elk1@NUc", "Erks@CLc", "Erk5@CLc", "Foxo1@NUc", "Foxo3@NUc", "Frs2@CLc", "Gab1@CLc", "Gab2@CLc", "Ikba@CLc", "Ikk1@CLc", "Ikk2@CLc", "Irak1@CLc", "Jnks@CLc", "Matk@CLc", "Mek1@CLc", "Mek2@CLc", "Myd88@CLc", "Ngf@XOut", "NgfR@NgfRC", "P38s@CLc", "Pi3k@CLc", "Pkcd@CLc", "Plcg1@CLc", "Pxn@CLc", "Raf1@CLc", "RapGef1@CLc", "Rela@CLc", "Ripk2@CLc", "Sh2b1@CLc", "Shc1@CLc", "Sqstm1@CLc", "Traf6@CLc", "Trka@TrkaC", "Znf274@CLc", "Hras-GDP@CLi", "Rap1a-GDP@CLi", "Rit1-GDP@CLi"],
+	 "op" : "dishnet",
+	 "args" : "NgfDish"
+} 

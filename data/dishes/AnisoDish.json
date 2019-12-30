@@ -1,0 +1,10 @@
+{"stype" : "jnet",
+	 "name" : "AnisoDish",
+	 "type" : "pnet",
+	 "kbname" : "RKB",
+	 "parent" : "RKB",
+	 "rids" : ["862.Adam17.irt.Aniso", "658.Egr1-gene.irt.Aniso", "681.Elk1.irt.Aniso", "682.Erks.irt.Aniso", "736.Jun-gene.irt.Aniso", "744.Junb-gene.irt.Aniso", "787.Mapkapk2.irt.Aniso", "792.Mkk4.irt.Aniso", "798.Mkk7.irt.Aniso", "803.Mlk3.irt.Aniso", "810.Mnk1.irt.Aniso", "811.Msk1.irt.Aniso", "813.Msk2.irt.Aniso", "848.P38s.irt.Aniso", "850.Rsk3.irt.Aniso", "854.Stat3.irt.Aniso", "858.Tab1.irt.Aniso", "1801.Gsk3s.irt.Aniso", "063c.Atf2.by.P38s", "812c.Jnks.by.Mkk4", "526c.Jnks.by.Mkk7", "599c.Mkk4.by.Mlk3", "262c.Mnk1.by.P38", "443c.P38s.by.Mkk4", "649c.ProTgfa.by.Adam17", "650.Atf1.irt.Aniso", "650.Atf1.irt.Aniso#1", "655.Atf2.irt.Aniso", "656.Creb1.irt.Aniso", "656.Creb1.irt.Aniso#1", "665.Eif4e.irt.Aniso", "685.Fos-gene.irt.Aniso", "685.Fos-gene.irt.Aniso#1", "739.Jun.irt.Aniso", "872.Tbp-gene.irt.Aniso", "511c.Atf2.by.Jnks", "032c.Mapkapk2.by.P38s", "887.Tgfa.irt.Aniso", "693.Jnks.irt.Aniso", "415c.Erks.act", "1656c.Mnk1.act", "1530c.Msk1.by.Erks#3"],
+	 "init" : ["Anisomycin@XOut", "Egr1-gene@NUc", "Fos-gene@NUc", "Jun-gene@NUc", "Junb-gene@NUc", "Tbp-gene@NUc", "Adam17@CLm", "Atf1@NUc", "Atf2@CLc", "Creb1@NUc", "Eif4e@CLc", "Elk1@NUc", "Erks@CLc", "Jnks@CLc", "Jun@NUc", "Mlk3@CLc", "Mapkapk2@CLc", "Mkk4@CLc", "Mkk7@CLc", "Mnk1@CLc", "Mnk1@CLc", "Msk1@NUc", "Msk2@NUc", "P38s@CLc", "Rsk3@CLc", "Stat3@CLc", "Tab1@CLc", "ProTgfa@CLm", "Gsk3s-act@CLc"],
+	 "op" : "dishnet",
+	 "args" : "AnisoDish"
+} 

@@ -1,0 +1,264 @@
+mod IL6RULES is inc ALLOPS .
+
+var xout : Soup .
+vars clo clm clr cli clc nuo num nui nuc : Soup .
+vars moo mom moi moc mio mim mii mic : Soup .
+vars ero erm eri erc pxo pxm pxi pxc : Soup .
+vars gao gam gai gac lyo lym lyi lyc : Soup .
+vars eeo eem eei eec leo lem lei lec : Soup .
+vars cpo cpm cpi cpc ct ptc sig : Soup .
+vars gp130c tak1c : Soup .
+vars erksmods : ModSet .
+
+*** ~/evidence/IL6-Evidence/00IL6-Evidence.txt
+
+rl[1221.IL6R.irt.IL6]:
+  {XOut   | xout   IL6                  }
+  {GP130C | gp130c Gp130                }
+  {CLm    | clm    IL6R                 }
+  =>
+  {XOut   | xout                        }
+  {GP130C | gp130c (IL6 : IL6R : Gp130) }
+  {CLm    | clm                         } .
+  -----------------------------------------
+  *** ~/evidence/IL6-Evidence/IL6R.irt.IL6.1221.txt
+
+*** A2m-- A2m-gene--
+
+rl[1222.A2m-gene.irt.IL6]:
+  {GP130C | gp130c (IL6 : IL6R : Gp130)                     }
+  {NUc    | nuc    Foxo1 [Stat3 - act] Lmo4  A2m-gene       }
+  =>
+  {GP130C | gp130c (IL6 : IL6R : Gp130)                     }
+  {NUc    | nuc    Foxo1 [Stat3 - act] Lmo4 [A2m-gene - on] } .
+  -----------------------------------------------------------
+  *** ~/evidence/IL6-Evidence/A2m-gene.irt.IL6.1222.txt
+
+*** Akt1--
+
+rl[1223.Akt1.irt.IL6]:
+  {GP130C | gp130c (IL6 : IL6R : Gp130) }
+  {CLc    | clc     Akt1                }
+  =>
+  {GP130C | gp130c (IL6 : IL6R : Gp130) }
+  {CLc    | clc    [Akt1 - act]         } .
+  ----------------------------------------
+  *** ~/evidence/IL6-Evidence/Akt1.irt.IL6.1223.txt
+
+*** Erks--
+
+rl[1224.Erks.irt.IL6]:
+  {GP130C | gp130c (IL6 : IL6R : Gp130)                    }
+  {CLc    | clc    [Hck - act] [Erks - erksmods]           }
+  =>
+  {GP130C | gp130c (IL6 : IL6R : Gp130)                    }
+  {CLc    | clc    [Hck - act] [Erks - erksmods phos(TEY)] } .
+  ------------------------------------------------------------
+  *** ~/evidence/IL6-Evidence/Erks.irt.IL6.1224.txt
+
+*** Gab1--
+
+rl[1225.Gab1.irt.IL6]:
+  {GP130C | gp130c (IL6 : IL6R : Gp130)                }
+  {CLc    | clc    [Hck - act] Gab1                    }
+  =>
+  {GP130C | gp130c (IL6 : IL6R : Gp130) [Gab1 - Yphos] }
+  {CLc    | clc    [Hck - act]                         } .
+  --------------------------------------------------------
+  *** ~/evidence/IL6-Evidence/Gab1.irt.IL6.1225.txt
+
+*** Gab2--
+
+rl[1226.Gab2.irt.IL6]:
+  {GP130C | gp130c (IL6 : IL6R : Gp130)                }
+  {CLc    | clc    [Hck - act] Gab2                    }
+  =>
+  {GP130C | gp130c (IL6 : IL6R : Gp130) [Gab2 - Yphos] }
+  {CLc    | clc    [Hck - act]                         } .
+  --------------------------------------------------------
+  *** ~/evidence/IL6-Evidence/Gab2.irt.IL6.1226.txt
+
+*** Hck--
+
+rl[1227.Hck.irt.IL6]:
+  {GP130C | gp130c (IL6 : IL6R : Gp130) }
+  {CLc    | clc    Hck                  }
+  =>
+  {GP130C | gp130c (IL6 : IL6R : Gp130) }
+  {CLc    | clc    [Hck - act]          } .
+  ---------------------------------------
+  *** ~/evidence/IL6-Evidence/Hck.irt.IL6.1227.txt
+
+*** Irf1--  Irf1-gene--
+
+rl[1228.Irf1-gene.irt.IL6]:
+  {GP130C | gp130c (IL6 : IL6R : Gp130) [Jak1 - Yphos] }
+  {NUc    | nuc    Irf1-gene                           }
+  =>
+  {GP130C | gp130c (IL6 : IL6R : Gp130) [Jak1 - Yphos] }
+  {NUc    | nuc    [Irf1-gene - on]                    } .
+  -----------------------------------------------------------
+  *** ~/evidence/IL6-Evidence/Irf1-gene.irt.IL6.1228.txt
+
+*** Jak1--
+
+rl[1230.Jak1.irt.IL6]:
+  {GP130C | gp130c (IL6 : IL6R : Gp130)  Jak1          }
+  =>
+  {GP130C | gp130c (IL6 : IL6R : Gp130) [Jak1 - Yphos] } .
+  --------------------------------------------------------
+  *** ~/evidence/IL6-Evidence/Jak1.irt.IL6.1230.txt
+
+*** Jak2--
+
+rl[1231.Jak2.irt.IL6]:
+  {GP130C | gp130c (IL6 : IL6R : Gp130)  Jak2              }
+  =>
+  {GP130C | gp130c (IL6 : IL6R : Gp130) [Jak2 - Yphos act] } .
+  ------------------------------------------------------------
+  *** ~/evidence/IL6-Evidence/Jak2.irt.IL6.1231.txt
+
+*** Mkk4--
+
+rl[1233.Mkk4.irt.IL6]:
+  {GP130C | gp130c (IL6 : IL6R : Gp130) [Rac1 - GTP] }
+  {CLc    | clc    Mkk4                              }
+  =>
+  {GP130C | gp130c (IL6 : IL6R : Gp130) [Rac1 - GTP] }
+  {CLc    | clc    [Mkk4 - act]                      } .
+  -----------------------------------------------------
+  *** ~/evidence/IL6-Evidence/Mkk4.irt.IL6.1233.txt
+
+*** Pckd--
+
+rl[1236.Pckd.irt.IL6]:
+  {GP130C | gp130c (IL6 : IL6R : Gp130) [Stat3 - Yphos]              }
+  {CLc    | clc     Pkcd                                             }
+  =>
+  {GP130C | gp130c (IL6 : IL6R : Gp130) [Stat3 - Yphos] [Pkcd - act] }
+  {CLc    | clc                                                      } .
+  ----------------------------------------------------------------------
+  *** ~/evidence/IL6-Evidence/Pckd.irt.IL6.1236.txt
+
+*** Rac1--
+
+rl[1235.Rac1.irt.IL6]:
+  {GP130C | gp130c (IL6 : IL6R : Gp130)              }
+  {CLi    | cli    [Rac1 - GDP]                      }
+  =>
+  {GP130C | gp130c (IL6 : IL6R : Gp130) [Rac1 - GTP] }
+  {CLi    | cli                                      } .
+  -------------------------------------------------------
+  *** ~/evidence/IL6-Evidence/Rac1.irt.IL6.1235.txt
+
+*** RankL-- RankL-gene--
+
+rl[1240.RankL-gene.irt.IL6]:
+  {GP130C | gp130c (IL6 : IL6R : Gp130)            }
+  {NUc    | nuc    [Stat3 - act]  RankL-gene       }
+  =>
+  {GP130C | gp130c (IL6 : IL6R : Gp130)            }
+  {NUc    | nuc    [Stat3 - act] [RankL-gene - on] } .
+  ----------------------------------------------------
+  *** ~/evidence/IL6-Evidence/RankL-gene.irt.IL6.1240.txt
+
+*** Shp2
+
+rl[1241.Shp2.irt.IL6]:
+  {GP130C | gp130c (IL6 : IL6R : Gp130) [Jak1 - Yphos]                }
+  {CLc    | clc     Shp2                                              }
+  =>
+  {GP130C | gp130c (IL6 : IL6R : Gp130) [Jak1 - Yphos] [Shp2 - Yphos] }
+  {CLc    | clc                                                       } .
+  -----------------------------------------------------------------------
+  *** ~/evidence/IL6-Evidence/Shp2.irt.IL6.1241.txt
+
+*** Socs3-- Socs3-gene--
+
+rl[1242.Socs3-gene.irt.IL6]:
+  {GP130C | gp130c (IL6 : IL6R : Gp130) }
+  {NUc    | nuc     Socs3-gene          }
+  =>
+  {GP130C | gp130c (IL6 : IL6R : Gp130) }
+  {NUc    | nuc    [Socs3-gene - on]    } .
+  -----------------------------------------
+  *** ~/evidence/IL6-Evidence/Socs3-gene.irt.IL6.1242.txt
+
+*** Stat1--
+
+rl[1243.Stat1.to.Gp130C.irt.IL6]:
+  {GP130C | gp130c (IL6 : IL6R : Gp130) [Jak1 - Yphos]                 }
+  {CLc    | clc     Stat1                                              }
+  =>
+  {GP130C | gp130c (IL6 : IL6R : Gp130) [Jak1 - Yphos] [Stat1 - Yphos] }
+  {CLc    | clc                                                        } .
+  ------------------------------------------------------------------------
+  *** ~/evidence/IL6-Evidence/Stat1.to.Gp130C.irt.IL6.1243.txt
+
+*** Stat3--
+
+rl[1237.Stat3.to.Gp130C.irt.IL6]:
+  {GP130C | gp130c (IL6 : IL6R : Gp130)                 }
+  {CLc    | clc     Stat3                               }
+  =>
+  {GP130C | gp130c (IL6 : IL6R : Gp130) [Stat3 - Yphos] }
+  {CLc    | clc                                         } .
+  ---------------------------------------------------------
+  *** ~/evidence/IL6-Evidence/Stat3.to.Gp130C.irt.IL6.1237.txt
+
+rl[1239.Stat3.Sphos.irt.IL6]:
+  {GP130C | gp130c (IL6 : IL6R : Gp130) [Pkcd - act] [Rac1 - GTP]
+                   [Stat3 - Yphos]                                  }
+  =>
+  {GP130C | gp130c (IL6 : IL6R : Gp130) [Pkcd - act] [Rac1 - GTP]
+                   [Stat3 - Yphos phos(S 727)]                      } .
+  ---------------------------------------------------------------------
+  *** ~/evidence/IL6-Evidence/Stat3.Sphos.irt.IL6.1239.txt
+
+rl[1238.Stat3.to.nuc.irt.IL6]:
+  {GP130C | gp130c (IL6 : IL6R : Gp130) [Stat3 - Yphos phos(S 727)] }
+  {NUc    | nuc                                                     }
+  =>
+  {GP130C | gp130c (IL6 : IL6R : Gp130)                             }
+  {NUc    | nuc    [Stat3 - act]                                    } .
+  ---------------------------------------------------------------------
+  *** ~/evidence/IL6-Evidence/Stat3.to.nuc.irt.IL6.1238.txt
+
+*** Tyk2--
+
+rl[1244.Tyk2.irt.IL6]:
+  {GP130C | gp130c (IL6 : IL6R : Gp130) }
+  {CLc    | clc      Tyk2               }
+  =>
+  {GP130C | gp130c (IL6 : IL6R : Gp130) }
+  {CLc    | clc    [Tyk2 - Yphos]       } .
+  --------------------------------------------------------
+  *** ~/evidence/IL6-Evidence/Tyk2.irt.IL6.1244.txt
+
+*** Vavs--
+
+rl[1234.Vavs.irt.IL6]:
+  {GP130C | gp130c (IL6 : IL6R : Gp130)                     }
+  {CLc    | clc    vavs:VavS                                }
+  =>
+  {GP130C | gp130c (IL6 : IL6R : Gp130) [vavs:VavS - Yphos] }
+  {CLc    | clc                                             } .
+  -------------------------------------------------------------
+  *** ~/evidence/IL6-Evidence/Vavs.irt.IL6.1234.txt
+
+endm
+
+
+***(
+
+rl[xxx.xxx.irt.IL6]:
+  {GP130C | gp130c (IL6 : IL6R : Gp130) }
+  {CLc    | clc             }
+  =>
+  {GP130C | gp130c (IL6 : IL6R : Gp130) }
+  {CLc    | clc             } .
+  ----------------------------------------
+  *** ~/evidence/IL6-Evidence/xxx.irt.IL6.xxx.txt
+
+
+)***

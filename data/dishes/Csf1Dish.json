@@ -1,0 +1,10 @@
+{"stype" : "jnet",
+	 "name" : "Csf1Dish",
+	 "type" : "pnet",
+	 "kbname" : "RKB",
+	 "parent" : "RKB",
+	 "rids" : ["417.Csf1R.irt.Csf1", "538.Dap12.irt.Csf1", "494.Eps8.irt.Csf1", "441.Fyn.irt.Csf1", "482.Gab2.irt.Csf1", "613.Gab3.irt.Csf1", "493.Grb2.irt.Csf1", "414.Itgb3.irt.Csf1", "428.Mek1.irt.Csf1", "518.P38s.irt.Csf1", "432.Pi3k.irt.Csf1", "430.Raf1.irt.Csf1", "521.Rsk1.irt.Csf1", "925.Shc1.irt.Csf1", "608.Shp2.irt.Csf1", "611.Socs1.irt.Csf1", "594.Thoc5.irt.Csf1", "160.Gsk3s.irt.Csf1", "422.Hras.irt.Csf1", "423.Kras.irt.Csf1", "424.Mras.irt.Csf1", "427.Nras.irt.Csf1", "159.Fak2.irt.Csf1", "533.Syk.irt.Csf1", "158.Ctnnb1.irt.Csf1", "401.Akt1.irt.Csf1", "413.Araf.irt.Csf1", "503.Cbl.irt.Csf1", "418.Erks.irt.Csf1"],
+	 "init" : ["Akt1@CLc", "Araf@CLc", "Araf@CLc", "Cbl@CLc", "Csf1@XOut", "Csf1R@Csf1RC", "Ctnnb1@CLc", "Dap12@CLm", "Eps8@CLc", "Erks@CLc", "Fak2@CLc", "Fyn@CLi", "Gab2@CLc", "Gab3@CLc", "Grb2@CLc", "Itgb3@CLm", "Mek1@CLc", "P38s@CLc", "Pi3k@CLc", "Raf1@CLc", "Rsk1@CLc", "Shc1@CLc", "Shp2@CLc", "Socs1@CLc", "Syk@CLc", "Thoc5@CLc", "Gsk3s-act@CLc", "Hras-GDP@CLi", "Kras-GDP@CLi", "Mras-GDP@CLi", "Nras-GDP@CLi"],
+	 "op" : "dishnet",
+	 "args" : "Csf1Dish"
+} 

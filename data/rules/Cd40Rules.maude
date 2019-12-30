@@ -1,0 +1,396 @@
+*********1*********2*********3*********4*********5*********6*********7****
+***
+***  Cd40Rules.maude
+***
+**************************************************************************
+mod CD40RULES is inc ALLOPS .
+
+var xout : Soup .
+vars clo clm clr cli clc nuo num nui nuc : Soup .
+vars moo mom moi moc mio mim mii mic : Soup .
+vars ero erm eri erc pxo pxm pxi pxc : Soup .
+vars gao gam gai gac lyo lym lyi lyc : Soup .
+vars eeo eem eei eec leo lem lei lec : Soup .
+vars cpo cpm cpi cpc ct ptc sig : Soup .
+var cd40c : Soup .
+var tak1c : Soup .
+
+  *** ~/evidence/Cd40-Evidence/00Cd40-evidence.txt
+
+rl[266.Cd40.by.Cd40L]:
+  {XOut  | xout  Cd40L          }
+  {Cd40C | cd40c Cd40           }
+  =>
+  {XOut  | xout                 }
+  {Cd40C | cd40c (Cd40 : Cd40L) } .
+  ----------------------------------
+  *** ~/evidence/Cd40-Evidence/Cd40.by.Cd40L.266.txt
+
+*** Ciap1--
+
+rl[267.Ciap1.to.Cd40]:
+  {Cd40C | cd40c  (Cd40 : Cd40L) Traf2       }
+  {CLc   | clc    Ciap1                      }
+  =>
+  {Cd40C | cd40c  (Cd40 : Cd40L) Traf2 Ciap1 }
+  {CLc   | clc                               } .
+  -------------------------------------------------
+  *** ~/evidence/Cd40-Evidence/Ciap1.to.Cd40.267.txt
+
+rl[269.Ciap1.from.Cd40]:
+  {Cd40C | cd40c  (Cd40 : Cd40L) Ciap1 }
+  {CLc   | clc                         }
+  =>
+  {Cd40C | cd40c  (Cd40 : Cd40L)       }
+  {CLc   | clc    Ciap1                } .
+  -------------------------------------------------
+  *** ~/evidence/Cd40-Evidence/Ciap1.from.Cd40.269.txt
+
+*** Ciap2--
+
+rl[276.Ciap2.to.Cd40]:
+  {Cd40C | cd40c  (Cd40 : Cd40L)        }
+  {CLc   | clc    Ciap2                 }
+  =>
+  {Cd40C | cd40c  (Cd40 : Cd40L) Ciap2  }
+  {CLc   | clc                          } .
+  -------------------------------------------------
+  *** ~/evidence/Cd40-Evidence/Ciap2.to.Cd40.276.txt
+
+rl[270.Ciap2.from.Cd40]:
+  {Cd40C | cd40c  (Cd40 : Cd40L) Ciap2  }
+  {CLc   | clc                          }
+  =>
+  {Cd40C | cd40c  (Cd40 : Cd40L)        }
+  {CLc   | clc    Ciap2                 } .
+  -------------------------------------------------
+  *** ~/evidence/Cd40-Evidence/Ciap2.from.Cd40.270.txt
+
+--- Ikba--
+
+rl[282.Ikba.degraded.irt.Cd40L]:
+  {Cd40C | cd40c (Cd40 : Cd40L) Traf2 Traf6            }
+  {CLc   | clc   [Nemo - ubiq] Ubc13 Ikba              }
+  =>
+  {Cd40C | cd40c (Cd40 : Cd40L) Traf2 Traf6            }
+  {CLc   | clc   [Nemo - ubiq] Ubc13 [Ikba - degraded] } .
+  -----------------------------------------------------------------------------
+  *** ~/evidence/Cd40-Evidence/Ikba.degraded.irt.Cd40L.282.txt
+
+*** Ikbb--
+
+*** Ikk1--
+
+*** Ikk2--
+
+rl[283.Ikk2.to.Cd40]:
+  {Cd40C | cd40c (Cd40 : Cd40L)               }
+  {CLc   | clc   Ikk2                         }
+  =>
+  {Cd40C | cd40c (Cd40 : Cd40L) [Ikk2 - phos] }
+  {CLc   | clc                                } .
+  -----------------------------------------------
+  *** ~/evidence/Cd40-Evidence/Ikk2.to.Cd40.283.txt
+
+*** Ikks--
+
+*** Jak3--
+
+rl[1265.Jak3.irt.Cd40L]:
+  {Cd40C | cd40c (Cd40 : Cd40L)  Jak3          }
+  =>
+  {Cd40C | cd40c (Cd40 : Cd40L) [Jak3 - Yphos] } .
+  ------------------------------------------------
+  *** ~/evidence/Cd40-Evidence/Jak3.irt.Cd40L.1265.txt
+
+*** JnkS--
+
+rl[317.Jnks.irt.Cd40L]:
+  {Cd40C | cd40c (Cd40 : Cd40L) ciap12:Ciap12S [Mekk1 - act]
+                 [Nemo - ubiq] Traf2 Traf6 Ubc13                }
+  {CLc   | clc   [mkk47s:Mkk47S - act] Jnks                     }
+  =>
+  {Cd40C | cd40c (Cd40 : Cd40L) ciap12:Ciap12S [Mekk1 - act]
+                 [Nemo - ubiq] Traf2 Traf6 Ubc13                }
+  {CLc   | clc   [mkk47s:Mkk47S - act] [Jnks - act]             } .
+  ----------------------------------------------------------------------------
+  *** ~/evidence/Cd40-Evidence/Jnks.irt.Cd40L.317.txt
+
+*** Mekk1--
+
+rl[278.Mekk1.to.Cd40]:
+  {Cd40C | cd40c  (Cd40 : Cd40L) [Nemo - ubiq] Traf2 Ubc13       }
+  {CLc   | clc    Mekk1                                          }
+  =>
+  {Cd40C | cd40c  (Cd40 : Cd40L) [Nemo - ubiq] Traf2 Ubc13 Mekk1 }
+  {CLc   | clc                                                   } .
+  ---------------------------------------------------------------------------
+  *** ~/evidence/Cd40-Evidence/Mekk1.to.Cd40.278.txt
+
+rl[304.Mekk1.act.irt.Cd40L]:
+  {Cd40C | cd40c  (Cd40 : Cd40L) ciap12:Ciap12S [Nemo - ubiq] Ubc13
+                  Traf2 Mekk1                                        }
+  {CLc   | clc                                                       }
+  =>
+  {Cd40C | cd40c  (Cd40 : Cd40L) ciap12:Ciap12S [Nemo - ubiq] Ubc13
+                  Traf2 [Mekk1 - act]                                }
+  {CLc   | clc                                                       } .
+  ----------------------------------------------------------------------
+  *** ~/evidence/Cd40-Evidence/Mekk1.act.irt.Cd40L.304.txt
+
+rl[303.Mekk1.from.Cd40]:
+  {Cd40C | cd40c  (Cd40 : Cd40L) ciap12:Ciap12S [Mekk1 - act]   }
+  {CLc   | clc                                                  }
+  =>
+  {Cd40C | cd40c  (Cd40 : Cd40L) ciap12:Ciap12S                 }
+  {CLc   | clc    [Mekk1 - act]                                 } .
+  ------------------------------------------------------------------
+  *** ~/evidence/Cd40-Evidence/Mekk1.from.Cd40.303.txt
+
+*** Mkk4--
+
+rl[305.Mkk4.to.Cd40]:
+  {Cd40C | cd40c (Cd40 : Cd40L)      }
+  {CLc   | clc   Mkk4                }
+  =>
+  {Cd40C | cd40c (Cd40 : Cd40L) Mkk4 }
+  {CLc   | clc                       } .
+  ----------------------------------------------
+  *** ~/evidence/Cd40-Evidence/Mkk4.to.Cd40.305.txt
+
+rl[487.Mkk4.act.irt.Cd40L]:
+  {Cd40C | cd40c (Cd40 : Cd40L) [Mekk1 - act] Mkk4         }
+  {CLc   | clc                                             }
+  =>
+  {Cd40C | cd40c (Cd40 : Cd40L) [Mekk1 - act] [Mkk4 - act] }
+  {CLc   | clc                                             } .
+  --------------------------------------------------------------
+  *** ~/evidence/Cd40-Evidence/Mkk4.act.irt.Cd40L.487.txt
+
+rl[308.Mkk4.from.Cd40]:
+  {Cd40C | cd40c (Cd40 : Cd40L) [Nemo - ubiq] [Mkk4 - act] }
+  {CLc   | clc                                             }
+  =>
+  {Cd40C | cd40c (Cd40 : Cd40L) [Nemo - ubiq]              }
+  {CLc   | clc   [Mkk4 - act]                              } .
+  -------------------------------------------------------------
+  *** ~/evidence/Cd40-Evidence/Mkk4.from.Cd40.308.txt
+
+*** Mkk7--
+
+rl[309.Mkk7.to.Cd40]:
+  {Cd40C | cd40c (Cd40 : Cd40L)      }
+  {CLc   | clc   Mkk7                }
+  =>
+  {Cd40C | cd40c (Cd40 : Cd40L) Mkk7 }
+  {CLc   | clc                       } .
+  ----------------------------------------------
+  *** ~/evidence/Cd40-Evidence/Mkk7.to.Cd40.309.txt
+
+rl[313.Mkk7.from.Cd40]:
+  {Cd40C | cd40c (Cd40 : Cd40L) Mkk7        }
+  {CLc   | clc   [Nemo - ubiq]              }
+  =>
+  {Cd40C | cd40c (Cd40 : Cd40L)             }
+  {CLc   | clc   [Nemo - ubiq] [Mkk7 - act] } .
+  ----------------------------------------------
+  *** ~/evidence/Cd40-Evidence/Mkk7.from.Cd40.313.txt
+
+*** Nemo--
+
+rl[333.Nemo.to.Cd40]:
+  {Cd40C | cd40c  (Cd40 : Cd40L)       }
+  {CLc   | clc    Nemo                 }
+  =>
+  {Cd40C | cd40c  (Cd40 : Cd40L) Nemo  }
+  {CLc   | clc                         } .
+  -------------------------------------------------
+  *** ~/evidence/Cd40-Evidence/Nemo.to.Cd40.333.txt
+
+rl[483.Nemo.ubiq.irt.Cd40L]:
+  {Cd40C | cd40c (Cd40 : Cd40L) Traf2 Ubc13 Nemo          }
+  {CLc   | clc                                            }
+  =>
+  {Cd40C | cd40c (Cd40 : Cd40L) Traf2 Ubc13 [Nemo - ubiq] }
+  {CLc   | clc                                            } .
+  -----------------------------------------------------------------
+  *** ~/evidence/Cd40-Evidence/Nemo.ubiq.irt.Cd40.483.txt
+
+rl[318.Nemo.from.Cd40]:
+  {Cd40C | cd40c  (Cd40 : Cd40L) [Nemo - ubiq] }
+  {CLc   | clc                                 }
+  =>
+  {Cd40C | cd40c  (Cd40 : Cd40L)               }
+  {CLc   | clc    [Nemo - ubiq]                } .
+  -------------------------------------------------
+  *** ~/evidence/Cd40-Evidence/Nemo.from.Cd40.318.txt
+
+*** Nfkb1--
+
+rl[1260.Nfkb1.irt.Cd40L]:
+  {Cd40C | cd40c (Cd40 : Cd40L) }
+  {CLc   | clc   Nfkb1          }
+  {NUc   | nuc                  }
+  =>
+  {Cd40C | cd40c (Cd40 : Cd40L) }
+  {CLc   | clc                  }
+  {NUc   | nuc   [Nfkb1 - act]  } .
+  ---------------------------------
+  *** ~/evidence/Cd40-Evidence/Nfkb1.irt.Cd40L.1260.txt
+
+*** P38s--
+
+rl[340.P38s.irt.Cd40L]:
+  {Cd40C | cd40c (Cd40 : Cd40L) ciap12:Ciap12S Nemo Traf2 }
+  {CLc   | clc    Traf6  P38s                             }
+  =>
+  {Cd40C | cd40c (Cd40 : Cd40L) ciap12:Ciap12S Nemo Traf2 }
+  {CLc   | clc    Traf6  P38s                             } .
+  -------------------------------------------------------------
+  *** ~/evidence/Cd40-Evidence/P38s.irt.Cd40L.340.txt
+
+*** Tak1--
+
+rl[351.Tak1.to.Cd40]:
+  {Cd40C | cd40c (Cd40 : Cd40L)      }
+  {CLc   | clc    Tak1               }
+  =>
+  {Cd40C | cd40c (Cd40 : Cd40L) Tak1 }
+  {CLc   | clc                       } .
+  --------------------------------------
+  *** ~/evidence/Cd40-Evidence/Tak1.to.Cd40.351.txt
+
+rl[376.Tak1.phos.irt.Cd40L]:
+  {Cd40C | cd40c (Cd40 : Cd40L) ciap12:Ciap12S 
+                  Nemo Traf6 Tak1                 }
+  =>
+  {Cd40C | cd40c (Cd40 : Cd40L) ciap12:Ciap12S 
+                  Nemo Traf6 [Tak1 - phos]        } .
+  --------------------------------------------------------------------
+  *** ~/evidence/Cd40-Evidence/Tak1.phos.irt.Cd40L.376.txt
+
+*** Tpl2--
+
+rl[488.Tpl2.to.Cd40]:
+  {Cd40C | cd40c (Cd40 : Cd40L)      }
+  {CLc   | clc   Tpl2                }
+  =>
+  {Cd40C | cd40c (Cd40 : Cd40L) Tpl2 }
+  {CLc   | clc                       } .
+  -------------------------------------------------------------
+  *** ~/evidence/Cd40-Evidence/Tpl2.to.Cd40.488.txt
+
+*** Traf2--
+
+rl[354.Traf2.to.Cd40]:
+  {Cd40C | cd40c (Cd40 : Cd40L)       }
+  {CLc   | clc  Traf2                 }
+  =>
+  {Cd40C | cd40c (Cd40 : Cd40L) Traf2 }
+  {CLc   | clc                        } .
+  -------------------------------------------------------------
+  *** ~/evidence/Cd40-Evidence/Traf2.to.Cd40.354.txt
+
+rl[380.Traf2.ubiq.irt.Cd40L]:
+  {Cd40C | cd40c (Cd40 : Cd40L) ciap12:Ciap12S Traf2          }
+  {CLc   | clc                                                }
+  =>
+  {Cd40C | cd40c (Cd40 : Cd40L) ciap12:Ciap12S [Traf2 - ubiq] }
+  {CLc   | clc                                                } .
+  -----------------------------------------------------------------
+  *** ~/evidence/Cd40-Evidence/Traf2.ubiq.irt.Cd40.380.txt
+
+rl[361.Traf2.from.Cd40]:
+  {Cd40C | cd40c (Cd40 : Cd40L) ciap12:Ciap12S [Traf2 - ubiq] }
+  {CLc   | clc                                                }
+  =>
+  {Cd40C | cd40c (Cd40 : Cd40L) ciap12:Ciap12S                }
+  {CLc   | clc   [Traf2 - ubiq]                               } .
+  -------------------------------------------------------------
+  *** ~/evidence/Cd40-Evidence/Traf2.from.Cd40.361.txt
+
+*** Traf3--
+
+rl[395.Traf3.to.Cd40]:
+  {Cd40C | cd40c (Cd40 : Cd40L)       }
+  {CLc   | clc   Traf3                }
+  =>
+  {Cd40C | cd40c (Cd40 : Cd40L) Traf3 }
+  {CLc   | clc                        } .
+  -------------------------------------------------------------
+  *** ~/evidence/Cd40-Evidence/Traf3.to.Cd40.395.txt
+
+rl[392.Traf3.ubiq.irt.Cd40L]:
+  {Cd40C | cd40c (Cd40 : Cd40L) ciap12:Ciap12S Traf3           }
+  {CLc   | clc                                                 }
+  =>
+  {Cd40C | cd40c (Cd40 : Cd40L) ciap12:Ciap12S [Traf3 - ubiq]  }
+  {CLc   | clc                                                 } .
+  -----------------------------------------------------------------
+  *** ~/evidence/Cd40-Evidence/Traf3.ubiq.irt.Cd40.392.txt
+
+rl[402.Traf3.degraded.irt.Cd40L]:
+  {Cd40C | cd40c (Cd40 : Cd40L) ciap12:Ciap12S [Traf3 - ubiq] }
+  {Sig   | sig                                                }
+  =>
+  {Cd40C | cd40c (Cd40 : Cd40L) ciap12:Ciap12S                }
+  {Sig   | sig   [Traf3 - degraded]                           } .
+  -----------------------------------------------------------------
+  *** ~/evidence/Cd40-Evidence/Traf3.degraded.irt.Cd40.402.txt
+
+*** Traf6--
+
+rl[031.Traf6.to.Cd40]:
+  {Cd40C | cd40c (Cd40 : Cd40L)       }
+  {CLc   | clc   Traf6                }
+  =>
+  {Cd40C | cd40c (Cd40 : Cd40L) Traf6 }
+  {CLc   | clc                        } .
+  -------------------------------------------------------------
+  *** ~/evidence/Cd40-Evidence/Traf6.to.Cd40.031.txt
+
+rl[412.Traf6.from.Cd40]:
+  {Cd40C | cd40c (Cd40 : Cd40L) ciap12:Ciap12S Traf6 }
+  {CLc   | clc                                       }
+  =>
+  {Cd40C | cd40c (Cd40 : Cd40L) ciap12:Ciap12S       }
+  {CLc   | clc   Traf6                               } .
+  -------------------------------------------------------------
+  *** ~/evidence/Cd40-Evidence/Traf6.from.Cd40.412.txt
+
+*** Ubc13--
+
+rl[419.Ubc13.to.Cd40]:
+  {Cd40C | cd40c (Cd40 : Cd40L) Traf2       }
+  {CLc   | clc   Ubc13                      }
+  =>
+  {Cd40C | cd40c (Cd40 : Cd40L) Traf2 Ubc13 }
+  {CLc   | clc                              } .
+  -------------------------------------------------------------
+  *** ~/evidence/Cd40-Evidence/Ubc13.to.Cd40.419.txt
+
+rl[421.Ubc13.from.Cd40]:
+  {Cd40C | cd40c (Cd40 : Cd40L) ciap12:Ciap12S Ubc13 }
+  {CLc   | clc                                       }
+  =>
+  {Cd40C | cd40c (Cd40 : Cd40L) ciap12:Ciap12S       }
+  {CLc   | clc   Ubc13                               } .
+  -------------------------------------------------------------
+  *** ~/evidence/Cd40-Evidence/Ubc13.from.Cd40.421.txt
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+endm

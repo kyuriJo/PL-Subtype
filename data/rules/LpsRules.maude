@@ -1,0 +1,1209 @@
+*********1*********2*********3*********4*********5*********6*********7****
+***
+***  LpsRules.maude
+***
+**************************************************************************
+mod LPSRULES is inc ALLOPS .
+
+vars xout clo clm cli clc nuc sig rnac cvc chr : Soup .
+var tlr4c tlr2c : Soup .
+vars mek1mods erksmods : ModSet .
+
+*** ~/evidence/Lps-Evidence/00Lps-evidence.txt
+
+*** TLR4--
+
+rl[612.TLR4.irt.Lps]:
+  {XOut  | xout  Lps Lbp Md2                      }
+  {CLo   | clo   Cd14                             }
+  {TLR4C | tlr4c TLR4                             }
+  =>
+  {XOut  | xout  Lps                              }
+  {CLo   | clo                                    }
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4) } .
+  ---------------------------------------------------
+  *** ~/evidence/Lps-Evidence/TLR4.irt.Lps.612.txt
+
+*** TLR2--
+
+rl[591.TLR2.irt.Lps]:
+  {XOut  | xout  Lps Lbp           }
+  {CLo   | clo   Cd14              }
+  {TLR2C | tlr2c TLR2              }
+  =>
+  {XOut  | xout  Lps               }
+  {CLo   |  clo                    }
+  {TLR2C | tlr2c TLR2 Cd14 Lps Lbp } .
+  ------------------------------------
+  *** ~/evidence/Lps-Evidence/TLR2.irt.Lps.591.txt
+
+*** Adam17--
+
+rl[958.Adam17.irt.Lps]:
+  {XOut  | xout  Lps                      }
+  {CLm   | clm   Adam17                   }
+  {CLc   | clc  [Tpl2 - act]              }
+  =>
+  {XOut  | xout  Lps                      }
+  {CLm   | clm  [Adam17 - phos(T 735)]    }
+  {CLc   | clc  [Tpl2 - act]              } .
+  ----------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Adam17.irt.Lps.958.txt
+
+*** Adm-- Adm-gene
+
+rl[1549.Adm-gene.irt.Lps]:
+  {XOut  | xout Lps                }
+  {NUc   | nuc  Adm-gene           }
+  =>
+  {XOut  | xout Lps                }
+  {NUc   | nuc  [Adm-gene - on]    } .
+  -------------------------------------------
+  *** ~/evidence/Lps-Evidence/Adm-gene.irt.Lps.1549.txt
+
+*** Akt1--
+
+rl[030.Akt1.irt.Lps]:
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4) }
+  {CLc   | clc   Akt1                             }
+  =>
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4) }
+  {CLc   | clc   [Akt1 - act]                     } .
+  ---------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Akt1.irt.Lps.030.txt
+
+*** Atf1--
+
+rl[1065.Atf1.irt.Lps]:
+  {XOut  | xout  Lps                }
+  {CLc   | clc  [Tpl2 - act]        }
+  {NUc   | nuc   Atf1               }
+  =>
+  {XOut  | xout  Lps                }
+  {CLc   | clc  [Tpl2 - act]        }
+  {NUc   | nuc  [Atf1 - phos(S 63)] } .
+  ---------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Atf1.irt.Lps.1065.txt
+
+*** Bcl3--  Bcl3-gene--
+
+rl[917.Bcl3-gene.irt.Lps]:
+  {XOut  | xout Lps                     }
+  {TLR4C | tlr4c Myd88                  }
+  {NUc   | nuc   Bcl3-gene              }
+  =>
+  {XOut  | xout Lps                     }
+  {TLR4C | tlr4c  Myd88                 }
+  {NUc   | nuc   [Bcl3-gene - on]       } .
+  ---------------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Bcl3-gene.irt.Lps.917.txt
+
+*** Bcl10--
+
+rl[286.Bcl10.irt.Lps]:
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4) [Irak1 - act]       }
+  {CLc   | clc   Bcl10                                                }
+  =>
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4) [Irak1 - act] Bcl10 }
+  {CLc   | clc                                                        } .
+  -----------------------------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Bcl10.irt.Lps.286.txt
+
+*** Btk--
+
+rl[759.Btk.irt.Lps]:
+  {XOut  | xout Lps                     }
+  {CLc   | clc   Btk                    }
+  =>
+  {XOut  | xout Lps                     }
+  {CLc   | clc   [Btk - act]            } .
+  ---------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Btk.irt.Lps.759.txt
+
+*** C3-- C3-gene--
+
+rl[920.C3-gene.irt.Lps]:
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4)          }
+  {CLc   | clc   ([Ikk1 - act] : [Ikk2 - act] : Nemo) Ikke }
+  {NUc   | nuc    C3-gene                                  }
+  =>
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4)          }
+  {CLc   | clc   ([Ikk1 - act] : [Ikk2 - act] : Nemo) Ikke }
+  {NUc   | nuc   [C3-gene - on]                            } .
+  ------------------------------------------------------------
+  *** ~/evidence/Lps-Evidence/C3-gene.irt.Lps.920.txt
+
+*** Casp1--
+
+rl[997.Casp1.irt.Lps]:
+  {XOut  | xout Lps                     }
+  {CLc   | clc  Casp1                   }
+  =>
+  {XOut  | xout Lps                     }
+  {CLc   | clc  [Casp1 - act]           } .
+  ---------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Casp1.irt.Lps.997.txt
+
+*** CcL2-- CcL2-gene--
+
+rl[935.CcL2-gene.irt.Lps]:
+  {XOut  | xout   Lps                   }
+  {CLc   | clc    Ikke Trif Traf3     }
+  {NUc   | nuc    CcL2-gene             }
+  =>
+  {XOut  | xout   Lps                   }
+  {CLc   | clc    Ikke Trif Traf3     }
+  {NUc   | nuc    [CcL2-gene - on]      } .
+  ---------------------------------------------------
+  *** ~/evidence/Lps-Evidence/CcL2-gene.irt.Lps.935.txt
+
+*** CcL3-- CcL3-gene--
+
+rl[956.CcL3-gene.irt.Lps]:
+  {XOut  | xout   Lps                             }
+  {NUc   | nuc    CcL3-gene                       }
+  =>
+  {XOut  | xout   Lps                             }
+  {NUc   | nuc   [CcL3-gene - on]                 } .
+  ---------------------------------------------------
+  *** ~/evidence/Lps-Evidence/CcL3-gene.irt.Lps.956.txt
+
+*** CcL4-- CcL4-gene--
+
+rl[974.CcL4-gene.irt.Lps]:
+  {XOut  | xout   Lps                             }
+  {NUc   | nuc    CcL4-gene                       }
+  =>
+  {XOut  | xout   Lps                             }
+  {NUc   | nuc   [CcL4-gene - on]                 } .
+  ---------------------------------------------------
+  *** ~/evidence/Lps-Evidence/CcL4-gene.irt.Lps.974.txt
+
+*** CcL5-- CcL5-gene--
+
+rl[975.CcL5-gene.irt.Lps]:
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4)
+                 [Pkce - phos(S 346)] Ticam2 [Traf6 - K63ubiq]  }
+  {CLc   | clc   Ripk1 Trif                                     }
+  {NUc   | nuc   CcL5-gene                                      }
+  =>
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4)
+                 [Pkce - phos(S 346)] Ticam2 [Traf6 - K63ubiq]  }
+  {CLc   | clc   Ripk1 Trif                                     }
+  {NUc   | nuc   [CcL5-gene - on]                               } .
+  -----------------------------------------------------------------
+  *** ~/evidence/Lps-Evidence/CcL5-gene.irt.Lps.975.txt
+
+*** Cebpb--
+
+rl[1014.Cebpb.irt.Lps]:
+  {XOut  | xout   Lps                             }
+  {NUc   | nuc   Cebpb                            }
+  =>
+  {XOut  | xout   Lps                             }
+  {NUc   | nuc   [Cebpb - act]                    } .
+  ---------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Cebpb.irt.Lps.1014.txt
+
+*** Cebpb-gene--
+
+rl[210.Cebpb-gene.irt.Lps]:
+  {XOut  | xout   Lps                             }
+  {NUc   | nuc   [Rela - act]  Cebpb-gene         }
+  =>
+  {XOut  | xout   Lps                             }
+  {NUc   | nuc   [Rela - act] [Cebpb-gene - on]   } .
+  ---------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Cebpb-gene.irt.Lps.210.txt
+
+*** Cebpd-- Cebpd-gene--
+
+rl[216.Cebpd-gene.irt.Lps]:
+  {XOut  | xout   Lps                                   }
+  {NUc   | nuc    Nfkbiz [Rela - act]  Cebpd-gene       }
+  =>
+  {XOut  | xout   Lps                                   }
+  {NUc   | nuc    Nfkbiz [Rela - act] [Cebpd-gene - on] } .
+  ---------------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Cebpd-gene.irt.Lps.216.txt
+
+*** Ciap1--
+
+rl[490.Ciap1.to.TLR4.irt.Lps]:
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4)       }
+  {CLc   | clc   Ciap1                                  }
+  =>
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4) Ciap1 }
+  {CLc   | clc                                          } .
+  ---------------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Ciap1.to.TLR4.irt.Lps.490.txt
+
+*** Ciap2--
+
+rl[513.Ciap2.to.TLR4.irt.Lps]:
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4)       }
+  {CLc   | clc   Ciap2                                  }
+  =>
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4) Ciap2 }
+  {CLc   | clc                                          } .
+  ---------------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Ciap2.to.TLR4.irt.Lps.513.txt
+
+rl[515.Ciap2.ubiq.irt.Lps]:
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4)  
+                 [Traf6 - K63ubiq] Ciap2                }
+  =>
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4)  
+                 [Traf6 - K63ubiq] [Ciap2 - ubiq]       } .
+  ---------------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Ciap2.ubiq.irt.Lps.515.txt
+
+rl[566.Ciap.Myd88.Tak1.Traf6.from.TLR4.irt.Lps]:
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4)
+                 ([Tak1 - phos] : Tab1 : tab23s:Tab23S) 
+                 [Traf6 - K63ubiq]  [Ciap2 - ubiq] Myd88  }
+  {CLc   | clc                                            } 
+  =>
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4)         }
+  {CLc   | clc   ([Tak1 - phos] : Tab1 : tab23s:Tab23S) 
+                 [Traf6 - K63ubiq]  [Ciap2 - ubiq] Myd88  } .
+  -----------------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Traf6.from.TLR4.irt.Lps.566.txt
+  *** ~/evidence/Lps-Evidence/Tak1.from.TLR4.irt.Lps.566.txt
+  *** ~/evidence/Lps-Evidence/Ciap2.from.TLR4.irt.Lps.566.txt
+  *** ~/evidence/Lps-Evidence/Myd88.from.TLR4.irt.Lps.566.txt
+
+*** Clic4-- Clic4-gene--
+
+rl[226.Clic4-gene.irt.Lps]:
+  {XOut  | xout   Lps                                        }
+  {NUc   | nuc   [Irf3 - act] [Rela - act]  Clic4-gene       }
+  =>
+  {XOut  | xout   Lps                                        }
+  {NUc   | nuc   [Irf3 - act] [Rela - act] [Clic4-gene - on] } .
+  --------------------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Clic4-gene.irt.Lps.226.txt
+
+*** Creb1--
+
+rl[1066.Creb1.irt.Lps]:
+  {XOut  | xout Lps                    }
+  {CLc   | clc  [Tpl2 - act]           }
+  {NUc   | nuc   Creb1                 }
+  =>
+  {XOut  | xout Lps                    }
+  {CLc   | clc  [Tpl2 - act]           }
+  {NUc   | nuc   [Creb1 - phos(S 133)] } .
+  ---------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Creb1.irt.Lps.1066.txt
+
+*** Csf2-- Csf2-gene--
+
+rl[299.Csf2-gene.irt.Lps]:
+  {XOut  | xout   Lps                             }
+  {NUc   | nuc    Nfkbiz Csf2-gene                }
+  =>
+  {XOut  | xout   Lps                             }
+  {NUc   | nuc    Nfkbiz [Csf2-gene - on]         } .
+  ---------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Csf2-gene.irt.Lps.299.txt
+
+*** Csf3-- Csf3-gene--
+
+rl[439.Csf3-gene.irt.Lps]:
+  {XOut  | xout   Lps                             }
+  {NUc   | nuc    Nfkbiz Csf3-gene                }
+  =>
+  {XOut  | xout   Lps                             }
+  {NUc   | nuc    Nfkbiz [Csf3-gene - on]         } .
+  ---------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Csf3-gene.irt.Lps.439.txt
+
+*** CxcL1-- CxcL1-gene--
+
+rl[446.CxcL1-gene.irt.Lps]:
+  {XOut  | xout   Lps                                  }
+  {TLR4C | tlr4c [Irak4 - act]                         }
+  {CLc   | clc   Myd88                                 }
+  {NUc   | nuc   [Rela - act] CxcL1-gene               }
+  =>
+  {XOut  | xout   Lps                                  }
+  {TLR4C | tlr4c [Irak4 - act]                         }
+  {CLc   | clc   Myd88                                 }
+  {NUc   | nuc   [Rela - act] [CxcL1-gene - on]        } .
+  --------------------------------------------------------
+  *** ~/evidence/Lps-Evidence/CxcL1-gene.irt.Lps.446.txt
+
+*** CxcL2-- CxcL2-gene--
+
+rl[447.CxcL2-gene.irt.Lps]:
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4)      }
+  {CLc   | clc   Myd88 Trif                            }
+  {NUc   | nuc    CxcL2-gene                           }
+  =>
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4)      }
+  {CLc   | clc   Myd88 Trif                            }
+  {NUc   | nuc   [CxcL2-gene - on]                     } .
+  ---------------------------------------------------------
+  *** ~/evidence/Lps-Evidence/CxcL2-gene.irt.Lps.447.txt
+
+*** CxcL9-- CxcL9-gene--
+
+rl[450.CxcL9-gene.irt.Lps]:
+  {XOut  | xout   Lps                                        }
+  {NUc   | nuc   [Irf3 - act] [Rela - act] CxcL9-gene        }
+  =>
+  {XOut  | xout   Lps                                        }
+  {NUc   | nuc   [Irf3 - act] [Rela - act] [CxcL9-gene - on] } .
+  --------------------------------------------------------------
+  *** ~/evidence/Lps-Evidence/CxcL9-gene.irt.Lps.450.txt
+
+*** CxcL10-- CxcL10-gene--
+
+rl[625.CxcL10-gene.irt.Lps]:
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4) [Irak4 - act] Ticam2 }
+  {CLc   | clc   Stat1 Tbk1 Trif Traf3                                 }
+  {NUc   | nuc   [Irf3 - act] [Rela - act]  CxcL10-gene                }
+  =>
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4) [Irak4 - act] Ticam2 }
+  {CLc   | clc   Stat1 Tbk1 Trif Traf3                                 }
+  {NUc   | nuc   [Irf3 - act] [Rela - act] [CxcL10-gene - on]          } .
+  -------------------------------------------------------------------------
+  *** ~/evidence/Lps-Evidence/CxcL10-gene.irt.Lps.625.txt
+
+*** Elk1--
+
+rl[1016.Elk1.irt.Lps]:
+  {XOut  | xout   Lps                  }
+  {CLc   | clc   [Mekk2 - act]         }
+  {NUc   | nuc   Elk1                  }
+  =>
+  {XOut  | xout   Lps                  }
+  {CLc   | clc   [Mekk2 - act]         }
+  {NUc   | nuc   [Elk1 - act]          } .
+  ---------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Elk1.irt.Lps.1016.txt
+
+*** ErkS--
+
+rl[838.ErkS.irt.Lps]:
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4) 
+                  Myd88 [Irak1 - act] [Irak4 - act] [Pkce - phos(S 346)]  }
+  {CLc   | clc   ([Tak1 - phos] : Tab1 : tab23s:Tab23S) 
+                  [mek12s:Mek12S - mek1mods act]
+                  [Mekk3 - act] Tirap  [Tpl2 - act] 
+                  [Erks - erksmods]                                       }
+  =>
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4)
+                  Myd88 [Irak1 - act] [Irak4 - act] [Pkce - phos(S 346)]  }
+  {CLc   | clc   ([Tak1 - phos] : Tab1 : tab23s:Tab23S) 
+                  [mek12s:Mek12S - mek1mods act]
+                  [Mekk3 - act] Tirap [Tpl2 - act]
+                  [Erks - erksmods act phos(TEY)]                         } .
+  -------------------------------------------------------------------------------
+  *** ~/evidence/Lps-Evidence/ErkS.irt.Lps.838.txt
+
+*** Hgs--
+
+rl[1592.Hgs.to.TLR4.irt.Lps]:
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4)      }
+  {CLc   | clc   Hgs                                   }
+  =>
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4) Hgs  }
+  {CLc   | clc                                         } .
+  -----------------------------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Hgs.to.TLR4.irt.Lps.1592.txt
+
+*** Hif1a-- Hif1a-gene--
+
+rl[1548.Hif1a-gene.irt.Lps]:
+  {XOut  | xout  Lps                      }
+  {NUc   | nuc   Hif1a-gene               }
+  =>
+  {XOut  | xout  Lps                      }
+  {NUc   | nuc   [Hif1a-gene - on]        } .
+  -------------------------------------------
+  *** ~/evidence/Lps-Evidence/Hif1a-gene.irt.Lps.1548.txt
+
+*** Cd54-- Cd54-gene--
+
+rl[643.Cd54-gene.irt.Lps]:
+  {XOut  | xout  Lps                     }
+  {NUc   | nuc    Cd54-gene              }
+  =>
+  {XOut  | xout  Lps                     }
+  {NUc   | nuc   [Cd54-gene - on]        } .
+  -----------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Cd54-gene.irt.Lps.643.txt
+
+*** Ifi16-- Ifi16-gene--
+
+rl[703.Ifi16-gene.irt.Lps]:
+  {XOut  | xout  Lps                      }
+  {CLc   | clc    Tbk1 Traf3              }
+  {NUc   | nuc    Ifi16-gene              }
+  =>
+  {XOut  | xout  Lps                      }
+  {CLc   | clc    Tbk1 Traf3              }
+  {NUc   | nuc   [Ifi16-gene - on]        } .
+  -----------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Ifi16-gene.irt.Lps.703.txt
+
+*** Ifit1-- Ifit1-gene--
+
+rl[852.Ifit1-gene.irt.Lps]:
+  {XOut  | xout  Lps                              }
+  {TLR4C | tlr4c [Irak4 - act]                    }
+  {CLc   | clc   Stat1 Tbk1                       }
+  {NUc   | nuc   [Irf3 - act]  Ifit1-gene         }
+  =>
+  {XOut  | xout  Lps                              }
+  {TLR4C | tlr4c [Irak4 - act]                    }
+  {CLc   | clc   Stat1 Tbk1                       }
+  {NUc   | nuc   [Irf3 - act] [Ifit1-gene - on]   } .
+  -----------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Ifit1-gene.irt.Lps.852.txt
+
+*** Ifit2-- Ifit2-gene--
+
+rl[866.Ifit2-gene.irt.Lps]:
+  {XOut  | xout  Lps                                    }
+  {TLR4C | tlr4c Ticam2                                 }
+  {CLc   | clc   Tbk1                                   }
+  {NUc   | nuc   [Rela - act] Ifit2-gene                }
+  =>
+  {XOut  | xout  Lps                                    }
+  {TLR4C | tlr4c Ticam2                                 }
+  {CLc   | clc   Tbk1                                   }
+  {NUc   | nuc   [Rela - act] [Ifit2-gene - on]         } .
+  ----------------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Ifit2-gene.irt.Lps.866.txt
+
+*** Ifit3-- Ifit3-gene--
+
+rl[1007.Ifit3-gene.irt.Lps]:
+  {XOut  | xout  Lps                              }
+  {CLc   | clc    Tbk1                            }
+  {NUc   | nuc   [Rela - act]  Ifit3-gene         }
+  =>
+  {XOut  | xout  Lps                              }
+  {CLc   | clc    Tbk1                            }
+  {NUc   | nuc   [Rela - act] [Ifit3-gene - on]   } .
+  -----------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Ifit3-gene.irt.Lps.1007.txt
+
+*** Ifnb1-- Ifnb1-gene--
+
+rl[1009.Ifnb1-gene.irt.Lps]:
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4) [Irak4 - act] Ticam2 }
+  {CLc   | clc   [Ikba - degraded] Stat1 Tbk1 Trif Tirap Traf3         }
+  {NUc   | nuc   [Irf3 - act] Ifnb1-gene                               }
+  =>
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4) [Irak4 - act] Ticam2 }
+  {CLc   | clc   [Ikba - degraded] Stat1 Tbk1 Trif Tirap Traf3         }
+  {NUc   | nuc   [Irf3 - act] [Ifnb1-gene - on]                        } .
+  ------------------------------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Ifnb1-gene.irt.Lps.1009.txt
+
+*** Ifng-- Ifng-gene--
+
+rl[1010.Ifng-gene.irt.Lps]:
+  {XOut  | xout  Lps                   }
+  {TLR4C | tlr4c [Irak4 - act]         }
+  {NUc   | nuc    Irf2 Ifng-gene       }
+  =>
+  {XOut  | xout  Lps                   }
+  {TLR4C | tlr4c [Irak4 - act]         }
+  {NUc   | nuc   Irf2 [Ifng-gene - on] } .
+  -----------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Ifng-gene.irt.Lps.1010.txt
+
+*** Ikba--
+
+rl[860.Ikba.phos.irt.Lps]:
+  {XOut  | xout  Lps                                              }
+  {TLR4C | tlr4c Myd88 [Traf6 - K63ubiq]                          }
+  {CLc   | clc   ([Ikk1 - act] : [Ikk2 - act] : Nemo)   
+                 ([Tak1 - phos] : Tab1 : tab23s:Tab23S)
+                 (Ikba : Rela)                                    }
+  =>
+  {XOut  | xout  Lps                                              }
+  {TLR4C | tlr4c Myd88 [Traf6 - K63ubiq]                          }
+  {CLc   | clc   ([Ikk1 - act] : [Ikk2 - act] : Nemo)   
+                 ([Tak1 - phos] : Tab1 : tab23s:Tab23S)
+                 ([Ikba - phos]: Rela)                            } .
+  -------------------------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Ikba.phos.irt.Lps.860.txt
+
+rl[861.Ikba.degraded.irt.Lps]:
+  {XOut  | xout  Lps                                                }
+  {TLR4C | tlr4c [Irak4 - act] [Traf6 - K63ubiq]                    }
+  {CLc   | clc   ([Ikk1 - act] : [Ikk2 - act] : Nemo)   
+                 ([Tak1 - phos] : Tab1 : tab23s:Tab23S)
+                 [Casp1 - act] ([Ikba - phos]: Rela)                }
+  =>
+  {XOut  | xout  Lps                                                }
+  {TLR4C | tlr4c [Irak4 - act] [Traf6 - K63ubiq]                    }
+  {CLc   | clc   ([Ikk1 - act] : [Ikk2 - act] : Nemo)   
+                 ([Tak1 - phos] : Tab1 : tab23s:Tab23S)
+                 [Casp1 - act] Rela [Ikba - degraded]               } .
+  --------------------------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Ikba.degraded.irt.Lps.861.txt
+
+*** Ikba-gene--
+
+rl[1015.Ikba-gene.irt.Lps]:
+  {XOut  | xout  Lps                                     }
+  {TLR4C | tlr4c Myd88                                   }
+  {CLc   | clc   ([Ikk1 - act] : [Ikk2 - act] : Nemo)   
+                 Rnf11 Trif Tnfaip3                      }
+  {NUc   | nuc   [Rela - act] Ikba-gene                  }
+  =>
+  {XOut  | xout  Lps                                     }
+  {TLR4C | tlr4c Myd88                                   }
+  {CLc   | clc   ([Ikk1 - act] : [Ikk2 - act] : Nemo)   
+                 Rnf11 Trif Tnfaip3                      }
+  {NUc   | nuc   [Rela - act] [Ikba-gene - on]           } .
+  -----------------------------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Ikba-gene.irt.Lps.1015.txt
+
+*** Ikbb--
+
+rl[1593.Ikbb.degraded.irt.Lps]:
+  {XOut  | xout  Lps                                              }
+  {CLc   | clc   ([Ikk1 - act] : [Ikk2 - act] : Nemo)   
+                 (Ikbb : Rela)                                    }
+  =>
+  {XOut  | xout  Lps                                              }
+  {CLc   | clc   ([Ikk1 - act] : [Ikk2 - act] : Nemo)   
+                 Rela [Ikbb - degraded]                           } .
+  --------------------------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Ikbb.degraded.irt.Lps.1593.txt
+
+*** Ikke-- Ikke-gene--
+
+rl[1022.Ikke-gene.irt.Lps]:
+  {XOut  | xout  Lps                              }
+  {CLc   | clc    Tbk1                            }
+  {NUc   | nuc   [Rela - act]  Ikke-gene          }
+  =>
+  {XOut  | xout  Lps                              }
+  {CLc   | clc   Tbk1                             }
+  {NUc   | nuc   [Rela - act] [Ikke-gene - on]    } .
+  -----------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Ikke-gene.irt.Lps.1022.txt
+
+*** Ikk--
+*** Ikks--
+
+rl[574.Ikks.to.TLR4.irt.Lps]:
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4)                      }
+  {CLc   | clc   (Ikk1 : Ikk2 : Nemo)                                  }
+  =>
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4) (Ikk1 : Ikk2 : Nemo) }
+  {CLc   | clc                                                         } .
+  ------------------------------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Ikks.to.TLR4.irt.Lps.574.txt
+
+rl[847.Ikks.act.irt.Lps]:
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4) [Irak1 - act]
+                 (Ikk1 : Ikk2 : Nemo)                             }
+  =>
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4) [Irak1 - act]
+                 ([Ikk1 - act] : [Ikk2 - act] : Nemo)             } .
+  -------------------------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Ikks.act.irt.Lps.847.txt
+
+rl[589.Ikks.from.TLR4.irt.Lps]:
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4)
+                 ([Tak1 - phos] : Tab1 : tab23s:Tab23S) 
+                 ([Ikk1 - act] : [Ikk2 - act] : Nemo)                  }
+  {CLc   | clc                                                         }
+  =>
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4)                      }
+  {CLc   | clc   ([Tak1 - phos] : Tab1 : tab23s:Tab23S) 
+                 ([Ikk1 - act] : [Ikk2 - act] : Nemo)                  } .
+  ------------------------------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Ikks.from.TLR4.irt.Lps.589.txt
+
+*** IL1b-- IL1b-gene--
+
+rl[1024.IL1b-gene.irt.Lps]:
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4) Myd88 }
+  {CLc   | clc    Ikke                                  }
+  {NUc   | nuc    IL1b-gene                             }
+  =>
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4) Myd88 }
+  {CLc   | clc    Ikke                                  }
+  {NUc   | nuc   [IL1b-gene - on]                       } .
+  ---------------------------------------------------------
+  *** ~/evidence/Lps-Evidence/IL1b-gene.irt.Lps.1024.txt
+
+*** IL6-- IL6-gene--
+
+rl[1028.IL6-gene.irt.Lps]:
+  {XOut  | xout  Lps                                                }
+  {TLR4C | tlr4c [Irak4 - act] Myd88 [Traf6 - K63ubiq]              }
+  {CLc   | clc   ciap12:Ciap12S Irf5 Itgam Tirap
+                 ([Tak1 - phos] : Tab1 : tab23s:Tab23S)             }
+  {NUc   | nuc    Nfkbiz IL6-gene                                   }
+  =>
+  {XOut  | xout  Lps                                                }
+  {TLR4C | tlr4c [Irak4 - act] Myd88 [Traf6 - K63ubiq]              }
+  {CLc   | clc   ciap12:Ciap12S Irf5 Itgam Tirap
+                 ([Tak1 - phos] : Tab1 : tab23s:Tab23S)             }
+  {NUc   | nuc    Nfkbiz IL6-gene                                   } .
+  -----------------------------------------------------------------------
+  *** ~/evidence/Lps-Evidence/IL6-gene.irt.Lps.1028.txt
+
+*** IL8-- IL8-gene--
+
+rl[1031.IL8-gene.irt.Lps]:
+  {XOut  | xout  Lps                              }
+  {CLc   | clc    Peli2                           }
+  {NUc   | nuc    IL8-gene                        }
+  =>
+  {XOut  | xout  Lps                              }
+  {CLc   | clc    Peli2                           }
+  {NUc   | nuc   [IL8-gene - on]                  } .
+  -----------------------------------------------------
+  *** ~/evidence/Lps-Evidence/IL8-gene.irt.Lps.1031.txt
+
+*** IL10-- IL10-gene--
+
+rl[1032.IL10-gene.irt.Lps]:
+  {XOut  | xout  Lps                              }
+  {CLc   | clc    Irak1 Traf3                     }
+  {NUc   | nuc    IL10-gene                       }
+  =>
+  {XOut  | xout  Lps                              }
+  {CLc   | clc    Irak1 Traf3                     }
+  {NUc   | nuc   [IL10-gene - on]                 } .
+  -----------------------------------------------------
+  *** ~/evidence/Lps-Evidence/IL10-gene.irt.Lps.1032.txt
+
+*** IL12a-- IL12a-gene--
+
+rl[1034.IL12a-gene.irt.Lps]:
+  {XOut  | xout  Lps                              }
+  {CLc   | clc   ciap12:Ciap12S Myd88 Trif        }
+  {NUc   | nuc    IL12a-gene                      }
+  =>
+  {XOut  | xout  Lps                              }
+  {CLc   | clc   ciap12:Ciap12S Myd88 Trif        }
+  {NUc   | nuc   [IL12a-gene - on]                } .
+  -----------------------------------------------------
+  *** ~/evidence/Lps-Evidence/IL12a-gene.irt.Lps.1034.txt
+
+*** IL12b-- IL12b-gene--
+
+rl[1036.IL12b-gene.irt.Lps]:
+  {XOut  | xout  Lps                                   }
+  {CLc   | clc    Myd88 Trif Irf5                      }
+  {NUc   | nuc   Nfkbiz Irf1 Irf2 IL12b-gene           }
+  =>
+  {XOut  | xout  Lps                                   }
+  {CLc   | clc   Myd88 Trif Irf5                       }
+  {NUc   | nuc   Nfkbiz Irf1 Irf2 [IL12b-gene - on]    } .
+  -----------------------------------------------------
+  *** ~/evidence/Lps-Evidence/IL12b-gene.irt.Lps.1036.txt
+
+*** Irak1--
+
+rl[189.Irak1.to.TLR4.irt.Lps]:
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4)       }
+  {CLc   | clc   Irak1                                  }
+  =>
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4) Irak1 }
+  {CLc   | clc                                          } .
+  ---------------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Irak1.to.TLR4.irt.Lps.189.txt
+
+rl[629.Irak1.irt.Lps]:
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4) Irak1          }
+  {CLc   | clc   Tirap                                           }
+  =>
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4)  [Irak1 - act] }
+  {CLc   | clc   Tirap                                           } .
+  ------------------------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Irak1.irt.Lps.629.txt
+
+rl[607.Irak1.to.TLR2.irt.Lps]:
+  {TLR2C | tlr2c TLR2 Lps Lbp            }
+  {CLc   | clc Irak1                     }
+  =>
+  {TLR2C | tlr2c TLR2 Lps Lbp Irak1      }
+  {CLc   | clc                           } .
+  ------------------------------------------
+  *** ~/evidence/Lps-Evidence/Irak1.to.TLR2.irt.Lps.607.txt
+
+rl[878.Irak1.irt.TLR2.Lps]:
+  {TLR2C | tlr2c TLR2 Cd14 Lps Lbp Irak1         }
+  {CLc   | clc                                   }
+  =>
+  {TLR2C | tlr2c TLR2 Cd14 Lps Lbp [Irak1 - act] }
+  {CLc   | clc                                   } .
+  ----------------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Irak1.irt.TLR2.Lps.878.txt
+
+*** Irak4--
+
+rl[1581.Irak4.to.TLR4.irt.Lps]:
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4)               }
+  {CLc   | clc   Irak4                                          }
+  =>
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4) [Irak4 - act] }
+  {CLc   | clc                                                  } .
+  ------------------------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Irak4.to.TLR4.irt.Lps.1581.txt
+
+*** Irf3--
+
+rl[556.Irf3.dimer.irt.Lps]:
+  {XOut  | xout  Lps                              }
+  {CLc   | clc   Pkce Ticam2 Trif Irf3            }
+  =>
+  {XOut  | xout  Lps                              }
+  {CLc   | clc   Pkce Ticam2 Trif [Irf3 - dimer]  } .
+  -----------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Irf3.dimer.irt.Lps.556.txt
+
+rl[834.Irf3.to.nuc.irt.Lps]:
+  {XOut  | xout  Lps                  }
+  {CLc   | clc   [Irf3 - dimer]       }
+  {NUc   | nuc                        }
+  =>
+  {XOut  | xout  Lps                  }
+  {CLc   | clc                        }
+  {NUc   | nuc   [Irf3 - act]         } .
+  ---------------------------------------
+  *** ~/evidence/Lps-Evidence/Irf3.to.nuc.irt.Lps.834.txt
+  *** ~/evidence/Lps-Evidence/Irf3.act.irt.Lps.834.txt
+
+*** Irf7--
+
+rl[1017.Irf7.irt.Lps]:
+  {XOut  | xout  Lps                             }
+  {CLc   | clc   Irf7                            }
+  {NUc   | nuc                                   }
+  =>
+  {XOut  | xout  Lps                             }
+  {CLc   | clc                                   }
+  {NUc   | nuc   [Irf7 - act]                    } .
+  --------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Irf7.irt.Lps.1017.txt
+
+*** JnkS--
+
+rl[836.JnkS.irt.Lps]:
+  {XOut  | xout  Lps                                                }
+  {TLR4C | tlr4c [Irak1 - act] [Irak4 - act]  Myd88                 }
+  {CLc   | clc   ([Tak1 - phos] : Tab1 : tab23s:Tab23S)
+                 [Mekk3 - act] Mekk1 Tirap Jnks                     }
+  =>
+  {XOut  | xout  Lps                                                }
+  {TLR4C | tlr4c [Irak1 - act] [Irak4 - act]  Myd88                 }
+  {CLc   | clc   ([Tak1 - phos] : Tab1 : tab23s:Tab23S)
+                 [Mekk3 - act] Mekk1 Tirap [Jnks - act]             } .
+  ---------------------------------------------------------------------
+  *** ~/evidence/Lps-Evidence/JnkS.irt.Lps.836.txt
+
+*** Jun--
+
+rl[1021.Jun.irt.Lps]:
+  {XOut  | xout  Lps                   }
+  {NUc   | nuc   Jun                   }
+  =>
+  {XOut  | xout  Lps                   }
+  {NUc   | nuc   [Jun - act]           } .
+  ----------------------------------------
+  *** ~/evidence/Lps-Evidence/Jun.irt.Lps.1021.txt
+
+*** Jun-gene--
+
+rl[1594.Jun-gene.irt.Lps]:
+  {XOut  | xout Lps                     }
+  {NUc   | nuc  Jun-gene                }
+  =>
+  {XOut  | xout Lps                     }
+  {NUc   | nuc  [Jun-gene - on]         } .
+  -------------------------------------------
+  *** ~/evidence/Lps-Evidence/Jun-gene.irt.Lps.1594.txt
+
+*** Mef2c--
+
+rl[404.Mef2c.irt.Lps]:
+  {XOut  | xout Lps                   }
+  {CLc   | clc  [P38s - act] Mef2c    }
+  {NUc   | nuc                        }
+  =>
+  {XOut  | xout Lps                   }
+  {CLc   | clc  [P38s - act]          }
+  {NUc   | nuc  [Mef2c - act]         } .
+  ----------------------------------------
+  *** ~/evidence/Lps-Evidence/Mef2c.irt.Lps.404.txt
+
+*** Mek1--
+
+rl[1037.Mek1.irt.Lps]:
+  {XOut  | xout Lps                               }
+  {CLc   | clc  [Tpl2 - act] Mek1                 }
+  =>
+  {XOut  | xout Lps                               }
+  {CLc   | clc  [Tpl2 - act] [Mek1 - phos(SMANS)] } .
+  -----------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Mek1.irt.Lps.1037.txt
+
+*** Mekk2--
+
+rl[1038.Mekk2.irt.Lps]:
+  {XOut  | xout Lps                   }
+  {CLc   | clc  Mekk2                 }
+  =>
+  {XOut  | xout Lps                   }
+  {CLc   | clc  [Mekk2 - act]         } .
+  ----------------------------------------
+  *** ~/evidence/Lps-Evidence/Mekk2.irt.Lps.1038.txt
+
+*** Mekk3--
+
+rl[1062.Mekk3.irt.Lps]:
+  {XOut  | xout Lps                   }
+  {CLc   | clc  Mekk3                 }
+  =>
+  {XOut  | xout Lps                   }
+  {CLc   | clc  [Mekk3 - act]         } .
+  ----------------------------------------
+  *** ~/evidence/Lps-Evidence/Mekk3.irt.Lps.1062.txt
+
+*** Msk1--
+
+rl[1081.Msk1.irt.Lps]:
+  {XOut  | xout  Lps          }
+  {CLc   | clc  [Tpl2 - act]  }
+  {NUc   | nuc   Msk1         }
+  =>
+  {XOut  | xout Lps           }
+  {CLc   | clc  [Tpl2 - act]  }
+  {NUc   | nuc  [Msk1 - act]  } .
+  ---------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Msk1.irt.Lps.1081.txt
+
+*** Msk2--
+
+rl[1082.Msk2.irt.Lps]:
+  {XOut  | xout Lps                     }
+  {NUc   | nuc  Msk2                    }
+  =>
+  {XOut  | xout Lps                     }
+  {NUc   | nuc  [Msk2 - act]            } .
+  ---------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Msk2.irt.Lps.1082.txt
+
+*** Myd88--
+
+rl[857.Myd88.to.TLR4.irt.Lps]:
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4)       }
+  {CLc   | clc   Myd88                                  }
+  =>
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4) Myd88 }
+  {CLc   | clc                                          } .
+  ---------------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Myd88.to.TLR4.irt.Lps.857.txt
+
+*** Nfkb--
+
+rl[089.Nfkb.irt.Lps]:
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4) [Irak4 - act]
+                 Myd88  [Traf6 - K63ubiq]                           }
+  {CLc   | clc   [Btk - act] [Casp1 - act] Malt1 [Mekk3 - act] Pin1
+                 ([Ikk1 - act] : [Ikk2 - act] : Nemo)               }
+  {NUc   | nuc   [Cebpb - act] [Rela - act]                         }
+  {Sig   | sig                                                      }
+  =>
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4) [Irak4 - act]
+                 Myd88  [Traf6 - K63ubiq]                           }
+  {CLc   | clc   [Btk - act] [Casp1 - act] Malt1 [Mekk3 - act] Pin1
+                 ([Ikk1 - act] : [Ikk2 - act] : Nemo)               }
+  {NUc   | nuc   [Cebpb - act] [Rela - act]                         }
+  {Sig   | sig    NFKB-REPORTER-ON                                  } .
+  ------------------------------------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Nfkb.irt.Lps.089.txt
+
+*** Nfkb1--
+
+rl[038.Nfkb1.phos.irt.Lps]:
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4)       }
+  {CLc   | clc    Nfkb1                                 }
+  =>
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4)       }
+  {CLc   | clc    [Nfkb1 - phos(S 927)]                 } .
+  ---------------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Nfkb1.phos.irt.Lps.038.txt
+
+rl[047.Nfkb1.degraded.irt.Lps]:
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4)           }
+  {CLc   | clc   ([Ikk1 - act] : [Ikk2 - act] : Nemo) 
+                  [Nfkb1 - phos(S 927)]                     }
+  =>
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4)           }
+  {CLc   | clc   ([Ikk1 - act] : [Ikk2 - act] : Nemo) 
+                 [Nfkb1 - degraded]                         } .
+  -------------------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Nfkb1.degraded.irt.Lps.047.txt
+
+*** Nos2a-- Nos2a-gene--
+
+rl[1550.Nos2a-gene.irt.Lps]:
+  {XOut  | xout Lps                   }
+  {NUc   | nuc  Nos2a-gene            }
+  =>
+  {XOut  | xout Lps                   }
+  {NUc   | nuc  [Nos2a-gene - on]     } .
+  -------------------------------------------
+  *** ~/evidence/Lps-Evidence/Nos2a-gene.irt.Lps.1550.txt
+
+*** P38s--
+
+rl[837.P38s.irt.Lps]:
+  {XOut  | xout  Lps                                                  }
+  {TLR4C | tlr4c [Irak1 - act]  Myd88 [Pkce - phos(S 346)]            }
+  {CLc   | clc   [Casp1 - act] Mekk1 [Mekk3 - act] Tirap
+                 ([Tak1 - phos] : Tab1 : tab23s:Tab23S)
+                 P38s                                                 }
+  =>
+  {XOut  | xout  Lps                                                  }
+  {TLR4C | tlr4c [Irak1 - act]  Myd88 [Pkce - phos(S 346)]            }
+  {CLc   | clc   [Casp1 - act] Mekk1 [Mekk3 - act] Tirap
+                 ([Tak1 - phos] : Tab1 : tab23s:Tab23S)
+                 [P38s - act]                                        } .
+  -----------------------------------------------------------------------
+  *** ~/evidence/Lps-Evidence/P38s.irt.Lps.837.txt
+
+*** Pkce--
+
+rl[1595.Pkce.irt.Lps]:
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4)                      }
+  {CLc   | clc   Pkce                                                  }
+  =>
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4) [Pkce - phos(S 346)] }
+  {CLc   | clc                                                         } .
+  ------------------------------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Pkce.irt.Lps.1595.txt
+
+*** Ptgs2--
+
+rl[1084.Ptgs2-gene.irt.Lps]:
+  {XOut  | xout Lps                   }
+  {NUc   | nuc  Ptgs2-gene            }
+  =>
+  {XOut  | xout Lps                   }
+  {NUc   | nuc  [Ptgs2-gene - on]     } .
+  -------------------------------------------
+  *** ~/evidence/Lps-Evidence/Ptgs2-gene.irt.Lps.1084.txt
+
+*** Pxn--
+
+rl[1276.Pxn.irt.Lps]:
+  {XOut  | xout  Lps                      }
+  {CLc   | clc   Pxn                      }
+  =>
+  {XOut  | xout  Lps                      }
+  {CLc   | clc   [Pxn - phos]      } .
+  ----------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Pxn.irt.Lps.1276.txt
+
+*** Rela--
+
+rl[1046.Rela.irt.Lps]:
+  {XOut  | xout  Lps                                                }
+  {CLc   | clc   ([Ikk1 - act] : [Ikk2 - act] : Nemo)   
+                 ([Tak1 - phos] : Tab1 : tab23s:Tab23S)
+                 [Btk - act] Tirap Rela                             }
+  {NUc   | nuc                                                      }
+  =>
+  {XOut  | xout  Lps                                                }
+  {CLc   | clc   ([Ikk1 - act] : [Ikk2 - act] : Nemo)   
+                 ([Tak1 - phos] : Tab1 : tab23s:Tab23S)
+                 [Btk - act] Tirap                                  }
+  {NUc   | nuc   [Rela - act]                                       } .
+  ---------------------------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Rela.irt.Lps.1046.txt
+
+*** S6k1--
+
+rl[1612.S6k1.irt.Lps]:
+  {XOut  | xout  Lps           }
+  {CLc   | clc   S6k1          }
+  =>
+  {XOut  | xout  Lps           }
+  {CLc   | clc   [S6k1 - phos] } .
+  ----------------------------------------------------
+  *** ~/evidence/Lps-Evidence/S6k1.irt.Lps.1612.txt
+
+*** Stat3--
+
+rl[1266.Stat3.irt.Lps]:
+  {XOut  | xout  Lps                                            }
+  {TLR4C | tlr4c [Irak1 - act] }
+  {CLc   | clc   Stat3                                          }
+  {NUc   | nuc                                                  }
+  =>
+  {XOut  | xout  Lps                                            }
+  {TLR4C | tlr4c [Irak1 - act] }
+  {CLc   | clc                                                  }
+  {NUc   | nuc   [Stat3 - phos(S 727)]                          } .
+  -----------------------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Stat3.irt.Lps.1266.txt
+
+*** Tak1--
+
+rl[547.Tak1.to.TLR4.irt.Lps]:
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4)       }
+  {CLc   | clc   (Tak1 : Tab1 : tab23s:Tab23S)          }
+  =>
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4) 
+                 (Tak1 : Tab1 : tab23s:Tab23S)          }
+  {CLc   | clc                                          } .
+  ---------------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Tak1.to.TLR4.irt.Lps.547.txt
+
+rl[548.Tak1.phos.irt.Lps]:
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4)
+                 ciap12:Ciap12S Myd88 Traf6
+                 (Tak1 : Tab1 : tab23s:Tab23S)          }
+
+  =>
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4)
+                 ciap12:Ciap12S Myd88 Traf6
+                 ([Tak1 - phos] : Tab1 : tab23s:Tab23S) } .
+  ---------------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Tak1.phos.irt.Lps.548.txt
+
+*** Ticam2--
+
+rl[863.Ticam2.to.TLR4.irt.Lps]:
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4)        }
+  {CLc   | clc   Ticam2                                  }
+  =>
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4) Ticam2 }
+  {CLc   | clc                                           } .
+  ----------------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Ticam2.to.TLR4.irt.Lps.863.txt
+
+*** Tnf-- ProTnf-gene--
+
+rl[1546.ProTnf-gene.irt.Lps]:
+  {XOut  | xout  Lps                           }
+  {CLc   | clc   [ciap12s:Ciap12S - ubiq]      }
+  {NUc   | nuc   Hif1a ProTnf-gene             }
+  =>
+  {XOut  | xout  Lps                           }
+  {CLc   | clc   [ciap12s:Ciap12S - ubiq]      }
+  {NUc   | nuc   Hif1a [ProTnf-gene - on]      } .
+  ------------------------------------------------
+  *** ~/evidence/Lps-Evidence/ProTnf-gene.irt.Lps.1546.txt
+
+*** Tnfaip3-- Tnfaip3-gene--
+
+rl[1596.Tnfaip3-gene.irt.Lps]:
+  {XOut  | xout  Lps                         }
+  {NUc   | nuc   Tnfaip3-gene                }
+  =>
+  {XOut  | xout  Lps                         }
+  {NUc   | nuc   [Tnfaip3-gene - on]         } .
+  ------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Tnfaip3-gene.irt.Lps.1596.txt
+
+*** Tpl2--
+
+rl[026.Tpl2.irt.Lps]:
+  {XOut  | xout  Lps                                               }
+  {CLc   | clc   ([Ikk1 - act] : [Ikk2 - act] : Nemo)   Tpl2       }
+  =>
+  {XOut  | xout  Lps                                               }
+  {CLc   | clc   ([Ikk1 - act] : [Ikk2 - act] : Nemo) [Tpl2 - act] } .
+  --------------------------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Tpl2.irt.Lps.026.txt
+
+*** Traf3--
+
+rl[597.Traf3.to.TLR4.irt.Lps]:
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4)       }
+  {CLc   | clc   Traf3                                  }
+  =>
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4) Traf3 }
+  {CLc   | clc                                          } .
+  ---------------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Traf3.to.TLR4.irt.Lps.597.txt
+
+rl[624.Traf3.ubiq.irt.Lps]:
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4) Traf6  Traf3            }
+  =>
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4) Traf6 [Traf3 - K48ubiq] } .
+  ---------------------------------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Traf3.ubiq.irt.Lps.624.txt
+
+rl[630.Traf3.degraded.irt.Lps]:
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4) Traf6 [Traf3 - K48ubiq]  }
+  =>
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4) Traf6 [Traf3 - degraded] } .
+  ---------------------------------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Traf3.degraded.irt.Lps.630.txt
+
+*** Traf6--
+
+rl[1060.Traf6.to.TLR4.irt.Lps]:
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4)       }
+  {CLc   | clc   Traf6                                  }
+  =>
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4) Traf6 }
+  {CLc   | clc                                          } .
+  ---------------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Traf6.to.TLR4.irt.Lps.1060.txt
+
+rl[1597.Traf6.ubiq.irt.Lps]:
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4)  Traf6            }
+  =>
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4) [Traf6 - K63ubiq] } .
+  ---------------------------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Traf6.ubiq.irt.Lps.1597.txt
+
+*** Trif--
+
+rl[642.Trif.to.TLR4.irt.Lps]:
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4)      }
+  {CLc   | clc   Trif                                  }
+  =>
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4) Trif }
+  {CLc   | clc                                         } .
+  ---------------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Trif.to.TLR4.irt.Lps.642.txt
+
+*** Ubc13--
+
+rl[645.Ubc13.to.TLR4.irt.Lps]:
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4)       }
+  {CLc   | clc   Ubc13                                  }
+  =>
+  {TLR4C | tlr4c (Lps :  Lbp : Md2 : Cd14 : TLR4) Ubc13 }
+  {CLc   | clc                                          } .
+  ---------------------------------------------------------
+  *** ~/evidence/Lps-Evidence/Ubc13.to.TLR4.irt.Lps.645.txt
+
+*** Vegf-- Vegf-gene--
+
+rl[1551.Vegf-gene.irt.Lps]:
+  {XOut  | xout  Lps                      }
+  {NUc   | nuc    Vegf-gene               }
+  =>
+  {XOut  | xout  Lps                      }
+  {NUc   | nuc   [Vegf-gene - on]         } .
+  -------------------------------------------
+  *** ~/evidence/Lps-Evidence/Vegf-gene.irt.Lps.1551.txt
+
+
+
+
+
+endm

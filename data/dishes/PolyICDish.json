@@ -1,0 +1,10 @@
+{"stype" : "jnet",
+	 "name" : "PolyICDish",
+	 "type" : "pnet",
+	 "kbname" : "RKB",
+	 "parent" : "RKB",
+	 "rids" : ["704c.Ikba.Rela.complex", "425.TLR3.onby.PolyIC", "583.Rela.to.Nuc.irt.PolyIC", "453.Src.to.TLR3.irt.PolyIC", "437.Traf3.to.TLR3.irt.PolyIC", "444.Traf6.to.TLR3.irt.PolyIC", "429.Trif.to.TLR3.irt.PolyIC", "169c.Ikk1.Ikk2.Nemo.complex", "711.JnkS.irt.PolyIC", "715.P38.irt.PolyIC", "596.IKK.irt.PolyIC", "555c.Tab1.Tab23.Tak1.complex", "083.ErkS.irt.PolyIC", "478.IL12b-gene.irt.PolyIC", "742.Ripk1.irt.PolyIC", "451.Stat1.phos.irt.PolyIC", "326.Ikba.phosed.irt.PolyIC", "456.ProTnf-gene.irt.PolyIC", "456.ProTnf-gene.irt.PolyIC#1", "456.ProTnf-gene.irt.PolyIC#2", "415c.Erks.act", "466c.P38s.act", "475.CcL5-gene.irt.PolyIC", "477.IL6-gene.irt.PolyIC", "484.IL8-gene.irt.PolyIC", "476.Ifna4-gene.irt.PolyIC", "449.Irf3.dimer.irt.PolyIC", "448.Irf3.phos.irt.PolyIC", "743.Tak1.irt.PolyIC", "692.Irf3.to.Nuc.irt.PolyIC", "455.Ifnb1-gene.irt.PolyIC#1", "512.Ikba.degraded.irt.PolyIC"],
+	 "init" : ["PolyIC@XOut", "CcL5-gene@NUc", "Ifna4-gene@NUc", "Ifnb1-gene@NUc", "IL6-gene@NUc", "IL8-gene@NUc", "IL12b-gene@NUc", "ProTnf-gene@NUc", "Azi2@CLc", "Erks@CLc", "Hmgb1@NUc", "Hmgb2@NUc", "Hmgb3@NUc", "Ikba@CLc", "Ikk1@CLc", "Ikk2@CLc", "Irf3@CLc", "Irf7@CLc", "Jnks@CLc", "Nemo@CLc", "P38s@CLc", "Peli1@CLc", "Rela@CLc", "Ripk1@CLc", "Src@CLi", "Stat1@CLc", "Tab1@CLc", "Tab2@CLc", "Tak1@CLc", "Tbk1@CLc", "TLR3@TLR3C", "Tradd@CLc", "Traf3@CLc", "Traf6@CLc", "Trif@CLc", "Unc93b1@CLc"],
+	 "op" : "dishnet",
+	 "args" : "PolyICDish"
+} 

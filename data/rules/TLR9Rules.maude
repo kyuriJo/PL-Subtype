@@ -1,0 +1,233 @@
+mod TLR9RULES is inc ALLOPS .
+
+vars xout clo clm cli clc nuc sig rnac cvc chr : Soup .
+var tlr9c : Soup .
+vars erksmods : ModSet .
+
+*** ~/evidence/TLR9-Evidence/00TLR9-evidence.txt
+
+*** TLR9--
+
+rl[746.TLR9.irt.TLR9L]:
+  {XOut  | xout  TLR9L          }
+  {TLR9C | tlr9c TLR9           }
+  =>
+  {XOut  | xout                 }
+  {TLR9C | tlr9c (TLR9 : TLR9L) } .
+  ---------------------------------
+  *** ~/evidence/TLR9-Evidence/TLR9.irt.TLR9L.746.txt
+
+*** Erks--
+
+rl[457.Erks.irt.TLR9L]:
+  {TLR9C | tlr9c (TLR9 : TLR9L) Myd88 Traf6  }
+  {CLc   | clc    [Erks - erksmods]          }
+  =>
+  {TLR9C | tlr9c (TLR9 : TLR9L) Myd88 Traf6  }
+  {CLc   | clc   [Erks - erksmods phos(TEY)] } .
+  ----------------------------------------------
+  *** ~/evidence/TLR9-Evidence/Erks.irt.TLR9L.457.txt
+
+*** Ifna4-gene--
+
+rl[459.Ifna4-gene.irt.TLR9L]:
+  {TLR9C | tlr9c (TLR9 : TLR9L)     }
+  {NUc   | nuc   Ifna4-gene         }
+  =>
+  {TLR9C | tlr9c (TLR9 : TLR9L)     }
+  {NUc   | nuc   [Ifna4-gene - on]  } .
+  ----------------------------------------------
+  *** ~/evidence/TLR9-Evidence/Ifna4-gene.irt.TLR9L.459.txt
+
+*** Ifnb1-gene--
+
+rl[460.Ifnb1-gene.irt.TLR9L]:
+  {TLR9C | tlr9c (TLR9 : TLR9L)     }
+  {NUc   | nuc   Ifnb1-gene         }
+  =>
+  {TLR9C | tlr9c (TLR9 : TLR9L)     }
+  {NUc   | nuc   [Ifnb1-gene - on]  } .
+  ----------------------------------------------
+  *** ~/evidence/TLR9-Evidence/Ifnb1-gene.irt.TLR9L.460.txt
+
+*** Ikba--
+
+rl[1160.Ikba.irt.TLR9L]:
+  {TLR9C | tlr9c (TLR9 : TLR9L) Myd88 Traf6   }
+  {CLc   | clc   Tak1 Ikba                    }
+  =>
+  {TLR9C | tlr9c (TLR9 : TLR9L) Myd88 Traf6   }
+  {CLc   | clc   Tak1 [Ikba - degraded]       } .
+  -----------------------------------------------------
+  *** ~/evidence/TLR9-Evidence/Ikba.irt.TLR9L.1160.txt
+
+*** IkkS--
+
+rl[1162.IkkS.irt.TLR9L]:
+  {TLR9C | tlr9c (TLR9 : TLR9L)                      }
+  {CLc   | clc  (Ikk1 : Ikk2 : Nemo)                 }
+  =>
+  {TLR9C | tlr9c (TLR9 : TLR9L)                      }
+  {CLc   | clc  ([Ikk1 - act] : [Ikk2 - act] : Nemo) } .
+  -----------------------------------------------------
+  *** ~/evidence/TLR9-Evidence/Ikks.irt.TLR9L.1162.txt
+
+*** IL6-gene--
+
+rl[462.IL6-gene.irt.TLR9L]:
+  {TLR9C | tlr9c (TLR9 : TLR9L)   }
+  {NUc   | nuc   IL6-gene         }
+  =>
+  {TLR9C | tlr9c (TLR9 : TLR9L)   }
+  {NUc   | nuc   [IL6-gene - on]  } .
+  ------------------------------------
+  *** ~/evidence/TLR9-Evidence/IL6-gene.irt.TLR9L.462.txt
+
+*** Irak1--
+
+rl[1142.Irak1.irt.TLR9L]:
+  {TLR9C | tlr9c (TLR9 : TLR9L)               }
+  {CLc   | clc   Irak1                        }
+  =>
+  {TLR9C | tlr9c (TLR9 : TLR9L) [Irak1 - act] }
+  {CLc   | clc                                } .
+  ------------------------------------------------
+  *** ~/evidence/TLR9-Evidence/Irak1.irt.TLR9L.1142.txt
+
+*** Irf5--
+
+rl[1144.Irf5.irt.TLR9L]:
+  {TLR9C | tlr9c (TLR9 : TLR9L) Myd88 }
+  {CLc   | clc   Irf5                 }
+  {NUc   | nuc                        }
+  =>
+  {TLR9C | tlr9c (TLR9 : TLR9L) Myd88 }
+  {CLc   | clc                        }
+  {NUc   | nuc   [Irf5 - act]         } .
+  ----------------------------------------
+  *** ~/evidence/TLR9-Evidence/Irf5.irt.TLR9L.1144.txt
+
+*** Irf7--
+
+rl[752.Irf7.irt.TLR9L]:
+  {TLR9C | tlr9c (TLR9 : TLR9L) Myd88 [Irak1 - act] }
+  {CLc   | clc   Irf7                               }
+  {NUc   | nuc                                      }
+  =>
+  {TLR9C | tlr9c (TLR9 : TLR9L) Myd88 [Irak1 - act] }
+  {CLc   | clc                                      }
+  {NUc   | nuc   [Irf7 - act]                       } .
+  ------------------------------------------------------
+  *** ~/evidence/TLR9-Evidence/Irf7.irt.TLR9L.752.txt
+
+*** Jnks--
+
+rl[1146.Jnks.irt.TLR9L]:
+  {TLR9C | tlr9c (TLR9 : TLR9L) Myd88 Traf6 }
+  {CLc   | clc   Jnks                       }
+  =>
+  {TLR9C | tlr9c (TLR9 : TLR9L) Myd88 Traf6 }
+  {CLc   | clc   [Jnks - act]               } .
+  -----------------------------------------------
+  *** ~/evidence/TLR9-Evidence/JnkS.irt.TLR9L.1146.txt
+
+*** Myd88--
+
+rl[761.Myd88.irt.TLR9L]:
+  {TLR9C | tlr9c (TLR9 : TLR9L)       }
+  {CLc   | clc   Myd88                }
+  =>
+  {TLR9C | tlr9c (TLR9 : TLR9L) Myd88 }
+  {CLc   | clc                        } .
+  ----------------------------------------
+  *** ~/evidence/TLR9-Evidence/Myd88.irt.TLR9L.761.txt
+
+*** P38s--
+
+rl[465.P38s.irt.TLR9L]:
+  {TLR9C | tlr9c (TLR9 : TLR9L) Myd88 Traf6  }
+  {CLc   | clc    P38s                       }
+  =>
+  {TLR9C | tlr9c (TLR9 : TLR9L) Myd88 Traf6  }
+  {CLc   | clc   [P38s - phos(TGY)]          } .
+  ------------------------------------------------
+  *** ~/evidence/TLR9-Evidence/P38s.irt.TLR9L.465.txt
+
+*** Rel--
+
+rl[1154.Rel.irt.TLR9L]:
+  {TLR9C | tlr9c (TLR9 : TLR9L)      }
+  {CLc   | clc   Rel                 }
+  {NUc   | nuc   Irf8                }
+  =>
+  {TLR9C | tlr9c (TLR9 : TLR9L)      }
+  {CLc   | clc                       }
+  {NUc   | nuc   Irf8 [Rel - act]    } .
+  ---------------------------------------
+  *** ~/evidence/TLR9-Evidence/Rel.irt.TLR9L.1154.txt
+
+*** Rela--
+
+rl[1149.Rela.irt.TLR9L]:
+  {TLR9C | tlr9c (TLR9 : TLR9L) Myd88 }
+  {CLc   | clc   Rela                 }
+  {NUc   | nuc   Irf8                 }
+  =>
+  {TLR9C | tlr9c (TLR9 : TLR9L) Myd88 }
+  {CLc   | clc                        }
+  {NUc   | nuc   Irf8 [Rela - act]    } .
+  ----------------------------------------
+  *** ~/evidence/TLR9-Evidence/Rela.irt.TLR9L.1149.txt
+
+*** Relb--
+
+rl[1155.Relb.irt.TLR9L]:
+  {TLR9C | tlr9c (TLR9 : TLR9L)     }
+  {CLc   | clc   Relb               }
+  {NUc   | nuc   Irf8               }
+  =>
+  {TLR9C | tlr9c (TLR9 : TLR9L)     }
+  {CLc   | clc                      }
+  {NUc   | nuc   Irf8 [Relb - act]  } .
+  --------------------------------------
+  *** ~/evidence/TLR9-Evidence/Relb.irt.TLR9L.1155.txt
+
+*** Tbk1--
+
+rl[777.Tbk1.irt.TLR9L]:
+  {TLR9C | tlr9c (TLR9 : TLR9L) }
+  {CLc   | clc   Tbk1           }
+  =>
+  {TLR9C | tlr9c (TLR9 : TLR9L) }
+  {CLc   | clc   [Tbk1 - act]   } .
+  --------------------------------
+  *** ~/evidence/TLR9-Evidence/Tbk1.irt.TLR9L.777.txt
+
+*** Tnf--
+*** ProTnf-gene--
+
+rl[467.ProTnf-gene.irt.TLR9L]:
+  {TLR9C | tlr9c (TLR9 : TLR9L)                 }
+  {CLc   | clc   Peli1 Unc93b1                  }
+  {NUc   | nuc   hmgb:HmgbS ProTnf-gene         }
+  =>
+  {TLR9C | tlr9c (TLR9 : TLR9L)                 }
+  {CLc   | clc   Peli1 Unc93b1                  }
+  {NUc   | nuc   hmgb:HmgbS [ProTnf-gene - on]  } .
+  -----------------------------------------------
+  *** ~/evidence/TLR9-Evidence/ProTnf-gene.irt.TLR9L.467.txt
+
+*** Traf6--
+
+rl[458.Traf6.irt.TLR9L]:
+  {TLR9C | tlr9c (TLR9 : TLR9L)       }
+  {CLc   | clc    Traf6               }
+  =>
+  {TLR9C | tlr9c (TLR9 : TLR9L) Traf6 }
+  {CLc   | clc                        } .
+  -----------------------------------------
+  *** ~/evidence/TLR9-Evidence/Traf6.irt.TLR9L.458.txt
+
+
+
+endm

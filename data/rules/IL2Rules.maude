@@ -1,0 +1,561 @@
+mod IL2RULES is inc ALLOPS .
+
+vars xout clo clm cli clc nuc sig rnac cvc chr : Soup .
+var il2rc : Soup .
+vars erksmods : ModSet .
+
+*** ~/evidence/IL2-Evidence/00IL2-Evidence.txt
+
+rl[1011.IL2R.irt.IL2]:
+  {XOut  | xout  IL2                                     }
+  {IL2RC | il2rc IL2Rb                                   }
+  {CLm   | clm   IL2Ra  IL2Rg                            }
+  =>
+  {XOut  | xout                                          }
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {CLm   | clm                                           } .
+  ------------------------------------------------------------------------------
+  *** ~/evidence/IL2-Evidence/IL2R.irt.IL2.1011.txt
+
+*** Akt--
+
+rl[1092.Akt1.irt.IL2]:
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2)  [Pi3k - Yphos] }
+  {CLi   | cli   [Rac1 - GTP]                                            }
+  {CLc   | clc   [Syk - act]  Akt1                                       }
+  =>
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2)  [Pi3k - Yphos] }
+  {CLi   | cli   [Rac1 - GTP]                                            }
+  {CLc   | clc   [Syk - act]  [Akt1 - act]                               } .
+  ------------------------------------------------------------------------------
+  *** ~/evidence/IL2-Evidence/Akt1.irt.IL2.1092.txt
+
+
+*** Bcl2-- Bcl2-gene--
+
+rl[1101.Bcl2-gene.irt.IL2]:
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {NUc   | nuc    Bcl2-gene                              }
+  =>
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {NUc   | nuc   [Bcl2-gene - on]                        } .
+  ------------------------------------------------------------------------------
+  *** ~/evidence/IL2-Evidence/Bcl2-gene.irt.IL2.1101.txt
+
+*** Bclxl-- Bclxl-gene--
+
+rl[1182.Bclxl-gene.irt.IL2]:
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {NUc   | nuc    Bclxl-gene                             }
+  =>
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {NUc   | nuc   [Bclxl-gene - on]                       } .
+  ------------------------------------------------------------------------------
+  *** ~/evidence/IL2-Evidence/Bclxl-gene.irt.IL2.1182.txt
+
+*** Cdc2-- Cdk1-gene--
+
+rl[1165.Cdk1-gene.irt.IL2]:
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {NUc   | nuc    Cdk1-gene                              }
+  =>
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {NUc   | nuc   [Cdk1-gene - on]                        } .
+  ----------------------------------------------------------
+  *** ~/evidence/IL2-Evidence/Cdk1-gene.irt.IL2.1165.txt
+
+*** Cdk2-- Cdk2-gene--
+
+rl[1105.Cdk2-gene.irt.IL2]:
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {NUc   | nuc    Cdk2-gene                              }
+  =>
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {NUc   | nuc   [Cdk2-gene - on]                        } .
+  -----------------------------------------------------------
+  *** ~/evidence/IL2-Evidence/Cdk2-gene.irt.IL2.1105.txt
+
+*** Cdk6-- Cdk6-gene--
+
+rl[1187.Cdk6-gene.irt.IL2]:
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {NUc   | nuc    Cdk6-gene                              }
+  =>
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {NUc   | nuc   [Cdk6-gene - on]                        } .
+  ----------------------------------------------------------
+  *** ~/evidence/IL2-Evidence/Cdk6-gene.irt.IL2.1187.txt
+
+*** Cish--  Cish-gene--
+
+rl[1183.Cish-gene.irt.IL2]:
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {NUc   | nuc    Cish-gene                              }
+  =>
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {NUc   | nuc   [Cish-gene - on]                        } .
+  ----------------------------------------------------------
+  *** ~/evidence/IL2-Evidence/Cish-gene.irt.IL2.1183.txt
+
+*** CyclinC-- CyclinC-gene--
+
+rl[1109.CyclinC-gene.irt.IL2]:
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {NUc   | nuc    CyclinC-gene                           }
+  =>
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {NUc   | nuc   [CyclinC-gene - on]                     } .
+  ----------------------------------------------------------
+  *** ~/evidence/IL2-Evidence/CyclinC-gene.irt.IL2.1109.txt
+
+*** CyclinD2-- CyclinD2-gene--
+
+rl[1110.CyclinD2-gene.irt.IL2]:
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {NUc   | nuc    CyclinD2-gene                          }
+  =>
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {NUc   | nuc   [CyclinD2-gene - on]                    } .
+  ----------------------------------------------------------
+  *** ~/evidence/IL2-Evidence/CyclinD2-gene.irt.IL2.1110.txt
+
+*** CyclinD3-- CyclinD3-gene--
+
+rl[1112.CyclinD3-gene.irt.IL2]:
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {NUc   | nuc    CyclinD3-gene                          }
+  =>
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {NUc   | nuc   [CyclinD3-gene - on]                    } .
+  ----------------------------------------------------------
+  *** ~/evidence/IL2-Evidence/CyclinD3-gene.irt.IL2.1112.txt
+
+*** Elk1--
+
+rl[1114.Elk1.irt.IL2]:
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {NUc   | nuc    Elk1                                   }
+  =>
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {NUc   | nuc   [Elk1 - act]                            } .
+  ----------------------------------------------------------
+  *** ~/evidence/IL2-Evidence/Elk1.irt.IL2.1114.txt
+
+*** Erks-- Erk1-- Erk2--
+
+rl[1119.Erks.irt.IL2]:
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {CLc   | clc   Shp2 [Erks - erksmods]                  }
+  =>
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {CLc   | clc   Shp2 [Erks - erksmods act phos(TEY)]    } .
+  -----------------------------------------------------------
+  *** ~/evidence/IL2-Evidence/Erks.irt.IL2.1119.txt
+
+*** Fak2--
+
+rl[1120.Fak2.irt.IL2]:
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) [Jak3 - Yphos] }
+  {CLc   | clc   Fak2                                                   }
+  =>
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) [Jak3 - Yphos] }
+  {CLc   | clc   [Fak2 - act]                                           } .
+  -------------------------------------------------------------------------
+  *** ~/evidence/IL2-Evidence/Fak2.irt.IL2.1120.txt
+
+*** Fos-- Fos-gene--
+
+rl[1123.Fos-gene.irt.IL2]:
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) [Jak3 - Yphos] }
+  {NUc   | nuc    Fos-gene                                              }
+  =>
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) [Jak3 - Yphos] }
+  {NUc   | nuc   [Fos-gene - on]                                        } .
+  -------------------------------------------------------------------------
+  *** ~/evidence/IL2-Evidence/Fos-gene.irt.IL2.1123.txt
+
+*** Fosb-- Fosb-gene--
+
+rl[1129.Fosb-gene.irt.IL2]:
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {NUc   | nuc    Fosb-gene                              }
+  =>
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {NUc   | nuc   [Fosb-gene - on]                        } .
+  -----------------------------------------------------------
+  *** ~/evidence/IL2-Evidence/Fosb-gene.irt.IL2.1129.txt
+
+*** Fosl1-- Fosl1-gene--
+
+rl[1130.Fosl1-gene.irt.IL2]:
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {NUc   | nuc    Fosl1-gene                             }
+  =>
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {NUc   | nuc   [Fosl1-gene - on]                       } .
+  ----------------------------------------------------------
+  *** ~/evidence/IL2-Evidence/Fosl1-gene.irt.IL2.1130.txt
+
+*** Foxp3-- Foxp3-gene--
+
+rl[1188.Foxp3-gene.irt.IL2]:
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {NUc   | nuc    Foxp3-gene                             }
+  =>
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {NUc   | nuc   [Foxp3-gene - on]                       } .
+  ----------------------------------------------------------
+  *** ~/evidence/IL2-Evidence/Foxp3-gene.irt.IL2.1188.txt
+
+*** Fyn--
+
+rl[1133.Fyn.irt.IL2]:
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {CLi   | cli    Fyn                                    }
+  =>
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {CLi   | cli   [Fyn - act]                             } .
+  -----------------------------------------------------------
+  *** ~/evidence/IL2-Evidence/Fyn.irt.IL2.1133.txt
+
+*** Gab2--
+
+rl[1141.Gab2.irt.IL2]:
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) [Jak3 - Yphos] }
+  {CLc   | clc   Gab2                                                   }
+  =>
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) [Jak3 - Yphos] }
+  {CLc   | clc   [Gab2 - Yphos]                                         } .
+  -------------------------------------------------------------------------
+  *** ~/evidence/IL2-Evidence/Gab2.irt.IL2.1141.txt
+
+*** Grb2--
+
+rl[1143.Grb2.irt.IL2]:
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2)      }
+  {CLc   | clc    Grb2                                        }
+  =>
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) Grb2 }
+  {CLc   | clc                                                } .
+  ---------------------------------------------------------------
+  *** ~/evidence/IL2-Evidence/Grb2.irt.IL2.1143.txt
+
+*** Hras--
+
+rl[1148.Hras.irt.IL2]:
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {CLi   | cli   [Hras - GDP]                            }
+  =>
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {CLi   | cli   [Hras - GTP]                            } .
+  ----------------------------------------------------------
+  *** ~/evidence/IL2-Evidence/Hras.irt.IL2.1148.txt
+
+*** Irs1--
+
+rl[1150.Irs1.irt.IL2]:
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {CLc   | clc    Irs1                                   }
+  =>
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {CLc   | clc   [Irs1 - Yphos]                          } .
+  ----------------------------------------------------------
+  *** ~/evidence/IL2-Evidence/Irs1.irt.IL2.1150.txt
+
+*** Jak1--
+
+rl[1156.Jak1.irt.IL2]:
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2)  Jak1          }
+  =>
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) [Jak1 - Yphos] } .
+  -------------------------------------------------------------------------
+  *** ~/evidence/IL2-Evidence/Jak1.irt.IL2.1156.txt
+
+*** Jak3--
+
+rl[1158.Jak3.irt.IL2]:
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2)                }
+  {CLc   | clc    Jak3                                                  }
+  =>
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) [Jak3 - Yphos] }
+  {CLc   | clc                                                          } .
+  -------------------------------------------------------------------------
+  *** ~/evidence/IL2-Evidence/Jak3.irt.IL2.1158.txt
+
+*** Jnks--  Jnk1--  Jnk2-- Jnk3--
+
+rl[1159.Jnks.irt.IL2]:
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {CLc   | clc   Jnks                                    }
+  =>
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {CLc   | clc   [Jnks - act]                            } .
+  ----------------------------------------------------------
+  *** ~/evidence/IL2-Evidence/Jnks.irt.IL2.1159.txt
+
+*** Jun-gene--
+
+rl[1163.Jun-gene.irt.IL2]:
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {NUc   | nuc    Jun-gene                               }
+  =>
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {NUc   | nuc   [Jun-gene - on]                         } .
+  ----------------------------------------------------------
+  *** ~/evidence/IL2-Evidence/Jun-gene.irt.IL2.1163.txt
+
+*** Junb-gene--
+
+rl[1164.Junb-gene.irt.IL2]:
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {NUc   | nuc    Junb-gene                              }
+  =>
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {NUc   | nuc   [Junb-gene - on]                        } .
+  ----------------------------------------------------------
+  *** ~/evidence/IL2-Evidence/Junb-gene.irt.IL2.1164.txt
+
+*** Lck--
+
+rl[1166.Lck.irt.IL2]:
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {CLi   | cli    Lck                                    }
+  =>
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {CLi   | cli   [Lck - act]                             } .
+  ----------------------------------------------------------
+  *** ~/evidence/IL2-Evidence/Lck.irt.IL2.1166.txt
+
+*** Lyn--
+
+rl[1167.Lyn.irt.IL2]:
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {CLi   | cli    Lyn                                    }
+  =>
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {CLi   | cli   [Lyn - act]                             } .
+  -----------------------------------------------------------
+  *** ~/evidence/IL2-Evidence/Lyn.irt.IL2.1167.txt
+
+*** Mapkapk2--
+
+rl[1169.Mapkapk2.irt.IL2]:
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {CLc   | clc    Mapkapk2                               }
+  =>
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {CLc   | clc   [Mapkapk2 - act]                        } .
+  ----------------------------------------------------------
+  *** ~/evidence/IL2-Evidence/Mapkapk2.irt.IL2.1169.txt
+
+*** Max-- Max-gene--
+
+rl[1170.Max-gene.irt.IL2]:
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {NUc   | nuc    Max-gene                               }
+  =>
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {NUc   | nuc   [Max-gene - on]                         } .
+  ----------------------------------------------------------
+  *** ~/evidence/IL2-Evidence/Max-gene.irt.IL2.1170.txt
+
+*** Mek1--
+
+rl[1171.Mek1.irt.IL2]:
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {CLc   | clc    Mek1                                   }
+  =>
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {CLc   | clc   [Mek1 - act]                            } .
+  ----------------------------------------------------------
+  *** ~/evidence/IL2-Evidence/Mek1.irt.IL2.1171.txt
+
+*** Myb-- Myb-gene--
+
+rl[1172.Myb-gene.irt.IL2]:
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {NUc   | nuc    Myb-gene                               }
+  =>
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {NUc   | nuc   [Myb-gene - on]                         } .
+  ----------------------------------------------------------
+  *** ~/evidence/IL2-Evidence/Myb-gene.irt.IL2.1172.txt
+
+*** Myc-- Myc-gene--
+
+rl[1173.Myc-gene.irt.IL2]:
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {CLc   | clc    Stam Stam2                             }
+  {NUc   | nuc    Myc-gene                               }
+  =>
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {CLc   | clc    Stam Stam2                             }
+  {NUc   | nuc   [Myc-gene - on]                         } .
+  ----------------------------------------------------------
+  *** ~/evidence/IL2-Evidence/Myc-gene.irt.IL2.1173.txt
+
+*** P38s--
+
+rl[1176.P38s.irt.IL2]:
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {CLc   | clc    P38s                           }
+  =>
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {CLc   | clc   [P38s - act]                    } .
+  --------------------------------------------------
+  *** ~/evidence/IL2-Evidence/P38s.irt.IL2.1176.txt
+
+*** Pi3k--  Pik3rs--
+
+rl[1177.Pi3k.irt.IL2]:
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2)                }
+  {CLc   | clc    Pi3k                                                  }
+  =>
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) [Pi3k - Yphos] }
+  {CLc   | clc                                                          } .
+  -------------------------------------------------------------------------
+  *** ~/evidence/IL2-Evidence/Pi3k.irt.IL2.1177.txt
+
+*** Rac1--
+
+rl[1178.Rac1.irt.IL2]:
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {CLi   | cli   [Rac1 - GDP]                            }
+  {CLc   | clc   [Syk - act]                             }
+  =>
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {CLi   | cli   [Rac1 - GTP]                            }
+  {CLc   | clc   [Syk - act]                             } .
+  ---------------------------------------------------------------
+  *** ~/evidence/IL2-Evidence/Rac1.irt.IL2.1178.txt
+
+*** Raf1--
+
+rl[1184.Raf1.irt.IL2]:
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {CLc   | clc    Raf1                                   }
+  =>
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {CLc   | clc   [Raf1 - act]                            } .
+  ----------------------------------------------------------
+  *** ~/evidence/IL2-Evidence/Raf1.irt.IL2.1184.txt
+
+*** S6k1--
+
+rl[1189.S6k1.irt.IL2]:
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {CLc   | clc    S6k1                                   }
+  =>
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {CLc   | clc   [S6k1 - act]                            } .
+  ----------------------------------------------------------
+  *** ~/evidence/IL2-Evidence/S6k1.irt.IL2.1189.txt
+
+*** Shc1--
+
+rl[1145.Shc1.irt.IL2]:
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2)                }
+  {CLc   | clc    Shc1                                                  }
+  =>
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) [Shc1 - Yphos] }
+  {CLc   | clc                                                          } .
+  -------------------------------------------------------------------------
+  *** ~/evidence/IL2-Evidence/Shc1.irt.IL2.1145.txt
+
+*** Shp2--
+
+rl[1185.Shp2.irt.IL2]:
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2)                }
+  {CLc   | clc    Shp2                                                  }
+  =>
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) [Shp2 - Yphos] }
+  {CLc   | clc                                                          } .
+  -------------------------------------------------------------------------
+  *** ~/evidence/IL2-Evidence/Shp2.irt.IL2.1185.txt
+
+*** Socs3-- Socs3-gene--
+
+rl[1186.Socs3-gene.irt.IL2]:
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {NUc   | nuc    Socs3-gene                             }
+  =>
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {NUc   | nuc   [Socs3-gene - on]                       } .
+  ----------------------------------------------------------
+  *** ~/evidence/IL2-Evidence/Socs3-gene.irt.IL2.1186.txt
+
+*** Sos1--
+
+rl[1147.Sos1.irt.IL2]:
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2)      }
+  {CLc   | clc    Sos1                                        }
+  =>
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) Sos1 }
+  {CLc   | clc                                                } .
+  ---------------------------------------------------------------
+  *** ~/evidence/IL2-Evidence/Sos1.irt.IL2.1147.txt
+
+*** Stam--
+
+rl[1190.Stam.irt.IL2]:
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {CLc   | clc   Stam                                    }
+  =>
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) }
+  {CLc   | clc   [Stam - Yphos]                          } .
+  ----------------------------------------------------------
+  *** ~/evidence/IL2-Evidence/Stam.irt.IL2.1190.txt
+
+*** Stat3--
+
+rl[1180.Stat3.irt.IL2]:
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2)  }
+  {CLc   | clc   Stat3                                    }
+  =>
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2)  }
+  {CLc   | clc   [Stat3 - Yphos act]                      } .
+  -----------------------------------------------------------
+  *** ~/evidence/IL2-Evidence/Stat3.irt.IL2.1180.txt
+
+*** Stat5s--
+
+rl[1181.Stat5s.irt.IL2]:
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2)  
+                 [Jak1 - Yphos] [Jak3 - Yphos]           }
+  {CLc   | clc   stat5s:Stat5S                           }
+  =>
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2)
+                 [Jak1 - Yphos] [Jak3 - Yphos]           }
+  {CLc   | clc   [stat5s:Stat5S - Yphos act]             } .
+  ----------------------------------------------------------
+  *** ~/evidence/IL2-Evidence/Stat5s.irt.IL2.1181.txt
+
+*** Syk--
+
+rl[1179.Syk.irt.IL2]:
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) [Jak3 - Yphos] }
+  {CLc   | clc   Syk                                                    }
+  =>
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) [Jak3 - Yphos] }
+  {CLc   | clc   [Syk - act]                                            } .
+  -------------------------------------------------------------------------
+  *** ~/evidence/IL2-Evidence/Syk.irt.IL2.1179.txt
+
+**********************************************************************
+*** Proliferation - Thymidine Incorporation
+
+rl[1245.Proliferation.irt.IL2]:
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) [Jak3 - Yphos] }
+  {CLc   | clc   [Fak2 - act] [stat5s:Stat5S - Yphos act]               }
+  {Sig   | sig                                                          }
+  =>
+  {IL2RC | il2rc (IL2Ra : [IL2Rb - Yphos] : IL2Rg : IL2) [Jak3 - Yphos] }
+  {CLc   | clc   [Fak2 - act] [stat5s:Stat5S - Yphos act]               }
+  {Sig   | sig   PROLIFERATION                                          } .
+  -------------------------------------------------------------------------
+  *** ~/evidence/IL2-Evidence/Proliferation.irt.IL2.1245.txt
+
+
+
+endm
+

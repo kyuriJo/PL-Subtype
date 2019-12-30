@@ -1,0 +1,9 @@
+mod CD3RULES is inc ALLOPS .
+
+var xout clc nuc chr : Soup .
+
+*** ~/evidence/Cd3-Evidence/00Cd3-evidence.txt
+*** ~/evidence/Cd3-Evidence/00Cd3Cd28-evidence.txt
+
+
+endm

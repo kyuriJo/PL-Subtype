@@ -1,0 +1,10 @@
+{"stype" : "jnet",
+	 "name" : "IRadDish",
+	 "type" : "pnet",
+	 "kbname" : "RKB",
+	 "parent" : "RKB",
+	 "rids" : ["1738.DSB.irt.IR", "088.Creb1.irt.IR", "058.Nemo.irt.IR", "1450.Cdkn1a-gene.irt.IR", "371.Fancd2.to.DDF.irt.IR", "1452.Mdm2-gene.irt.IR", "348c.Mre11.Rad50.Nbs1.complex", "1453.Pirh2-gene.irt.IR", "341.Tip60.to.DDF.irt.IR", "1455.Tp53aip1-gene.irt.IR", "279.MRN.to.DDF.irt.IR", "322.Atm.to.DDF.irt.IR", "1449.Atm.phos.irt.IR", "329.Atm.acetyl.irt.IR", "081c.Atm.act", "106.Abl1.irt.IR", "292.Trim28.irt.IR", "110.Nbs1.phos.irt.IR", "167.H2ax.irt.IR", "260.Mdc1.to.DDF.irt.IR", "289.Atr.to.DDF.irt.IR", "214.Chek1.irt.IR", "273c.Atm.autophos", "346c.H2ax.by.Atm", "370c.Mdc1.by.Atm", "300c.H2ax.Mdc1.complex", "372.Mdc1.phos.irt.IR", "265.Rnf8.to.DDF.irt.IR", "383.Rap80.to.DDF.irt.IR", "274.Tp53bp1.to.DDF.irt.IR", "277.Brca1.to.DDF.irt.IR", "367c.Brca1.by.Atm", "368.Chek2.to.DDF.irt.IR", "140.Smc1a.irt.IR", "119c.Chek2.by.Atm", "1451.Chek2.irt.IR", "234c.Chek2.act"],
+	 "init" : ["Cdkn1a-gene@NUc", "Mdm2-gene@NUc", "Pirh2-gene@NUc", "Tp53aip1-gene@NUc", "Abl1@CLc", "Atm@NUc", "Atr@NUc", "Brca1@NUc", "Chek1@NUc", "Chek2@NUc", "Claspin@NUc", "Creb1@NUc", "Fancd2@NUc", "H2ax@CHR", "Mdc1@NUc", "Mre11@NUc", "Nbs1@NUc", "Nemo@CLc", "Rad50@NUc", "Rap80@NUc", "Rnf8@NUc", "Smc1a@NUc", "Tip60@NUc", "Tp53@NUc", "Tp53bp1@NUc", "Trim28@NUc", "IR@XOut"],
+	 "op" : "dishnet",
+	 "args" : "IRadDish"
+} 

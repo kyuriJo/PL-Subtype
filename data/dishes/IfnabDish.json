@@ -1,0 +1,10 @@
+{"stype" : "jnet",
+	 "name" : "IfnabDish",
+	 "type" : "pnet",
+	 "kbname" : "RKB",
+	 "parent" : "RKB",
+	 "rids" : ["1553.IfnaR1.IfnaR2.irt.Ifnabs", "481.Irf7-gene.irt.Ifnabs", "1554.CcL3-gene.irt.Ifnabs", "1555.CrkL.irt.Ifnabs", "1557.CxcL10-gene.irt.Ifnabs", "1556.CxcL9-gene.irt.Ifnabs", "1558.Gab1.irt.Ifnabs", "1561.Stat1.phos.irt.Ifnabs", "470.Stat2.phos.irt.Ifnabs", "1563.Stat1.to.nuc.irt.Ifnabs", "471.Stat2.to.nuc.irt.Ifnabs", "1559.Hif1a-gene.irt.Ifnabs", "1560.Ifi6-gene.irt.Ifnabs", "469.Ifit2-gene.irt.Ifnabs"],
+	 "init" : ["CcL3-gene@NUc", "CxcL9-gene@NUc", "CxcL10-gene@NUc", "Hif1a-gene@NUc", "Ifi6-gene@NUc", "Ifit2-gene@NUc", "Irf7-gene@NUc", "CrkL@CLc", "Gab1@CLc", "Ifnabs@XOut", "IfnaR1@CLm", "IfnaR2@IfnaRC", "Irf9@NUc", "Jak2@CLc", "Stat1@CLc", "Stat2@CLc", "Stat2@CLc"],
+	 "op" : "dishnet",
+	 "args" : "IfnabDish"
+} 

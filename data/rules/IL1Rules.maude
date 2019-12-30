@@ -1,0 +1,860 @@
+*********1*********2*********3*********4*********5*********6*********7****
+***
+***  IL1Rules.maude
+***
+**************************************************************************
+mod IL1RULES is inc ALLOPS .
+
+var xout : Soup .
+vars clo clm clr cli clc nuo num nui nuc : Soup .
+vars moo mom moi moc mio mim mii mic : Soup .
+vars ero erm eri erc pxo pxm pxi pxc : Soup .
+vars gao gam gai gac lyo lym lyi lyc : Soup .
+vars eeo eem eei eec leo lem lei lec : Soup .
+vars cpo cpm cpi cpc ct ptc sig : Soup .
+var il1r1c : Soup .
+vars erksmods : ModSet .
+
+*** ~/evidence/IL1-Evidence/00IL1-evidence.txt
+*** ~/evidence/IL1-Evidence/00IL1-rejects.txt
+
+*** IL1Rap--
+
+rl[900.IL1R1.by.IL1]:
+  {XOut   | xout   IL1                    }
+  {IL1R1C | il1r1c IL1R1                  }
+  {CLm    | clm    IL1Rap                 }
+  =>
+  {XOut   | xout                          }
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) }
+  {CLm    | clm                           } .
+  -------------------------------------------
+  *** ~/evidence/IL1-Evidence/IL1R1.by.IL1.900.txt
+
+*** Atf2--
+
+rl[010.Atf2.irt.IL1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) }
+  {CLc    | clc    Atf2                   }
+  {NUc    | nuc                           }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) }
+  {CLc    | clc                           }
+  {NUc    | nuc   [Atf2 - phos]           } .
+  -------------------------------------------
+  *** ~/evidence/IL1-Evidence/Atf2.irt.IL1.010.txt
+
+*** CcL2--  CcL2-gene
+
+rl[123.CcL2-gene.irt.IL1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) [Irak4 - act]         }
+  {CLc    | clc    [Jnks - act]                                 }
+  {NUc    | nuc    [Atf2 - phos] [Jun - phos]  CcL2-gene        }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) [Irak4 - act]         }
+  {CLc    | clc    [Jnks - act]                                 }
+  {NUc    | nuc    [Atf2 - phos] [Jun - phos] [CcL2-gene - on]  } .
+  -----------------------------------------------------------------
+  *** ~/evidence/IL1-Evidence/CcL2-gene.irt.IL1.123.txt
+
+*** CcL4--  CcL4-gene
+
+rl[745.CcL4-gene.irt.IL1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)    }
+  {CLc    | clc    [Tpl2 - act]              }
+  {NUc    | nuc    CcL4-gene                 }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)    }
+  {CLc    | clc    [Tpl2 - act]              }
+  {NUc    | nuc    [CcL4-gene - on]          } .
+  ----------------------------------------------
+  *** ~/evidence/IL1-Evidence/CcL4-gene.irt.IL1.745.txt
+
+*** CcL5--  CcL5-gene
+
+rl[765.CcL5-gene.irt.IL1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)         }
+  {NUc    | nuc    [Rela - act] CcL5-gene         }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)         }
+  {NUc    | nuc    [Rela - act] [CcL5-gene - on]  } .
+  ---------------------------------------------------
+  *** ~/evidence/IL1-Evidence/CcL5-gene.irt.IL1.765.txt
+
+*** CcL7--  CcL7-gene
+
+rl[767.CcL7-gene.irt.IL1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) [Irak4 - act] }
+  {CLc    | clc    [Jnks - act]                         }
+  {NUc    | nuc    [Jun - phos]  CcL7-gene              }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) [Irak4 - act] }
+  {CLc    | clc    [Jnks - act]                         }
+  {NUc    | nuc    [Jun - phos] [CcL7-gene - on]        } .
+  ---------------------------------------------------------
+  *** ~/evidence/IL1-Evidence/CcL7-gene.irt.IL1.767.txt
+
+*** Cd54-- Cd54-gene--
+
+rl[755.Cd54-gene.irt.IL1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)        }
+  {CLc    | clc    [Jnks - act] Tbk1             }
+  {NUc    | nuc    [Jun - phos] Cd54-gene        }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)        }
+  {CLc    | clc    [Jnks - act] Tbk1             }
+  {NUc    | nuc    [Jun - phos] [Cd54-gene - on] } .
+  ----------------------------------------------------
+  *** ~/evidence/IL1-Evidence/Cd54-gene.irt.IL1.755.txt
+
+*** Ch25h--  Ch25h-gene--
+
+rl[770.Ch25h-gene.irt.IL1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)          }
+  {CLc    | clc    [Jnks - act]                    }
+  {NUc    | nuc    [Jun - phos]  Ch25h-gene        }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)          }
+  {CLc    | clc    [Jnks - act]                    }
+  {NUc    | nuc    [Jun - phos] [Ch25h-gene - on]  } .
+  ---------------------------------------------------
+  *** ~/evidence/IL1-Evidence/Ch25h-gene.irt.IL1.770.txt
+
+*** Creb1--
+
+rl[1529.Creb1.irt.IL1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)  }
+  {NUc    | nuc     Creb1                  }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)  }
+  {NUc    | nuc     [Creb1 - phos]         } .
+  ---------------------------------------------------
+  *** ~/evidence/IL1-Evidence/Creb1.irt.IL1.1529.txt
+
+*** CxcL1--  CxcL1-gene--
+
+rl[1040.CxcL1-gene.irt.IL1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) [Irak4 - act] }
+  {NUc    | nuc    CxcL1-gene                           }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) [Irak4 - act] }
+  {NUc    | nuc    [CxcL1-gene - on]                    } .
+  ---------------------------------------------------------
+  *** ~/evidence/IL1-Evidence/CxcL1-gene.irt.IL1.1040.txt
+
+*** CxcL10--  CxcL10-gene--
+
+rl[877.CxcL10-gene.irt.IL1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) Myd88          
+                   (Ikk1 : [Ikk2 - act] : [Nemo - ubiq]) }
+  {NUc    | nuc    CxcL10-gene                           }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) Myd88 
+                   (Ikk1 : [Ikk2 - act] : [Nemo - ubiq]) }
+  {NUc    | nuc    [CxcL10-gene - on]                    } .
+  ---------------------------------------------------------
+  *** ~/evidence/IL1-Evidence/CxcL10-gene.irt.IL1.877.txt
+
+*** Eif4e--
+
+rl[1636.Eif4e.irt.IL1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)    }
+  {CLc    | clc    [Mnk1 - act] Eif4e        }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)    }
+  {CLc    | clc    [Mnk1 - act] [Eif4e - phos(S 209)]       } .
+  ----------------------------------------------
+  *** ~/evidence/IL1-Evidence/Eif4e.irt.IL1.1636.txt
+
+
+*** Elk1--
+
+rl[750.Elk1.irt.IL1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)    }
+  {CLc    | clc    [Tpl2 - act]              }
+  {NUc    | nuc     Elk1                     }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)    }
+  {CLc    | clc    [Tpl2 - act]              }
+  {NUc    | nuc    [Elk1 - act]              } .
+  ----------------------------------------------------
+  *** ~/evidence/IL1-Evidence/Elk1.irt.IL1.750.txt
+
+*** Elk4--
+
+rl[1533.Elk4.irt.IL1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)    }
+  {CLc    | clc                              }
+  {NUc    | nuc     Elk4                     }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)    }
+  {CLc    | clc                              }
+  {NUc    | nuc    [Elk4 - act]              } .
+  ----------------------------------------------------
+  *** ~/evidence/IL1-Evidence/Elk4.irt.IL1.1533.txt
+
+*** ErkS--
+
+rl[995.ErkS.irt.IL1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) [Irak4 - act]   
+                   [Irak1 - K63ubiq] [Traf6 - K63ubiq] 
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S)  }
+  {CLc    | clc    [Tpl2 - act] [Erks - erksmods]                               }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) [Irak4 - act]   
+                   [Irak1 - K63ubiq] [Traf6 - K63ubiq] 
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S)  }
+  {CLc    | clc    [Tpl2 - act] [Erks - erksmods phos(TEY)]                     } .
+  ---------------------------------------------------------------------------------
+  *** ~/evidence/IL1-Evidence/ErkS.irt.IL1.995.txt
+
+*** Eselectin--  Eselectin-gene
+
+rl[131.Eselectin-gene.irt.IL1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) [Irak4 - act] Myd88        
+                   [Irak1 - K63ubiq]  [Traf6 - K63ubiq]                   
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S)  }
+  {CLc    | clc    Tbk1 [Gsk3s - act]                                           }
+  {NUc    | nuc    Eselectin-gene                                               }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) [Irak4 - act] Myd88
+                   [Irak1 - K63ubiq]  [Traf6 - K63ubiq]                  
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S)  }
+  {CLc    | clc    Tbk1 [Gsk3s - act]                                           }
+  {NUc    | nuc    [Eselectin-gene - on]                                        } .
+  -------------------------------------------------------------------------------
+  *** ~/evidence/IL1-Evidence/Eselectin-gene.irt.IL1.131.txt
+
+*** Hif1a-- Hif1a-gene--
+
+rl[1552.Hif1a-gene.irt.IL1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)         }
+  {NUc    | nuc    Hif1a-gene                     }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)         }
+  {NUc    | nuc    [Hif1a-gene - on]              } .
+  ----------------------------------------------------
+  *** ~/evidence/IL1-Evidence/Hif1a-gene.irt.IL1.1552.txt
+
+*** Ikba--
+
+rl[805.Ikba.Rela.to.IL1R1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) [Irak1 - K63ubiq]
+                   [Traf6 - K63ubiq] Ubc13  [Mekk3 - ubiq]
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S)
+                   (Ikk1 : [Ikk2 - act] : [Nemo - ubiq])                     }
+  {CLc    | clc    (Ikba : Rela)                                             }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)  [Irak1 - K63ubiq]
+                   [Traf6 - K63ubiq] Ubc13  [Mekk3 - ubiq]
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S)
+                   (Ikk1 : [Ikk2 - act] : [Nemo - ubiq]) (Ikba : Rela)       }
+  {CLc    | clc                                                              } .
+  -------------------------------------------------------------------------------
+  *** ~/evidence/IL1-Evidence/Ikba.Rela.to.IL1R1.805.txt
+
+rl[502.Ikba.phosed.irt.IL1]:
+
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)
+                   [Traf6 - K63ubiq] [Irak1 - K63ubiq] Ubc13
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S)
+                   (Ikk1 : [Ikk2 - act] : [Nemo - ubiq])
+                   (Ikba : Rela)                                              }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)
+                   [Traf6 - K63ubiq] [Irak1 - K63ubiq] Ubc13
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S)
+                   (Ikk1 : [Ikk2 - act] : [Nemo - ubiq])
+                   ([Ikba - phos] : Rela)                                     } .
+  -------------------------------------------------------------------------------
+  *** ~/evidence/IL1-Evidence/Ikba.phosed.irt.IL1.502.txt
+
+rl[706.Ikba.degraded.irt.IL1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) Myd88
+                   [Traf6 - K63ubiq] [Irak1 - K63ubiq] Ubc13
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S)
+                   (Ikk1 : [Ikk2 - act] : [Nemo - ubiq])
+                   ([Ikba - phos] : Rela)                                       }
+  {CLc    | clc                                                                 }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) Myd88
+                   [Traf6 - K63ubiq] [Irak1 - K63ubiq] Ubc13
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S)
+                   (Ikk1 : [Ikk2 - act] : [Nemo - ubiq]) 
+                   Rela                                                         }
+  {CLc    | clc    [Ikba - degraded]                                            } .
+  --------------------------------------------------------------------------------
+  *** ~/evidence/IL1-Evidence/Ikba.degraded.irt.IL1.706.txt
+
+*** Ikba-gene--
+
+rl[882.Ikba-gene.irt.IL1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)  }
+  {CLc    | clc    [Ikba - degraded]       }
+  {NUc    | nuc     Ikba-gene              }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)  }
+  {CLc    | clc    [Ikba - degraded]       }
+  {NUc    | nuc    [Ikba-gene - on]        } .
+  --------------------------------------------
+  *** ~/evidence/IL1-Evidence/Ikba-gene.irt.IL1.882.txt
+
+*** Ikbb--
+
+rl[806.Ikbb.Rela.to.IL1R1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) Mekk2 
+                   (Ikk1 : [Ikk2 - act] : [Nemo - ubiq])               }
+  {CLc    | clc    (Ikbb : Rela)                                       }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) Mekk2 
+                   (Ikk1 : [Ikk2 - act] : [Nemo - ubiq]) (Ikbb : Rela) }
+  {CLc    | clc                                                        } .
+  ------------------------------------------------------------------------
+  *** ~/evidence/IL1-Evidence/Ikbb.Rela.to.IL1R1.806.txt
+
+rl[610.Ikbb.degraded.irt.IL1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) Mekk2 
+                   (Ikk1 : [Ikk2 - act] : [Nemo - ubiq]) (Ikbb : Rela) }
+  {CLc    | clc                                                        }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) Mekk2 
+                   (Ikk1 : [Ikk2 - act] : [Nemo - ubiq]) Rela          }
+  {CLc    | clc    [Ikbb - degraded]                                   } .
+  -------------------------------------------------------------------------
+  *** ~/evidence/IL1-Evidence/Ikbb.degraded.irt.IL1.610.txt
+
+*** Ikk1--
+*** Ikk2--
+*** Ikks--
+
+rl[804.IKK.to.IL1R1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)  
+                   [Traf6 - K63ubiq] [Irak1 - K63ubiq] Ubc13
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S) }
+  {CLc    | clc    (Ikk1 : Ikk2 : Nemo)                                        }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)
+                   [Traf6 - K63ubiq] [Irak1 - K63ubiq] Ubc13
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S)
+                   (Ikk1 : Ikk2 : Nemo)                                        }
+  {CLc    | clc                                                                } .
+  --------------------------------------------------------------------------------
+  *** ~/evidence/IL1-Evidence/IKK.to.IL1R1.804.txt
+
+rl[178.IKK.irt.IL1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)
+                   [Traf6 - K63ubiq] [Irak1 - K63ubiq] Ubc13
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S) 
+                   (Ikk1 : Ikk2 : Nemo)                                      }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)
+                   [Traf6 - K63ubiq] [Irak1 - K63ubiq] Ubc13
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S)
+                   (Ikk1 : [Ikk2 - act] : Nemo)                              } .
+  ------------------------------------------------------------------------------
+  *** ~/evidence/IL1-Evidence/IKK.irt.IL1.178.txt
+
+*** IL1b-- IL1b-gene--
+
+rl[756.IL1b-gene.irt.IL1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) [Irak4 - act] }
+  {NUc    | nuc    IL1b-gene                            }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) [Irak4 - act] }
+  {NUc    | nuc    [IL1b-gene - on]                     } .
+  ---------------------------------------------------------
+  *** ~/evidence/IL1-Evidence/IL1b-gene.irt.IL1.756.txt
+
+*** IL6--  IL6-gene
+
+rl[142.IL6-gene.irt.IL1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) Myd88  [Traf6 - K63ubiq]
+                   [Irak1 - K63ubiq] [Irak4 - act] [Mekk3 - ubiq] 
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S)
+                   (Ikk1 : [Ikk2 - act] : [Nemo - ubiq])                      }
+  {CLc    | clc    [Jnks - act] [Pkcz - act]                                  }
+  {NUc    | nuc    [Jun - phos] Nfkbiz [Rela - act] IL6-gene                  }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) Myd88  [Traf6 - K63ubiq]
+                   [Irak1 - K63ubiq] [Irak4 - act] [Mekk3 - ubiq] 
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S)
+                   (Ikk1 : [Ikk2 - act] : [Nemo - ubiq])                      }
+  {CLc    | clc    [Jnks - act] [Pkcz - act]                                  }
+  {NUc    | nuc    [Jun - phos] Nfkbiz [Rela - act] [IL6-gene - on]           } .
+  -------------------------------------------------------------------------------
+  *** ~/evidence/IL1-Evidence/IL6-gene.irt.IL1.142.txt
+
+*** IL8--  IL8-gene
+
+rl[144.IL8-gene.irt.IL1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) Myd88 Peli1
+                   [Irak1 - K63ubiq] [Irak4 - act]
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S)  }
+  {NUc    | nuc    IL8-gene                                                     }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) Myd88 Peli1
+                   [Irak1 - K63ubiq] [Irak4 - act]
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S)  }
+  {NUc    | nuc    [IL8-gene - on]                                              } .
+  -------------------------------------------------------------------------------
+  *** ~/evidence/IL1-Evidence/IL8-gene.irt.IL1.144.txt
+
+*** Irak1--
+
+rl[709.Irak1.to.IL1R1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) Myd88 [Irak4 - act] Tollip       }
+  {CLc    | clc    Irak1                                                   }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) Myd88 [Irak4 - act] Tollip Irak1 }
+  {CLc    | clc                                                            } .
+  ----------------------------------------------------------------------------
+  *** ~/evidence/IL1-Evidence/Irak1.to.IL1R1.709.txt
+
+rl[027.Irak1.act.irt.IL1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)  Irak1        }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) [Irak1 - act] } .
+  ----------------------------------------------------------
+  *** ~/evidence/IL1-Evidence/Irak1.act.irt.IL1.027.txt
+
+rl[801.Irak1.ubiq.irt.IL1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)  Irak1            }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) [Irak1 - K63ubiq] } .
+  ---------------------------------------------------------------
+  *** ~/evidence/IL1-Evidence/Irak1.ubiq.irt.IL1.801.txt
+
+*** Irak4--
+
+rl[725.Irak4.to.IL1R1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)               }
+  {CLc    | clc    Irak4                                }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) [Irak4 - act] }
+  {CLc    | clc                                         } .
+  ---------------------------------------------------------
+  *** ~/evidence/IL1-Evidence/Irak4.to.IL1R1.725.txt
+
+*** Jnks--
+
+rl[908.JnkS.irt.IL1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)
+                   [Mekk1 - act] Myd88  [Traf6 - K63ubiq] Ubc13
+                   [Irak1 - K63ubiq] [Irak4 - act]
+                   ([Tak1 - K63ubiq act] : [Tab1 - phos] : tab23s:Tab23S)            }
+  {CLc    | clc    [Mkk7 - act] Jnks                                      }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)
+                   [Mekk1 - act] Myd88  [Traf6 - K63ubiq] Ubc13
+                   [Irak1 - K63ubiq] [Irak4 - act]
+                   ([Tak1 - K63ubiq act] : [Tab1 - phos] : tab23s:Tab23S)            }
+  {CLc    | clc    [Mkk7 - act] [Jnks - act]                              } .
+  -----------------------------------------------------------------------------
+  *** ~/evidence/IL1-Evidence/JnkS.irt.IL1.908.txt
+
+*** Jun--
+
+rl[914.Jun.irt.IL1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) [Irak4 - act]                     
+                   ([Tak1 - K63ubiq act] : [Tab1 - phos] : tab23s:Tab23S)               }
+  {CLc    | clc    [Jnks - act]                                              }
+  {NUc    | nuc    Jun                                                       }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) [Irak4 - act]                      
+                   ([Tak1 - K63ubiq act] : [Tab1 - phos] : tab23s:Tab23S)               }
+  {CLc    | clc    [Jnks - act]                                              }
+  {NUc    | nuc    [Jun - phos]                                              } .
+  -----------------------------------------------------------------------------
+  *** ~/evidence/IL1-Evidence/Jun.irt.IL1.914.txt
+
+*** Mekk1--
+
+rl[771.Mekk1.irt.IL1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)               }
+  {CLc    | clc    Mekk1                                }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) [Mekk1 - act] }
+  {CLc    | clc                                         } .
+  ---------------------------------------------------------------
+  *** ~/evidence/IL1-Evidence/Mekk1.irt.IL1.771.txt
+
+*** Mekk2--
+
+rl[939.Mekk2.to.IL1R1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)
+                   (Ikk1 : [Ikk2 - act] : [Nemo - ubiq])                      } 
+  {CLc    | clc    Mekk2                                             }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) Mekk2   
+                   (Ikk1 : [Ikk2 - act] : [Nemo - ubiq])                      } 
+  {CLc    | clc                                                      } .
+  ----------------------------------------------------------------------
+  *** ~/evidence/IL1-Evidence/Mekk2.to.IL1R1.939.txt
+
+*** Mekk3--
+
+rl[044.Mekk3.to.IL1R1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) [Traf6 - K63ubiq]
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S)  } 
+  {CLc    | clc    Mekk3                                                      }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) [Traf6 - K63ubiq] Mekk3   
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S)  } 
+  {CLc    | clc                                                               } .
+  -------------------------------------------------------------------------------
+  *** ~/evidence/IL1-Evidence/Mekk3.to.IL1R1.044.txt
+
+rl[145.Mekk3.ubiq.irt.IL1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) 
+                   [Traf6 - K63ubiq] Ubc13 Mekk3          }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)
+                   [Traf6 - K63ubiq] Ubc13 [Mekk3 - ubiq] } .
+  ----------------------------------------------------------------------
+  *** ~/evidence/IL1-Evidence/Mekk3.ubiq.irt.IL1.145.txt
+
+*** Mkk7--
+
+rl[018.Mkk7.irt.IL1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) }
+  {CLc    | clc    Mkk7                   }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) }
+  {CLc    | clc    [Mkk7 - act]           } .
+  -------------------------------------------
+  *** ~/evidence/IL1-Evidence/Mkk7.irt.IL1.018.txt
+
+*** Mnk1--
+
+rl[1637.Mnk1.irt.IL1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) }
+  {CLc    | clc    Mnk1                   }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) }
+  {CLc    | clc    [Mnk1 - act]           } .
+  -------------------------------------------
+  *** ~/evidence/IL1-Evidence/Mnk1.irt.IL1.1637.txt
+
+*** Myd88--
+
+rl[901.Myd88.to.IL1R1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)       }
+  {CLc    | clc    Myd88                        }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) Myd88 }
+  {CLc    | clc                                 } .
+  ------------------------------------------------
+  *** ~/evidence/IL1-Evidence/Myd88.to.IL1R1.901.txt
+
+*** Nemo--
+
+rl[054.Nemo.ubiq.irt.IL1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) [Traf6 - K63ubiq]
+                   (Ikk1 : [Ikk2 - act] : Nemo)              }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) [Traf6 - K63ubiq]
+                   (Ikk1 : [Ikk2 - act] : [Nemo - ubiq])     } .
+  --------------------------------------------------------------
+  *** ~/evidence/IL1-Evidence/Nemo.ubiq.irt.IL1.054.txt
+
+*** Nfkb--
+
+rl[604.Nfkb.irt.IL1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) Myd88 
+                   [Traf6 - K63ubiq] [Irak1 - K63ubiq] [Irak4 - act] Ubc13
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S)
+                   (Ikk1 : [Ikk2 - act] : [Nemo - ubiq])                        }
+  {CLc    | clc    Azi2 Erc1 [Ikba - degraded] Pin1 [Pkcz - act] Sqstm1         }
+  {NUc    | nuc    [Rela - act]                                                 }
+  {Sig    | sig                                                                 }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) Myd88 
+                   [Traf6 - K63ubiq] [Irak1 - K63ubiq] [Irak4 - act] Ubc13
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S)
+                   (Ikk1 : [Ikk2 - act] : [Nemo - ubiq])                        }
+  {CLc    | clc    Azi2 Erc1 [Ikba - degraded] Pin1 [Pkcz - act] Sqstm1         }
+  {NUc    | nuc    [Rela - act]                                                 }
+  {Sig    | sig    NFKB-REPORTER-ON                                             } .
+  --------------------------------------------------------------------------------
+  *** ~/evidence/IL1-Evidence/Nfkb.irt.IL1.604.txt
+
+*** Nfkbiz-- Nfkbiz-gene--
+
+rl[879.Nfkbiz-gene.irt.IL1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) [Irak4 - act] Myd88 }
+  {NUc    | nuc    Nfkbiz-gene                                }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) [Irak4 - act] Myd88 }
+  {NUc    | nuc    [Nfkbiz-gene - on]                         } .
+  ---------------------------------------------------------------
+  *** ~/evidence/IL1-Evidence/Nfkbiz-gene.irt.IL1.879.txt
+
+*** P38s--
+
+rl[926.P38s.irt.IL1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) [Mekk1 - act]  [Traf6 - K63ubiq] Ubc13
+                   [Irak1 - K63ubiq] [Irak4 - act]
+                   ([Tak1 - K63ubiq act] : [Tab1 - phos] : tab23s:Tab23S)            }
+  {CLc    | clc    P38s                                                   }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) [Mekk1 - act]  [Traf6 - K63ubiq] Ubc13
+                   [Irak1 - K63ubiq] [Irak4 - act]
+                   ([Tak1 - K63ubiq act] : [Tab1 - phos] : tab23s:Tab23S)            }
+  {CLc    | clc    [P38s - act]                                           } .
+  -------------------------------------------------------------------------------
+  *** ~/evidence/IL1-Evidence/P38s.irt.IL1.926.txt
+
+*** Peli1--
+
+rl[615.Peli1.to.IL1R1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)       }
+  {CLc    | clc    Peli1                        }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) Peli1 }
+  {CLc    | clc                                 } .
+  ------------------------------------------------
+  *** ~/evidence/IL1-Evidence/Peli1.to.IL1R1.615.txt
+
+*** Pkcz--
+
+rl[772.Pkcz.irt.IL1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) }
+  {CLc    | clc    Pkcz                   }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) }
+  {CLc    | clc    [Pkcz - act]           } .
+  --------------------------------------------
+  *** ~/evidence/IL1-Evidence/Pkcz.irt.IL1.772.txt
+
+*** Rela--
+
+rl[315.Rela.phos.irt.IL1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) [Irak1 - K63ubiq]
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S)
+                   Rela                                                        }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) [Irak1 - K63ubiq]
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S)
+                   [Rela - phos(S 536)]                                        } .
+  -----------------------------------------------------------------------
+  *** ~/evidence/IL1-Evidence/Rela.phos.irt.IL1.315.txt
+
+rl[600.Rela.to.Nuc.irt.IL1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)              
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S)
+                   [Rela - phos(S 536)]                                        } 
+  {NUc    | nuc                                                                }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)              
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S) }
+  {NUc    | nuc    [Rela - phos(S 536)]                                        } .
+  ----------------------------------------------------------------------
+  *** ~/evidence/IL1-Evidence/Rela.to.Nuc.irt.IL1.600.txt
+
+rl[672.Rela.act.irt.IL1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)
+                   (Ikk1 : [Ikk2 - act] : [Nemo - ubiq]) }
+  {NUc    | nuc    [Rela - phos(S 536)]                  }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)  
+                   (Ikk1 : [Ikk2 - act] : [Nemo - ubiq]) }
+  {NUc    | nuc    [Rela - act]                          } .
+  ----------------------------------------------------------
+  *** ~/evidence/IL1-Evidence/Rela.act.irt.IL1.672.txt
+
+*** S6k1--
+
+rl[1611.S6k1.phos.irt.IL1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)                    }
+  {CLc    | clc    S6k1                                      }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)                    }
+  {CLc    | clc    [S6k1 - phos]                             } .
+  ---------------------------------------------------------------
+  *** ~/evidence/IL1-Evidence/S6k1.phos.irt.IL1.1611.txt
+
+
+
+*** Tab1--
+*** Tab2--
+*** Tab3--
+*** Tak1--
+
+rl[093.Tak1.to.IL1R1C]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)                    }
+  {CLc    | clc    (Tak1 : Tab1 : tab23s:Tab23S)               }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)                  
+                   (Tak1 : [Tab1 - phos] : tab23s:Tab23S)      }
+  {CLc    | clc                                              } .
+  ---------------------------------------------------------------
+  *** ~/evidence/IL1-Evidence/Tak1.to.IL1R1.093.txt
+
+rl[1585.Tak1.ubiq.irt.IL1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)  [Traf6 - K63ubiq]
+                   (Tak1 : [Tab1 - phos] : tab23s:Tab23S)              }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)  [Traf6 - K63ubiq]
+                   ([Tak1 - K63ubiq] : [Tab1 - phos] : tab23s:Tab23S)  } .
+  -------------------------------------------------------------------
+  *** ~/evidence/IL1-Evidence/Tak1.ubiq.irt.IL1.1585.txt
+
+rl[209.Tak1.act.irt.IL1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)  [Traf6 - K63ubiq]
+                   ([Tak1 - K63ubiq] : [Tab1 - phos] : tab23s:Tab23S)                   }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)  [Traf6 - K63ubiq]
+                   ([Tak1 - K63ubiq act] : [Tab1 - phos] : tab23s:Tab23S)      } .
+  -------------------------------------------------------------------------------
+  *** ~/evidence/IL1-Evidence/Tak1.act.irt.IL1.209.txt
+
+
+rl[1586.Tak1.phos.irt.IL1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)  [Traf6 - K63ubiq]
+                   ([Tak1 - K63ubiq act] : [Tab1 - phos] : tab23s:Tab23S)                }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)  [Traf6 - K63ubiq]
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S)  } .
+  -------------------------------------------------------------------------------
+  *** ~/evidence/IL1-Evidence/Tak1.phos.irt.IL1.1586.txt
+
+*** Tax1bp1--
+
+***(
+rl[951.Tax1bp1.to.IL1R1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) Tnfaip3         }
+  {CLc    | clc    Tax1bp1                                }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) Tnfaip3 Tax1bp1 }
+  {CLc    | clc                                           } .
+  -----------------------------------------------------------
+  *** ~/evidence/IL1-Evidence/Tax1bp1.to.IL1R1.951.txt
+
+rl[950.Tax1bp1.phos.irt.IL1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)  Tax1bp1         }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) [Tax1bp1 - phos] } .
+  -----------------------------------------------------------
+  *** ~/evidence/IL1-Evidence/Tax1bp1.phos.irt.IL1.950.txt
+)***
+
+*** Tiprl--
+
+rl[959.Tiprl.irt.IL1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S)  }
+  {CLc    | clc    Tiprl                                                      }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) Tiprl
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S)  }
+  {CLc    | clc                                                               } .
+  -------------------------------------------------------------------------------
+  *** ~/evidence/IL1-Evidence/Tiprl.irt.IL1.959.txt
+
+*** Tnfaip3-gene--
+
+rl[880.Tnfaip3-gene.irt.IL1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)           
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S)  
+                   (Ikk1 : [Ikk2 - act] :  [Nemo - ubiq])                    } 
+  {NUc    | nuc    [Rela - act] Tnfaip3-gene                                 }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)           
+                   ([Tak1 - K63ubiq act phos] : [Tab1 - phos] : tab23s:Tab23S)  
+                   (Ikk1 : [Ikk2 - act] :  [Nemo - ubiq])                    } 
+  {NUc    | nuc    [Rela - act] [Tnfaip3-gene - on]                          } .
+  ------------------------------------------------------------------------------
+  *** ~/evidence/IL1-Evidence/Tnfaip3-gene.irt.IL1.880.txt
+
+*** Tnfaip3-- 
+
+***(
+rl[949.Tnfaip3.to.IL1R1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)         }
+  {CLc    | clc     Tnfaip3                       }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) Tnfaip3 }
+  {CLc    | clc                                   } .
+  -----------------------------------------------------------
+  *** ~/evidence/IL1-Evidence/ Tnfaip3.to.IL1R1.949.txt
+)***
+
+*** Tollip--
+
+rl[245.Tollip.to.IL1R1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)        }
+  {CLc    | clc    Tollip                        }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) Tollip }
+  {CLc    | clc                                  } .
+  --------------------------------------------------
+  *** ~/evidence/IL1-Evidence/Tollip.to.IL1R1.245.txt
+
+*** Tpl2--
+
+rl[183.Tpl2.irt.IL1R1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)        }
+  {CLc    | clc    Tpl2                          }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)        }
+  {CLc    | clc    [Tpl2 - act]                  } .
+  --------------------------------------------------
+  *** ~/evidence/IL1-Evidence/Tpl2.irt.IL1R1.183.txt
+
+rl[186.Tpl2.degraded.irt.IL1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)        }
+  {CLc    | clc    [Tpl2 - act]                  } 
+  {Sig    | sig                                  }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)        }
+  {CLc    | clc                                  } 
+  {Sig    | sig    [Tpl2 - degraded]             } .
+  ---------------------------------------------------
+  *** ~/evidence/IL1-Evidence/Tpl2.degraded.irt.IL1.186.txt
+
+*** Traf6--
+
+rl[800.Traf6.to.IL1R1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) [Irak1 - K63ubiq]       }
+  {CLc    | clc    Traf6                                          }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) [Irak1 - K63ubiq] Traf6 }
+  {CLc    | clc                                                   } .
+  --------------------------------------------------------------------
+  *** ~/evidence/IL1-Evidence/Traf6.to.IL1R1.800.txt
+
+rl[714.Traf6.ubiq.irt.IL1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) Traf6
+                   (Tak1 : [Tab1 - phos] : tab23s:Tab23S)     }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) [Traf6 - K63ubiq]
+                   (Tak1 : [Tab1 - phos] : tab23s:Tab23S)     } .
+  ---------------------------------------------------------------
+  *** ~/evidence/IL1-Evidence/Traf6.ubiq.irt.IL1.714.txt
+
+*** Ubc13--
+
+rl[1587.Ubc13.to.IL1R1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)       }
+  {CLc    | clc    Ubc13                        }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) Ubc13 }
+  {CLc    | clc                                 } .
+  ----------------------------------------------------------------
+  *** ~/evidence/IL1-Evidence/Ubc13.to.IL1R1.1587.txt
+
+*** Ube2d3--
+
+***(
+rl[1588.Ube2d3.to.IL1R1]:
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap)         }
+  {CLc    | clc    Ube2d3                         }
+  =>
+  {IL1R1C | il1r1c (IL1R1 : IL1 : IL1Rap) Ube2d3  }
+  {CLc    | clc                                   } .
+  ---------------------------------------------------
+  *** ~/evidence/IL1-Evidence/Ube2d3.to.IL1R1.1588.txt
+)***
+
+
+endm

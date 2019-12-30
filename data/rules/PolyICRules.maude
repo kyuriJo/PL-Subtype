@@ -1,0 +1,306 @@
+mod POLYICRULES is inc ALLOPS .
+
+var xout : Soup .
+var tlr3c : Soup .
+vars clo clm clr cli clc nuo num nui nuc : Soup .
+vars moo mom moi moc mio mim mii mic : Soup .
+vars ero erm eri erc pxo pxm pxi pxc : Soup .
+vars gao gam gai gac lyo lym lyi lyc : Soup .
+vars eeo eem eei eec leo lem lei lec : Soup .
+vars cpo cpm cpi cpc ptc sig ct : Soup .
+
+**************************************************************************
+
+*** ~/evidence/PolyIC-Evidence/00PolyIC-evidence.txt
+
+rl[425.TLR3.onby.PolyIC]:
+  {XOut  | xout   PolyIC           }
+  {TLR3C | tlr3c  TLR3             }
+  =>
+  {XOut | xout                     }
+  {TLR3C | tlr3c (TLR3 : PolyIC)   } .
+  --------------------------------------
+  *** ~/evidence/PolyIC-Evidence/TLR3.onby.PolyIC.425.txt
+
+*** CcL5--
+*** CcL5-gene--
+
+rl[475.CcL5-gene.irt.PolyIC]:
+  {TLR3C | tlr3c (TLR3 : PolyIC)   }
+  {NUc   | nuc    CcL5-gene        }
+
+  =>
+  {TLR3C | tlr3c (TLR3 : PolyIC)   }
+  {NUc   | nuc   [CcL5-gene - on]  } .
+  -----------------------------------------
+  *** ~/evidence/PolyIC-Evidence/CcL5-gene.irt.PolyIC.475.txt
+
+*** Erks--
+
+rl[083.ErkS.irt.PolyIC]:
+  {TLR3C | tlr3c (TLR3 : PolyIC) Trif     }
+  {CLc   | clc  Erks Tradd                }
+  =>
+  {TLR3C | tlr3c (TLR3 : PolyIC) Trif     }
+  {CLc   | clc [Erks - phos(TEY)] Tradd   } .
+  ---------------------------------------------
+  *** ~/evidence/PolyIC-Evidence/ErkS.irt.PolyIC.083.txt
+
+*** Ifna4--
+
+rl[476.Ifna4-gene.irt.PolyIC]:
+  {TLR3C | tlr3c (TLR3 : PolyIC)   }
+  {NUc   | nuc    Ifna4-gene       }
+
+  =>
+  {TLR3C | tlr3c (TLR3 : PolyIC)   }
+  {NUc   | nuc   [Ifna4-gene - on] } .
+  -------------------------------------
+  *** ~/evidence/PolyIC-Evidence/Ifna4-gene.irt.PolyIC.476.txt
+
+*** Ifnb1--
+*** Ifnb1-gene--
+
+rl[455.Ifnb1-gene.irt.PolyIC]:
+  {TLR3C | tlr3c (TLR3 : PolyIC) Trif                         }
+  {CLc   | clc    Irf7                                        }
+  {NUc   | nuc    [Irf3 - irf3mods:ModSet] Ifnb1-gene         }
+
+  =>
+  {TLR3C | tlr3c (TLR3 : PolyIC) Trif                         }
+  {CLc   | clc    Irf7                                        }
+  {NUc   | nuc   [Irf3 - irf3mods:ModSet] [Ifnb1-gene - on]   } .
+  ----------------------------------------------------------------
+  *** ~/evidence/PolyIC-Evidence/Ifnb1-gene.irt.PolyIC.455.txt
+  *** Irf7 needs an update
+
+*** Ikba--
+
+rl[326.Ikba.phosed.irt.PolyIC]:
+  {TLR3C | tlr3c (TLR3 : PolyIC) [Ripk1 - ubiq] Traf6                 }
+  {CLc   | clc   (Ikk1 : [Ikk2 - act] : Nemo) (Ikba : Rela)           }
+  =>
+  {TLR3C | tlr3c (TLR3 : PolyIC) [Ripk1 - ubiq] Traf6                 }
+  {CLc   | clc   (Ikk1 : [Ikk2 - act] : Nemo) ([Ikba - phos] : Rela)  } .
+  ----------------------------------------------------------------------
+  *** ~/evidence/PolyIC-Evidence/Ikba.phosed.irt.PolyIC.326.txt
+
+rl[512.Ikba.degraded.irt.PolyIC]:
+  {TLR3C | tlr3c (TLR3 : PolyIC) Trif (Tab1 : Tab2 : [Tak1 - act])  }
+  {CLc   | clc (Ikk1 : [Ikk2 - act] : Nemo) ([Ikba - phos] : Rela)  }
+  =>
+  {TLR3C | tlr3c (TLR3 : PolyIC) Trif (Tab1 : Tab2 : [Tak1 - act])  }
+  {CLc   | clc (Ikk1 : [Ikk2 - act] : Nemo) Rela [Ikba - degraded]  } .
+  -----------------------------------------------------------------------
+  *** ~/evidence/PolyIC-Evidence/Ikba.degraded.irt.PolyIC.512.txt
+
+*** IKK--
+
+rl[596.IKK.irt.PolyIC]:
+  {TLR3C | tlr3c (TLR3 : PolyIC)                    }
+  {CLc   | clc   Peli1 (Ikk1 : Ikk2 : Nemo)         }
+  =>
+  {TLR3C | tlr3c (TLR3 : PolyIC)                    }
+  {CLc   | clc   Peli1 (Ikk1 : [Ikk2 - act] : Nemo) } .
+  -----------------------------------------------------
+  *** ~/evidence/PolyIC-Evidence/IKK.irt.PolyIC.596.txt
+
+*** IL6-gene--
+
+rl[477.IL6-gene.irt.PolyIC]:
+  {TLR3C | tlr3c (TLR3 : PolyIC)   }
+  {NUc   | nuc    IL6-gene         }
+
+  =>
+  {TLR3C | tlr3c (TLR3 : PolyIC)   }
+  {NUc   | nuc   [IL6-gene - on]   } .
+  -------------------------------------
+  *** ~/evidence/PolyIC-Evidence/IL6-gene.irt.PolyIC.477.txt
+
+*** IL8-gene--
+
+rl[484.IL8-gene.irt.PolyIC]:
+  {TLR3C | tlr3c (TLR3 : PolyIC)   }
+  {NUc   | nuc    IL8-gene         }
+
+  =>
+  {TLR3C | tlr3c (TLR3 : PolyIC)   }
+  {NUc   | nuc   [IL8-gene - on]   } .
+  -------------------------------------
+  *** ~/evidence/PolyIC-Evidence/IL8-gene.irt.PolyIC.484.txt
+
+*** IL12b-gene--
+
+rl[478.IL12b-gene.irt.PolyIC]:
+  {TLR3C  | tlr3c (TLR3 : PolyIC) Trif          }
+  {CLc    | clc   Peli1                         }
+  {NUc    | nuc   IL12b-gene                    }
+  =>
+  {TLR3C  | tlr3c (TLR3 : PolyIC) Trif          }
+  {CLc    | clc   Peli1                         }
+  {NUc    | nuc   [IL12b-gene - on]             } .
+  -----------------------------------------------
+  *** ~/evidence/PolyIC-Evidence/IL12b-gene.irt.PolyIC.478.txt
+
+*** Irf3--
+
+rl[448.Irf3.phos.irt.PolyIC]:
+  {TLR3C | tlr3c (TLR3 : PolyIC)                   }
+  {CLc   | clc      Irf3                           }
+  =>
+  {TLR3C | tlr3c (TLR3 : PolyIC)                   }
+  {CLc   | clc    [Irf3 - phos(S 339) phos(S 396)] } .
+  ---------------------------------------------------
+  *** ~/evidence/PolyIC-Evidence/Irf3.phos.irt.PolyIC.448.txt
+
+rl[449.Irf3.dimer.irt.PolyIC]:
+  {TLR3C | tlr3c (TLR3 : PolyIC)                }
+  {CLc   | clc    Irf3                          }
+  =>
+  {TLR3C | tlr3c (TLR3 : PolyIC)                }
+  {CLc   | clc   [Irf3 - dimer]                 } .
+  ---------------------------------------------------
+  *** ~/evidence/PolyIC-Evidence/Irf3.dimer.irt.PolyIC.449.txt
+
+rl[692.Irf3.to.Nuc.irt.PolyIC]:
+  {TLR3C | tlr3c (TLR3 : PolyIC) Trif      }
+  {CLc | clc  Azi2 Tbk1 [Irf3 - dimer]     }
+  {NUc | nuc                               }
+  =>
+  {TLR3C | tlr3c (TLR3 : PolyIC) Trif      }
+  {CLc | clc Azi2 Tbk1                     }
+  {NUc | nuc [Irf3 - dimer]                } .
+  -----------------------------------------------
+  *** ~/evidence/PolyIC-Evidence/Irf3.to.Nuc.irt.PolyIC.692.txt
+
+*** Jnks--
+
+rl[711.JnkS.irt.PolyIC]:
+  {TLR3C | tlr3c (TLR3 : PolyIC)       }
+  {CLc | clc Jnks  Tradd               }
+  =>
+  {TLR3C | tlr3c (TLR3 : PolyIC)       }
+  {CLc | clc [Jnks - act] Tradd        } .
+  ----------------------------------------
+  *** ~/evidence/PolyIC-Evidence/JnkS.irt.PolyIC.711.txt
+
+*** P38--
+*** P38s--
+
+rl[715.P38.irt.PolyIC]:
+  {TLR3C | tlr3c (TLR3 : PolyIC)       }
+  {CLc | clc P38s  Tradd               }
+  =>
+  {TLR3C | tlr3c (TLR3 : PolyIC)       }
+  {CLc | clc [P38s - phos(TGY)] Tradd  } .
+  ----------------------------------------
+  *** ~/evidence/PolyIC-Evidence/P38.irt.PolyIC.715.txt
+
+*** Rela--
+
+rl[583.Rela.to.Nuc.irt.PolyIC]:
+  {TLR3C | tlr3c (TLR3 : PolyIC)  }
+  {CLc | clc  Rela                }
+  {NUc | nuc                      } 
+  =>
+  {TLR3C | tlr3c (TLR3 : PolyIC)  }
+  {CLc | clc                      }
+  {NUc | nuc  Rela                } .
+  -----------------------------------
+  *** ~/evidence/PolyIC-Evidence/Rela.to.Nuc.irt.PolyIC.583.txt
+
+*** Ripk1--
+
+rl[742.Ripk1.irt.PolyIC]:
+  {TLR3C | tlr3c (TLR3 : PolyIC) Trif                }
+  {CLc   | clc    Peli1 Ripk1                        }
+  =>
+  {TLR3C | tlr3c (TLR3 : PolyIC) Trif [Ripk1 - ubiq] }
+  {CLc   | clc    Peli1                              } .
+  --------------------------------------------------------
+  *** ~/evidence/PolyIC-Evidence/Ripk1.irt.PolyIC.742.txt
+
+*** Src--
+
+rl[453.Src.to.TLR3.irt.PolyIC]:
+  {TLR3C | tlr3c (TLR3 : PolyIC)                     }
+  {CLi   | cli    Src                                }
+  =>
+  {TLR3C | tlr3c (TLR3 : PolyIC) [Src - phos(Y 419)] }
+  {CLi   | cli                                       } .
+  -----------------------------------------------------
+  *** ~/evidence/PolyIC-Evidence/Src.to.TLR3.irt.PolyIC.453.txt
+
+*** Stat1--
+
+rl[451.Stat1.phos.irt.PolyIC]:
+  {TLR3C | tlr3c (TLR3 : PolyIC) [Src - phos(Y 419)] Trif }
+  {CLc   | clc    Stat1                                     }
+  =>
+  {TLR3C | tlr3c (TLR3 : PolyIC) [Src - phos(Y 419)] Trif }
+  {CLc   | clc   [Stat1 - phos(Y 701)]                      } .
+  -------------------------------------------------------------
+  *** ~/evidence/PolyIC-Evidence/Stat1.phos.irt.PolyIC.451.txt
+
+*** Tak1-- Tab2--
+
+rl[743.Tak1.irt.PolyIC]:
+  {TLR3C | tlr3c (TLR3 : PolyIC)                              }
+  {CLc   | clc   (Tab1 : Tab2 : Tak1)                         }
+  =>
+  {TLR3C | tlr3c (TLR3 : PolyIC) (Tab1 : Tab2 : [Tak1 - act]) }
+  {CLc   | clc                                                } .
+  ---------------------------------------------------------------
+  *** ~/evidence/PolyIC-Evidence/Tak1.irt.PolyIC.743.txt
+
+*** Tnf--
+*** ProTnf-gene--
+
+rl[456.ProTnf-gene.irt.PolyIC]:
+  {TLR3C | tlr3c (TLR3 : PolyIC) Trif            }
+  {CLc    | clc   Peli1 Unc93b1                  }
+  {NUc    | nuc   hmgb:HmgbS ProTnf-gene         }
+  =>
+  {TLR3C | tlr3c (TLR3 : PolyIC) Trif            }
+  {CLc    | clc   Peli1 Unc93b1                  }
+  {NUc    | nuc   hmgb:HmgbS [ProTnf-gene - on]  } .
+  -----------------------------------------------
+  *** ~/evidence/PolyIC-Evidence/ProTnf-gene.irt.PolyIC.456.txt
+
+*** Trif-- 
+
+rl[429.Trif.to.TLR3.irt.PolyIC]:
+  {TLR3C | tlr3c (TLR3 : PolyIC)        }
+  {CLc   | clc    Trif                  }
+  =>
+  {TLR3C | tlr3c (TLR3 : PolyIC) Trif   }
+  {CLc   | clc                          } .
+  ------------------------------------------
+  *** ~/evidence/PolyIC-Evidence/Trif.to.TLR3.irt.PolyIC.429.txt
+
+*** Traf3--
+
+rl[437.Traf3.to.TLR3.irt.PolyIC]:
+  {TLR3C | tlr3c (TLR3 : PolyIC)       }
+  {CLc   | clc    Traf3                }
+  =>
+  {TLR3C | tlr3c (TLR3 : PolyIC) Traf3 }
+  {CLc   | clc                         } .
+  ------------------------------------------
+  *** ~/evidence/PolyIC-Evidence/Traf3.to.TLR3.irt.PolyIC.437.txt
+
+*** Traf6--
+
+rl[444.Traf6.to.TLR3.irt.PolyIC]:
+  {TLR3C | tlr3c (TLR3 : PolyIC)       }
+  {CLc   | clc    Traf6                }
+  =>
+  {TLR3C | tlr3c (TLR3 : PolyIC) Traf6 }
+  {CLc   | clc                         } .
+  ------------------------------------------
+  *** ~/evidence/PolyIC-Evidence/Traf6.to.TLR3.irt.PolyIC.444.txt
+
+
+
+
+endm
