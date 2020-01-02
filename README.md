@@ -35,7 +35,7 @@ SampleN	Basal
 
 ```console
 Rscript run_limma.R [expression_file] [sample_file]
-python subtype_analysis.py [pathway name]
+python subtype_analysis.py [subtype_name] [pathway name]
 ```
 ## Case 2. 
 ```console
